@@ -82,7 +82,7 @@ const AnagramGenerator = () => {
     const isMaxReached = filteredAnagrams.length === 20000;
 
     return (
-        <div className="p-12 bg-black text-white" style={{ margin: '3rem' }}>
+        <div className="p-12 bg-black text-white" style={{margin: '3rem'}}>
             <h1 className="text-2xl font-bold mb-4">Anagramm-Generator</h1>
             <input
                 type="text"
@@ -98,31 +98,7 @@ const AnagramGenerator = () => {
                 placeholder="Filtere nach Buchstaben"
                 className="border p-2 mb-4 w-full text-black"
             />
-            <div>
-                <h2 className="text-xl mb-2">
-                    Anzahl der Anagramme: {filteredAnagrams.length} {isMaxReached && '(Maximum)'}
-                </h2>
-                <h2 className="text-xl mb-2">Mögliche Anagramme:</h2>
-                <table className="table-auto border-collapse w-full">
-                    <tbody>
-                    {filteredAnagrams.length > 0 && (
-                        filteredAnagrams.map((anagram, index) => {
-                            if (index % 4 === 0) {
-                                return (
-                                    <tr key={index}>
-                                        <td className="border p-2">{anagram}</td>
-                                        {filteredAnagrams[index + 1] && <td className="border p-2">{filteredAnagrams[index + 1]}</td>}
-                                        {filteredAnagrams[index + 2] && <td className="border p-2">{filteredAnagrams[index + 2]}</td>}
-                                        {filteredAnagrams[index + 3] && <td className="border p-2">{filteredAnagrams[index + 3]}</td>}
-                                    </tr>
-                                );
-                            }
-                            return null; // Gibt null zurück, wenn der Index nicht durch 4 teilbar ist, um eine neue Zeile zu beginnen
-                        })
-                    )}
-                    </tbody>
-                </table>
-            </div>
+
             <div className="mt-4 flex space-x-4">
                 <label>
                     <input
@@ -165,6 +141,35 @@ const AnagramGenerator = () => {
                     oe anstatt ö
                 </label>
             </div>
+            <div>
+                <h2 className="text-xl mb-2">
+                    Anzahl der Anagramme: {filteredAnagrams.length} {isMaxReached && '(Maximum)'}
+                </h2>
+                <h2 className="text-xl mb-2">Mögliche Anagramme:</h2>
+                <table className="table-auto border-collapse w-full">
+                    <tbody>
+                    {filteredAnagrams.length > 0 && (
+                        filteredAnagrams.map((anagram, index) => {
+                            if (index % 4 === 0) {
+                                return (
+                                    <tr key={index}>
+                                        <td className="border p-2">{anagram}</td>
+                                        {filteredAnagrams[index + 1] &&
+                                            <td className="border p-2">{filteredAnagrams[index + 1]}</td>}
+                                        {filteredAnagrams[index + 2] &&
+                                            <td className="border p-2">{filteredAnagrams[index + 2]}</td>}
+                                        {filteredAnagrams[index + 3] &&
+                                            <td className="border p-2">{filteredAnagrams[index + 3]}</td>}
+                                    </tr>
+                                );
+                            }
+                            return null; // Gibt null zurück, wenn der Index nicht durch 4 teilbar ist, um eine neue Zeile zu beginnen
+                        })
+                    )}
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 };
