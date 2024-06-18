@@ -42,6 +42,7 @@ const kaeseKalorien = {
     Streichkaese: 27,
     Scheibenkaese: 40,
     Cheddar: 57,
+    Mozarella_Mix: 46
 };
 
 const gemueseKalorien = {
