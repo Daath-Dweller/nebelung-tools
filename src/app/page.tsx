@@ -30,7 +30,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveTab("rechner")}
               >
-                Rechner
+                Subway-Kalorien-Rechner
               </a>
             </li>
           </ul>
