@@ -28,6 +28,26 @@ const belagKalorien = {
     VeggiePatty: 175,
 };
 
+const belagAnzeigenamen = {
+    ChickenFajita: 'Chicken Fajita',
+    RoastedChickenBreast: 'Roasted Chicken Breast',
+    ChickenTeriyaki: 'Chicken Teriyaki',
+    Ham: 'Ham',
+    Turkey: 'Turkey',
+    TurkeyHam: 'Turkey & Ham',
+    TurkeyHamBeef: 'Turkey, Ham & Beef',
+    Beef: 'Beef',
+    Fajita: 'Chicken Fajita',
+    VeggieDelite: 'Veggie Delite',
+    BBQ_Rib: 'BBQ Rib',
+    ItalianBMT: 'Italian BMT®',
+    Salami: 'Salami',
+    TurkeyHamBaconMelt: 'Turkey, Ham & Bacon Melt',
+    SteakCheese: 'Steak & Cheese / Philly Beef',
+    Tuna: 'Tuna',
+    VeggiePatty: 'Veggie Patty',
+};
+
 const sosseKalorien = {
     Asiago: 101,
     ChipotleSouthwest: 90,
@@ -42,21 +62,23 @@ const kaeseKalorien = {
     Streichkaese: 27,
     Scheibenkaese: 40,
     Cheddar: 57,
-    Mozarella_Mix: 46
+    Mozarella_Mix: 46,
 };
 
 const gemueseKalorien = {
-    Salat: 2,
-    Oliven: 30,
-    Paprika: 5,
+    Salat: 1,
+    Oliven: 3,
+    Paprika: 4,
     Jalapeno: 5,
-    Spinat: 3,
-    Mais: 15,
+    Spinat: 2,
+    Mais: 12,
     Zwiebel: 3,
     Rucola: 3,
     Gurke: 2,
     Tomate: 4,
     SaureGurke: 7,
+    Roestzwiebeln: 30,
+    Guacamole: 50,
 };
 
 export default function Rechner() {
@@ -68,6 +90,7 @@ export default function Rechner() {
     const [doppelFleisch, setDoppelFleisch] = useState(false);
     const [footlong, setFootlong] = useState(false);
     const [wrap, setWrap] = useState(false);
+    const [bacon, setBacon] = useState(false);
     const [gemuese, setGemuese] = useState({
         Salat: false,
         Oliven: false,
@@ -96,8 +119,11 @@ export default function Rechner() {
             if (gemuese[gemuesItem]) kalorien += gemueseKalorien[gemuesItem];
         }
 
-        if (footlong) kalorien *= 2;
+
         if (wrap) kalorien += 328; // Wrap Kalorien
+        if (bacon) kalorien += 42; // Bacon Kalorien
+        //Footlong immer als letztes
+        if (footlong) kalorien *= 2;
 
         return kalorien;
     };
@@ -125,7 +151,7 @@ export default function Rechner() {
                         <option value="">kein Belag</option>
                         {Object.keys(belagKalorien).map((belag) => (
                             <option key={belag} value={belag}>
-                                {belag}
+                                {belagAnzeigenamen[belag]}
                             </option>
                         ))}
                     </select>
@@ -191,6 +217,15 @@ export default function Rechner() {
                         type="checkbox"
                         checked={wrap}
                         onChange={(e) => setWrap(e.target.checked)}
+                        className="ml-2"
+                    />
+                </label>
+                <label className="block mb-4">
+                    Bacon:
+                    <input
+                        type="checkbox"
+                        checked={bacon}
+                        onChange={(e) => setBacon(e.target.checked)}
                         className="ml-2"
                     />
                 </label>
