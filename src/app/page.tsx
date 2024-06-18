@@ -19,7 +19,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveTab("anagram")}
               >
-                Anagram Generator
+                Anagram Generator TEST
               </a>
             </li>
             <li>
