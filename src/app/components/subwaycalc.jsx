@@ -1,60 +1,61 @@
 import { useState } from 'react';
 
 const brotKalorien = {
-    Italian: 150,
-    Vollkorn: 160,
-    CheeseOregano: 170,
-    HoneyOat: 180,
-    Sesam: 140,
+    Italian: 200,
+    Vollkorn: 222,
+    CheeseOregano: 221,
+    HoneyOat: 229,
+    Sesam: 223,
 };
 
 const belagKalorien = {
-    ChickenFajita: 200,
-    RoastedChickenBreast: 180,
-    ChickenTeriyaki: 220,
-    Ham: 100,
-    Turkey: 90,
-    TurkeyHam: 150,
-    TurkeyHamBeef: 180,
-    Beef: 200,
-    VeggieDelite: 50,
-    BBQ_Rib: 240,
-    ItalianBMT: 250,
-    Salami: 300,
-    TurkeyHamBaconMelt: 280,
-    SteakCheese: 320,
-    Tuna: 250,
-    VeggiePatty: 180,
+    ChickenFajita: 85,
+    RoastedChickenBreast: 75,
+    ChickenTeriyaki: 97,
+    Ham: 66,
+    Turkey: 75,
+    TurkeyHam: 89,
+    TurkeyHamBeef: 95,
+    Beef: 84,
+    Fajita: 85,
+    VeggieDelite: 15,
+    BBQ_Rib: 301,
+    ItalianBMT: 194,
+    Salami: 111,
+    TurkeyHamBaconMelt: 170,
+    SteakCheese: 127,
+    Tuna: 150,
+    VeggiePatty: 175,
 };
 
 const sosseKalorien = {
-    Asiago: 50,
-    ChipotleSouthwest: 70,
-    HoneyMustard: 60,
-    LiteMayonnaise: 35,
-    HotSauce: 40,
-    SweetOnion: 30,
-    BBQ: 80,
+    Asiago: 101,
+    ChipotleSouthwest: 90,
+    HoneyMustard: 25,
+    LiteMayonnaise: 50,
+    HotSauce: 21,
+    SweetOnion: 46,
+    BBQ: 37,
 };
 
 const kaeseKalorien = {
-    Streichkaese: 70,
-    Scheibenkaese: 50,
-    Cheddar: 80,
+    Streichkaese: 27,
+    Scheibenkaese: 40,
+    Cheddar: 57,
 };
 
 const gemueseKalorien = {
-    Salat: 30,
+    Salat: 2,
     Oliven: 30,
-    Paprika: 30,
-    Jalapeno: 30,
-    Spinat: 30,
-    Mais: 30,
-    Zwiebel: 30,
-    Rucola: 30,
-    Gurke: 30,
-    Tomate: 30,
-    SaureGurke: 30,
+    Paprika: 5,
+    Jalapeno: 5,
+    Spinat: 3,
+    Mais: 15,
+    Zwiebel: 3,
+    Rucola: 3,
+    Gurke: 2,
+    Tomate: 4,
+    SaureGurke: 7,
 };
 
 export default function Rechner() {
@@ -95,7 +96,7 @@ export default function Rechner() {
         }
 
         if (footlong) kalorien *= 2;
-        if (wrap) kalorien += 150; // Wrap Kalorien
+        if (wrap) kalorien += 328; // Wrap Kalorien
 
         return kalorien;
     };
@@ -107,7 +108,7 @@ export default function Rechner() {
                 <label className="block mb-4">
                     Brotsorte:
                     <select onChange={(e) => setBrot(e.target.value)} className="border p-2 mt-2 w-full text-black">
-                        <option value="">Wählen</option>
+                        <option value="">kein Brot</option>
                         {Object.keys(brotKalorien).map((brot) => (
                             <option key={brot} value={brot}>
                                 {brot}
@@ -120,7 +121,7 @@ export default function Rechner() {
                 <label className="block mb-4">
                     Belag:
                     <select onChange={(e) => setBelag(e.target.value)} className="border p-2 mt-2 w-full text-black">
-                        <option value="">Wählen</option>
+                        <option value="">kein Belag</option>
                         {Object.keys(belagKalorien).map((belag) => (
                             <option key={belag} value={belag}>
                                 {belag}
@@ -133,7 +134,7 @@ export default function Rechner() {
                 <label className="block mb-4">
                     Sosse:
                     <select onChange={(e) => setSosse(e.target.value)} className="border p-2 mt-2 w-full text-black">
-                        <option value="">Wählen</option>
+                        <option value="">keine Sosse</option>
                         {Object.keys(sosseKalorien).map((sosse) => (
                             <option key={sosse} value={sosse}>
                                 {sosse}
@@ -146,7 +147,7 @@ export default function Rechner() {
                 <label className="block mb-4">
                     Käse:
                     <select onChange={(e) => setKaese(e.target.value)} className="border p-2 mt-2 w-full text-black">
-                        <option value="">Wählen</option>
+                        <option value="">kein Käse</option>
                         {Object.keys(kaeseKalorien).map((kaese) => (
                             <option key={kaese} value={kaese}>
                                 {kaese}
