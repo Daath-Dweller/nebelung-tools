@@ -33,10 +33,10 @@ export default function Rechner() {
         const calculateUserValues = () => {
             // Beispielwerte, hier sollte die eigentliche Berechnungslogik eingefügt werden
             const exampleUserValues = {
-                kalorien: 150,
-                protein: 50,
-                fett: 30,
-                kohlenhydrate: 60,
+                kalorien: 0,
+                protein: 0,
+                fett: 0,
+                kohlenhydrate: 0,
             };
             setUserValues(exampleUserValues);
         };
