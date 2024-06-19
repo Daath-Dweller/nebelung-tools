@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import SubwayRechner from "@/app/components/subwaycalc";
 import KfcRechner from "@/app/components/kfccalc";
 
@@ -33,8 +33,8 @@ export default function Rechner() {
             </nav>
             <div className="p-4">
 
-                {activeTab === "SubwayRechner" && <SubwayRechner />}
-                {activeTab === "KFC-Rechner" && <KfcRechner />}
+                {activeTab === "SubwayRechner" && <SubwayRechner/>}
+                {activeTab === "KFC-Rechner" && <KfcRechner/>}
             </div>
         </div>
     );

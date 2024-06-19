@@ -198,7 +198,7 @@ export default function SubwayRechner() {
                     </select>
                 </label>
             </div>
-<div id="wrapper" className="grid grid-cols-3">
+<div id="wrapper" className="md:grid md:grid-cols-3 flex flex-col">
     <div id="left">
             <div className="mb-8">
                 <label className="block mb-4 font-extrabold text-xl">Gemüse</label>
