@@ -1,7 +1,7 @@
 // SubwayRechner.tsx
 
-import { useState } from 'react';
-import { zutaten } from '@/app/data/subwaydata.ts'; // Daten importieren
+import {useState} from 'react';
+import {zutaten} from '@/app/data/subwaydata.ts'; // Daten importieren
 
 const getDisplayName = (item) => {
     return `${item.name} | + ${item.kcal} Kcal | + ${item.fett} F | + ${item.kohlenhydrate} KH | + ${item.protein} P`;
@@ -24,7 +24,6 @@ export default function SubwayRechner() {
     const [doppelKaese, setDoppelKaese] = useState(false);
     const [doppelFleisch, setDoppelFleisch] = useState(false);
     const [footlong, setFootlong] = useState(false);
-    const [wrap, setWrap] = useState(false);
     const [bacon, setBacon] = useState(false);
     const [gemuese, setGemuese] = useState({
         Salat: false,
@@ -38,10 +37,35 @@ export default function SubwayRechner() {
         Gurke: false,
         Tomate: false,
         SaureGurke: false,
+        Roestzwiebeln: false,
+        Guacamole: false
+    });
+    const [subwaySeries, setSubwaySeries] = useState({
+        Salat: false,
+        Oliven: false,
+        Paprika: false,
+        Jalapeno: false,
+        Spinat: false,
+        Mais: false,
+        Zwiebel: false,
+        Rucola: false,
+        Gurke: false,
+        Tomate: false,
+        SaureGurke: false,
+        Roestzwiebeln: false,
+        Guacamole: false
     });
 
+    const handleAllGemueseChange = (checked) => {
+        const newGemuese = Object.keys(gemuese).reduce((acc, key) => {
+            acc[key] = checked;
+            return acc;
+        }, {});
+        setGemuese(newGemuese);
+    };
+
     const berechneWerte = () => {
-        let werte = { kcal: 0, fett: 0, kohlenhydrate: 0, protein: 0 };
+        let werte = {kcal: 0, fett: 0, kohlenhydrate: 0, protein: 0};
 
         if (brot) {
             werte.kcal += zutaten.brot[brot].kcal;
@@ -90,12 +114,16 @@ export default function SubwayRechner() {
             }
         }
 
-        if (wrap) {
-            werte.kcal += 328; // Wrap Kalorien
-            werte.fett += 666;
-            werte.kohlenhydrate += 666;
-            werte.protein += 666;
+        for (const sseriesItem in subwaySeries) {
+            if (subwaySeries[sseriesItem]) {
+                werte.kcal += zutaten.subwaySeries[sseriesItem].kcal;
+                werte.fett += zutaten.subwaySeries[sseriesItem].fett;
+                werte.kohlenhydrate += zutaten.subwaySeries[sseriesItem].kohlenhydrate;
+                werte.protein += zutaten.subwaySeries[sseriesItem].protein;
+            }
         }
+
+
         if (bacon) {
             werte.kcal += 42; // Bacon Kalorien
             werte.fett += 666;
@@ -120,9 +148,9 @@ export default function SubwayRechner() {
             <h1 className="text-2xl font-bold mb-8">Subway-Kalorien-Rechner</h1>
             <div className="mb-8">
                 <label className="block mb-4">
-                    Brotsorte:
+                    Brotsorte / Wrap:
                     <select onChange={(e) => setBrot(e.target.value)} className="border p-2 mt-2 w-full text-black">
-                        <option value="">kein Brot</option>
+                        <option value="">kein Brot / Salat</option>
                         {Object.keys(zutaten.brot).map((brot) => (
                             <option key={brot} value={brot}>
                                 {getDisplayName(zutaten.brot[brot])}
@@ -170,68 +198,19 @@ export default function SubwayRechner() {
                     </select>
                 </label>
             </div>
+<div id="wrapper" className="flex flex-row justify-between space-x-10">
+    <div id="left">
             <div className="mb-8">
+                <label className="block mb-4 font-extrabold text-xl">Gemüse</label>
                 <label className="block mb-4">
-                    <span>
-                        {getCheckboxDisplayName("Doppelt Käse", zutaten.kaese[kaese])}
-                    </span>
+                    <span>Alles an Gemüse</span>
                     <input
                         type="checkbox"
-                        checked={doppelKaese}
-                        onChange={(e) => setDoppelKaese(e.target.checked)}
-                        className="ml-2"
+                        onChange={(e) => handleAllGemueseChange(e.target.checked)}
+                        className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                     />
                 </label>
-                <label className="block mb-4">
-                    <span>
-                        {getCheckboxDisplayName("Doppelt Fleisch", zutaten.belag[belag])}
-                    </span>
-                    <input
-                        type="checkbox"
-                        checked={doppelFleisch}
-                        onChange={(e) => setDoppelFleisch(e.target.checked)}
-                        className="ml-2"
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span>
-                        Footlong:
-                        {brot || belag || sosse || kaese ? `+ ${werte.kcal} kcal` : " keine Auswahl"}
-                    </span>
-                    <input
-                        type="checkbox"
-                        checked={footlong}
-                        onChange={(e) => setFootlong(e.target.checked)}
-                        className="ml-2"
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span>
-                        Wrap:
-                        {wrap ? ` + 328 Kcal` : "+ 328 Kcal"}
-                    </span>
-                    <input
-                        type="checkbox"
-                        checked={wrap}
-                        onChange={(e) => setWrap(e.target.checked)}
-                        className="ml-2"
-                    />
-                </label>
-                <label className="block mb-4">
-                    <span>
-                        Bacon:
-                        {bacon ? ` + 42 kcal | + 666 F | + 666 KH | + 666 P` : `+ 42 kcal | + 666 F | + 666 KH | + 666 P`}
-                    </span>
-                    <input
-                        type="checkbox"
-                        checked={bacon}
-                        onChange={(e) => setBacon(e.target.checked)}
-                        className="ml-2"
-                    />
-                </label>
-            </div>
-            <div className="mb-8">
-                <label className="block mb-4">Gemüse:</label>
+
                 {Object.keys(zutaten.gemuese).map((gemuesItem) => (
                     <label key={gemuesItem} className="block mb-2">
                         {getDisplayName(zutaten.gemuese[gemuesItem])}
@@ -244,14 +223,88 @@ export default function SubwayRechner() {
                                     [gemuesItem]: e.target.checked,
                                 })
                             }
-                            className="ml-2"
+                            className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                         />
                     </label>
                 ))}
+
             </div>
+    </div>
+    <div id="right">
+            <div className="mb-8">
+                <label className="block mb-4 font-extrabold text-xl">Sonstiges</label>
+                <label className="block mb-4">
+                    <span>
+                        {getCheckboxDisplayName("Doppelt Käse", zutaten.kaese[kaese])}
+                    </span>
+                    <input
+                        type="checkbox"
+                        checked={doppelKaese}
+                        onChange={(e) => setDoppelKaese(e.target.checked)}
+                        className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                    />
+                </label>
+                <label className="block mb-4">
+                    <span>
+                        {getCheckboxDisplayName("Doppelt Fleisch", zutaten.belag[belag])}
+                    </span>
+                    <input
+                        type="checkbox"
+                        checked={doppelFleisch}
+                        onChange={(e) => setDoppelFleisch(e.target.checked)}
+                        className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                    />
+                </label>
+                <label className="block mb-4">
+                    <span>
+                        Bacon:
+                        {bacon ? ` + 42 kcal | + 666 F | + 666 KH | + 666 P` : `+ 42 kcal | + 666 F | + 666 KH | + 666 P`}
+                    </span>
+                    <input
+                        type="checkbox"
+                        checked={bacon}
+                        onChange={(e) => setBacon(e.target.checked)}
+                        className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                    />
+                </label>
+            </div>
+            <label className="block mb-4">
+                <label className="block mb-4 font-extrabold text-xl">Footlong</label>
+                <span>
+                        30-cm-Sub:
+                    {brot || belag || sosse || kaese ? `+ ${werte.kcal} kcal` : " keine Auswahl"}
+                    </span>
+                <input
+                    type="checkbox"
+                    checked={footlong}
+                    onChange={(e) => setFootlong(e.target.checked)}
+                    className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                />
+            </label>
+
+            <label className="block mb-4 font-extrabold text-xl">Subway Series (vorzusammengestellt)</label>
+            {Object.keys(zutaten.subwaySeries).map((subwaySeriesItem) => (
+                <label key={subwaySeriesItem} className="block mb-2">
+                    {getDisplayName(zutaten.subwaySeries[subwaySeriesItem])}
+                    <input
+                        type="checkbox"
+                        checked={subwaySeries[subwaySeriesItem]}
+                        onChange={(e) =>
+                            setSubwaySeries({
+                                ...subwaySeries,
+                                [subwaySeriesItem]: e.target.checked,
+                            })
+                        }
+                        className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                    />
+                </label>
+            ))}
+    </div>
             <h2 className="text-xl font-bold mt-8">
-                Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
+                Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g
+                Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
             </h2>
+</div>
         </div>
     );
 }
