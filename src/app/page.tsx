@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import AnagramGenerator from "@/app/components/anagramgenerator";
 import Rechner from "@/app/components/calc";
 
