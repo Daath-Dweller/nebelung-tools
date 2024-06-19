@@ -1,64 +1,22 @@
-import { useState } from 'react';
+// SubwayRechner.tsx
 
-const zutaten = {
-    brot: {
-        Italian: { name: 'Italian', kcal: 200, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Vollkorn: { name: 'Vollkorn', kcal: 222, fett: 666, kohlenhydrate: 666, protein: 666 },
-        CheeseOregano: { name: 'Cheese Oregano', kcal: 221, fett: 666, kohlenhydrate: 666, protein: 666 },
-        HoneyOat: { name: 'Honey Oat', kcal: 229, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Sesam: { name: 'Sesam', kcal: 223, fett: 666, kohlenhydrate: 666, protein: 666 },
-    },
-    belag: {
-        ChickenFajita: { name: 'Chicken Fajita', kcal: 85, fett: 666, kohlenhydrate: 666, protein: 666 },
-        RoastedChickenBreast: { name: 'Roasted Chicken Breast', kcal: 75, fett: 666, kohlenhydrate: 666, protein: 666 },
-        ChickenTeriyaki: { name: 'Chicken Teriyaki', kcal: 97, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Ham: { name: 'Ham', kcal: 66, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Turkey: { name: 'Turkey', kcal: 75, fett: 666, kohlenhydrate: 666, protein: 666 },
-        TurkeyHam: { name: 'Turkey & Ham', kcal: 89, fett: 666, kohlenhydrate: 666, protein: 666 },
-        TurkeyHamBeef: { name: 'Turkey, Ham & Beef', kcal: 95, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Beef: { name: 'Beef', kcal: 84, fett: 666, kohlenhydrate: 666, protein: 666 },
-        VeggieDelite: { name: 'Veggie Delite', kcal: 15, fett: 666, kohlenhydrate: 666, protein: 666 },
-        BBQ_Rib: { name: 'BBQ Rib', kcal: 301, fett: 666, kohlenhydrate: 666, protein: 666 },
-        ItalianBMT: { name: 'Italian BMT®', kcal: 194, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Salami: { name: 'Salami', kcal: 111, fett: 666, kohlenhydrate: 666, protein: 666 },
-        TurkeyHamBaconMelt: { name: 'Turkey, Ham & Bacon Melt', kcal: 170, fett: 666, kohlenhydrate: 666, protein: 666 },
-        SteakCheese: { name: 'Steak & Cheese / Philly Beef', kcal: 127, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Tuna: { name: 'Tuna', kcal: 150, fett: 666, kohlenhydrate: 666, protein: 666 },
-        VeggiePatty: { name: 'Veggie Patty', kcal: 175, fett: 666, kohlenhydrate: 666, protein: 666 },
-    },
-    sosse: {
-        Asiago: { name: 'Asiago', kcal: 101, fett: 666, kohlenhydrate: 666, protein: 666 },
-        ChipotleSouthwest: { name: 'Chipotle Southwest', kcal: 90, fett: 666, kohlenhydrate: 666, protein: 666 },
-        HoneyMustard: { name: 'Honey Mustard', kcal: 25, fett: 666, kohlenhydrate: 666, protein: 666 },
-        LiteMayonnaise: { name: 'Lite Mayonnaise', kcal: 50, fett: 666, kohlenhydrate: 666, protein: 666 },
-        HotSauce: { name: 'Hot Sauce', kcal: 21, fett: 666, kohlenhydrate: 666, protein: 666 },
-        SweetOnion: { name: 'Sweet Onion', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666 },
-        BBQ: { name: 'BBQ', kcal: 37, fett: 666, kohlenhydrate: 666, protein: 666 },
-    },
-    kaese: {
-        Streichkaese: { name: 'Streichkäse', kcal: 27, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Scheibenkaese: { name: 'Scheibenkäse', kcal: 40, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Cheddar: { name: 'Cheddar', kcal: 57, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Mozarella_Mix: { name: 'Mozzarella Mix', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666 },
-    },
-    gemuese: {
-        Salat: { name: 'Salat', kcal: 1, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Oliven: { name: 'Oliven', kcal: 3, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Paprika: { name: 'Paprika', kcal: 4, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Jalapeno: { name: 'Jalapeno', kcal: 5, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Spinat: { name: 'Spinat', kcal: 2, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Mais: { name: 'Mais', kcal: 12, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Zwiebel: { name: 'Zwiebel', kcal: 3, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Rucola: { name: 'Rucola', kcal: 3, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Gurke: { name: 'Gurke', kcal: 2, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Tomate: { name: 'Tomate', kcal: 4, fett: 666, kohlenhydrate: 666, protein: 666 },
-        SaureGurke: { name: 'Saure Gurke', kcal: 7, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Roestzwiebeln: { name: 'Röstzwiebeln', kcal: 30, fett: 666, kohlenhydrate: 666, protein: 666 },
-        Guacamole: { name: 'Guacamole', kcal: 50, fett: 666, kohlenhydrate: 666, protein: 666 },
-    },
+import { useState } from 'react';
+import { zutaten } from '@/app/data/subwaydata.ts'; // Daten importieren
+
+const getDisplayName = (item) => {
+    return `${item.name} | + ${item.kcal} Kcal | + ${item.fett} F | + ${item.kohlenhydrate} KH | + ${item.protein} P`;
 };
 
-export default function Rechner() {
+const getCheckboxDisplayName = (label, item) => {
+    if (!item) return `${label}: keine Auswahl`;
+    return `${label}: + ${item.kcal} kcal | + ${item.fett} F | + ${item.kohlenhydrate} KH | + ${item.protein} P`;
+};
+
+const roundUp = (value) => {
+    return Math.ceil(value * 10) / 10;
+};
+
+export default function SubwayRechner() {
     const [brot, setBrot] = useState('');
     const [belag, setBelag] = useState('');
     const [sosse, setSosse] = useState('');
@@ -158,8 +116,8 @@ export default function Rechner() {
     const werte = berechneWerte();
 
     return (
-        <div className="p-12 bg-black text-white" style={{ margin: '3rem' }}>
-            <h1 className="text-2xl font-bold mb-8">Kalorien Rechner</h1>
+        <div className="p-12 bg-black text-white">
+            <h1 className="text-2xl font-bold mb-8">Subway-Kalorien-Rechner</h1>
             <div className="mb-8">
                 <label className="block mb-4">
                     Brotsorte:
@@ -167,7 +125,7 @@ export default function Rechner() {
                         <option value="">kein Brot</option>
                         {Object.keys(zutaten.brot).map((brot) => (
                             <option key={brot} value={brot}>
-                                {zutaten.brot[brot].name}
+                                {getDisplayName(zutaten.brot[brot])}
                             </option>
                         ))}
                     </select>
@@ -180,7 +138,7 @@ export default function Rechner() {
                         <option value="">kein Belag</option>
                         {Object.keys(zutaten.belag).map((belag) => (
                             <option key={belag} value={belag}>
-                                {zutaten.belag[belag].name}
+                                {getDisplayName(zutaten.belag[belag])}
                             </option>
                         ))}
                     </select>
@@ -193,7 +151,7 @@ export default function Rechner() {
                         <option value="">keine Sosse</option>
                         {Object.keys(zutaten.sosse).map((sosse) => (
                             <option key={sosse} value={sosse}>
-                                {zutaten.sosse[sosse].name}
+                                {getDisplayName(zutaten.sosse[sosse])}
                             </option>
                         ))}
                     </select>
@@ -206,7 +164,7 @@ export default function Rechner() {
                         <option value="">kein Käse</option>
                         {Object.keys(zutaten.kaese).map((kaese) => (
                             <option key={kaese} value={kaese}>
-                                {zutaten.kaese[kaese].name}
+                                {getDisplayName(zutaten.kaese[kaese])}
                             </option>
                         ))}
                     </select>
@@ -214,7 +172,9 @@ export default function Rechner() {
             </div>
             <div className="mb-8">
                 <label className="block mb-4">
-                    Doppelt Käse:
+                    <span>
+                        {getCheckboxDisplayName("Doppelt Käse", zutaten.kaese[kaese])}
+                    </span>
                     <input
                         type="checkbox"
                         checked={doppelKaese}
@@ -223,7 +183,9 @@ export default function Rechner() {
                     />
                 </label>
                 <label className="block mb-4">
-                    Doppelt Fleisch:
+                    <span>
+                        {getCheckboxDisplayName("Doppelt Fleisch", zutaten.belag[belag])}
+                    </span>
                     <input
                         type="checkbox"
                         checked={doppelFleisch}
@@ -232,7 +194,10 @@ export default function Rechner() {
                     />
                 </label>
                 <label className="block mb-4">
-                    Footlong:
+                    <span>
+                        Footlong:
+                        {brot || belag || sosse || kaese ? `+ ${werte.kcal} kcal` : " keine Auswahl"}
+                    </span>
                     <input
                         type="checkbox"
                         checked={footlong}
@@ -241,7 +206,10 @@ export default function Rechner() {
                     />
                 </label>
                 <label className="block mb-4">
-                    Wrap:
+                    <span>
+                        Wrap:
+                        {wrap ? ` + 328 Kcal` : "+ 328 Kcal"}
+                    </span>
                     <input
                         type="checkbox"
                         checked={wrap}
@@ -250,7 +218,10 @@ export default function Rechner() {
                     />
                 </label>
                 <label className="block mb-4">
-                    Bacon:
+                    <span>
+                        Bacon:
+                        {bacon ? ` + 42 kcal | + 666 F | + 666 KH | + 666 P` : `+ 42 kcal | + 666 F | + 666 KH | + 666 P`}
+                    </span>
                     <input
                         type="checkbox"
                         checked={bacon}
@@ -263,7 +234,7 @@ export default function Rechner() {
                 <label className="block mb-4">Gemüse:</label>
                 {Object.keys(zutaten.gemuese).map((gemuesItem) => (
                     <label key={gemuesItem} className="block mb-2">
-                        {zutaten.gemuese[gemuesItem].name}
+                        {getDisplayName(zutaten.gemuese[gemuesItem])}
                         <input
                             type="checkbox"
                             checked={gemuese[gemuesItem]}
@@ -279,7 +250,7 @@ export default function Rechner() {
                 ))}
             </div>
             <h2 className="text-xl font-bold mt-8">
-                Kalorien deines Subs: {werte.kcal} kcal, {werte.fett} g Fett, {werte.kohlenhydrate} g Kohlenhydrate, {werte.protein} g Protein
+                Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
             </h2>
         </div>
     );

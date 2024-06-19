@@ -82,7 +82,7 @@ const AnagramGenerator = () => {
     const isMaxReached = filteredAnagrams.length === 20000;
 
     return (
-        <div className="p-12 bg-black text-white" style={{margin: '3rem'}}>
+        <div className="p-12 bg-black text-white m-3">
             <h1 className="text-2xl font-bold mb-4">Anagramm-Generator</h1>
             <input
                 type="text"
@@ -99,7 +99,7 @@ const AnagramGenerator = () => {
                 className="border p-2 mb-4 w-full text-black"
             />
 
-            <div className="mt-4 flex space-x-4">
+            <div className="mt-4 mb-4 flex space-x-4">
                 <label>
                     <input
                         type="checkbox"
@@ -108,7 +108,7 @@ const AnagramGenerator = () => {
                         onChange={handleCheckboxChange}
                         className="mr-2"
                     />
-                    ss anstatt eszett
+                    ss anstatt ß
                 </label>
                 <label>
                     <input
@@ -141,6 +141,7 @@ const AnagramGenerator = () => {
                     oe anstatt ö
                 </label>
             </div>
+
             <div>
                 <h2 className="text-xl mb-2">
                     Anzahl der Anagramme: {filteredAnagrams.length} {isMaxReached && '(Maximum)'}

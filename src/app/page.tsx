@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import AnagramGenerator from "@/app/components/anagramgenerator";
-import Rechner from "@/app/components/subwaycalc";
+import Rechner from "@/app/components/calc";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("anagram");
 
   return (
-      <div className="bg-white">
-        <nav className="bg-gray-800 p-4">
+      <div className="bg-gray-700">
+        <nav className="bg-black p-4">
           <ul className="flex space-x-4">
             <li>
               <a
@@ -30,7 +30,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveTab("rechner")}
               >
-                Subway-Kalorien-Rechner
+                Kalorien-Rechner
               </a>
             </li>
           </ul>
