@@ -53,8 +53,13 @@ export default function Rechner() {
 
     return (
         <div className="bg-gray-700">
-            <nav className="bg-black p-4">
-                <div id="navwrap" className="flex flex-row justify-between">
+
+
+            <nav className="bg-black p-4 flex flex-row justify-between">
+
+
+
+                <div id="navwrap" className="flex flex-col space-y-4 ">
                     <ul className="flex space-x-4">
                         <li>
                             <a
@@ -84,6 +89,37 @@ export default function Rechner() {
                             </a>
                         </li>
                     </ul>
+                    <ul className="flex space-x-4">
+                        <li>
+                            <a
+                                href="#"
+                                className={`text-white ${activeTab === "BK" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("BK")}
+                            >
+                                BK
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                className={`text-white ${activeTab === "Nordsee" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("Nordsee")}
+                            >
+                                Nordsee
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                className={`text-white ${activeTab === "????" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("????")}
+                            >
+                                ????
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                    <div id="valuesNBtns" className="flex flex-row space-x-4">
                     <div id="nutrition" className="text-white flex space-x-4 mb-4 items-center">
                         {["Kalorien", "Protein", "Fett", "Kohlenhydrate"].map((label) => (
                             <div key={label} className="flex flex-col items-center space-y-2">
@@ -110,30 +146,44 @@ export default function Rechner() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+
+
+                    <div className="flex justify-between space-x-2">
                         <button
                             onClick={resetTargetValues}
-                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded"
+                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
                         >
-                            Zielwerte<br/> zurücksetzen
+                            Zielwerte <br/>zurücksetzen
                         </button>
                         <button
                             onClick={resetUserValues}
-                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded"
+                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
                         >
                             Benutzerwerte <br/>zurücksetzen
                         </button>
                     </div>
 
+
+
+
+
                 </div>
 
             </nav>
-            <div className="p-4">
-                {activeTab === "Subway" && <SubwayRechner updateUserValues={updateUserValues}/>}
-                {activeTab === "KFC" && <KfcRechner/>}
-                {activeTab === "McDonalds" && <McDRechner/>}
-                <div className="flex justify-between mt-4">
 
-                </div>
+
+
+
+
+            <div className="p-4">
+                {activeTab === "Subway" && <SubwayRechner updateUserValues={updateUserValues} />}
+                {activeTab === "KFC" && <KfcRechner />}
+                {activeTab === "McDonalds" && <McDRechner />}
+                {activeTab === "BK" && <div>BK Component</div>}
+                {activeTab === "Nordsee" && <div>Nordsee Component</div>}
+                {activeTab === "????" && <div>???? Component</div>}
             </div>
         </div>
     );
