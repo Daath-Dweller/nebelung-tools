@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SubwayRechner from "@/app/components/subwaycalc";
+import KfcRechner from "@/app/components/kfccalc";
 
 export default function Rechner() {
     const [activeTab, setActiveTab] = useState("SubwayRechner");
@@ -23,18 +24,17 @@ export default function Rechner() {
                         <a
                             href="#"
                             className={`text-white ${
-                                activeTab === " KFC-Rechner" ? "underline" : ""
+                                activeTab === "KFC-Rechner" ? "underline" : ""
                             }`}
-                            onClick={() => setActiveTab(" KFC-Rechner")}
-                        >
-                           KFC-Rechner
-                        </a>
+                            onClick={() => setActiveTab("KFC-Rechner")}
+                        >KFC-Rechner</a>
                     </li>
                 </ul>
             </nav>
             <div className="p-4">
 
                 {activeTab === "SubwayRechner" && <SubwayRechner />}
+                {activeTab === "KFC-Rechner" && <KfcRechner />}
             </div>
         </div>
     );
