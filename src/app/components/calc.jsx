@@ -4,7 +4,7 @@ import KfcRechner from "@/app/components/kfccalc";
 import McDRechner from "@/app/components/mcdonaldscalc";
 
 export default function Rechner() {
-    const [activeTab, setActiveTab] = useState("Subway-Rechner");
+    const [activeTab, setActiveTab] = useState("Subway");
     const [targetValues, setTargetValues] = useState({
         kalorien: 0,
         protein: 0,
@@ -29,19 +29,23 @@ export default function Rechner() {
         setUserValues(newValues);
     };
 
-    useEffect(() => {
-        const calculateUserValues = () => {
-            // Beispielwerte, hier sollte die eigentliche Berechnungslogik eingefügt werden
-            const exampleUserValues = {
-                kalorien: 0,
-                protein: 0,
-                fett: 0,
-                kohlenhydrate: 0,
-            };
-            setUserValues(exampleUserValues);
-        };
-        calculateUserValues();
-    }, [targetValues]);
+    const resetTargetValues = () => {
+        setTargetValues({
+            kalorien: 0,
+            protein: 0,
+            fett: 0,
+            kohlenhydrate: 0,
+        });
+    };
+
+    const resetUserValues = () => {
+        setUserValues({
+            kalorien: 0,
+            protein: 0,
+            fett: 0,
+            kohlenhydrate: 0,
+        });
+    };
 
     const calculatePercentage = (userValue, targetValue) => {
         return targetValue === 0 ? 0 : ((userValue / targetValue) * 100).toFixed(2);
@@ -55,28 +59,28 @@ export default function Rechner() {
                         <li>
                             <a
                                 href="#"
-                                className={`text-white ${activeTab === "Subway-Rechner" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("Subway-Rechner")}
+                                className={`text-white ${activeTab === "Subway" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("Subway")}
                             >
-                                Subway-Rechner
+                                Subway
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
-                                className={`text-white ${activeTab === "KFC-Rechner" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("KFC-Rechner")}
+                                className={`text-white ${activeTab === "KFC" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("KFC")}
                             >
-                                KFC-Rechner
+                                KFC
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
-                                className={`text-white ${activeTab === "Mc-Donalds-Rechner" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("Mc-Donalds-Rechner")}
+                                className={`text-white ${activeTab === "McDonalds" ? "underline" : ""}`}
+                                onClick={() => setActiveTab("McDonalds")}
                             >
-                                Mc-Donalds-Rechner
+                                McDonalds
                             </a>
                         </li>
                     </ul>
@@ -106,13 +110,30 @@ export default function Rechner() {
                                 </div>
                             </div>
                         ))}
+                        <button
+                            onClick={resetTargetValues}
+                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded"
+                        >
+                            Zielwerte<br/> zurücksetzen
+                        </button>
+                        <button
+                            onClick={resetUserValues}
+                            className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded"
+                        >
+                            Benutzerwerte <br/>zurücksetzen
+                        </button>
                     </div>
+
                 </div>
+
             </nav>
             <div className="p-4">
-                {activeTab === "Subway-Rechner" && <SubwayRechner updateUserValues={updateUserValues} />}
-                {activeTab === "KFC-Rechner" && <KfcRechner />}
-                {activeTab === "Mc-Donalds-Rechner" && <McDRechner />}
+                {activeTab === "Subway" && <SubwayRechner updateUserValues={updateUserValues}/>}
+                {activeTab === "KFC" && <KfcRechner/>}
+                {activeTab === "McDonalds" && <McDRechner/>}
+                <div className="flex justify-between mt-4">
+
+                </div>
             </div>
         </div>
     );
