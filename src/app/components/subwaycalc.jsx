@@ -287,7 +287,7 @@ export default function SubwayRechner({ updateUserValues }) {
                         />
                     </label>
 
-                    <label className="block mb-4 font-extrabold text-xl">Subway Series (vorzusammengestellt)</label>
+                    <label className="block mb-4 font-extrabold text-xl">Subway Series (15 cm, vorzusammengestellt)</label>
                     {Object.keys(zutaten.subwaySeries).map((subwaySeriesItem) => (
                         <label key={subwaySeriesItem} className="block mb-2">
                             {getDisplayName(zutaten.subwaySeries[subwaySeriesItem])}
