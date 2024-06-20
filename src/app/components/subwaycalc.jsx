@@ -150,10 +150,10 @@ export default function SubwayRechner({ updateUserValues }) {
     };
 
     return (
-        <div className="p-12 bg-black text-white">
-            <h1 className="text-2xl font-bold mb-8">Subway-Kalorien-Rechner</h1>
-            <div className="mb-8">
-                <label className="block mb-4">
+        <div className="md:p-12 p-4 bg-black text-white">
+            <h1 className="md:text-2xl text-sm font-bold md:mb-8">Subway-Kalorien-Rechner</h1>
+            <div className="md:mb-8">
+                <label className="block md:mb-4">
                     Brotsorte / Wrap:
                     <select onChange={(e) => setBrot(e.target.value)} className="border p-2 mt-2 w-full text-black">
                         <option value="">kein Brot / Salat</option>
@@ -165,8 +165,8 @@ export default function SubwayRechner({ updateUserValues }) {
                     </select>
                 </label>
             </div>
-            <div className="mb-8">
-                <label className="block mb-4">
+            <div className="md:mb-8">
+                <label className="block md:mb-4">
                     Belag:
                     <select onChange={(e) => setBelag(e.target.value)} className="border p-2 mt-2 w-full text-black">
                         <option value="">kein Belag</option>
@@ -178,8 +178,8 @@ export default function SubwayRechner({ updateUserValues }) {
                     </select>
                 </label>
             </div>
-            <div className="mb-8">
-                <label className="block mb-4">
+            <div className="md:mb-8">
+                <label className="block md:mb-4">
                     Sosse:
                     <select onChange={(e) => setSosse(e.target.value)} className="border p-2 mt-2 w-full text-black">
                         <option value="">keine Sosse</option>
@@ -191,8 +191,8 @@ export default function SubwayRechner({ updateUserValues }) {
                     </select>
                 </label>
             </div>
-            <div className="mb-8">
-                <label className="block mb-4">
+            <div className="md:mb-8">
+                <label className="block md:mb-4">
                     Käse:
                     <select onChange={(e) => setKaese(e.target.value)} className="border p-2 mt-2 w-full text-black">
                         <option value="">kein Käse</option>
@@ -207,13 +207,13 @@ export default function SubwayRechner({ updateUserValues }) {
             <div id="wrapper" className="md:grid md:grid-cols-3 flex flex-col">
                 <div id="left">
                     <div className="mb-8">
-                        <label className="block mb-4 font-extrabold text-xl">Gemüse</label>
-                        <label className="block mb-4">
+                        <label className="block md:mb-4 font-extrabold md:text-xl">Gemüse</label>
+                        <label className="block md:mb-4">
                             <span>Alles an Gemüse</span>
                             <input
                                 type="checkbox"
                                 onChange={(e) => handleAllGemueseChange(e.target.checked)}
-                                className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
                         </label>
 
@@ -229,16 +229,16 @@ export default function SubwayRechner({ updateUserValues }) {
                                             [gemuesItem]: e.target.checked,
                                         })
                                     }
-                                    className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                    className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                                 />
                             </label>
                         ))}
                     </div>
                 </div>
                 <div id="right">
-                    <div className="mb-8">
-                        <label className="block mb-4 font-extrabold text-xl">Sonstiges</label>
-                        <label className="block mb-4">
+                    <div className="md:mb-8">
+                        <label className="block md:mb-4 font-extrabold md:text-xl">Sonstiges</label>
+                        <label className="block md:mb-4">
                             <span>
                                 {getCheckboxDisplayName("Doppelt Käse", zutaten.kaese[kaese])}
                             </span>
@@ -246,7 +246,7 @@ export default function SubwayRechner({ updateUserValues }) {
                                 type="checkbox"
                                 checked={doppelKaese}
                                 onChange={(e) => setDoppelKaese(e.target.checked)}
-                                className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
                         </label>
                         <label className="block mb-4">
@@ -257,7 +257,7 @@ export default function SubwayRechner({ updateUserValues }) {
                                 type="checkbox"
                                 checked={doppelFleisch}
                                 onChange={(e) => setDoppelFleisch(e.target.checked)}
-                                className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
                         </label>
                         <label className="block mb-4">
@@ -269,12 +269,12 @@ export default function SubwayRechner({ updateUserValues }) {
                                 type="checkbox"
                                 checked={bacon}
                                 onChange={(e) => setBacon(e.target.checked)}
-                                className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
                         </label>
                     </div>
-                    <label className="block mb-4">
-                        <label className="block mb-4 font-extrabold text-xl">Footlong</label>
+                    <label className="block md:mb-4">
+                        <label className="block md:mb-4 font-extrabold md:text-xl">Footlong</label>
                         <span>
                             30-cm-Sub:
                             {brot || belag || sosse || kaese ? `+ ${werte.kcal} kcal` : " keine Auswahl"}
@@ -283,7 +283,7 @@ export default function SubwayRechner({ updateUserValues }) {
                             type="checkbox"
                             checked={footlong}
                             onChange={(e) => setFootlong(e.target.checked)}
-                            className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                            className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                         />
                     </label>
 
@@ -300,19 +300,19 @@ export default function SubwayRechner({ updateUserValues }) {
                                         [subwaySeriesItem]: e.target.checked,
                                     })
                                 }
-                                className="ml-2 w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
+                                className="md:ml-2 md:w-6 md:h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
                         </label>
                     ))}
                 </div>
                 <div className="resultWrap">
-                <h2 className="text-xl font-bold mt-8">
+                <h2 className="md:text-xl font-bold md:mt-8">
                     Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g
                     Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
                 </h2>
                 <button
                     onClick={handleTransferClick}
-                    className="mt-4 p-4 bg-gray-500 text-white border border-white rounded"
+                    className="md:mt-4 md:p-4 bg-gray-500 text-white border border-white rounded"
                 >
                     Übertragen auf Ziel
                 </button></div>
