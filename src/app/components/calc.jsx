@@ -102,7 +102,7 @@ export default function Rechner() {
                 </ul>
             </div>
             <div id="valuesNBtns" className="md:flex md:flex-row md:space-x-4 flex flex-col space-x-2">
-                <div id="nutrition" className="text-white md:flex md:flex-row md:space-x-4 md:mb-4 items-center md:m-0 m-2  flex flex-col space-x-2 space-y-2">
+                <div id="nutrition" className="text-white md:flex md:flex-row md:space-x-4 md:mb-4 items-center md:m-0 m-2 flex flex-col space-x-2 space-y-2">
                     {["Kalorien", "Protein", "Fett", "Kohlenhydrate"].map((label) => (
                         <div key={label} className="md:flex md:flex-col items-center md:space-y-2 md:m-0 m-2 flex flex-col space-x-2 space-y-2">
                             <div className="flex items-center space-x-2">
