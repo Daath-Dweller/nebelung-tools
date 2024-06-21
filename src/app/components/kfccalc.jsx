@@ -58,10 +58,10 @@ export default function KfcRechner({updateUserValues}) {
                             <div>
                                 <div className="font-bold">
                                     {produkt.name}<br/>
-                                    {produkt.fett}g Fett | {produkt.kohlenhydrate}g Kohlenhydrate | {produkt.protein}g
-                                    Protein
+                                    {produkt.fett}g F | {produkt.kohlenhydrate}g KH | {produkt.protein}g
+                                    P
                                 </div>
-                                <div className="font-extrabold">{produkt.kcal} kcal</div>
+                                <div className="font-extrabold">{produkt.kcal} Kcal</div>
                             </div>
                         </button>
                     ))
@@ -73,15 +73,15 @@ export default function KfcRechner({updateUserValues}) {
                 <ul>
                     {selectedProducts.map((produkt, index) => (
                         <li key={index}>
-                            {produkt.name}: {produkt.kcal} kcal, {produkt.kohlenhydrate}g Kohlenhydrate, {produkt.fett}g
-                            Fett, {produkt.protein}g Protein
+                            {produkt.name}: {produkt.kcal} Kcal, {produkt.kohlenhydrate}g KH, {produkt.fett}g
+                            F, {produkt.protein}g P
                         </li>
                     ))}
                 </ul>
                 <h3 className="text-xl font-bold mt-4">Alle deine Produkte zusammen:</h3>
                 <p>
-                    {totalValues.kalorien} kcal, {totalValues.kohlenhydrate}g Kohlenhydrate, {totalValues.fett}g
-                    Fett, {totalValues.protein}g Protein
+                    {totalValues.kalorien} Kcal, {totalValues.kohlenhydrate}g KH, {totalValues.fett}g
+                    F, {totalValues.protein}g P
                 </p>
                 <button
                     onClick={handleTransferValues}
