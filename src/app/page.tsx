@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AnagramGenerator from "@/app/components/anagramgenerator";
 import Rechner from "@/app/components/calc";
 
@@ -8,14 +8,15 @@ export default function Home() {
 
     return (
         <div className="bg-gray-700">
-            <nav className="bg-black p-4">
+            <nav className="bg-black p-8">
                 <ul className="flex space-x-4">
                     <li>
                         <a
                             href="#"
-                            className={`text-white ${
-                                activeTab === "anagram" ? "underline" : ""
-                            }`}
+                            className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
+                                after:h-px after:bg-gray-500 after:transform after:scale-x-0 
+                                after:origin-center after:transition-transform after:duration-300 
+                                ${activeTab === "anagram" ? "font-bold after:scale-x-100 hover:after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("anagram")}
                         >
                             Anagramm-Generator
@@ -24,9 +25,10 @@ export default function Home() {
                     <li>
                         <a
                             href="#"
-                            className={`text-white ${
-                                activeTab === "rechner" ? "underline" : ""
-                            }`}
+                            className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
+                                after:h-px after:bg-gray-500 after:transform after:scale-x-0 
+                                after:origin-center after:transition-transform after:duration-300 
+                                ${activeTab === "rechner" ? "font-bold after:scale-x-100 hover:after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("rechner")}
                         >
                             Kalorien-Rechner
@@ -35,8 +37,8 @@ export default function Home() {
                 </ul>
             </nav>
             <div className="p-4">
-                {activeTab === "anagram" && <AnagramGenerator/>}
-                {activeTab === "rechner" && <Rechner/>}
+                {activeTab === "anagram" && <AnagramGenerator />}
+                {activeTab === "rechner" && <Rechner />}
             </div>
         </div>
     );

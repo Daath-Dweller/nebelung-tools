@@ -314,7 +314,7 @@ export default function SubwayRechner({ updateUserValues }) {
                     onClick={handleTransferClick}
                     className="md:mt-4 md:p-4 bg-gray-500 text-white border border-white rounded"
                 >
-                    Übertragen auf Ziel
+                    Übertragen auf Nutzerwerte
                 </button></div>
             </div>
         </div>
