@@ -26,12 +26,12 @@ export default function Rechner() {
     };
 
     const updateUserValues = (newValues) => {
-        setUserValues({
-            kalorien: parseFloat(newValues.kalorien.toFixed(1)),
-            protein: parseFloat(newValues.protein.toFixed(1)),
-            fett: parseFloat(newValues.fett.toFixed(1)),
-            kohlenhydrate: parseFloat(newValues.kohlenhydrate.toFixed(1)),
-        });
+        setUserValues((prevValues) => ({
+            kalorien: parseFloat((prevValues.kalorien + newValues.kalorien).toFixed(1)),
+            protein: parseFloat((prevValues.protein + newValues.protein).toFixed(1)),
+            fett: parseFloat((prevValues.fett + newValues.fett).toFixed(1)),
+            kohlenhydrate: parseFloat((prevValues.kohlenhydrate + newValues.kohlenhydrate).toFixed(1)),
+        }));
     };
 
     const resetTargetValues = () => {

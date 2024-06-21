@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AnagramGenerator from "@/app/components/anagramgenerator";
 import Rechner from "@/app/components/calc";
 
@@ -8,10 +8,17 @@ export default function Home() {
 
     return (
         <div className="bg-gray-700">
-            <nav className="bg-black p-8 select-none">
-                <ul className="flex space-x-4">
-                    <li>
-                        <span className="text-white">NT</span>
+            <nav className="bg-black p-12 h-28 select-none flex items-center">
+                <ul className="flex space-x-4 items-center">
+                    <li className="relative w-16">
+                        <a
+                            href="#"
+                            className={`text-white text-2xl tracking-wider relative transition-all font-bold duration-300 
+                                ${activeTab === "home" ? "text-4xl font-extrabold text-teal-500 -translate-y-2" : ""}`}
+                            onClick={() => setActiveTab("home")}
+                        >
+                            NT
+                        </a>
                     </li>
                     <li>
                         <a
@@ -49,13 +56,13 @@ export default function Home() {
                             Kalorien-Rechner
                         </a>
                     </li>
-
                 </ul>
             </nav>
             <div className="p-4">
-                {activeTab === "anagram" && <AnagramGenerator/>}
-                {activeTab === "rechner" && <Rechner/>}
+                {activeTab === "home" && "Home"}
                 {activeTab === "nutritionalmanac" && "Test"}
+                {activeTab === "anagram" && <AnagramGenerator />}
+                {activeTab === "rechner" && <Rechner />}
             </div>
         </div>
     );
