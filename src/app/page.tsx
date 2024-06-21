@@ -8,13 +8,13 @@ export default function Home() {
 
     return (
         <div className="bg-gray-700">
-            <nav className="bg-black p-12 h-28 select-none flex items-center">
+            <nav className="bg-black pl-6 pr-12 py-12 h-28 select-none flex items-center">
                 <ul className="flex space-x-4 items-center">
                     <li className="relative w-16">
                         <a
                             href="#"
-                            className={`text-white text-2xl tracking-wider relative transition-all font-bold duration-300 
-                                ${activeTab === "home" ? "text-4xl font-extrabold text-teal-500 -translate-y-2" : ""}`}
+                            className={`text-4xl tracking-wider
+                                ${activeTab === "home" ? "text-teal-500 font-extrabold" : "text-white font-bold"}`}
                             onClick={() => setActiveTab("home")}
                         >
                             NT
@@ -26,7 +26,7 @@ export default function Home() {
                             className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
                                 after:h-px after:bg-gray-500 after:transform after:scale-x-0 
                                 after:origin-center after:transition-transform after:duration-300 
-                                ${activeTab === "nutritionalmanac" ? "font-bold after:scale-x-100 hover:after:bg-white" : "hover:after:scale-x-100"}`}
+                                ${activeTab === "nutritionalmanac" ? "font-bold after:scale-x-100 after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("nutritionalmanac")}
                         >
                             Nutrition-Almanac
@@ -38,7 +38,7 @@ export default function Home() {
                             className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
                                 after:h-px after:bg-gray-500 after:transform after:scale-x-0 
                                 after:origin-center after:transition-transform after:duration-300 
-                                ${activeTab === "anagram" ? "font-bold after:scale-x-100 hover:after:bg-white" : "hover:after:scale-x-100"}`}
+                                ${activeTab === "anagram" ? "font-bold after:scale-x-100 after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("anagram")}
                         >
                             Anagramm-Generator
@@ -50,7 +50,7 @@ export default function Home() {
                             className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
                                 after:h-px after:bg-gray-500 after:transform after:scale-x-0 
                                 after:origin-center after:transition-transform after:duration-300 
-                                ${activeTab === "rechner" ? "font-bold after:scale-x-100 hover:after:bg-white" : "hover:after:scale-x-100"}`}
+                                ${activeTab === "rechner" ? "font-bold after:scale-x-100 after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("rechner")}
                         >
                             Kalorien-Rechner
