@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { produkte } from '@/app/data/kfcdata.ts';
+import {useState} from 'react';
+import {produkte} from '@/app/data/kfcdata.ts';
 
-export default function KfcRechner({ updateUserValues }) {
+export default function KfcRechner({updateUserValues}) {
     const [selectedProducts, setSelectedProducts] = useState([]);
 
     const handleProductClick = (produkt) => {
@@ -16,9 +16,13 @@ export default function KfcRechner({ updateUserValues }) {
                 kohlenhydrate: acc.kohlenhydrate + produkt.kohlenhydrate,
                 protein: acc.protein + produkt.protein,
             }),
-            { kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0 }
+            {kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0}
         );
         updateUserValues(totalValues);
+    };
+
+    const handleClearProducts = () => {
+        setSelectedProducts([]);
     };
 
     const totalValues = selectedProducts.reduce(
@@ -28,7 +32,7 @@ export default function KfcRechner({ updateUserValues }) {
             kohlenhydrate: acc.kohlenhydrate + produkt.kohlenhydrate,
             protein: acc.protein + produkt.protein,
         }),
-        { kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0 }
+        {kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0}
     );
 
     return (
@@ -52,8 +56,10 @@ export default function KfcRechner({ updateUserValues }) {
                             }`}
                         >
                             <div>
-                                <div className="font-bold">{produkt.name}<br/>
-                            {produkt.fett} | {produkt.kohlenhydrate} | {produkt.protein}<br/>
+                                <div className="font-bold">
+                                    {produkt.name}<br/>
+                                    {produkt.fett}g Fett | {produkt.kohlenhydrate}g Kohlenhydrate | {produkt.protein}g
+                                    Protein
                                 </div>
                                 <div className="font-extrabold">{produkt.kcal} kcal</div>
                             </div>
@@ -67,19 +73,27 @@ export default function KfcRechner({ updateUserValues }) {
                 <ul>
                     {selectedProducts.map((produkt, index) => (
                         <li key={index}>
-                            {produkt.name}: {produkt.kcal} kcal, {produkt.kohlenhydrate}g Kohlenhydrate, {produkt.fett}g Fett, {produkt.protein}g Protein
+                            {produkt.name}: {produkt.kcal} kcal, {produkt.kohlenhydrate}g Kohlenhydrate, {produkt.fett}g
+                            Fett, {produkt.protein}g Protein
                         </li>
                     ))}
                 </ul>
                 <h3 className="text-xl font-bold mt-4">Alle deine Produkte zusammen:</h3>
                 <p>
-                    {totalValues.kalorien} kcal, {totalValues.kohlenhydrate}g Kohlenhydrate, {totalValues.fett}g Fett, {totalValues.protein}g Protein
+                    {totalValues.kalorien} kcal, {totalValues.kohlenhydrate}g Kohlenhydrate, {totalValues.fett}g
+                    Fett, {totalValues.protein}g Protein
                 </p>
                 <button
                     onClick={handleTransferValues}
                     className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
                 >
                     Übertrage Userwerte
+                </button>
+                <button
+                    onClick={handleClearProducts}
+                    className="mx-4 my-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+                >
+                    Alle Produkte entfernen
                 </button>
             </div>
         </div>
