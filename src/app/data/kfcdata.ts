@@ -1,4 +1,4 @@
-// Data.ts
+// kfcdata.ts
 
 interface Produkt {
     name: string;
@@ -14,55 +14,45 @@ interface Produkte {
 
 export const produkte: Produkte = {
     haehnchen: {
-        Italian: {name: 'Italian (Weißbrot)', kcal: 200, fett: 2.1, kohlenhydrate: 37.2, protein: 7.8},
-        Vollkorn: {
-            name: 'Vollkorn (Vollkornbrot mit Saatenmischung)',
-            kcal: 222,
-            fett: 4.1,
-            kohlenhydrate: 34.6,
-            protein: 11.2
-        },
-        CheeseOregano: {
-            name: 'Cheese Oregano (Weißbrot mit Käse und Oregano)',
-            kcal: 221,
-            fett: 3.2,
-            kohlenhydrate: 39.1,
-            protein: 9.4
-        },
-        HoneyOat: {
-            name: 'Honey Oat (Vollkornbrot mit Honig und Haferflocken)',
-            kcal: 229,
-            fett: 2.5,
-            kohlenhydrate: 45.2,
-            protein: 9.5
-        },
-        Sesam: {name: 'Sesam (Weißbrot mit Sesam)', kcal: 223, fett: 4.1, kohlenhydrate: 38.2, protein: 8.5},
-        Wrap: {name: 'Wrap (Weizentortilla)', kcal: 328, fett: 6.6, kohlenhydrate: 59.5, protein: 7.9},
+        OriginalPouletteil: {name: 'Original Pouletteil', kcal: 234, fett: 14, kohlenhydrate: 9, protein: 19},
+        HotWingsOberfluegel: {name: 'Hot Wings Oberflügel', kcal: 322, fett: 22, kohlenhydrate: 12, protein: 19},
+        HotWingsUnterfluegel: {name: 'Hot Wings Unterflügel', kcal: 312, fett: 21, kohlenhydrate: 11, protein: 19},
+        FiletBite: {name: 'Filet Bite', kcal: 234, fett: 12, kohlenhydrate: 13, protein: 19},
+        Crispy: {name: 'Crispy', kcal: 240, fett: 14, kohlenhydrate: 10, protein: 19}
     },
     burger: {
-        ChickenFajita: {
-            name: 'Chicken Fajita (Hähnchenbrustfiletstreifen mit mexikanischer Würzung)',
-            kcal: 85,
-            fett: 1.2,
-            kohlenhydrate: 3.6,
-            protein: 14
-        },
-
+        DoubleCrispyClassicBurger: {name: 'Double Crispy Classic Burger', kcal: 399, fett: 18, kohlenhydrate: 23, protein: 20},
+        CrispyCheeseBurger: {name: 'Crispy Cheese Burger', kcal: 277, fett: 9, kohlenhydrate: 31, protein: 13},
+        CrispyChiliCheeseBurger: {name: 'Crispy Chili Cheese Burger', kcal: 329, fett: 16, kohlenhydrate: 29, protein: 12},
+        ClassicOriginalBurger: {name: 'Classic Original Burger', kcal: 494, fett: 21, kohlenhydrate: 23, protein: 26},
+        ClassicZingerBurger: {name: 'Classic Zinger Burger', kcal: 490, fett: 22, kohlenhydrate: 23, protein: 27}
     },
     beilagen: {
-        Asiago: {name: 'Asiago', kcal: 101, fett: 666, kohlenhydrate: 666, protein: 666},
-        ChipotleSouthwest: {name: 'Chipotle Southwest', kcal: 90, fett: 666, kohlenhydrate: 666, protein: 666},
-        HoneyMustard: {name: 'Honey Mustard', kcal: 25, fett: 666, kohlenhydrate: 666, protein: 666},
-        LiteMayonnaise: {name: 'Lite Mayonnaise', kcal: 50, fett: 666, kohlenhydrate: 666, protein: 666},
-        HotSauce: {name: 'Hot Sauce', kcal: 21, fett: 666, kohlenhydrate: 666, protein: 666},
-        SweetOnion: {name: 'Sweet Onion', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666},
-        BBQ: {name: 'BBQ', kcal: 37, fett: 666, kohlenhydrate: 666, protein: 666},
+        PommesFritesKlein: {name: 'Pommes frites - klein', kcal: 226, fett: 10, kohlenhydrate: 31, protein: 3},
+        PommesFritesGross: {name: 'Pommes frites - groß', kcal: 311, fett: 14, kohlenhydrate: 43, protein: 4},
+        KartoffelstockOhneGravy: {name: 'Kartoffelstock ohne Gravy', kcal: 99, fett: 1, kohlenhydrate: 20, protein: 3},
+        KartoffelstockMitGravy: {name: 'Kartoffelstock mit Gravy', kcal: 112, fett: 1, kohlenhydrate: 23, protein: 3},
+        Coleslaw: {name: 'Coleslaw', kcal: 255, fett: 20, kohlenhydrate: 16, protein: 2}
     },
     desserts: {
-        Streichkaese: {name: 'Streichkäse', kcal: 27, fett: 666, kohlenhydrate: 666, protein: 666},
-        Scheibenkaese: {name: 'Scheibenkäse', kcal: 40, fett: 666, kohlenhydrate: 666, protein: 666},
-        Cheddar: {name: 'Cheddar', kcal: 57, fett: 666, kohlenhydrate: 666, protein: 666},
-        Mozarella_Mix: {name: 'Mozzarella Mix', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666},
+        DoubleChocolateCookie: {name: 'Double Chocolate Cookie', kcal: 357, fett: 17, kohlenhydrate: 44, protein: 5},
+        CookieChocolate: {name: 'Cookie Chocolate', kcal: 366, fett: 18, kohlenhydrate: 48, protein: 4},
+        MilkshakeStrawberrySmall: {name: 'Milkshake (Strawberry) 0.18L', kcal: 252, fett: 7, kohlenhydrate: 42, protein: 4},
+        MilkshakeStrawberryLarge: {name: 'Milkshake (Strawberry) 0.3L', kcal: 420, fett: 12, kohlenhydrate: 71, protein: 7},
+        MilkshakeChocolateSmall: {name: 'Milkshake (Chocolate) 0.18L', kcal: 286, fett: 13, kohlenhydrate: 36, protein: 5}
     },
+    dips_dressings: {
+        HeinzTomatoKetchup: {name: 'Heinz Tomato Ketchup', kcal: 18, fett: 0, kohlenhydrate: 4, protein: 0},
+        HeinzPommesFritesSauce: {name: 'Heinz Pommes-Frites-Sauce', kcal: 63, fett: 6, kohlenhydrate: 2, protein: 0},
+        HeinzSalatMayonnaise: {name: 'Heinz Salat Mayonnaise', kcal: 94, fett: 10, kohlenhydrate: 1, protein: 0},
+        CreamyCurryDip: {name: 'Creamy Curry Dip', kcal: 93, fett: 8, kohlenhydrate: 4, protein: 0},
+        SmokyBBQDip: {name: 'Smoky BBQ Dip', kcal: 41, fett: 0, kohlenhydrate: 10, protein: 0}
+    },
+    getraenke: {
+        PepsiCola300ml: {name: 'Pepsi Cola 300 ml', kcal: 87, fett: 0, kohlenhydrate: 22, protein: 0},
+        PepsiCola400ml: {name: 'Pepsi Cola 400 ml', kcal: 116, fett: 0, kohlenhydrate: 29, protein: 0},
+        PepsiCola500ml: {name: 'Pepsi Cola 500 ml', kcal: 145, fett: 0, kohlenhydrate: 37, protein: 0},
+        PepsiMax300ml: {name: 'Pepsi Max 300 ml', kcal: 1, fett: 0, kohlenhydrate: 0, protein: 0},
+        PepsiMax400ml: {name: 'Pepsi Max 400 ml', kcal: 1, fett: 0, kohlenhydrate: 0, protein: 0}
+    }
 }
-

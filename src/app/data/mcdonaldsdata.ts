@@ -1,4 +1,4 @@
-// Data.ts
+// mcdonaldsdata.ts
 
 interface Produkt {
     name: string;
@@ -13,56 +13,29 @@ interface Produkte {
 }
 
 export const produkte: Produkte = {
-    fingerfood: {
-        Italian: {name: 'Italian (Weißbrot)', kcal: 200, fett: 2.1, kohlenhydrate: 37.2, protein: 7.8},
-        Vollkorn: {
-            name: 'Vollkorn (Vollkornbrot mit Saatenmischung)',
-            kcal: 222,
-            fett: 4.1,
-            kohlenhydrate: 34.6,
-            protein: 11.2
-        },
-        CheeseOregano: {
-            name: 'Cheese Oregano (Weißbrot mit Käse und Oregano)',
-            kcal: 221,
-            fett: 3.2,
-            kohlenhydrate: 39.1,
-            protein: 9.4
-        },
-        HoneyOat: {
-            name: 'Honey Oat (Vollkornbrot mit Honig und Haferflocken)',
-            kcal: 229,
-            fett: 2.5,
-            kohlenhydrate: 45.2,
-            protein: 9.5
-        },
-        Sesam: {name: 'Sesam (Weißbrot mit Sesam)', kcal: 223, fett: 4.1, kohlenhydrate: 38.2, protein: 8.5},
-        Wrap: {name: 'Wrap (Weizentortilla)', kcal: 328, fett: 6.6, kohlenhydrate: 59.5, protein: 7.9},
+    burgers: {
+        BigMac: {name: 'Big Mac', kcal: 508, fett: 26, kohlenhydrate: 42, protein: 25},
+        Cheeseburger: {name: 'Cheeseburger', kcal: 300, fett: 13, kohlenhydrate: 33, protein: 15},
+        DoubleCheeseburger: {name: 'Double Cheeseburger', kcal: 450, fett: 23, kohlenhydrate: 34, protein: 25}
     },
-    burger: {
-        ChickenFajita: {
-            name: 'Chicken Fajita (Hähnchenbrustfiletstreifen mit mexikanischer Würzung)',
-            kcal: 85,
-            fett: 1.2,
-            kohlenhydrate: 3.6,
-            protein: 14
-        },
-
+    chicken_fish: {
+        McChicken: {name: 'McChicken', kcal: 435, fett: 21, kohlenhydrate: 45, protein: 14},
+        FiletOFish: {name: 'Filet-O-Fish', kcal: 380, fett: 18, kohlenhydrate: 38, protein: 15}
     },
-    beilagen: {
-        Asiago: {name: 'Asiago', kcal: 101, fett: 666, kohlenhydrate: 666, protein: 666},
-        ChipotleSouthwest: {name: 'Chipotle Southwest', kcal: 90, fett: 666, kohlenhydrate: 666, protein: 666},
-        HoneyMustard: {name: 'Honey Mustard', kcal: 25, fett: 666, kohlenhydrate: 666, protein: 666},
-        LiteMayonnaise: {name: 'Lite Mayonnaise', kcal: 50, fett: 666, kohlenhydrate: 666, protein: 666},
-        HotSauce: {name: 'Hot Sauce', kcal: 21, fett: 666, kohlenhydrate: 666, protein: 666},
-        SweetOnion: {name: 'Sweet Onion', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666},
-        BBQ: {name: 'BBQ', kcal: 37, fett: 666, kohlenhydrate: 666, protein: 666},
+    nuggets_meals: {
+        ChickenMcNuggets4: {name: 'Chicken McNuggets (4 pcs)', kcal: 170, fett: 10, kohlenhydrate: 10, protein: 9},
+        ChickenMcNuggets6: {name: 'Chicken McNuggets (6 pcs)', kcal: 250, fett: 15, kohlenhydrate: 15, protein: 13}
+    },
+    fries_sides: {
+        SmallFries: {name: 'Small Fries', kcal: 230, fett: 11, kohlenhydrate: 29, protein: 3},
+        LargeFries: {name: 'Large Fries', kcal: 510, fett: 24, kohlenhydrate: 67, protein: 7}
     },
     desserts: {
-        Streichkaese: {name: 'Streichkäse', kcal: 27, fett: 666, kohlenhydrate: 666, protein: 666},
-        Scheibenkaese: {name: 'Scheibenkäse', kcal: 40, fett: 666, kohlenhydrate: 666, protein: 666},
-        Cheddar: {name: 'Cheddar', kcal: 57, fett: 666, kohlenhydrate: 666, protein: 666},
-        Mozarella_Mix: {name: 'Mozzarella Mix', kcal: 46, fett: 666, kohlenhydrate: 666, protein: 666},
+        ApplePie: {name: 'Apple Pie', kcal: 240, fett: 11, kohlenhydrate: 35, protein: 2},
+        SundaeChocolate: {name: 'Sundae Chocolate', kcal: 330, fett: 9, kohlenhydrate: 55, protein: 7}
     },
+    beverages: {
+        CocaColaSmall: {name: 'Coca-Cola Small', kcal: 140, fett: 0, kohlenhydrate: 39, protein: 0},
+        CocaColaLarge: {name: 'Coca-Cola Large', kcal: 310, fett: 0, kohlenhydrate: 86, protein: 0}
+    }
 }
-

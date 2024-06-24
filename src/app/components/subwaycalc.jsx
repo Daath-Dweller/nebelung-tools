@@ -14,6 +14,16 @@ const roundUp = (value) => {
     return Math.ceil(value * 10) / 10;
 };
 
+const getCircleColor = (value) => {
+    if (value < 5) {
+        return 'bg-red-500';
+    } else if (value < 10) {
+        return 'bg-yellow-500';
+    } else {
+        return 'bg-green-500';
+    }
+};
+
 export default function SubwayRechner({ updateUserValues }) {
     const [brot, setBrot] = useState('');
     const [belag, setBelag] = useState('');
@@ -123,9 +133,9 @@ export default function SubwayRechner({ updateUserValues }) {
 
         if (bacon) {
             werte.kcal += 42; // Bacon Kalorien
-            werte.fett += 666;
-            werte.kohlenhydrate += 666;
-            werte.protein += 666;
+            werte.fett += 2.9;
+            werte.kohlenhydrate += 0.2;
+            werte.protein += 3.4;
         }
 
         if (footlong) {
@@ -139,6 +149,8 @@ export default function SubwayRechner({ updateUserValues }) {
     };
 
     const werte = berechneWerte();
+    const proteinPer100Kcal = werte.kcal ? (werte.protein / (werte.kcal / 100)).toFixed(2) : '0';
+    const circleColorClass = getCircleColor(proteinPer100Kcal);
 
     const handleTransferClick = () => {
         updateUserValues({
@@ -263,7 +275,7 @@ export default function SubwayRechner({ updateUserValues }) {
                         <label className="block mb-4">
                             <span>
                                 Bacon:
-                                {bacon ? ` + 42 kcal | + 666 F | + 666 KH | + 666 P` : `+ 42 kcal | + 666 F | + 666 KH | + 666 P`}
+                                {bacon ? ` + 42 kcal | + 2.9 F | + 0.2 KH | + 3.2 P` : `+ 42 kcal | + 2.9 F | + 0.2 KH | + 3.2 P`}
                             </span>
                             <input
                                 type="checkbox"
@@ -306,16 +318,18 @@ export default function SubwayRechner({ updateUserValues }) {
                     ))}
                 </div>
                 <div className="resultWrap">
-                <h2 className="md:text-xl font-bold md:mt-8">
-                    Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g
-                    Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
-                </h2>
-                <button
-                    onClick={handleTransferClick}
-                    className="md:mt-4 md:p-4 bg-gray-500 text-white border border-white rounded"
-                >
-                    Übertragen auf Nutzerwerte
-                </button></div>
+                    <h2 className="md:text-xl font-bold md:mt-8">
+                        Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g
+                        Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
+                        <div className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></div>
+                    </h2>
+                    <button
+                        onClick={handleTransferClick}
+                        className="md:mt-4 md:p-4 bg-gray-500 text-white border border-white rounded"
+                    >
+                        Übertragen auf Nutzerwerte
+                    </button>
+                </div>
             </div>
         </div>
     );
