@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import AnagramGenerator from "@/app/components/anagramgenerator";
 import Rechner from "@/app/components/calc";
+import NutritianAlmanac from "@/app/components/nutrition-almanac";
 
 export default function Home() {
     const [activeTab, setActiveTab] = useState("rechner");
@@ -60,7 +61,7 @@ export default function Home() {
             </nav>
             <div className="p-4">
                 {activeTab === "home" && "Home"}
-                {activeTab === "nutritionalmanac" && "Test"}
+                {activeTab === "nutritionalmanac" && <NutritianAlmanac />}
                 {activeTab === "anagram" && <AnagramGenerator />}
                 {activeTab === "rechner" && <Rechner />}
             </div>
