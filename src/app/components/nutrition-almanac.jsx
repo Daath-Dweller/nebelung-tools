@@ -63,36 +63,36 @@ const NutritionAlmanac = () => {
                     </span>
             )) : 'Keine'}
             </div>
-            <table className="w-full text-left">
+            <table className="w-full border-2 text-left">
                 <thead>
-                <tr>
-                    <th>Bezeichnung</th>
-                    <th>Stoffgruppe (Tags)</th>
-                    <th>Nutzung (Sport)</th>
-                    <th>Beschreibung</th>
-                    <th>Vorkommen</th>
+                <tr className="border-2 p-2">
+                    <th className="border-2 p-2">Bezeichnung</th>
+                    <th className="border-2 p-2">Stoffgruppe (Tags)</th>
+                    <th className="border-2 p-2">Nutzung (Sport)</th>
+                    <th className="border-2 p-2">Beschreibung</th>
+                    <th className="border-2 p-2">Vorkommen</th>
                 </tr>
                 </thead>
                 <tbody>
                 {filteredNaehrstoffe.map((item, index) => (
                     <tr key={index}>
-                        <td>{item.name}</td>
-                        <td>
+                        <td className="border-2 p-2">{item.name}</td>
+                        <td className="border-2 p-2">
                             {item.stoffgruppe.map(tag => (
                                 <button key={tag} className="bg-gray-500 text-white p-1 m-1" onClick={() => toggleFilter(tag)}>
                                     {tag}
                                 </button>
                             ))}
                         </td>
-                        <td>
+                        <td className="border-2 p-2">
                             {item.nutzungSport.map(tag => (
                                 <button key={tag} className="bg-gray-500 text-white p-1 m-1" onClick={() => toggleFilter(tag)}>
                                     {tag}
                                 </button>
                             ))}
                         </td>
-                        <td><button className="bg-gray-300 p-1" onClick={() => handlePopup(item.beschreibung)}>Beschreibung</button></td>
-                        <td>{item.vorkommen}</td>
+                        <td className="border-2 p-2"><button className="bg-gray-300 p-1" onClick={() => handlePopup(item.beschreibung)}>Beschreibung</button></td>
+                        <td className="border-2 p-2">{item.vorkommen}</td>
                     </tr>
                 ))}
                 </tbody>
