@@ -98,8 +98,8 @@ const NutritionAlmanac = () => {
                 </tbody>
             </table>
             {popup.active && (
-                <div className="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white text-black p-4">
+                <div className="popup-overlay">
+                    <div className="popup-content">
                         <p>{popup.content}</p>
                         <button className="bg-gray-300 p-1" onClick={closePopup}>Schließen</button>
                     </div>
