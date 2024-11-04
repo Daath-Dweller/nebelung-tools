@@ -52,17 +52,13 @@ export default function Logik() {
                                     viewIndex === 1 ? `Beispiel: ${fehlschluss.beispiel}` :
                                         <span className="text-sm"><span className="font-extrabold">Erläuterung:</span> {fehlschluss.erlaeuterung}</span>;
 
-                            const bgColor = viewIndex === 0
-                                ? 'bg-gray-400'
-                                : viewIndex === 1
-                                    ? 'bg-gray-600'
-                                    : 'bg-gray-800';
+
 
                             return (
                                 <div
                                     key={key}
                                     className={`relative w-full min-h-80 flex items-center justify-center text-center p-4 m-2 
-                                    ${bgColor} text-white rounded-lg`}
+                                    ${fehlschluss.bgcolor} text-white rounded-lg`}
                                 >
                                     <button
                                         onClick={() => flipBackward(key)}
