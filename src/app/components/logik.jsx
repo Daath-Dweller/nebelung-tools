@@ -50,7 +50,7 @@ export default function Logik() {
                                         </>
                                     ) :
                                     viewIndex === 1 ? `Beispiel: ${fehlschluss.beispiel}` :
-                                      <span className="text-sm">  `Erläuterung: ${fehlschluss.erlaeuterung}`;</span>
+                                        <span className="text-sm"><span className="font-extrabold">Erläuterung:</span> {fehlschluss.erlaeuterung}</span>;
 
                             const bgColor = viewIndex === 0
                                 ? 'bg-gray-400'
