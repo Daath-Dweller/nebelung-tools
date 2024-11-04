@@ -34,7 +34,7 @@ export default function Logik() {
             <h1 className="text-2xl font-bold mb-4">Logische Fehlschlüsse & Heuristika</h1>
 
             <div className="p-12 bg-black text-white">
-                <div id="wrapper" className="md:grid md:grid-cols-4 gap-4 flex flex-col">
+                <div id="wrapper" className="md:grid md:grid-cols-3 gap-4 flex flex-col">
                     {Object.keys(fehlschluesse).map((category) =>
                         Object.entries(fehlschluesse[category]).map(([key, fehlschluss]) => {
                             // Aktuellen Zustand für jede Karte holen
