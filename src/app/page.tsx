@@ -33,7 +33,7 @@ export default function Home() {
                                 ${activeTab === "logos" ? "font-bold after:scale-x-100 after:bg-white" : "hover:after:scale-x-100"}`}
                             onClick={() => setActiveTab("logos")}
                         >
-                            Logos
+                            PhiloScope
                         </a>
                     </li>
                     <li>
