@@ -16,7 +16,7 @@ export default function Home() {
             <nav className="bg-black select-none">
                 <div className="md:pl-6 md:pr-12 md:py-12 md:h-28 flex items-center justify-between md:justify-start">
                     {/* Logo */}
-                    <div className="w-16 text-center md:text-left">
+                    <div className="ml-4 md:ml-0 w-16 text-center md:text-left">
                         <a
                             href="#"
                             className={`text-4xl tracking-wider ${
@@ -31,7 +31,7 @@ export default function Home() {
                     </div>
 
                     {/* Hamburger Icon */}
-                    <div className="md:hidden">
+                    <div className="md:hidden mr-6 mt-4 mb-4">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-white focus:outline-none"
