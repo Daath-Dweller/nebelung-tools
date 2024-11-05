@@ -1602,15 +1602,16 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist gegeben, damit Menschen Verantwortung für ihre Taten tragen und sich für den Glauben entscheiden können.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Islam wird der Lebenssinn in der Hingabe an Gott und der Erfüllung seiner Gebote gesehen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Islam erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als höchste Erkenntnisquelle.",
+                position: 3,
+            },
         },
-        "Existenz eines Lebenssinns": {
-            description: "Im Islam wird der Lebenssinn in der Hingabe an Gott und der Erfüllung seiner Gebote gesehen.",
-            position: 3,
-        },
-        "Begrenzung des menschlichen Wissens": {
-            description: "Islam erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als höchste Erkenntnisquelle.",
-            position: 3,
-        },
+
 
     },
     "Nietzsche, Friedrich": {
