@@ -58,7 +58,7 @@ export default function Logos() {
 
     return (
         <div className="p-12 bg-black text-white m-3">
-            <h1 className="text-2xl font-bold mb-4">Logos</h1>
+            <h1 className="text-2xl font-bold mb-4">Wer sagt eigentlich was?</h1>
 
             {/* First Dropdown */}
             <div className="mb-4">
