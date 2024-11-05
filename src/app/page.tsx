@@ -11,8 +11,10 @@ export default function Home() {
 
     return (
         <div className="bg-gray-700">
-            <nav className="bg-black pl-6 pr-12 py-12 h-28 select-none flex items-center">
-                <ul className="flex space-x-4 items-center">
+
+            {/* Large Screens */}
+            <nav className="bg-black md:pl-6 md:pr-12 md:py-12 md:h-28 md:select-none flex items-center justify-around md:justify-start">
+                <ul className="md:flex space-y-2 mb-2 md:space-x-4 md:space-y-0 md:items-center">
                     <li className="relative w-16">
                         <a
                             href="#"
