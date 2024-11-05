@@ -155,7 +155,7 @@ export default function Logos() {
             {/* Judgment Selection */}
             {thirdSelection && (
                 <div className="mb-4 mt-16">
-                    <label className="block mb-2">Filter alle Einträge nach Position zum ausgewählten Aspekt:</label>
+                    <label className="block mb-2">Alle DB-Einträge nach Position zum ausgewählten Aspekt filtern:</label>
                     <select
                         className="text-black p-2"
                         value={judgmentSelection}
