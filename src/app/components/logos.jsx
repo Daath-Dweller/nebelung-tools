@@ -54,7 +54,24 @@ export default function Logos() {
             ? logosEntries[subcategorySelection]?.details[themeSelection]?.position
             : null;
 
-    const thumbIcon = thumbPosition === 1 ? "👎" : thumbPosition === 2 ? "👈" : thumbPosition === 3 ? "👍" : null;
+// Display question mark initially, and update to thumbs once a selection is made
+    const thumbIcon = thumbPosition === null
+        ? "?"
+        : thumbPosition === 1
+            ? "👎"
+            : thumbPosition === 2
+                ? "👈"
+                : "👍";
+
+    const thumbStyle = thumbPosition === null
+        ? "left-1/2" // Centered initially
+        : thumbPosition === 1
+            ? "left-[16.66%]"
+            : thumbPosition === 2
+                ? "left-1/2"
+                : "left-[83.33%]";
+
+
 
     return (
         <div className="p-12 bg-black text-white m-3">
@@ -132,16 +149,16 @@ export default function Logos() {
                     <div className="flex-1 bg-green-500"></div>
                 </div>
 
-                {themeSelection && (
-                    <div
-                        className={`absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 
-                        w-12 h-12 flex items-center justify-center 
-                        bg-black bg-opacity-80 border-2 border-white rounded-full 
-                        shadow-lg ${thumbPosition === 1 ? "left-[16.66%]" : thumbPosition === 2 ? "left-1/2" : "left-[83.33%]"}`}
-                    >
-                        <span className="text-4xl text-white">{thumbIcon}</span>
-                    </div>
-                )}
+
+                <div
+                    className={`absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 
+    w-12 h-12 flex items-center justify-center 
+    bg-black bg-opacity-80 border-2 border-white rounded-full 
+    shadow-lg ${thumbStyle}`}
+                >
+                    <span className="text-4xl text-white">{thumbIcon}</span>
+                </div>
+
             </div>
 
             {/* Description text after Third Dropdown */}

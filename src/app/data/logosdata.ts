@@ -1952,7 +1952,6 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 position: 3,
             },
         },
-
             Pantheismus: {
                 description: "Pantheismus ist die religiöse Überzeugung, dass Gott und das Universum identisch sind und Gott in allem existiert.",
                 details: {
@@ -2351,7 +2350,6 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
 
         },
-    },
 };
 
 export const judgmentOptions = ["Klare Ablehnung", "Uneindeutig", "Klare Zustimmung"];
