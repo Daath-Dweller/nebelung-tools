@@ -13,8 +13,8 @@ export default function Logos() {
     const [themeSelection, setThemeSelection] = useState("");
     const [judgmentSelection, setJudgmentSelection] = useState("");
 
-    const handleCategorySelection = (e) => {
-        setCategorySelection(e.target.value);
+    const handleCategorySelection = (value) => {
+        setCategorySelection(value);
         setSubcategorySelection("");
         setThemeSelection("");
         setJudgmentSelection("");
@@ -37,11 +37,9 @@ export default function Logos() {
 
     const filteredEntries = Object.entries(logosEntries)
         .filter(([_, entry]) => {
-            // Nur Einträge für das ausgewählte Thema und die ausgewählte Bewertung anzeigen
             const detail = entry.details[themeSelection];
             if (!detail) return false;
 
-            // Bewertung prüfen, wenn sie gesetzt ist
             if (judgmentSelection === "Klare Ablehnung") return detail.position === 1;
             if (judgmentSelection === "Uneindeutig") return detail.position === 2;
             if (judgmentSelection === "Klare Zustimmung") return detail.position === 3;
@@ -49,8 +47,7 @@ export default function Logos() {
             return true;
         })
         .map(([name]) => name)
-        .join(", ");
-
+        .join(" | ");
 
     const thumbPosition =
         themeSelection && subcategorySelection
@@ -61,23 +58,25 @@ export default function Logos() {
 
     return (
         <div className="p-12 bg-black text-white m-3">
-            <h1 className="text-2xl font-bold mb-4">Wer sagt eigentlich was?</h1>
+            <span className="text-l font-bold mb-2">Wer sagt eigentlich was?</span><br/>
+           <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
+            Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br/>
 
-            {/* First Dropdown */}
-            <div className="mb-4">
+            {/* Category Buttons */}
+            <div className="mb-4 mt-4">
                 <label className="block mb-2">Kategorie auswählen:</label>
-                <select
-                    className="text-black p-2 mr-4"
-                    value={categorySelection}
-                    onChange={handleCategorySelection}
-                >
-                    <option value="">Bitte auswählen</option>
+                <div className="flex space-x-4">
                     {categoryOptions.map((option) => (
-                        <option key={option} value={option}>
+                        <button
+                            key={option}
+                            onClick={() => handleCategorySelection(option)}
+                            className={`p-2 ${categorySelection === option ? "bg-blue-500" : "bg-gray-600"} 
+                            hover:bg-blue-700 text-white rounded`}
+                        >
                             {option}
-                        </option>
+                        </button>
                     ))}
-                </select>
+                </div>
             </div>
 
             {/* Second Dropdown */}
@@ -136,13 +135,12 @@ export default function Logos() {
                 {themeSelection && (
                     <div
                         className={`absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 
-                w-12 h-12 flex items-center justify-center 
-                bg-black bg-opacity-80 border-2 border-white rounded-full 
-                shadow-lg ${thumbPosition === 1 ? "left-[16.66%]" : thumbPosition === 2 ? "left-1/2" : "left-[83.33%]"}`}
+                        w-12 h-12 flex items-center justify-center 
+                        bg-black bg-opacity-80 border-2 border-white rounded-full 
+                        shadow-lg ${thumbPosition === 1 ? "left-[16.66%]" : thumbPosition === 2 ? "left-1/2" : "left-[83.33%]"}`}
                     >
                         <span className="text-4xl text-white">{thumbIcon}</span>
                     </div>
-
                 )}
             </div>
 

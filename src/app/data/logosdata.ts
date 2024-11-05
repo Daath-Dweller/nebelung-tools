@@ -45,39 +45,53 @@ export const subcategoryOptions = {
         "Konfuzianismus",
         "Gnostizismus",
         "Zoroastrismus",
-        "Voodoo"
+        "Voodoo",
+        "Pantheismus",
+        "Zen-Buddhismus"
     ],
     Person: [
-        "Nietzsche",
+        "Nietzsche, Friedrich",
         "Aristoteles",
-        "Cioran",
+        "Cioran, Emil",
         "Platon",
-        "Hobbes",
-        "Descartes",
-        "Feuerbach",
-        "Frege",
-        "Wittgenstein",
-        "Schopenhauer",
+        "Hobbes, Thomas",
+        "Descartes, René",
+        "Feuerbach, Ludwig",
+        "Frege, Gottlob",
+        "Wittgenstein, Ludwig",
+        "Schopenhauer, Arthur",
         "Sokrates",
-        "John Locke",
-        "Spinoza",
-        "Kant",
-        "Sartre",
-        "Camus",
-        "Marx",
-        "Foucault",
-        "Heidegger",
+        "Locke, John",
+        "Spinoza, Baruch",
+        "Kant, Immanuel",
+        "Sartre, Jean-Paul",
+        "Camus, Albert",
+        "Marx, Karl",
+        "Foucault, Michel",
+        "Heidegger, Martin",
         "Epikur",
         "Thomas von Aquin",
         "Diogenes",
         "Konfuzius",
         "Laotse",
-        "Derrida",
-        "Francis Bacon"
+        "Derrida, Jacques",
+        "Bacon, Francis",
+        "Heraklit",
+        "Berkeley, George",
+        "Ockham, William",
+        "Hume, David",
+        "Fichte, Johann Gottlieb",
+        "Kierkegaard, Søren",
+        "Mill, John Stuart",
+        "de Beauvoir, Simone",
+        "Habermas, Jürgen",
+        "Zizek, Slavoj"
     ],
+
 };
 
-export const themeOptions = ["das Ich (Existenz eines beständigen Selbst)", "ein personifizierter Gott", "Geist-Körper-Dualismus (Existenz einer Seele)", "Existenz von objektiver Moral", "Existenz eines freien Willens"];
+export const themeOptions = ["das Ich (Existenz eines beständigen Selbst)", "ein personifizierter Gott", "Geist-Körper-Dualismus (Existenz einer Seele)",
+    "Existenz von objektiver Moral", "Existenz eines freien Willens", "Existenz eines Lebenssinns", "Begrenzung des menschlichen Wissens"];
 
 export const logosEntries: { [key: string]: LogosEntry } = {
     Sokrates: {
@@ -103,9 +117,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Sokrates ging davon aus, dass der Mensch freien Willen hat, um zwischen Gut und Böse zu wählen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Sokrates sah das Streben nach Weisheit und ethischer Reflexion als zentralen Lebenssinn.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Sokrates betonte die Grenzen des Wissens und das Eingeständnis eigener Unwissenheit als Voraussetzung für Weisheit.",
+                position: 3,
+            },
+
         },
     },
-    "John Locke": {
+    "Locke, John": {
         description: "John Locke war ein englischer Philosoph, bekannt für seine Theorien des Liberalismus und des empirischen Wissens.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -128,9 +151,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Locke glaubte an den freien Willen und die persönliche Verantwortung des Individuums.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Für Locke besteht der Lebenssinn im Streben nach persönlichem Glück und moralischer Verantwortung.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Locke hielt Wissen für begrenzt auf Sinneserfahrungen und die Reflexion darüber.",
+                position: 3,
+            },
         },
     },
-    Spinoza: {
+    "Spinoza, Baruch": {
         description: "Baruch Spinoza war ein rationalistischer Philosoph, der Gott als Natur und universelle Substanz auffasste.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -153,9 +184,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Spinoza glaubte nicht an freien Willen; alle Handlungen sind durch die Naturgesetze determiniert.",
                 position: 1,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Spinoza sah den Sinn des Lebens in der Erkenntnis der Natur Gottes und der eigenen Existenz.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens":  {
+                description: "Spinoza vertrat die Auffassung, dass Wissen durch Vernunft über die Naturgesetze möglich ist.",
+                position: 3,
+            },
         },
     },
-    Kant: {
+    "Kant, Immanuel": {
         description: "Immanuel Kant war ein deutscher Philosoph, der den Kategorischen Imperativ und den transzendentalen Idealismus entwickelte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -178,9 +217,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Kant vertrat den freien Willen als Bedingung moralischer Verantwortung.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Für Kant liegt der Lebenssinn in der moralischen Pflichterfüllung und dem Streben nach dem höchsten Gut.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Kant trennte Wissen auf empirische Erkenntnis und die Vernunft als Werkzeuge der Erkenntnisgrenzen.",
+                position: 3,
+            },
         },
     },
-    Sartre: {
+    "Sartre, Jean-Paul": {
         description: "Jean-Paul Sartre war ein französischer Existentialist, der Freiheit und Verantwortung des Individuums betonte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -203,11 +250,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Sartre betonte den freien Willen als fundamentale menschliche Freiheit.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Sartre betrachtete den Lebenssinn als individuelle Wahl und Verantwortung zur Selbstbestimmung.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Sartre lehnte absolute Gewissheit ab und betonte die subjektive Erfahrung des Wissens.",
+                position: 2,
+            },
         },
     },
-
-
-    Camus: {
+    "Camus, Albert": {
         description: "Albert Camus war ein französischer Philosoph des Absurdismus, der die Sinnlosigkeit des Lebens betonte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -230,9 +283,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Camus nahm den freien Willen als zentralen Bestandteil der menschlichen Existenz an.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Camus sah den Lebenssinn in der Rebellion gegen die Absurdität und der Schaffung eigener Werte.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens":  {
+                description: "Camus hielt Wissen für fragmentarisch und betonte das Akzeptieren der Absurdität als Erkenntnis.",
+                position: 2,
+            },
         },
     },
-    Marx: {
+    "Marx, Karl": {
         description: "Karl Marx war ein deutscher Philosoph und Ökonom, der den dialektischen Materialismus und den Kommunismus entwickelte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -255,9 +316,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Marx sah den freien Willen als eingeschränkt durch materielle und soziale Bedingungen.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Marx sah den Sinn des Lebens in der Überwindung von Klassenverhältnissen und der Schaffung einer gerechten Gesellschaft.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Marx hielt Wissen für stark durch die gesellschaftlichen und ökonomischen Verhältnisse geprägt.",
+                position: 2,
+            },
         },
     },
-    Foucault: {
+    "Foucault, Michel": {
         description: "Michel Foucault war ein französischer Philosoph, bekannt für seine Studien zu Macht und Diskursen.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -280,9 +349,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Foucault betrachtete den freien Willen kritisch, als durch Machtstrukturen begrenzt.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Foucault stellte die Frage nach einem objektiven Lebenssinn zurück und analysierte die Machtverhältnisse, die Sinn konstruieren.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Foucault betrachtete Wissen als begrenzt durch Diskurse und gesellschaftliche Machtstrukturen.",
+                position: 2,
+            },
         },
     },
-    Heidegger: {
+    "Heidegger, Martin": {
         description: "Martin Heidegger war ein deutscher Philosoph, der das Konzept des Seins und der Existenz untersuchte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -304,6 +381,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             "Existenz eines freien Willens": {
                 description: "Heidegger sah das Dasein als von Möglichkeiten bestimmt, ohne klaren Fokus auf freien Willen.",
                 position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Heidegger sah den Lebenssinn im authentischen Sein-zum-Tode, das die Existenz in ihrer Endlichkeit erfasst.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Heidegger betonte die Grenzen des Wissens durch das Sein, das nur in seiner Offenbarung erkannt werden kann.",
+                position: 3,
             },
         },
     },
@@ -328,6 +413,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
             "Existenz eines freien Willens": {
                 description: "Epikur glaubte an den freien Willen und betonte die individuelle Verantwortung im Streben nach Glück.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Für Epikur liegt der Lebenssinn im Streben nach Lust und der Vermeidung von Schmerz.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Epikur hielt Wissen für begrenzt und betonte das Vertrauen auf sinnliche Wahrnehmung und Vernunft.",
                 position: 3,
             },
         },
@@ -355,6 +448,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Thomas vertrat den freien Willen als notwendig für moralisches Handeln und göttliche Belohnung.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Thomas von Aquin sah den Lebenssinn in der Erkenntnis und Vereinigung mit Gott.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Thomas glaubte, dass das menschliche Wissen begrenzt sei und nur durch göttliche Offenbarung erweitert werden könne.",
+                position: 3,
+            },
         },
     },
     Diogenes: {
@@ -378,6 +479,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
             "Existenz eines freien Willens": {
                 description: "Diogenes befürwortete den freien Willen im Sinne einer Autonomie gegenüber gesellschaftlichen Zwängen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Diogenes verwarf einen objektiven Lebenssinn und lebte nach der natürlichen Einfachheit.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Diogenes zweifelte am Wert umfassenden Wissens und setzte auf unmittelbare Erfahrung.",
                 position: 3,
             },
         },
@@ -405,6 +514,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Konfuzius betrachtete den freien Willen als begrenzt durch soziale und familiäre Pflichten.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Konfuzius sah den Lebenssinn in der Erfüllung sozialer und familiärer Pflichten.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Konfuzius betonte die Grenzen des Wissens und hob die Bedeutung der moralischen Selbsterkenntnis hervor.",
+                position: 2,
+            },
         },
     },
     Laotse: {
@@ -430,9 +547,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Laotse empfahl Anpassung an das Dao, stellte jedoch die Existenz eines freien Willens nicht direkt infrage.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Laotse betrachtete den Lebenssinn als Harmonie mit dem Dao, dem natürlichen Weg des Universums.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Laotse sah Wissen als begrenzt und betonte das intuitive Verstehen des Dao über rationales Wissen.",
+                position: 2,
+            },
         },
     },
-    Derrida: {
+    "Derrida, Jacques": {
         description: "Jacques Derrida war ein französischer Philosoph und Begründer der Dekonstruktion.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -455,11 +580,19 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Derrida hinterfragte den freien Willen, sah jedoch die Wahl als zentral im Umgang mit Bedeutung.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Derrida hinterfragte feste Konzepte wie einen objektiven Lebenssinn und betrachtete Bedeutung als fluide.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Derrida sah Wissen als konstruiert und durch Sprache und Diskurs begrenzt.",
+                position: 2,
+            },
         },
     },
 
 
-    "Francis Bacon": {
+    "Bacon, Francis": {
         description: "Francis Bacon war ein englischer Philosoph und Begründer des Empirismus.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -481,6 +614,14 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             "Existenz eines freien Willens": {
                 description: "Bacon ließ die Frage des freien Willens offen, betonte jedoch die Rolle der Vernunft im Handeln.",
                 position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Bacon sah den Lebenssinn im Streben nach Wissen und Beherrschung der Natur durch empirische Methoden.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Bacon erkannte die Grenzen des menschlichen Wissens an und förderte die ständige Erweiterung durch empirische Beobachtung.",
+                position: 3,
             },
         },
     },
@@ -506,7 +647,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             "Existenz eines freien Willens": {
                 description: "Freier Wille wird akzeptiert, wobei die Götter und das Schicksal den Rahmen beeinflussen.",
                 position: 2,
+            },    "Existenz eines Lebenssinns": {
+                description: "Asatru sieht den Lebenssinn in der Ehrung der Ahnen, Natur und der nordischen Götter.",
+                position: 2,
             },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Im Asatru wird Wissen als begrenzt und oft von den Göttern beeinflusst betrachtet.",
+                position: 2,
+            },
+
         },
     },
     Sikhismus: {
@@ -532,6 +681,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Der freie Wille ist vorhanden, jedoch eingebettet in das göttliche Gesetz.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Sikhismus liegt der Lebenssinn in der Vereinigung mit Gott und dem Dienst an der Menschheit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Der Sikhismus betont, dass menschliches Wissen begrenzt ist und durch göttliche Erleuchtung erweitert wird.",
+                position: 3,
+            },
+
         },
     },
     Taoismus: {
@@ -557,6 +715,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als untergeordnet zum Dao gesehen; harmonisches Handeln ist entscheidend.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Taoismus wird der Lebenssinn in der natürlichen Harmonie und dem Fluss des Dao gesehen.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Taoismus sieht Wissen als begrenzt und bevorzugt intuitives Verstehen statt analytischem Wissen.",
+                position: 2,
+            },
+
         },
     },
     Konfuzianismus: {
@@ -582,6 +749,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als eingeschränkt gesehen, da das Individuum durch soziale Normen gebunden ist.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Konfuzianismus liegt der Lebenssinn in der Erfüllung ethischer Pflichten und sozialer Harmonie.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Konfuzianismus erkennt die Grenzen des Wissens an und legt Wert auf moralische und soziale Weisheit.",
+                position: 3,
+            },
+
         },
     },
     Gnostizismus: {
@@ -607,6 +783,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um die materielle Welt abzulehnen und nach Erkenntnis zu streben.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Gnostizismus sieht den Lebenssinn in der Befreiung des göttlichen Funkens aus der materiellen Welt.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Im Gnostizismus ist Wissen begrenzt und erfordert geheime Offenbarung zur Erkenntnis der Wahrheit.",
+                position: 3,
+            },
+
         },
     },
     Zoroastrismus: {
@@ -632,6 +817,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Der Mensch hat freien Willen, um zwischen Gut und Böse zu wählen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Zoroastrismus besteht der Lebenssinn im Kampf für das Gute gegen das Böse.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Zoroastrismus sieht Wissen als begrenzt und betont die Bedeutung göttlicher Offenbarung.",
+                position: 2,
+            },
+
         },
     },
     Voodoo: {
@@ -657,6 +851,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird anerkannt, jedoch stark durch Ahnen- und Geisterwelt beeinflusst.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Voodoo wird der Lebenssinn in der Harmonie mit Ahnen und spirituellen Kräften gesucht.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Voodoo sieht Wissen als begrenzt und abhängig von spirituellen Praktiken und Ahnenweisheit.",
+                position: 2,
+            },
+
         },
     },
     Relativismus: {
@@ -682,6 +885,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird oft als illusionär betrachtet, da er von kulturellen Normen geprägt ist.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Relativismus verneint einen objektiven Lebenssinn und betrachtet ihn als kulturell und individuell bedingt.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Relativismus sieht Wissen als begrenzt und abhängig vom Kontext und der Perspektive.",
+                position: 2,
+            },
+
         },
     },
 
@@ -708,6 +920,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um die Verantwortung für die Konsequenzen der Handlungen zu übernehmen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Konsequentialismus liegt der Lebenssinn in der Maximierung des Wohls durch die Konsequenzen der Handlungen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Konsequentialismus erkennt die Grenzen des Wissens an und betont die Bedeutung empirischer Überprüfung.",
+                position: 3,
+            },
+
         },
     },
     Deontologismus: {
@@ -733,6 +954,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um moralische Verpflichtungen freiwillig zu erfüllen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Deontologismus wird der Lebenssinn in der Erfüllung moralischer Pflichten gesehen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Deontologismus erkennt die Grenzen des Wissens an und sieht moralische Prinzipien als universell gültig.",
+                position: 3,
+            },
+
         },
     },
     Zynismus: {
@@ -758,6 +988,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als notwendig erachtet, um soziale Konventionen zu hinterfragen und abzulehnen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Zynismus verneint einen objektiven Lebenssinn und propagiert ein Leben im Einklang mit der Natur.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Zynismus sieht Wissen als begrenzt und setzt auf persönliche Erfahrung und radikale Ehrlichkeit.",
+                position: 3,
+            },
+
         },
     },
     Antinatalismus: {
@@ -783,6 +1022,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als begrenzt betrachtet, da Leid und Existenz untrennbar sind.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Antinatalismus verneint einen positiven Lebenssinn und betrachtet das Leben als inhärent leidvoll.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Antinatalismus erkennt die Grenzen des Wissens an und sieht den menschlichen Zustand als tragisch.",
+                position: 2,
+            },
+
         },
     },
     Idealismus: {
@@ -808,6 +1056,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist ein integraler Bestandteil des Geistes, der Realität konstruiert.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Idealismus sieht den Lebenssinn in der Verwirklichung geistiger Ideen und moralischer Prinzipien.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Idealismus betont die Grenzen des Wissens, das durch den Geist interpretiert wird.",
+                position: 3,
+            },
+
         },
     },
     Realismus: {
@@ -833,6 +1090,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Der freie Wille wird als Teil der menschlichen Interaktion mit der objektiven Realität gesehen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Realismus wird der Lebenssinn oft in der objektiven Realität und im pragmatischen Handeln gesucht.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Realismus erkennt die Grenzen des Wissens und betont die empirische Erkundung der Realität.",
+                position: 3,
+            },
+
         },
     },
     Empirismus: {
@@ -858,6 +1124,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als Folge von empirisch erlebter Entscheidungsfreiheit betrachtet.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Empirismus betrachtet den Lebenssinn als in den realen Erfahrungen und Erkenntnissen begründet.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Empirismus sieht Wissen als begrenzt auf Sinneserfahrungen und Beobachtungen.",
+                position: 3,
+            },
+
         },
     },
     Rationalismus: {
@@ -883,6 +1158,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um vernünftige und moralische Entscheidungen zu treffen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Rationalismus wird der Lebenssinn in der Suche nach Wahrheit durch Vernunft gesehen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Rationalismus erkennt die Grenzen des Wissens an, betont jedoch die Rolle der Vernunft als Weg zur Erkenntnis.",
+                position: 3,
+            },
+
         },
     },
     Existentialismus: {
@@ -908,6 +1192,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist zentral; jeder muss sich selbst erschaffen und Verantwortung tragen.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Existentialismus sieht den Lebenssinn als individuelle Entscheidung in einer oft sinnlosen Welt.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Existentialismus erkennt die Grenzen des Wissens und die Unmöglichkeit absoluter Gewissheit an.",
+                position: 2,
+            },
+
         },
     },
     Nihilismus: {
@@ -933,6 +1226,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Der Nihilismus lässt die Frage des freien Willens offen, da Handlungen keinen Wert haben.",
                 position: 1,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Nihilismus verneint die Existenz eines objektiven Lebenssinns und betrachtet alle Werte als subjektiv.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Nihilismus sieht Wissen als begrenzt und betont die Sinnlosigkeit absoluter Wahrheiten.",
+                position: 2,
+            },
+
         },
     },
     Utilitarismus: {
@@ -958,6 +1260,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um moralisch und vorausschauend handeln zu können.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Utilitarismus besteht der Lebenssinn im Streben nach dem größtmöglichen Glück für die Mehrheit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Utilitarismus erkennt die Grenzen des Wissens an, betont jedoch die Bedeutung empirischer Analyse.",
+                position: 3,
+            },
+
         },
     },
 
@@ -985,6 +1296,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als durch soziale Strukturen begrenzt betrachtet.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Strukturalismus betrachtet den Lebenssinn als gesellschaftlich konstruiert und nicht inhärent.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Strukturalismus sieht Wissen als begrenzt und geprägt durch gesellschaftliche Strukturen.",
+                position: 2,
+            },
+
         },
     },
     Pragmatismus: {
@@ -1010,6 +1330,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als notwendig für praktische Handlungsfreiheit betrachtet.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Pragmatismus wird der Lebenssinn in praktischen Zielen und deren Umsetzung gesehen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Pragmatismus erkennt die Grenzen des Wissens und misst Erkenntnisse an ihrem praktischen Nutzen.",
+                position: 3,
+            },
+
         },
     },
     Poststrukturalismus: {
@@ -1035,6 +1364,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als durch Diskurse und gesellschaftliche Machtstrukturen beeinflusst gesehen.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Poststrukturalismus verneint einen festen Lebenssinn und betrachtet Bedeutung als fluid und kontextabhängig.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Poststrukturalismus sieht Wissen als begrenzt und abhängig von wechselnden Diskursen und Kontexten.",
+                position: 2,
+            },
+
         },
     },
     Stoizismus: {
@@ -1060,6 +1398,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um mit Gelassenheit und Vernunft zu handeln.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Stoizismus sieht den Lebenssinn im Streben nach Tugend und Gelassenheit im Einklang mit der Natur.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Stoizismus erkennt die Grenzen des Wissens und betont das Verständnis natürlicher Gesetze.",
+                position: 3,
+            },
+
         },
     },
     Shinto: {
@@ -1085,6 +1432,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als Teil der Beziehung zu Natur und Kami gesehen.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Shinto sieht den Lebenssinn in der Harmonie mit der Natur und der Ehrung der Kami.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Shinto erkennt die Grenzen des Wissens an und betont die intuitive Verbindung zu Natur und Kami.",
+                position: 2,
+            },
+
         },
     },
     Christentum: {
@@ -1110,6 +1466,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist zentral, damit der Mensch Entscheidungen für oder gegen das Göttliche treffen kann.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Christentum liegt der Lebenssinn in der Beziehung zu Gott und dem Erreichen des ewigen Lebens.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Christentum erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als Quelle höherer Erkenntnis.",
+                position: 3,
+            },
+
         },
     },
     Buddhismus: {
@@ -1135,6 +1500,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird anerkannt, wobei Handlungen Konsequenzen (Karma) erzeugen.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Buddhismus sieht den Lebenssinn in der Überwindung des Leidens und dem Erreichen des Nirvana.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Buddhismus erkennt die Grenzen des Wissens und betont das Erleben der Realität jenseits intellektueller Erkenntnis.",
+                position: 2,
+            },
+
         },
     },
     Hinduismus: {
@@ -1160,6 +1534,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist vorhanden, jedoch beeinflusst durch das Gesetz des Karma.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Hinduismus liegt der Lebenssinn im Erreichen der Befreiung (Moksha) und der Vereinigung mit dem Göttlichen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Hinduismus erkennt die Grenzen des Wissens an und sieht Erleuchtung als Weg zur Erkenntnis.",
+                position: 3,
+            },
+
         },
     },
     Judentum: {
@@ -1185,6 +1568,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist wesentlich, damit Menschen ethisch handeln und den göttlichen Geboten folgen können.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Im Judentum besteht der Lebenssinn in der Erfüllung des Bundes mit Gott und dem Streben nach Gerechtigkeit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Judentum erkennt die Grenzen des Wissens an und betrachtet göttliche Gebote als Wegweiser zur Wahrheit.",
+                position: 3,
+            },
+
         },
     },
     Islam: {
@@ -1211,8 +1603,17 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 position: 3,
             },
         },
+        "Existenz eines Lebenssinns": {
+            description: "Im Islam wird der Lebenssinn in der Hingabe an Gott und der Erfüllung seiner Gebote gesehen.",
+            position: 3,
+        },
+        "Begrenzung des menschlichen Wissens": {
+            description: "Islam erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als höchste Erkenntnisquelle.",
+            position: 3,
+        },
+
     },
-    Nietzsche: {
+    "Nietzsche, Friedrich": {
         description: "Friedrich Nietzsche war ein deutscher Philosoph des 19. Jahrhunderts, der den Übermenschen und den Willen zur Macht betonte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1235,6 +1636,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Nietzsche befürwortete eine Art freien Willen, definiert durch individuelle Stärke und Selbstüberwindung.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Nietzsche sah den Lebenssinn in der Überwindung des Individuums durch den Willen zur Macht.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Nietzsche betonte die Grenzen des Wissens und betrachtete Wahrheit als Perspektive des Willens zur Macht.",
+                position: 3,
+            },
+
         },
     },
     Aristoteles: {
@@ -1260,9 +1670,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, um tugendhaft zu handeln und das individuelle Potenzial zu entfalten.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Für Aristoteles liegt der Lebenssinn im Streben nach Eudaimonia, dem guten Leben durch Tugend.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Aristoteles erkannte die Grenzen des Wissens und betonte die Bedeutung der empirischen Beobachtung.",
+                position: 3,
+            },
+
         },
     },
-    Cioran: {
+    "Cioran, Emil": {
         description: "Emil Cioran war ein pessimistischer Philosoph des 20. Jahrhunderts, der das Leben als absurde Existenz sah.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1285,6 +1704,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als illusionär betrachtet, da das Leben in Ciorans Sicht absurd ist.",
                 position: 1,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Cioran verneinte die Existenz eines objektiven Lebenssinns und betrachtete das Leben als absurden Zustand.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Cioran sah das Wissen als begrenzt und empfand Erkenntnis oft als sinnlose Last.",
+                position: 3,
+            },
+
         },
     },
     Platon: {
@@ -1310,10 +1738,19 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille ist notwendig, damit die Seele moralische Entscheidungen trifft und zur Erkenntnis gelangt.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Platon sah den Lebenssinn in der Annäherung an die Ideenwelt und dem Streben nach Weisheit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Platon betrachtete Wissen als begrenzt, da es auf den Schattenbildern der wahren Ideenwelt basiert.",
+                position: 3,
+            },
+
         },
     },
 
-    Hobbes: {
+    "Hobbes, Thomas": {
         description: "Thomas Hobbes war ein englischer Philosoph, der den Gesellschaftsvertrag und den Leviathan postulierte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1336,9 +1773,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Hobbes sah den freien Willen als eingeschränkt durch Naturgesetze und Selbsterhaltungstrieb.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Für Hobbes bestand der Lebenssinn im Selbsterhalt und der Stabilität durch den Gesellschaftsvertrag.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Hobbes erkannte die Grenzen des Wissens an und betrachtete das Verstehen der Naturgesetze als zentral.",
+                position: 2,
+            },
+
         },
     },
-    Descartes: {
+    "Descartes, René": {
         description: "René Descartes war ein französischer Philosoph und Mathematiker, bekannt für seinen Dualismus von Körper und Geist.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1361,9 +1807,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille war für Descartes grundlegend, da er die menschliche Fähigkeit zur Vernunft und Entscheidung betonte.",
                 position: 3,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Descartes sah den Lebenssinn in der Suche nach Gewissheit und der Befolgung göttlicher Vernunft.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Descartes erkannte die Grenzen des Wissens an, suchte jedoch absolute Gewissheit durch den Verstand.",
+                position: 3,
+            },
+
         },
     },
-    Feuerbach: {
+    "Feuerbach, Ludwig": {
         description: "Ludwig Feuerbach war ein deutscher Philosoph, der die Religion als Projektion menschlicher Wünsche verstand.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1386,9 +1841,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird als durch soziale Umstände beeinflusst betrachtet, jedoch nicht absolut geleugnet.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Feuerbach sah den Lebenssinn in der Selbstverwirklichung und der Projektion menschlicher Ideale.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Feuerbach betrachtete Wissen als begrenzt und beeinflusst durch menschliche Projektionen.",
+                position: 2,
+            },
+
         },
     },
-    Frege: {
+    "Frege, Gottlob": {
         description: "Gottlob Frege war ein deutscher Mathematiker und Philosoph, der die Grundlagen der modernen Logik legte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1411,9 +1875,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Frege äußerte sich selten zum freien Willen und sah die Logik als vorrangig.",
                 position: 1,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Frege äußerte sich kaum zum Lebenssinn und konzentrierte sich auf die objektive Logik.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Frege sah Wissen als begrenzt auf logische Strukturen und analytische Wahrheit.",
+                position: 3,
+            },
+
         },
     },
-    Wittgenstein: {
+    "Wittgenstein, Ludwig": {
         description: "Ludwig Wittgenstein war ein österreichischer Philosoph, der die Sprachphilosophie revolutionierte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1436,9 +1909,18 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Freier Wille wird indirekt hinterfragt, da Sprache und Bedeutung die Wahrnehmung beeinflussen.",
                 position: 2,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Wittgenstein sah den Lebenssinn als unaussprechlich und jenseits sprachlicher Begriffe.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Wittgenstein betonte die Grenzen des Wissens, das durch Sprache beschränkt ist.",
+                position: 2,
+            },
+
         },
     },
-    Schopenhauer: {
+    "Schopenhauer, Arthur": {
         description: "Arthur Schopenhauer war ein deutscher Philosoph, der die Welt als 'Wille und Vorstellung' erklärte.",
         details: {
             "das Ich (Existenz eines beständigen Selbst)": {
@@ -1461,6 +1943,412 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Schopenhauer lehnte den freien Willen ab und sah den Willen als determinierte Kraft.",
                 position: 1,
             },
+            "Existenz eines Lebenssinns": {
+                description: "Schopenhauer verneinte einen positiven Lebenssinn und sah das Leben als von Leiden geprägt.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Schopenhauer sah Wissen als durch den Willen begrenzt und betonte das Verständnis von Leid.",
+                position: 3,
+            },
+
+            Pantheismus: {
+                description: "Pantheismus ist die religiöse Überzeugung, dass Gott und das Universum identisch sind und Gott in allem existiert.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Im Pantheismus wird das Ich als Teil des allumfassenden Göttlichen betrachtet.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Pantheismus lehnt einen personifizierten Gott ab und sieht das Göttliche in allen Dingen.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Pantheismus verneint die Trennung von Geist und Materie und sieht alles als Einheit.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral wird als immanent in der Natur und dem Göttlichen verstanden, jedoch nicht als absolut.",
+                        position: 2,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille wird als begrenzt betrachtet, da das Individuum Teil eines göttlichen Ganzen ist.",
+                        position: 2,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Der Pantheismus sieht den Lebenssinn in der Harmonie und Verbindung mit dem Universum.",
+                        position: 2,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Pantheismus erkennt die Grenzen des Wissens und fördert ein intuitives Verständnis der Welt.",
+                        position: 2,
+                    },
+                },
+            },
+            "Zen-Buddhismus": {
+                description: "Zen-Buddhismus ist eine Schule des Buddhismus, die Meditation und das unmittelbare Erleben des Seins betont.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Im Zen-Buddhismus gilt das Ich als Illusion und wird durch Meditation transzendiert.",
+                        position: 1,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Zen-Buddhismus lehnt die Vorstellung eines personifizierten Gottes ab und betont das Erwachen.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Zen-Buddhismus verneint den Dualismus und sieht Geist und Körper als Einheit im Moment.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral wird durch Mitgefühl und Weisheit geleitet, aber nicht als absolut objektiv angesehen.",
+                        position: 2,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille wird als Illusion betrachtet, während das Handeln aus dem Erwachen entspringt.",
+                        position: 1,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Zen-Buddhismus sieht den Lebenssinn in der Befreiung vom Leiden und dem Erleben des Jetzt.",
+                        position: 2,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Zen erkennt die Begrenzungen des Wissens und betont das direkte Erleben der Wirklichkeit.",
+                        position: 2,
+                    },
+                },
+            },
+            Heraklit: {
+                description: "Heraklit war ein vorsokratischer Philosoph, der die Lehre vom ständigen Wandel und der Einheit der Gegensätze entwickelte.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Heraklit sieht das Ich als ständig im Wandel begriffen und Teil des ewigen Flusses.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Heraklit sprach von einem universalen Logos, jedoch nicht von einem personifizierten Gott.",
+                        position: 2,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Heraklit sah das Selbst als dynamischen Teil des Weltgesetzes, ohne strikten Dualismus.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist für Heraklit Teil des kosmischen Logos und in den Naturgesetzen verankert.",
+                        position: 2,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille wird als eingeschränkt durch den kosmischen Logos betrachtet.",
+                        position: 2,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Für Heraklit besteht der Lebenssinn in der Erkenntnis des ewigen Wandels.",
+                        position: 2,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Heraklit betonte die Begrenztheit des Wissens und die Notwendigkeit, den Logos zu verstehen.",
+                        position: 2,
+                    },
+                },
+            },
+            "Berkeley, George": {
+                description: "George Berkeley war ein irischer Philosoph und Bischof, der den subjektiven Idealismus entwickelte.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Berkeley sieht das Ich als denkendes Wesen, das durch Wahrnehmung existiert.",
+                        position: 3,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Berkeley glaubte an einen personifizierten Gott, der als Grundlage aller Wahrnehmung dient.",
+                        position: 3,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Berkeley verneinte die Materie, glaubte jedoch an das Geistige als primäre Realität.",
+                        position: 2,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Für Berkeley ist Moral objektiv und durch göttliche Wahrnehmung begründet.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist für Berkeley gegeben und bedingt die moralische Verantwortung.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Berkeley sah den Lebenssinn in der Nähe zu Gott und dem Streben nach Tugend.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Berkeley erkannte die Grenzen des Wissens und sah Wahrnehmung als einzige Quelle der Erkenntnis.",
+                        position: 3,
+                    },
+                },
+            },
+            "Ockham, William": {
+                description: "Wilhelm von Ockham war ein mittelalterlicher Philosoph, bekannt für das Sparsamkeitsprinzip 'Ockhams Rasiermesser'.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Für Ockham ist das Ich ein individuelles Wesen, das keine überflüssigen Annahmen benötigt.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Ockham glaubte an einen personifizierten Gott, dessen Existenz einfach postuliert wird.",
+                        position: 3,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Ockham bejahte die Existenz einer Seele, ohne überflüssige Metaphysik.",
+                        position: 3,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moralische Prinzipien gelten als objektiv und sind göttlicher Ordnung untergeordnet.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Ockham akzeptierte den freien Willen als notwendige Bedingung moralischer Verantwortung.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Für Ockham liegt der Lebenssinn in der Einhaltung göttlicher Gebote und der Einfachheit des Glaubens.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Ockham sah Wissen als begrenzt und erkannte die Notwendigkeit von Einfachheit in Erkenntnisprozessen.",
+                        position: 3,
+                    },
+                },
+            },
+            "Hume, David": {
+                description: "David Hume war ein schottischer Philosoph, der für seinen Empirismus und seine Skepsis bekannt ist.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Hume sah das Ich als Bündel von Wahrnehmungen, ohne beständige Essenz.",
+                        position: 1,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Hume war skeptisch gegenüber einem personifizierten Gott und sah Glauben als irrational.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Hume lehnte den Dualismus ab und betrachtete das Selbst als Ansammlung von Wahrnehmungen.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist subjektiv und basiert auf Gefühlen und Nutzen, nicht auf objektiven Prinzipien.",
+                        position: 1,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Hume akzeptierte freien Willen als kompatibel mit Determinismus.",
+                        position: 2,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Hume sah keinen objektiven Lebenssinn, sondern betonte den Wert des Lebensgenusses.",
+                        position: 1,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Hume erkannte die Begrenzungen des Wissens und sah Erkenntnis als begrenzt auf Erfahrung.",
+                        position: 3,
+                    },
+                },
+            },
+            "Fichte, Johann Gottlieb": {
+                description: "Johann Gottlieb Fichte war ein deutscher Idealist, der das Ich und die Freiheit des Individuums betonte.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Fichte sah das Ich als aktiven, schaffenden Grund aller Realität.",
+                        position: 3,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Fichte sprach von einem göttlichen Prinzip, jedoch nicht von einem personifizierten Gott.",
+                        position: 2,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Fichte verneinte den Dualismus und sah das Ich als Einheit des Seins.",
+                        position: 2,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist objektiv und folgt dem Streben des Ichs nach Freiheit und Vernunft.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist zentral für das schöpferische Ich in Fichtes Philosophie.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Für Fichte besteht der Lebenssinn im Streben des Ichs nach Selbstverwirklichung und Freiheit.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Fichte erkannte die Begrenzungen des Wissens und betonte das Ich als Quelle der Erkenntnis.",
+                        position: 3,
+                    },
+                },
+            },
+            "Kierkegaard, Søren": {
+                description: "Søren Kierkegaard war ein dänischer Philosoph und Vater des Existentialismus, der die persönliche Entscheidung betonte.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Kierkegaard sieht das Ich als in der Wahl und Existenz befindlich, ständig in Spannung.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Kierkegaard glaubte an einen personifizierten Gott, zu dem das Individuum eine persönliche Beziehung eingeht.",
+                        position: 3,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Kierkegaard befürwortete die Existenz einer Seele, die das Individuum in die Beziehung zu Gott führt.",
+                        position: 3,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist für Kierkegaard in der Beziehung zu Gott begründet und objektiv.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist für Kierkegaard entscheidend, da die Wahl den Glauben formt.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Kierkegaard sah den Lebenssinn in der individuellen Beziehung zu Gott und der Selbstfindung.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Kierkegaard erkannte die Grenzen des Wissens und betonte die Bedeutung des Glaubens.",
+                        position: 2,
+                    },
+                },
+            },
+            "Mill, John Stuart": {
+                description: "John Stuart Mill war ein britischer Philosoph und Ökonom, bekannt für seinen Utilitarismus und Liberalismus.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Für Mill ist das Ich ein empfindendes Wesen, das nach Glück strebt.",
+                        position: 3,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Mill äußerte sich kaum zu einem personifizierten Gott, da er empirische Beobachtung bevorzugte.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Mill äußerte sich wenig zum Dualismus und fokussierte sich auf das empirische Selbst.",
+                        position: 2,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist objektiv und basiert auf der Maximierung des Glücks für die Mehrheit.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist entscheidend für die moralische Verantwortung und das Streben nach Glück.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Für Mill liegt der Lebenssinn in der Maximierung des Glücks und der Freiheit des Individuums.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Mill erkannte die Grenzen des Wissens und betonte empirische Überprüfung als Erkenntnisquelle.",
+                        position: 3,
+                    },
+                },
+            },
+            "de Beauvoir, Simone": {
+                description: "Simone de Beauvoir war eine französische Existentialistin und Feministin, die das Verhältnis von Freiheit und Geschlecht untersuchte.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Für de Beauvoir ist das Ich ein freies Wesen, das sich in sozialer und geschlechtlicher Identität konstruiert.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "De Beauvoir lehnte einen personifizierten Gott ab und betonte das Individuum als frei.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "De Beauvoir sah den Körper als primäre Erfahrung des Selbst, ohne metaphysischen Dualismus.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist für de Beauvoir subjektiv und muss aus individuellen und sozialen Bedingungen heraus konstruiert werden.",
+                        position: 2,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist zentral, um die Rolle und Freiheit des Individuums selbst zu gestalten.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "De Beauvoir sah den Lebenssinn in der freien Selbstgestaltung und im Engagement für soziale Gerechtigkeit.",
+                        position: 2,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "De Beauvoir erkannte die Begrenzungen des Wissens und betonte das Erleben über rationale Erkenntnis.",
+                        position: 2,
+                    },
+                },
+            },
+            "Habermas, Jürgen": {
+                description: "Jürgen Habermas ist ein deutscher Philosoph, bekannt für seine Theorie des kommunikativen Handelns.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Für Habermas ist das Ich ein kommunikatives Wesen, das sich in sozialen Interaktionen formt.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Habermas äußerte sich wenig zu einem personifizierten Gott und konzentrierte sich auf säkulare Kommunikation.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Habermas legte wenig Wert auf den Dualismus und sah das Selbst als sozial konstruiert.",
+                        position: 1,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moralische Prinzipien entstehen für Habermas durch intersubjektive Kommunikation und Konsens.",
+                        position: 3,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille ist zentral, um an Kommunikation und demokratischer Teilhabe teilzunehmen.",
+                        position: 3,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Habermas sieht den Lebenssinn in der Partizipation an rationaler Kommunikation und sozialem Zusammenleben.",
+                        position: 3,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Habermas erkannte die Begrenzungen des Wissens und betonte die Rolle der kommunikativen Vernunft.",
+                        position: 3,
+                    },
+                },
+            },
+            "Zizek, Slavoj": {
+                description: "Slavoj Zizek ist ein slowenischer Philosoph und Kulturkritiker, bekannt für seine postmarxistische Theorie und Psychoanalyse.",
+                details: {
+                    "das Ich (Existenz eines beständigen Selbst)": {
+                        description: "Zizek sieht das Ich als durch ideologische Strukturen und unbewusste Triebe geprägt.",
+                        position: 2,
+                    },
+                    "ein personifizierter Gott": {
+                        description: "Zizek analysiert die Idee eines personifizierten Gottes als ideologisches Konstrukt.",
+                        position: 1,
+                    },
+                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                        description: "Zizek verneint einen traditionellen Dualismus und betont den Einfluss des Unbewussten.",
+                        position: 2,
+                    },
+                    "Existenz von objektiver Moral": {
+                        description: "Moral ist für Zizek eine Konstruktion und abhängig von sozialen und ideologischen Kontexten.",
+                        position: 2,
+                    },
+                    "Existenz eines freien Willens": {
+                        description: "Freier Wille wird als illusionär betrachtet und stark durch das Unbewusste beeinflusst.",
+                        position: 1,
+                    },
+                    "Existenz eines Lebenssinns": {
+                        description: "Zizek sieht keinen objektiven Lebenssinn, analysiert jedoch den ideologischen Bedarf daran.",
+                        position: 2,
+                    },
+                    "Begrenzung des menschlichen Wissens": {
+                        description: "Zizek betont die Grenzen des Wissens und die Rolle des Unbewussten in der Erkenntnis.",
+                        position: 2,
+                    },
+                },
+            },
+
         },
     },
 };
