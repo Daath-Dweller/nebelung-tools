@@ -3,54 +3,68 @@ import {
     options1,
     options2,
     options3,
+    judgmentOptions,
     logosEntries,
-} from "@/app/data/logosdata"; // Importiere die Daten
+} from "@/app/data/logosdata";
 
 export default function Logos() {
     const [firstSelection, setFirstSelection] = useState("");
     const [secondSelection, setSecondSelection] = useState("");
     const [thirdSelection, setThirdSelection] = useState("");
+    const [judgmentSelection, setJudgmentSelection] = useState("");
 
     const handleFirstSelection = (e) => {
         setFirstSelection(e.target.value);
         setSecondSelection("");
         setThirdSelection("");
+        setJudgmentSelection("");
     };
 
     const handleSecondSelection = (e) => {
         setSecondSelection(e.target.value);
         setThirdSelection("");
+        setJudgmentSelection("");
     };
 
     const handleThirdSelection = (e) => {
         setThirdSelection(e.target.value);
+        setJudgmentSelection("");
     };
 
-    // Bestimme die Position des Daumens
+    const handleJudgmentSelection = (e) => {
+        setJudgmentSelection(e.target.value);
+    };
+
+    const filteredEntries = Object.entries(logosEntries)
+        .filter(([_, entry]) => {
+            const detail = entry.details[thirdSelection];
+            if (!detail) return false;
+
+            if (judgmentSelection === "Klare Ablehnung") return detail.position === 1;
+            if (judgmentSelection === "Uneindeutig") return detail.position === 2;
+            if (judgmentSelection === "Klare Zustimmung") return detail.position === 3;
+
+            return false;
+        })
+        .map(([name]) => name)
+        .join(", ");
+
     const thumbPosition =
         thirdSelection && secondSelection
             ? logosEntries[secondSelection]?.details[thirdSelection]?.position
             : null;
 
-    // Bestimme das Daumensymbol basierend auf der Position
-    let thumbIcon = null;
-    if (thumbPosition === 1) {
-        thumbIcon = "👎"; // Daumen nach unten
-    } else if (thumbPosition === 2) {
-        thumbIcon = "👈"; // Daumen nach links
-    } else if (thumbPosition === 3) {
-        thumbIcon = "👍"; // Daumen nach oben
-    }
+    const thumbIcon = thumbPosition === 1 ? "👎" : thumbPosition === 2 ? "👈" : thumbPosition === 3 ? "👍" : null;
 
     return (
         <div className="p-12 bg-black text-white m-3">
             <h1 className="text-2xl font-bold mb-4">Logos</h1>
 
-            {/* Erstes Pulldown */}
+            {/* First Dropdown */}
             <div className="mb-4">
                 <label className="block mb-2">Kategorie auswählen:</label>
                 <select
-                    className="text-black p-2"
+                    className="text-black p-2 mr-4"
                     value={firstSelection}
                     onChange={handleFirstSelection}
                 >
@@ -63,12 +77,12 @@ export default function Logos() {
                 </select>
             </div>
 
-            {/* Zweites Pulldown */}
+            {/* Second Dropdown */}
             {firstSelection && (
                 <div className="mb-4">
                     <label className="block mb-2">Option auswählen:</label>
                     <select
-                        className="text-black p-2"
+                        className="text-black p-2 mr-4"
                         value={secondSelection}
                         onChange={handleSecondSelection}
                     >
@@ -82,19 +96,19 @@ export default function Logos() {
                 </div>
             )}
 
-            {/* Beschreibung nach Auswahl von Pulldown 2 */}
+            {/* Description after Second Dropdown */}
             {secondSelection && (
-                <div className="mt-4 p-4 bg-gray-800 rounded">
+                <div className="mt-4 p-4 bg-gray-800 rounded mb-4">
                     <p>{logosEntries[secondSelection]?.description}</p>
                 </div>
             )}
 
-            {/* Drittes Pulldown */}
+            {/* Third Dropdown */}
             {secondSelection && (
                 <div className="mb-4">
                     <label className="block mb-2">Aspekt auswählen:</label>
                     <select
-                        className="text-black p-2"
+                        className="text-black p-2 mr-4"
                         value={thirdSelection}
                         onChange={handleThirdSelection}
                     >
@@ -108,25 +122,21 @@ export default function Logos() {
                 </div>
             )}
 
+
+
             {/* Slider */}
-            <div className="mt-8 relative">
-                {/* Slider-Hintergrund */}
+            <div className="mt-8 relative mb-4">
                 <div className="flex h-10 w-full">
                     <div className="flex-1 bg-red-500"></div>
-                    <div className="flex-1 bg-yellow-200"></div> {/* Helleres Gelb */}
+                    <div className="flex-1 bg-yellow-200"></div>
                     <div className="flex-1 bg-green-500"></div>
                 </div>
-                {/* Daumen */}
+
                 {thirdSelection && (
                     <div
                         className="absolute top-1/2"
                         style={{
-                            left:
-                                thumbPosition === 1
-                                    ? "16.66%"
-                                    : thumbPosition === 2
-                                        ? "50%"
-                                        : "83.33%",
+                            left: thumbPosition === 1 ? "16.66%" : thumbPosition === 2 ? "50%" : "83.33%",
                             transform: "translate(-50%, -50%)",
                         }}
                     >
@@ -135,12 +145,36 @@ export default function Logos() {
                 )}
             </div>
 
-            {/* Beschreibungstext nach Auswahl von Pulldown 3 */}
+            {/* Description text after Third Dropdown */}
             {thirdSelection && (
                 <div className="mt-4 p-4 bg-gray-800 rounded">
-                    <p>
-                        {logosEntries[secondSelection]?.details[thirdSelection]?.description}
-                    </p>
+                    <p>{logosEntries[secondSelection]?.details[thirdSelection]?.description}</p>
+                </div>
+            )}
+
+            {/* Judgment Selection */}
+            {thirdSelection && (
+                <div className="mb-4 mt-16">
+                    <label className="block mb-2">Filter alle Einträge nach Position zum ausgewählten Aspekt:</label>
+                    <select
+                        className="text-black p-2"
+                        value={judgmentSelection}
+                        onChange={handleJudgmentSelection}
+                    >
+                        <option value="">Bitte auswählen</option>
+                        {judgmentOptions.map((option) => (
+                            <option key={option} value={option}>
+                                {option}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            )}
+
+            {/* List of filtered names */}
+            {judgmentSelection && (
+                <div className="mt-4 p-4 bg-gray-800 rounded">
+                    <p>{filteredEntries || "Keine passenden Einträge gefunden."}</p>
                 </div>
             )}
         </div>

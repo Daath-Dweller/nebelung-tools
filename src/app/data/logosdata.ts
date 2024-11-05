@@ -1,16 +1,29 @@
-// logosdata.js
+// logosdata.ts
+
+// Define interfaces for structured data
+interface LogosDetail {
+    description: string;
+    position: number;
+}
+
+interface LogosEntry {
+    description: string;
+    details: {
+        [key: string]: LogosDetail;
+    };
+}
 
 export const options1 = ["philosophische Strömung", "Religion", "Person"];
 
 export const options2 = {
     "philosophische Strömung": ["Stoizismus"],
     Religion: ["Shinto", "Christentum", "Buddhismus", "Hinduismus", "Judentum", "Islam"],
-    Person: ["Nietzsche", "Aristoteles"],
+    Person: ["Nietzsche", "Aristoteles", "Cioran", "Platon", "Hobbes", "Descartes", "Feuerbach", "Frege", "Wittgenstein", "Schopenhauer"],
 };
 
 export const options3 = ["das Ich", "ein personifizierter Gott"];
 
-export const logosEntries = {
+export const logosEntries: { [key: string]: LogosEntry } = {
     Stoizismus: {
         description:
             "Der Stoizismus ist eine antike Philosophie, die Gelassenheit und Selbstbeherrschung lehrt.",
@@ -18,7 +31,7 @@ export const logosEntries = {
             "das Ich": {
                 description:
                     "Im Stoizismus ist das Ich Teil eines kosmischen Ganzen und durch die Vernunft beständig, aber veränderlich.",
-                position: 2,
+                position: 3,
             },
             "ein personifizierter Gott": {
                 description:
@@ -34,7 +47,7 @@ export const logosEntries = {
             "das Ich": {
                 description:
                     "Im Shinto existiert ein Ich in Verbindung mit Natur und Gemeinschaft, ohne feste Beständigkeit.",
-                position: 2,
+                position: 1,
             },
             "ein personifizierter Gott": {
                 description:
@@ -155,4 +168,134 @@ export const logosEntries = {
             },
         },
     },
+    Cioran: {
+        description:
+            "Emil Cioran war ein pessimistischer Philosoph des 20. Jahrhunderts, der das Leben als absurde Existenz sah.",
+        details: {
+            "das Ich": {
+                description:
+                    "Für Cioran ist das Ich ein quälender Zustand, der die Illusion eines stabilen Selbst erzeugt.",
+                position: 1,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Cioran lehnte die Vorstellung eines personifizierten Gottes ab und sah den Glauben als illusionär.",
+                position: 1,
+            },
+        },
+    },
+    Platon: {
+        description:
+            "Platon war ein antiker griechischer Philosoph und Begründer der idealistischen Philosophie.",
+        details: {
+            "das Ich": {
+                description:
+                    "Für Platon ist das Ich eine unsterbliche Seele, die an den Ideen teilhat und in den Körper eingebunden ist.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Platon sprach von einer göttlichen Ordnung, lehnte aber einen personifizierten Gott ab.",
+                position: 2,
+            },
+        },
+    },
+    Hobbes: {
+        description:
+            "Thomas Hobbes war ein englischer Philosoph, der den Gesellschaftsvertrag und den Leviathan postulierte.",
+        details: {
+            "das Ich": {
+                description:
+                    "Hobbes sieht das Ich als egoistisches, materielles Wesen, das vom Selbsterhaltungstrieb geprägt ist.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Hobbes betrachtete Gott als notwendiges Konzept für gesellschaftliche Ordnung, aber nicht als personifiziertes Wesen.",
+                position: 2,
+            },
+        },
+    },
+    Descartes: {
+        description:
+            "René Descartes war ein französischer Philosoph und Mathematiker, bekannt für seinen Dualismus von Körper und Geist.",
+        details: {
+            "das Ich": {
+                description:
+                    "Descartes identifizierte das Ich als denkendes Wesen (*cogito*), das klar und beständig existiert.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Descartes glaubte an einen vollkommenen Gott, den er als notwendig für die Existenz des Ichs ansah.",
+                position: 3,
+            },
+        },
+    },
+    Feuerbach: {
+        description:
+            "Ludwig Feuerbach war ein deutscher Philosoph, der die Religion als Projektion menschlicher Wünsche verstand.",
+        details: {
+            "das Ich": {
+                description:
+                    "Feuerbach sah das Ich als Produkt sozialer und psychologischer Projektionen, ohne metaphysische Beständigkeit.",
+                position: 1,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Für Feuerbach ist Gott eine Projektion menschlicher Ideale, kein personifiziertes Wesen.",
+                position: 1,
+            },
+        },
+    },
+    Frege: {
+        description:
+            "Gottlob Frege war ein deutscher Mathematiker und Philosoph, der die Grundlagen der modernen Logik legte.",
+        details: {
+            "das Ich": {
+                description:
+                    "Frege befasste sich wenig mit dem Ich, das er als bedeutungslos für objektive Logik ansah.",
+                position: 1,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Frege äußerte sich kaum zu einem personifizierten Gott und sah Logik als unabhängig von Religion.",
+                position: 1,
+            },
+        },
+    },
+    Wittgenstein: {
+        description:
+            "Ludwig Wittgenstein war ein österreichischer Philosoph, der die Sprachphilosophie revolutionierte.",
+        details: {
+            "das Ich": {
+                description:
+                    "Wittgenstein sah das Ich als unbestimmt und durch Sprache konstruiert, ohne stabile Identität.",
+                position: 1,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Wittgenstein diskutierte Gott als sprachliches Konzept, jedoch nicht als personifiziertes Wesen.",
+                position: 2,
+            },
+        },
+    },
+    Schopenhauer: {
+        description:
+            "Arthur Schopenhauer war ein deutscher Philosoph, der die Welt als 'Wille und Vorstellung' erklärte.",
+        details: {
+            "das Ich": {
+                description:
+                    "Schopenhauer sah das Ich als Ausdruck des universellen Willens, letztlich illusionär und leidvoll.",
+                position: 1,
+            },
+            "ein personifizierter Gott": {
+                description:
+                    "Schopenhauer verneinte einen personifizierten Gott und sah das Weltgeschehen als blindem Willen unterworfen.",
+                position: 1,
+            },
+        },
+    },
 };
+
+export const judgmentOptions = ["Klare Ablehnung", "Uneindeutig", "Klare Zustimmung"];

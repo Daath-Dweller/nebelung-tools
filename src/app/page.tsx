@@ -7,7 +7,7 @@ import Logik from "@/app/components/logik";
 import Logos from "@/app/components/logos";
 
 export default function Home() {
-    const [activeTab, setActiveTab] = useState("rechner");
+    const [activeTab, setActiveTab] = useState("logos");
 
     return (
         <div className="bg-gray-700">
