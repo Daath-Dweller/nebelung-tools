@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import {
-    options1,
-    options2,
-    options3,
+    categoryOptions,
+    subcategoryOptions,
+    themeOptions,
     judgmentOptions,
     logosEntries,
 } from "@/app/data/logosdata";
 
 export default function Logos() {
-    const [firstSelection, setFirstSelection] = useState("");
-    const [secondSelection, setSecondSelection] = useState("");
-    const [thirdSelection, setThirdSelection] = useState("");
+    const [categorySelection, setCategorySelection] = useState("");
+    const [subcategorySelection, setSubcategorySelection] = useState("");
+    const [themeSelection, setThemeSelection] = useState("");
     const [judgmentSelection, setJudgmentSelection] = useState("");
 
-    const handleFirstSelection = (e) => {
-        setFirstSelection(e.target.value);
-        setSecondSelection("");
-        setThirdSelection("");
+    const handleCategorySelection = (e) => {
+        setCategorySelection(e.target.value);
+        setSubcategorySelection("");
+        setThemeSelection("");
         setJudgmentSelection("");
     };
 
-    const handleSecondSelection = (e) => {
-        setSecondSelection(e.target.value);
-        setThirdSelection("");
+    const handleSubcategorySelection = (e) => {
+        setSubcategorySelection(e.target.value);
+        setThemeSelection("");
         setJudgmentSelection("");
     };
 
-    const handleThirdSelection = (e) => {
-        setThirdSelection(e.target.value);
+    const handleThemeSelection = (e) => {
+        setThemeSelection(e.target.value);
         setJudgmentSelection("");
     };
 
@@ -37,7 +37,7 @@ export default function Logos() {
 
     const filteredEntries = Object.entries(logosEntries)
         .filter(([_, entry]) => {
-            const detail = entry.details[thirdSelection];
+            const detail = entry.details[themeSelection];
             if (!detail) return false;
 
             if (judgmentSelection === "Klare Ablehnung") return detail.position === 1;
@@ -50,8 +50,8 @@ export default function Logos() {
         .join(", ");
 
     const thumbPosition =
-        thirdSelection && secondSelection
-            ? logosEntries[secondSelection]?.details[thirdSelection]?.position
+        themeSelection && subcategorySelection
+            ? logosEntries[subcategorySelection]?.details[themeSelection]?.position
             : null;
 
     const thumbIcon = thumbPosition === 1 ? "👎" : thumbPosition === 2 ? "👈" : thumbPosition === 3 ? "👍" : null;
@@ -65,11 +65,11 @@ export default function Logos() {
                 <label className="block mb-2">Kategorie auswählen:</label>
                 <select
                     className="text-black p-2 mr-4"
-                    value={firstSelection}
-                    onChange={handleFirstSelection}
+                    value={categorySelection}
+                    onChange={handleCategorySelection}
                 >
                     <option value="">Bitte auswählen</option>
-                    {options1.map((option) => (
+                    {categoryOptions.map((option) => (
                         <option key={option} value={option}>
                             {option}
                         </option>
@@ -78,16 +78,16 @@ export default function Logos() {
             </div>
 
             {/* Second Dropdown */}
-            {firstSelection && (
+            {categorySelection && (
                 <div className="mb-4">
                     <label className="block mb-2">Unterkategorie auswählen:</label>
                     <select
                         className="text-black p-2 mr-4"
-                        value={secondSelection}
-                        onChange={handleSecondSelection}
+                        value={subcategorySelection}
+                        onChange={handleSubcategorySelection}
                     >
                         <option value="">Bitte auswählen</option>
-                        {options2[firstSelection].map((option) => (
+                        {subcategoryOptions[categorySelection].map((option) => (
                             <option key={option} value={option}>
                                 {option}
                             </option>
@@ -97,23 +97,23 @@ export default function Logos() {
             )}
 
             {/* Description after Second Dropdown */}
-            {secondSelection && (
+            {subcategorySelection && (
                 <div className="mt-4 p-4 bg-gray-800 rounded mb-4">
-                    <p>{logosEntries[secondSelection]?.description}</p>
+                    <p>{logosEntries[subcategorySelection]?.description}</p>
                 </div>
             )}
 
             {/* Third Dropdown */}
-            {secondSelection && (
+            {subcategorySelection && (
                 <div className="mb-4">
                     <label className="block mb-2">Thema auswählen:</label>
                     <select
                         className="text-black p-2 mr-4"
-                        value={thirdSelection}
-                        onChange={handleThirdSelection}
+                        value={themeSelection}
+                        onChange={handleThemeSelection}
                     >
                         <option value="">Bitte auswählen</option>
-                        {options3.map((option) => (
+                        {themeOptions.map((option) => (
                             <option key={option} value={option}>
                                 {option}
                             </option>
@@ -121,8 +121,6 @@ export default function Logos() {
                     </select>
                 </div>
             )}
-
-
 
             {/* Slider */}
             <div className="mt-8 relative mb-4">
@@ -132,28 +130,28 @@ export default function Logos() {
                     <div className="flex-1 bg-green-500"></div>
                 </div>
 
-                {thirdSelection && (
+                {themeSelection && (
                     <div
-                        className="absolute top-1/2"
-                        style={{
-                            left: thumbPosition === 1 ? "16.66%" : thumbPosition === 2 ? "50%" : "83.33%",
-                            transform: "translate(-50%, -50%)",
-                        }}
+                        className={`absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 
+                w-12 h-12 flex items-center justify-center 
+                bg-black bg-opacity-80 border-2 border-white rounded-full 
+                shadow-lg ${thumbPosition === 1 ? "left-[16.66%]" : thumbPosition === 2 ? "left-1/2" : "left-[83.33%]"}`}
                     >
-                        <span className="text-4xl">{thumbIcon}</span>
+                        <span className="text-4xl text-white">{thumbIcon}</span>
                     </div>
+
                 )}
             </div>
 
             {/* Description text after Third Dropdown */}
-            {thirdSelection && (
+            {themeSelection && (
                 <div className="mt-4 p-4 bg-gray-800 rounded">
-                    <p>{logosEntries[secondSelection]?.details[thirdSelection]?.description}</p>
+                    <p>{logosEntries[subcategorySelection]?.details[themeSelection]?.description}</p>
                 </div>
             )}
 
             {/* Judgment Selection */}
-            {thirdSelection && (
+            {themeSelection && (
                 <div className="mb-4 mt-16">
                     <label className="block mb-2">Alle DB-Einträge nach Position zum ausgewählten Aspekt filtern:</label>
                     <select
