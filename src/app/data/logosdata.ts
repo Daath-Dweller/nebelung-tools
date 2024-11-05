@@ -1576,7 +1576,6 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Judentum erkennt die Grenzen des Wissens an und betrachtet göttliche Gebote als Wegweiser zur Wahrheit.",
                 position: 3,
             },
-
         },
     },
     Islam: {
@@ -1952,6 +1951,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Schopenhauer sah Wissen als durch den Willen begrenzt und betonte das Verständnis von Leid.",
                 position: 3,
             },
+        },
 
             Pantheismus: {
                 description: "Pantheismus ist die religiöse Überzeugung, dass Gott und das Universum identisch sind und Gott in allem existiert.",
