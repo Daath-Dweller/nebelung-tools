@@ -37,17 +37,20 @@ export default function Logos() {
 
     const filteredEntries = Object.entries(logosEntries)
         .filter(([_, entry]) => {
+            // Nur Einträge für das ausgewählte Thema und die ausgewählte Bewertung anzeigen
             const detail = entry.details[themeSelection];
             if (!detail) return false;
 
+            // Bewertung prüfen, wenn sie gesetzt ist
             if (judgmentSelection === "Klare Ablehnung") return detail.position === 1;
             if (judgmentSelection === "Uneindeutig") return detail.position === 2;
             if (judgmentSelection === "Klare Zustimmung") return detail.position === 3;
 
-            return false;
+            return true;
         })
         .map(([name]) => name)
         .join(", ");
+
 
     const thumbPosition =
         themeSelection && subcategorySelection
