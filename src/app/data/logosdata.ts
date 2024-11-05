@@ -128,6 +128,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
 
         },
     },
+
     "Locke, John": {
         description: "John Locke war ein englischer Philosoph, bekannt für seine Theorien des Liberalismus und des empirischen Wissens.",
         details: {
@@ -161,6 +162,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Spinoza, Baruch": {
         description: "Baruch Spinoza war ein rationalistischer Philosoph, der Gott als Natur und universelle Substanz auffasste.",
         details: {
@@ -194,6 +196,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Kant, Immanuel": {
         description: "Immanuel Kant war ein deutscher Philosoph, der den Kategorischen Imperativ und den transzendentalen Idealismus entwickelte.",
         details: {
@@ -227,6 +230,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Sartre, Jean-Paul": {
         description: "Jean-Paul Sartre war ein französischer Existentialist, der Freiheit und Verantwortung des Individuums betonte.",
         details: {
@@ -260,6 +264,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Camus, Albert": {
         description: "Albert Camus war ein französischer Philosoph des Absurdismus, der die Sinnlosigkeit des Lebens betonte.",
         details: {
@@ -293,6 +298,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Marx, Karl": {
         description: "Karl Marx war ein deutscher Philosoph und Ökonom, der den dialektischen Materialismus und den Kommunismus entwickelte.",
         details: {
@@ -326,6 +332,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Foucault, Michel": {
         description: "Michel Foucault war ein französischer Philosoph, bekannt für seine Studien zu Macht und Diskursen.",
         details: {
@@ -359,6 +366,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
     "Heidegger, Martin": {
         description: "Martin Heidegger war ein deutscher Philosoph, der das Konzept des Seins und der Existenz untersuchte.",
         details: {
@@ -1951,7 +1959,8 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Schopenhauer sah Wissen als durch den Willen begrenzt und betonte das Verständnis von Leid.",
                 position: 3,
             },
-        },
+        },   },
+
             Pantheismus: {
                 description: "Pantheismus ist die religiöse Überzeugung, dass Gott und das Universum identisch sind und Gott in allem existiert.",
                 details: {
