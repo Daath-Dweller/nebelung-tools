@@ -1,4 +1,4 @@
-// logik.ts
+// logikdata.ts
 
 interface Fehlschluss {
     name: string;

@@ -54,7 +54,6 @@ export default function Logos() {
             ? logosEntries[subcategorySelection]?.details[themeSelection]?.position
             : null;
 
-// Display question mark initially, and update to thumbs once a selection is made
     const thumbIcon = thumbPosition === null
         ? "?"
         : thumbPosition === 1
@@ -64,25 +63,23 @@ export default function Logos() {
                 : "👍";
 
     const thumbStyle = thumbPosition === null
-        ? "left-1/2" // Centered initially
+        ? "left-1/2"
         : thumbPosition === 1
             ? "left-[16.66%]"
             : thumbPosition === 2
                 ? "left-1/2"
                 : "left-[83.33%]";
 
-
-
     return (
         <div className="p-12 bg-black text-white m-3">
             <span className="text-l font-bold mb-2">Wer sagt eigentlich was?</span><br/>
-           <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
-            Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br/>
+            <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
+                Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br/>
 
             {/* Category Buttons */}
             <div className="mb-4 mt-4">
                 <label className="block mb-2">Kategorie auswählen:</label>
-                <div className="flex space-x-4">
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                     {categoryOptions.map((option) => (
                         <button
                             key={option}
@@ -127,13 +124,13 @@ export default function Logos() {
                 <div className="mb-4">
                     <label className="block mb-2">Thema auswählen:</label>
                     <select
-                        className="text-black p-2 mr-4"
+                        className="text-black p-2 mr-4 w-full truncate overflow-hidden"
                         value={themeSelection}
                         onChange={handleThemeSelection}
                     >
                         <option value="">Bitte auswählen</option>
                         {themeOptions.map((option) => (
-                            <option key={option} value={option}>
+                            <option key={option} value={option} className="break-words">
                                 {option}
                             </option>
                         ))}
@@ -149,7 +146,6 @@ export default function Logos() {
                     <div className="flex-1 bg-green-500"></div>
                 </div>
 
-
                 <div
                     className={`absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 
     w-12 h-12 flex items-center justify-center 
@@ -158,7 +154,6 @@ export default function Logos() {
                 >
                     <span className="text-4xl text-white">{thumbIcon}</span>
                 </div>
-
             </div>
 
             {/* Description text after Third Dropdown */}
