@@ -77,13 +77,13 @@ export const subcategoryOptions = {
     ],
 };
 
-export const themeOptions = ["das Ich", "ein personifizierter Gott", "Geist-Körper-Dualismus (Existenz einer Seele)", "Existenz von objektiver Moral", "Existenz eines freien Willens"];
+export const themeOptions = ["das Ich (Existenz eines beständigen Selbst)", "ein personifizierter Gott", "Geist-Körper-Dualismus (Existenz einer Seele)", "Existenz von objektiver Moral", "Existenz eines freien Willens"];
 
 export const logosEntries: { [key: string]: LogosEntry } = {
     Sokrates: {
         description: "Sokrates war ein antiker griechischer Philosoph, bekannt für seine dialektische Methode und die Betonung ethischer Reflexion.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Sokrates ist das Ich eine suchende Vernunft, die durch Selbsterkenntnis moralische Wahrheit findet.",
                 position: 2,
             },
@@ -108,7 +108,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "John Locke": {
         description: "John Locke war ein englischer Philosoph, bekannt für seine Theorien des Liberalismus und des empirischen Wissens.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Locke sieht das Ich als Tabula Rasa, das durch Erfahrung geformt wird.",
                 position: 3,
             },
@@ -133,7 +133,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Spinoza: {
         description: "Baruch Spinoza war ein rationalistischer Philosoph, der Gott als Natur und universelle Substanz auffasste.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Spinoza ist das Ich ein Teil der Substanz Gottes, das sich selbst als illusorisch getrennt erfährt.",
                 position: 2,
             },
@@ -158,7 +158,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Kant: {
         description: "Immanuel Kant war ein deutscher Philosoph, der den Kategorischen Imperativ und den transzendentalen Idealismus entwickelte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Kant sieht das Ich als erkenntnistheoretisches Subjekt, das durch Vernunft moralische Gesetze setzt.",
                 position: 3,
             },
@@ -183,7 +183,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Sartre: {
         description: "Jean-Paul Sartre war ein französischer Existentialist, der Freiheit und Verantwortung des Individuums betonte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Sartre ist das Ich zur Freiheit verurteilt und muss sich selbst definieren.",
                 position: 1,
             },
@@ -210,7 +210,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Camus: {
         description: "Albert Camus war ein französischer Philosoph des Absurdismus, der die Sinnlosigkeit des Lebens betonte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Camus sieht das Ich als Individuum, das im Angesicht des Absurden handeln muss.",
                 position: 1,
             },
@@ -235,7 +235,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Marx: {
         description: "Karl Marx war ein deutscher Philosoph und Ökonom, der den dialektischen Materialismus und den Kommunismus entwickelte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Marx sieht das Ich als soziales Wesen, das durch Klassenverhältnisse geprägt ist.",
                 position: 2,
             },
@@ -260,7 +260,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Foucault: {
         description: "Michel Foucault war ein französischer Philosoph, bekannt für seine Studien zu Macht und Diskursen.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Foucault sieht das Ich als Konstruktion, die von Machtstrukturen und Diskursen beeinflusst ist.",
                 position: 2,
             },
@@ -285,7 +285,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Heidegger: {
         description: "Martin Heidegger war ein deutscher Philosoph, der das Konzept des Seins und der Existenz untersuchte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Heidegger ist das Ich ein Dasein, das im Sein verankert ist und zum Tode hin lebt.",
                 position: 2,
             },
@@ -310,7 +310,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Epikur: {
         description: "Epikur war ein antiker griechischer Philosoph, der die Bedeutung von Glück und dem Vermeiden von Schmerz betonte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Epikur sieht das Ich als empfindendes Wesen, das nach Lust und Schmerzvermeidung strebt.",
                 position: 3,
             },
@@ -335,7 +335,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Thomas von Aquin": {
         description: "Thomas von Aquin war ein mittelalterlicher Theologe und Philosoph, der den christlichen Glauben mit der Vernunft verband.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Thomas sieht das Ich als Seele, die in Beziehung zu Gott steht und durch Tugend vervollkommnet wird.",
                 position: 3,
             },
@@ -360,7 +360,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Diogenes: {
         description: "Diogenes war ein antiker griechischer Philosoph und Zyniker, bekannt für seine radikale Ablehnung gesellschaftlicher Konventionen.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Diogenes sieht das Ich als naturverbunden und unabhängig von sozialem Einfluss.",
                 position: 1,
             },
@@ -385,7 +385,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Konfuzius: {
         description: "Konfuzius war ein chinesischer Philosoph, der ethische und soziale Prinzipien für ein harmonisches Leben betonte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Konfuzius ist das Ich ein Teil eines größeren sozialen Gefüges, das durch moralische Tugenden gedeiht.",
                 position: 2,
             },
@@ -410,7 +410,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Laotse: {
         description: "Laotse war ein legendärer chinesischer Philosoph und Begründer des Taoismus.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Laotse ist das Ich ein Teil des Dao und sollte sich an die natürliche Ordnung anpassen.",
                 position: 2,
             },
@@ -435,7 +435,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Derrida: {
         description: "Jacques Derrida war ein französischer Philosoph und Begründer der Dekonstruktion.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Derrida sieht das Ich als durch Sprache und Bedeutungsverschiebung geformt.",
                 position: 2,
             },
@@ -462,7 +462,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Francis Bacon": {
         description: "Francis Bacon war ein englischer Philosoph und Begründer des Empirismus.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Bacon sieht das Ich als erkenntnissuchendes Wesen, das durch Erfahrung die Natur erforscht.",
                 position: 3,
             },
@@ -487,7 +487,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Asatru: {
         description: "Asatru ist eine Form des Neopaganismus, die auf die germanische Mythologie zurückgreift und die Verehrung nordischer Götter betont.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Asatru ist das Ich mit den Ahnen und der Natur verbunden und agiert im Einklang mit den Göttern.",
                 position: 2,
             },
@@ -512,7 +512,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Sikhismus: {
         description: "Der Sikhismus ist eine monotheistische Religion, die in Indien gegründet wurde und Gleichheit und soziale Gerechtigkeit betont.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Sikhismus wird das Ich als spirituelle Seele gesehen, die mit dem Schöpfer verbunden ist.",
                 position: 3,
             },
@@ -537,7 +537,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Taoismus: {
         description: "Der Taoismus ist eine chinesische Religion und Philosophie, die im Einklang mit dem Dao, dem Weg des Universums, lebt.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Taoismus wird das Ich als unbeständiger Teil des größeren Kosmos betrachtet, in Harmonie mit dem Dao.",
                 position: 2,
             },
@@ -562,7 +562,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Konfuzianismus: {
         description: "Der Konfuzianismus ist eine chinesische Philosophie, die Ethik und soziale Moral betont.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Konfuzianismus ist das Ich stark von familiären und sozialen Bindungen geprägt.",
                 position: 2,
             },
@@ -587,7 +587,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Gnostizismus: {
         description: "Der Gnostizismus ist eine religiöse Bewegung, die Erlösung durch geheimes Wissen anstrebt.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Gnostizismus ist das Ich ein göttlicher Funken, der von der materiellen Welt befreit werden muss.",
                 position: 2,
             },
@@ -612,7 +612,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Zoroastrismus: {
         description: "Der Zoroastrismus ist eine der ältesten monotheistischen Religionen und betont den Kampf zwischen Gut und Böse.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Zoroastrismus ist das Ich Teil des kosmischen Kampfes und strebt nach Reinheit und Wahrheit.",
                 position: 3,
             },
@@ -637,7 +637,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Voodoo: {
         description: "Voodoo ist eine synkretistische Religion afrikanischer Herkunft, die Geister und Ahnen verehrt.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Voodoo wird das Ich als Teil eines Netzwerks von Ahnen und spirituellen Kräften betrachtet.",
                 position: 2,
             },
@@ -662,7 +662,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Relativismus: {
         description: "Relativismus ist die Ansicht, dass Wahrheit und Moral von individuellen oder kulturellen Kontexten abhängen.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Relativismus ist das Ich ein Produkt seiner kulturellen und individuellen Perspektiven.",
                 position: 2,
             },
@@ -688,7 +688,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Konsequentialismus: {
         description: "Konsequentialismus ist eine ethische Theorie, die Handlungen nach ihren Konsequenzen bewertet.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Konsequentialismus ist das Ich verantwortlich für die Ergebnisse seiner Handlungen.",
                 position: 3,
             },
@@ -713,7 +713,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Deontologismus: {
         description: "Deontologismus ist eine ethische Theorie, die Handlungen nach festen moralischen Prinzipien bewertet, unabhängig von den Konsequenzen.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Deontologismus ist das Ich verpflichtet, moralische Regeln zu befolgen, ungeachtet der Konsequenzen.",
                 position: 3,
             },
@@ -738,7 +738,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Zynismus: {
         description: "Der Zynismus ist eine Philosophie, die gesellschaftliche Normen und Werte radikal hinterfragt und oft verachtet.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Zynismus wird das Ich als egoistisch und von natürlichen Trieben getrieben betrachtet.",
                 position: 2,
             },
@@ -763,7 +763,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Antinatalismus: {
         description: "Antinatalismus ist die Ansicht, dass es moralisch falsch ist, Leben zu erzeugen, aufgrund des inhärenten Leidens der Existenz.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Antinatalismus ist das Ich eine Last, die durch Geburt aufoktroyiert wird.",
                 position: 1,
             },
@@ -788,7 +788,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Idealismus: {
         description: "Idealismus ist eine Philosophie, die betont, dass Realität primär durch den Geist konstruiert ist.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Idealismus ist das Ich eine zentrale Wahrnehmungseinheit, die die Welt interpretiert.",
                 position: 3,
             },
@@ -813,7 +813,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Realismus: {
         description: "Realismus ist die Philosophie, die davon ausgeht, dass die Welt unabhängig vom menschlichen Bewusstsein existiert.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Realismus ist das Ich ein Bewusstsein, das die objektive Realität erfährt.",
                 position: 3,
             },
@@ -838,7 +838,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Empirismus: {
         description: "Empirismus betont, dass Wissen hauptsächlich durch Sinneserfahrungen gewonnen wird.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Empirismus wird das Ich durch seine Erfahrungen definiert und formt so seine Realität.",
                 position: 3,
             },
@@ -863,7 +863,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Rationalismus: {
         description: "Rationalismus ist die Auffassung, dass Wissen vor allem durch Vernunft erworben wird.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Rationalismus wird das Ich als Vernunftwesen betrachtet, das abstrakte Wahrheiten erkennt.",
                 position: 3,
             },
@@ -888,7 +888,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Existentialismus: {
         description: "Existentialismus betont die Freiheit des Individuums und die Sinnsuche in einer oft absurden Welt.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Existentialismus ist das Ich zur eigenen Schöpfung und zur Sinnsuche verdammt.",
                 position: 1,
             },
@@ -913,7 +913,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Nihilismus: {
         description: "Nihilismus ist die philosophische Ansicht, dass Leben und Existenz keinen inhärenten Sinn haben.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Nihilismus ist das Ich eine Illusion ohne Bedeutung oder Ziel.",
                 position: 1,
             },
@@ -938,7 +938,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Utilitarismus: {
         description: "Utilitarismus ist eine Ethik, die Handlungen nach dem größten Nutzen für das größte Glück bewertet.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Utilitarismus ist das Ich ein Teil des Ganzen, das nach maximalem Glück für alle strebt.",
                 position: 2,
             },
@@ -965,7 +965,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Strukturalismus: {
         description: "Strukturalismus analysiert gesellschaftliche und sprachliche Strukturen als bestimmend für das Individuum.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Strukturalismus ist das Ich ein Produkt gesellschaftlicher und sprachlicher Strukturen.",
                 position: 2,
             },
@@ -990,7 +990,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Pragmatismus: {
         description: "Pragmatismus bewertet Ideen nach ihrer praktischen Umsetzbarkeit und ihren Ergebnissen.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Pragmatismus ist das Ich flexibel und anwendbar auf praktische Ziele und Ergebnisse.",
                 position: 3,
             },
@@ -1015,7 +1015,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Poststrukturalismus: {
         description: "Poststrukturalismus hinterfragt feste Strukturen und die Stabilität von Sprache und Bedeutung.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Poststrukturalismus ist das Ich fragmentiert und durch flexible Bedeutungen geprägt.",
                 position: 2,
             },
@@ -1040,7 +1040,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Stoizismus: {
         description: "Der Stoizismus ist eine antike Philosophie, die Gelassenheit und Selbstbeherrschung lehrt.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Stoizismus ist das Ich Teil eines kosmischen Ganzen und durch die Vernunft beständig, aber veränderlich.",
                 position: 3,
             },
@@ -1065,7 +1065,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Shinto: {
         description: "Shinto ist die indigene Religion Japans, die die Verehrung von Kami beinhaltet.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Shinto existiert ein Ich in Verbindung mit Natur und Gemeinschaft, ohne feste Beständigkeit.",
                 position: 1,
             },
@@ -1090,7 +1090,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Christentum: {
         description: "Das Christentum ist eine monotheistische Religion, die auf den Lehren von Jesus Christus basiert.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Christentum besitzt das Individuum eine beständige Seele in Beziehung zu Gott.",
                 position: 3,
             },
@@ -1115,7 +1115,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Buddhismus: {
         description: "Der Buddhismus ist eine spirituelle Tradition, die auf den Lehren Buddhas basiert.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Buddhismus gilt das Ich als Illusion, eine Ansammlung veränderlicher Elemente.",
                 position: 1,
             },
@@ -1140,7 +1140,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Hinduismus: {
         description: "Der Hinduismus ist eine der ältesten Religionen der Welt und hat ein komplexes Glaubenssystem.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Hinduismus ist das Ich, das Atman, eine unsterbliche Seele, die Reinkarnation durchläuft.",
                 position: 3,
             },
@@ -1165,7 +1165,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Judentum: {
         description: "Das Judentum ist die älteste abrahamitische Religion, die auf den Bund mit Gott basiert.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Judentum wird das Ich als individuelle, beständige Seele in Beziehung zu Gott verstanden.",
                 position: 3,
             },
@@ -1190,7 +1190,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Islam: {
         description: "Der Islam ist eine monotheistische Religion, die durch die Offenbarungen an den Propheten Mohammed entstand.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Im Islam wird das Ich als Seele verstanden, die durch Glauben und Taten eine ewige Beständigkeit erlangen kann.",
                 position: 3,
             },
@@ -1215,7 +1215,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Nietzsche: {
         description: "Friedrich Nietzsche war ein deutscher Philosoph des 19. Jahrhunderts, der den Übermenschen und den Willen zur Macht betonte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Nietzsche sieht das Ich als Konstruktion und dynamische Projektion, beeinflusst durch soziale und psychologische Faktoren.",
                 position: 1,
             },
@@ -1240,7 +1240,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Aristoteles: {
         description: "Aristoteles war ein antiker griechischer Philosoph, der als Schüler Platons wesentliche Grundlagen der westlichen Philosophie prägte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Aristoteles ist das Ich eine vernunftbegabte Seele, die beständig nach Glück und Tugend strebt.",
                 position: 3,
             },
@@ -1265,7 +1265,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Cioran: {
         description: "Emil Cioran war ein pessimistischer Philosoph des 20. Jahrhunderts, der das Leben als absurde Existenz sah.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Cioran ist das Ich ein quälender Zustand, der die Illusion eines stabilen Selbst erzeugt.",
                 position: 1,
             },
@@ -1290,7 +1290,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Platon: {
         description: "Platon war ein antiker griechischer Philosoph und Begründer der idealistischen Philosophie.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Für Platon ist das Ich eine unsterbliche Seele, die an den Ideen teilhat und in den Körper eingebunden ist.",
                 position: 3,
             },
@@ -1316,7 +1316,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Hobbes: {
         description: "Thomas Hobbes war ein englischer Philosoph, der den Gesellschaftsvertrag und den Leviathan postulierte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Hobbes sieht das Ich als egoistisches, materielles Wesen, das vom Selbsterhaltungstrieb geprägt ist.",
                 position: 2,
             },
@@ -1341,7 +1341,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Descartes: {
         description: "René Descartes war ein französischer Philosoph und Mathematiker, bekannt für seinen Dualismus von Körper und Geist.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Descartes identifizierte das Ich als denkendes Wesen (*cogito*), das klar und beständig existiert.",
                 position: 3,
             },
@@ -1366,7 +1366,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Feuerbach: {
         description: "Ludwig Feuerbach war ein deutscher Philosoph, der die Religion als Projektion menschlicher Wünsche verstand.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Feuerbach sah das Ich als Produkt sozialer und psychologischer Projektionen, ohne metaphysische Beständigkeit.",
                 position: 1,
             },
@@ -1391,7 +1391,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Frege: {
         description: "Gottlob Frege war ein deutscher Mathematiker und Philosoph, der die Grundlagen der modernen Logik legte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Frege befasste sich wenig mit dem Ich, das er als bedeutungslos für objektive Logik ansah.",
                 position: 1,
             },
@@ -1416,7 +1416,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Wittgenstein: {
         description: "Ludwig Wittgenstein war ein österreichischer Philosoph, der die Sprachphilosophie revolutionierte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Wittgenstein sah das Ich als unbestimmt und durch Sprache konstruiert, ohne stabile Identität.",
                 position: 1,
             },
@@ -1441,7 +1441,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Schopenhauer: {
         description: "Arthur Schopenhauer war ein deutscher Philosoph, der die Welt als 'Wille und Vorstellung' erklärte.",
         details: {
-            "das Ich": {
+            "das Ich (Existenz eines beständigen Selbst)": {
                 description: "Schopenhauer sah das Ich als Ausdruck des universellen Willens, letztlich illusionär und leidvoll.",
                 position: 1,
             },
