@@ -80,7 +80,7 @@ export default function Logos() {
             {/* Second Dropdown */}
             {firstSelection && (
                 <div className="mb-4">
-                    <label className="block mb-2">Option auswählen:</label>
+                    <label className="block mb-2">Unterkategorie auswählen:</label>
                     <select
                         className="text-black p-2 mr-4"
                         value={secondSelection}
@@ -106,7 +106,7 @@ export default function Logos() {
             {/* Third Dropdown */}
             {secondSelection && (
                 <div className="mb-4">
-                    <label className="block mb-2">Aspekt auswählen:</label>
+                    <label className="block mb-2">Thema auswählen:</label>
                     <select
                         className="text-black p-2 mr-4"
                         value={thirdSelection}
