@@ -103,22 +103,22 @@ export const subcategoryOptions = {
 
 };
 
-export const themeOptions = ["das Ich (Existenz eines beständigen Selbst)", "ein personifizierter Gott", "Geist-Körper-Dualismus (Existenz einer Seele)",
-    "Existenz von objektiver Moral", "Existenz eines freien Willens", "Existenz eines Lebenssinns", "Begrenzung des menschlichen Wissens"];
+export const themeOptions = ["Existenz eines Ichs bzw. beständigen Selbst", "Existenz eines (personifizierten) Gottes", "Existenz einer Seele (Geist-Körper-Dualismus)",
+    "Existenz von objektiver Moral", "Existenz eines freien Willens", "Existenz eines Lebenssinns"];
 
 export const logosEntries: { [key: string]: LogosEntry } = {
     Sokrates: {
         description: "Sokrates war ein antiker griechischer Philosoph, bekannt für seine dialektische Methode und die Betonung ethischer Reflexion.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Sokrates ist das Ich eine suchende Vernunft, die durch Selbsterkenntnis moralische Wahrheit findet.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Sokrates akzeptierte göttliche Eingebungen, jedoch ohne klaren personifizierten Gott.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Sokrates befürwortete einen Dualismus, glaubte an die Unsterblichkeit der Seele und trennte diese vom Körper.",
                 position: 3,
             },
@@ -134,10 +134,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Sokrates sah das Streben nach Weisheit und ethischer Reflexion als zentralen Lebenssinn.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Sokrates betonte die Grenzen des Wissens und das Eingeständnis eigener Unwissenheit als Voraussetzung für Weisheit.",
-                position: 3,
-            },
+
 
         },
     },
@@ -145,15 +142,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Locke, John": {
         description: "John Locke war ein englischer Philosoph, bekannt für seine Theorien des Liberalismus und des empirischen Wissens.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Locke sieht das Ich als Tabula Rasa, das durch Erfahrung geformt wird.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Locke glaubte an einen personifizierten Schöpfergott als Grundlage der Moral.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Locke vertrat die Idee einer immateriellen Seele, die jedoch mit dem Körper interagiert.",
                 position: 2,
             },
@@ -169,25 +166,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Locke besteht der Lebenssinn im Streben nach persönlichem Glück und moralischer Verantwortung.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Locke hielt Wissen für begrenzt auf Sinneserfahrungen und die Reflexion darüber.",
-                position: 3,
-            },
+
         },
     },
 
     "Spinoza, Baruch": {
         description: "Baruch Spinoza war ein rationalistischer Philosoph, der Gott als Natur und universelle Substanz auffasste.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Spinoza ist das Ich ein Teil der Substanz Gottes, das sich selbst als illusorisch getrennt erfährt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Spinoza lehnte einen personifizierten Gott ab und verstand Gott als Natur.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Spinoza lehnte den Dualismus ab und betrachtete Geist und Körper als zwei Seiten derselben Substanz.",
                 position: 1,
             },
@@ -203,25 +197,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Spinoza sah den Sinn des Lebens in der Erkenntnis der Natur Gottes und der eigenen Existenz.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens":  {
-                description: "Spinoza vertrat die Auffassung, dass Wissen durch Vernunft über die Naturgesetze möglich ist.",
-                position: 3,
-            },
+
         },
     },
 
     "Kant, Immanuel": {
         description: "Immanuel Kant war ein deutscher Philosoph, der den Kategorischen Imperativ und den transzendentalen Idealismus entwickelte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Kant sieht das Ich als erkenntnistheoretisches Subjekt, das durch Vernunft moralische Gesetze setzt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Kant postulierte einen Gott als moralische Idee, ohne klare Personifizierung.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Kant glaubte an eine unsterbliche Seele, die das moralische Subjekt bildet.",
                 position: 3,
             },
@@ -237,25 +228,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Kant liegt der Lebenssinn in der moralischen Pflichterfüllung und dem Streben nach dem höchsten Gut.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Kant trennte Wissen auf empirische Erkenntnis und die Vernunft als Werkzeuge der Erkenntnisgrenzen.",
-                position: 3,
-            },
+
         },
     },
 
     "Sartre, Jean-Paul": {
         description: "Jean-Paul Sartre war ein französischer Existentialist, der Freiheit und Verantwortung des Individuums betonte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Sartre ist das Ich zur Freiheit verurteilt und muss sich selbst definieren.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Sartre lehnte einen personifizierten Gott ab und sah das Leben als absurde Freiheit.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Sartre lehnte den Dualismus ab und betrachtete das Bewusstsein als Ergebnis des Daseins.",
                 position: 1,
             },
@@ -271,25 +259,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Sartre betrachtete den Lebenssinn als individuelle Wahl und Verantwortung zur Selbstbestimmung.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Sartre lehnte absolute Gewissheit ab und betonte die subjektive Erfahrung des Wissens.",
-                position: 2,
-            },
+
         },
     },
 
     "Camus, Albert": {
         description: "Albert Camus war ein französischer Philosoph des Absurdismus, der die Sinnlosigkeit des Lebens betonte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Camus sieht das Ich als Individuum, das im Angesicht des Absurden handeln muss.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Camus lehnte die Existenz eines personifizierten Gottes als Trostillusion ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Camus lehnte den Geist-Körper-Dualismus ab und betrachtete das Leben rein physisch.",
                 position: 1,
             },
@@ -305,25 +290,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Camus sah den Lebenssinn in der Rebellion gegen die Absurdität und der Schaffung eigener Werte.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens":  {
-                description: "Camus hielt Wissen für fragmentarisch und betonte das Akzeptieren der Absurdität als Erkenntnis.",
-                position: 2,
-            },
+
         },
     },
 
     "Marx, Karl": {
         description: "Karl Marx war ein deutscher Philosoph und Ökonom, der den dialektischen Materialismus und den Kommunismus entwickelte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Marx sieht das Ich als soziales Wesen, das durch Klassenverhältnisse geprägt ist.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Marx lehnte Religion und einen personifizierten Gott als 'Opium des Volkes' ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Marx lehnte den Dualismus ab und sah den Menschen als materielles Wesen.",
                 position: 1,
             },
@@ -339,25 +321,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Marx sah den Sinn des Lebens in der Überwindung von Klassenverhältnissen und der Schaffung einer gerechten Gesellschaft.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Marx hielt Wissen für stark durch die gesellschaftlichen und ökonomischen Verhältnisse geprägt.",
-                position: 2,
-            },
+
         },
     },
 
     "Foucault, Michel": {
         description: "Michel Foucault war ein französischer Philosoph, bekannt für seine Studien zu Macht und Diskursen.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Foucault sieht das Ich als Konstruktion, die von Machtstrukturen und Diskursen beeinflusst ist.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Foucault äußerte sich kaum zu einem personifizierten Gott und analysierte Religion als Machtinstrument.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Foucault betrachtete das Selbst als gesellschaftlich geformt und ohne metaphysische Seele.",
                 position: 1,
             },
@@ -373,25 +352,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Foucault stellte die Frage nach einem objektiven Lebenssinn zurück und analysierte die Machtverhältnisse, die Sinn konstruieren.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Foucault betrachtete Wissen als begrenzt durch Diskurse und gesellschaftliche Machtstrukturen.",
-                position: 2,
-            },
+
         },
     },
 
     "Heidegger, Martin": {
         description: "Martin Heidegger war ein deutscher Philosoph, der das Konzept des Seins und der Existenz untersuchte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Heidegger ist das Ich ein Dasein, das im Sein verankert ist und zum Tode hin lebt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Heidegger lehnte einen personifizierten Gott ab und konzentrierte sich auf das Sein.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Heidegger lehnte den Dualismus ab und betrachtete das Selbst als Einheit im Dasein.",
                 position: 2,
             },
@@ -407,24 +383,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Heidegger sah den Lebenssinn im authentischen Sein-zum-Tode, das die Existenz in ihrer Endlichkeit erfasst.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Heidegger betonte die Grenzen des Wissens durch das Sein, das nur in seiner Offenbarung erkannt werden kann.",
-                position: 3,
-            },
+
         },
     },
     Epikur: {
         description: "Epikur war ein antiker griechischer Philosoph, der die Bedeutung von Glück und dem Vermeiden von Schmerz betonte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Epikur sieht das Ich als empfindendes Wesen, das nach Lust und Schmerzvermeidung strebt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Epikur glaubte an Götter, die jedoch nicht in das menschliche Leben eingreifen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Epikur sah das Selbst als materiell und sterblich, ohne unsterbliche Seele.",
                 position: 1,
             },
@@ -440,24 +413,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Epikur liegt der Lebenssinn im Streben nach Lust und der Vermeidung von Schmerz.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Epikur hielt Wissen für begrenzt und betonte das Vertrauen auf sinnliche Wahrnehmung und Vernunft.",
-                position: 3,
-            },
+
         },
     },
     "Thomas von Aquin": {
         description: "Thomas von Aquin war ein mittelalterlicher Theologe und Philosoph, der den christlichen Glauben mit der Vernunft verband.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Thomas sieht das Ich als Seele, die in Beziehung zu Gott steht und durch Tugend vervollkommnet wird.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Thomas von Aquin beschreibt Gott als personifiziertes Wesen, das das Universum und die Moral lenkt.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Thomas bejahte einen Dualismus, wobei die unsterbliche Seele den Körper überlebt.",
                 position: 3,
             },
@@ -473,24 +443,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Thomas von Aquin sah den Lebenssinn in der Erkenntnis und Vereinigung mit Gott.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Thomas glaubte, dass das menschliche Wissen begrenzt sei und nur durch göttliche Offenbarung erweitert werden könne.",
-                position: 3,
-            },
+
         },
     },
     Diogenes: {
         description: "Diogenes war ein antiker griechischer Philosoph und Zyniker, bekannt für seine radikale Ablehnung gesellschaftlicher Konventionen.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Diogenes sieht das Ich als naturverbunden und unabhängig von sozialem Einfluss.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Diogenes lehnte die Vorstellung eines personifizierten Gottes ab und betonte die Einfachheit der Natur.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Diogenes sah das Selbst als Einheit ohne metaphysische Seele.",
                 position: 1,
             },
@@ -506,24 +473,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Diogenes verwarf einen objektiven Lebenssinn und lebte nach der natürlichen Einfachheit.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Diogenes zweifelte am Wert umfassenden Wissens und setzte auf unmittelbare Erfahrung.",
-                position: 3,
-            },
+
         },
     },
     Konfuzius: {
         description: "Konfuzius war ein chinesischer Philosoph, der ethische und soziale Prinzipien für ein harmonisches Leben betonte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Konfuzius ist das Ich ein Teil eines größeren sozialen Gefüges, das durch moralische Tugenden gedeiht.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Konfuzius spricht von einem 'Himmel', jedoch ohne personifizierten Gott.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Konfuzius äußerte sich kaum zum Dualismus, betonte jedoch die Rolle des Himmels in der menschlichen Existenz.",
                 position: 2,
             },
@@ -539,24 +503,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Konfuzius sah den Lebenssinn in der Erfüllung sozialer und familiärer Pflichten.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Konfuzius betonte die Grenzen des Wissens und hob die Bedeutung der moralischen Selbsterkenntnis hervor.",
-                position: 2,
-            },
+
         },
     },
     Laotse: {
         description: "Laotse war ein legendärer chinesischer Philosoph und Begründer des Taoismus.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Laotse ist das Ich ein Teil des Dao und sollte sich an die natürliche Ordnung anpassen.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Laotse spricht vom Dao, einer unpersönlichen Kraft, jedoch nicht von einem personifizierten Gott.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Laotse lehnte eine strikte Trennung zwischen Geist und Körper ab und betonte die Einheit des Dao.",
                 position: 1,
             },
@@ -572,24 +533,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Laotse betrachtete den Lebenssinn als Harmonie mit dem Dao, dem natürlichen Weg des Universums.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Laotse sah Wissen als begrenzt und betonte das intuitive Verstehen des Dao über rationales Wissen.",
-                position: 2,
-            },
+
         },
     },
     "Derrida, Jacques": {
         description: "Jacques Derrida war ein französischer Philosoph und Begründer der Dekonstruktion.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Derrida sieht das Ich als durch Sprache und Bedeutungsverschiebung geformt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Derrida hinterfragte die Stabilität des Gottesbegriffs und lehnte eine feste Personifizierung ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Derrida lehnte die traditionelle Vorstellung von Geist und Körper als getrennt ab.",
                 position: 1,
             },
@@ -605,10 +563,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Derrida hinterfragte feste Konzepte wie einen objektiven Lebenssinn und betrachtete Bedeutung als fluide.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Derrida sah Wissen als konstruiert und durch Sprache und Diskurs begrenzt.",
-                position: 2,
-            },
+
         },
     },
 
@@ -616,15 +571,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Bacon, Francis": {
         description: "Francis Bacon war ein englischer Philosoph und Begründer des Empirismus.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Bacon sieht das Ich als erkenntnissuchendes Wesen, das durch Erfahrung die Natur erforscht.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Bacon sah einen Schöpfer als Ursprung der Naturgesetze, jedoch ohne klare Personifizierung.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Bacon äußerte sich kaum zum Dualismus und betrachtete das Selbst primär empirisch.",
                 position: 2,
             },
@@ -640,24 +595,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Bacon sah den Lebenssinn im Streben nach Wissen und Beherrschung der Natur durch empirische Methoden.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Bacon erkannte die Grenzen des menschlichen Wissens an und förderte die ständige Erweiterung durch empirische Beobachtung.",
-                position: 3,
-            },
+
         },
     },
     Asatru: {
         description: "Asatru ist eine Form des Neopaganismus, die auf die germanische Mythologie zurückgreift und die Verehrung nordischer Götter betont.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Asatru ist das Ich mit den Ahnen und der Natur verbunden und agiert im Einklang mit den Göttern.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Asatru verehrt viele personifizierte Götter wie Odin und Thor als reale Wesenheiten.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Im Asatru wird das Selbst als Seele betrachtet, die in das spirituelle Netzwerk eingebunden ist.",
                 position: 3,
             },
@@ -672,25 +624,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Asatru sieht den Lebenssinn in der Ehrung der Ahnen, Natur und der nordischen Götter.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Im Asatru wird Wissen als begrenzt und oft von den Göttern beeinflusst betrachtet.",
-                position: 2,
-            },
+
 
         },
     },
     Sikhismus: {
         description: "Der Sikhismus ist eine monotheistische Religion, die in Indien gegründet wurde und Gleichheit und soziale Gerechtigkeit betont.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Sikhismus wird das Ich als spirituelle Seele gesehen, die mit dem Schöpfer verbunden ist.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Sikhismus verehrt einen einzigen, nicht personifizierten Gott, der als formlos und allgegenwärtig gilt.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Sikhismus betrachtet die Seele als ewig, getrennt vom physischen Körper.",
                 position: 3,
             },
@@ -706,25 +655,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Sikhismus liegt der Lebenssinn in der Vereinigung mit Gott und dem Dienst an der Menschheit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Der Sikhismus betont, dass menschliches Wissen begrenzt ist und durch göttliche Erleuchtung erweitert wird.",
-                position: 3,
-            },
+
 
         },
     },
     Taoismus: {
         description: "Der Taoismus ist eine chinesische Religion und Philosophie, die im Einklang mit dem Dao, dem Weg des Universums, lebt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Taoismus wird das Ich als unbeständiger Teil des größeren Kosmos betrachtet, in Harmonie mit dem Dao.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Taoismus verehrt keine personifizierten Götter, sondern das Dao als unpersönliche Kraft.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Taoismus sieht keine scharfe Trennung zwischen Körper und Geist, sondern eine natürliche Einheit.",
                 position: 1,
             },
@@ -740,25 +686,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Taoismus wird der Lebenssinn in der natürlichen Harmonie und dem Fluss des Dao gesehen.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Taoismus sieht Wissen als begrenzt und bevorzugt intuitives Verstehen statt analytischem Wissen.",
-                position: 2,
-            },
+
 
         },
     },
     Konfuzianismus: {
         description: "Der Konfuzianismus ist eine chinesische Philosophie, die Ethik und soziale Moral betont.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Konfuzianismus ist das Ich stark von familiären und sozialen Bindungen geprägt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Konfuzianismus beinhaltet keinen personifizierten Gott, sondern ein Konzept von moralischem Himmel und Tugend.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Konfuzianismus äußert sich kaum zur Seele, betont aber den Einfluss des Himmels auf das Selbst.",
                 position: 2,
             },
@@ -774,25 +717,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Konfuzianismus liegt der Lebenssinn in der Erfüllung ethischer Pflichten und sozialer Harmonie.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Konfuzianismus erkennt die Grenzen des Wissens an und legt Wert auf moralische und soziale Weisheit.",
-                position: 3,
-            },
+
 
         },
     },
     Gnostizismus: {
         description: "Der Gnostizismus ist eine religiöse Bewegung, die Erlösung durch geheimes Wissen anstrebt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Gnostizismus ist das Ich ein göttlicher Funken, der von der materiellen Welt befreit werden muss.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Gnostizismus verehrt einen verborgenen, personifizierten Gott, getrennt von dem Schöpfer der materiellen Welt.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Gnostizismus sieht die Seele als göttliches Element, das vom Körper getrennt werden muss.",
                 position: 3,
             },
@@ -808,25 +748,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Gnostizismus sieht den Lebenssinn in der Befreiung des göttlichen Funkens aus der materiellen Welt.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Im Gnostizismus ist Wissen begrenzt und erfordert geheime Offenbarung zur Erkenntnis der Wahrheit.",
-                position: 3,
-            },
+
 
         },
     },
     Zoroastrismus: {
         description: "Der Zoroastrismus ist eine der ältesten monotheistischen Religionen und betont den Kampf zwischen Gut und Böse.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Zoroastrismus ist das Ich Teil des kosmischen Kampfes und strebt nach Reinheit und Wahrheit.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Zoroastrismus verehrt Ahura Mazda als personifizierten Gott und Vertreter des Guten.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Die Seele ist im Zoroastrismus ewig und trennt sich vom Körper nach dem Tod.",
                 position: 3,
             },
@@ -842,25 +779,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Zoroastrismus besteht der Lebenssinn im Kampf für das Gute gegen das Böse.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Zoroastrismus sieht Wissen als begrenzt und betont die Bedeutung göttlicher Offenbarung.",
-                position: 2,
-            },
+
 
         },
     },
     Voodoo: {
         description: "Voodoo ist eine synkretistische Religion afrikanischer Herkunft, die Geister und Ahnen verehrt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Voodoo wird das Ich als Teil eines Netzwerks von Ahnen und spirituellen Kräften betrachtet.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Voodoo verehrt viele personifizierte Geister und Gottheiten, darunter auch Ahnengeister.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Das Selbst ist im Voodoo mit einer Seele ausgestattet, die nach dem Tod weiter existiert.",
                 position: 3,
             },
@@ -876,25 +810,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Voodoo wird der Lebenssinn in der Harmonie mit Ahnen und spirituellen Kräften gesucht.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Voodoo sieht Wissen als begrenzt und abhängig von spirituellen Praktiken und Ahnenweisheit.",
-                position: 2,
-            },
+
 
         },
     },
     Relativismus: {
         description: "Relativismus ist die Ansicht, dass Wahrheit und Moral von individuellen oder kulturellen Kontexten abhängen.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Relativismus ist das Ich ein Produkt seiner kulturellen und individuellen Perspektiven.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Relativismus sieht die Vorstellung eines personifizierten Gottes als kulturell bedingt und nicht absolut an.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Relativismus betrachtet die Seele als kontextabhängiges Konzept, nicht als objektiv existierend.",
                 position: 1,
             },
@@ -910,10 +841,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Relativismus verneint einen objektiven Lebenssinn und betrachtet ihn als kulturell und individuell bedingt.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Relativismus sieht Wissen als begrenzt und abhängig vom Kontext und der Perspektive.",
-                position: 2,
-            },
+
 
         },
     },
@@ -921,15 +849,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Konsequentialismus: {
         description: "Konsequentialismus ist eine ethische Theorie, die Handlungen nach ihren Konsequenzen bewertet.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Konsequentialismus ist das Ich verantwortlich für die Ergebnisse seiner Handlungen.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Ein personifizierter Gott spielt im Konsequentialismus oft keine zentrale Rolle, da moralisches Handeln an den Ergebnissen gemessen wird.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Konsequentialismus äußert sich wenig zu Seele oder Dualismus, da Fokus auf Handlungsfolgen liegt.",
                 position: 2,
             },
@@ -945,25 +873,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Konsequentialismus liegt der Lebenssinn in der Maximierung des Wohls durch die Konsequenzen der Handlungen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Konsequentialismus erkennt die Grenzen des Wissens an und betont die Bedeutung empirischer Überprüfung.",
-                position: 3,
-            },
+
 
         },
     },
     Deontologismus: {
         description: "Deontologismus ist eine ethische Theorie, die Handlungen nach festen moralischen Prinzipien bewertet, unabhängig von den Konsequenzen.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Deontologismus ist das Ich verpflichtet, moralische Regeln zu befolgen, ungeachtet der Konsequenzen.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Ein personifizierter Gott kann im Deontologismus eine Rolle spielen, wenn er als Quelle moralischer Prinzipien gilt.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Deontologismus äußert sich selten zu Geist-Körper-Dualismus, aber setzt ein moralisches Selbst voraus.",
                 position: 2,
             },
@@ -979,25 +904,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Deontologismus wird der Lebenssinn in der Erfüllung moralischer Pflichten gesehen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Deontologismus erkennt die Grenzen des Wissens an und sieht moralische Prinzipien als universell gültig.",
-                position: 3,
-            },
+
 
         },
     },
     Zynismus: {
         description: "Der Zynismus ist eine Philosophie, die gesellschaftliche Normen und Werte radikal hinterfragt und oft verachtet.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Zynismus wird das Ich als egoistisch und von natürlichen Trieben getrieben betrachtet.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Zynismus lehnt die Existenz eines personifizierten Gottes ab und betrachtet Religion oft als Mittel der Täuschung.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Zynismus äußert sich selten zum Dualismus, verachtet jedoch metaphysische Spekulationen.",
                 position: 1,
             },
@@ -1013,25 +935,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Zynismus verneint einen objektiven Lebenssinn und propagiert ein Leben im Einklang mit der Natur.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Zynismus sieht Wissen als begrenzt und setzt auf persönliche Erfahrung und radikale Ehrlichkeit.",
-                position: 3,
-            },
 
         },
     },
     Antinatalismus: {
         description: "Antinatalismus ist die Ansicht, dass es moralisch falsch ist, Leben zu erzeugen, aufgrund des inhärenten Leidens der Existenz.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Antinatalismus ist das Ich eine Last, die durch Geburt aufoktroyiert wird.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Antinatalismus lehnt die Vorstellung eines wohlwollenden Schöpfers angesichts des Leides ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Antinatalismus äußert sich selten zum Dualismus, da Fokus auf Leid und Existenz liegt.",
                 position: 1,
             },
@@ -1047,25 +965,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Antinatalismus verneint einen positiven Lebenssinn und betrachtet das Leben als inhärent leidvoll.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Antinatalismus erkennt die Grenzen des Wissens an und sieht den menschlichen Zustand als tragisch.",
-                position: 2,
-            },
+
 
         },
     },
     Idealismus: {
         description: "Idealismus ist eine Philosophie, die betont, dass Realität primär durch den Geist konstruiert ist.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Idealismus ist das Ich eine zentrale Wahrnehmungseinheit, die die Welt interpretiert.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Idealismus sieht das Göttliche als durch den Geist geprägt, oft ohne klare Personifizierung.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Idealismus bejaht oft den Dualismus, wobei Geist die primäre Realität darstellt.",
                 position: 3,
             },
@@ -1081,25 +996,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Idealismus sieht den Lebenssinn in der Verwirklichung geistiger Ideen und moralischer Prinzipien.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Idealismus betont die Grenzen des Wissens, das durch den Geist interpretiert wird.",
-                position: 3,
-            },
+
 
         },
     },
     Realismus: {
         description: "Realismus ist die Philosophie, die davon ausgeht, dass die Welt unabhängig vom menschlichen Bewusstsein existiert.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Realismus ist das Ich ein Bewusstsein, das die objektive Realität erfährt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Realismus schließt einen personifizierten Gott oft nicht aus, konzentriert sich jedoch auf beobachtbare Realität.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Realismus ist offen für den Dualismus, sieht jedoch oft den Körper als primär.",
                 position: 2,
             },
@@ -1115,25 +1027,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Realismus wird der Lebenssinn oft in der objektiven Realität und im pragmatischen Handeln gesucht.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Realismus erkennt die Grenzen des Wissens und betont die empirische Erkundung der Realität.",
-                position: 3,
-            },
+
 
         },
     },
     Empirismus: {
         description: "Empirismus betont, dass Wissen hauptsächlich durch Sinneserfahrungen gewonnen wird.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Empirismus wird das Ich durch seine Erfahrungen definiert und formt so seine Realität.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Empirismus hat oft wenig Bezug zu einem personifizierten Gott, da er schwer erfahrbar ist.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Empirismus äußert sich selten zum Dualismus, da Wissen auf Sinneserfahrung beruht.",
                 position: 2,
             },
@@ -1149,25 +1058,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Empirismus betrachtet den Lebenssinn als in den realen Erfahrungen und Erkenntnissen begründet.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Empirismus sieht Wissen als begrenzt auf Sinneserfahrungen und Beobachtungen.",
-                position: 3,
-            },
+
 
         },
     },
     Rationalismus: {
         description: "Rationalismus ist die Auffassung, dass Wissen vor allem durch Vernunft erworben wird.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Rationalismus wird das Ich als Vernunftwesen betrachtet, das abstrakte Wahrheiten erkennt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Ein personifizierter Gott wird im Rationalismus oft durch logische Begründungen hinterfragt.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Rationalismus neigt zum Dualismus und sieht den Geist als primäres Erkenntnisorgan.",
                 position: 3,
             },
@@ -1183,25 +1089,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Rationalismus wird der Lebenssinn in der Suche nach Wahrheit durch Vernunft gesehen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Rationalismus erkennt die Grenzen des Wissens an, betont jedoch die Rolle der Vernunft als Weg zur Erkenntnis.",
-                position: 3,
-            },
+
 
         },
     },
     Existentialismus: {
         description: "Existentialismus betont die Freiheit des Individuums und die Sinnsuche in einer oft absurden Welt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Existentialismus ist das Ich zur eigenen Schöpfung und zur Sinnsuche verdammt.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Existentialismus sieht einen personifizierten Gott als irrelevant oder nicht-existent an.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Existentialismus lehnt oft den Dualismus ab und betont das körperlich erfahrene Dasein.",
                 position: 1,
             },
@@ -1217,25 +1120,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Existentialismus sieht den Lebenssinn als individuelle Entscheidung in einer oft sinnlosen Welt.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Existentialismus erkennt die Grenzen des Wissens und die Unmöglichkeit absoluter Gewissheit an.",
-                position: 2,
-            },
+
 
         },
     },
     Nihilismus: {
         description: "Nihilismus ist die philosophische Ansicht, dass Leben und Existenz keinen inhärenten Sinn haben.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Nihilismus ist das Ich eine Illusion ohne Bedeutung oder Ziel.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Nihilismus lehnt die Existenz eines personifizierten Gottes als sinnlos ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Nihilismus äußert sich oft nicht zum Dualismus, betrachtet das Selbst jedoch als illusorisch.",
                 position: 1,
             },
@@ -1251,25 +1151,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Nihilismus verneint die Existenz eines objektiven Lebenssinns und betrachtet alle Werte als subjektiv.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Nihilismus sieht Wissen als begrenzt und betont die Sinnlosigkeit absoluter Wahrheiten.",
-                position: 2,
-            },
+
 
         },
     },
     Utilitarismus: {
         description: "Utilitarismus ist eine Ethik, die Handlungen nach dem größten Nutzen für das größte Glück bewertet.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Utilitarismus ist das Ich ein Teil des Ganzen, das nach maximalem Glück für alle strebt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Ein personifizierter Gott wird im Utilitarismus oft irrelevant, wenn das Glück maximiert wird.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Utilitarismus äußert sich selten zum Dualismus, da der Fokus auf Handlungsfolgen liegt.",
                 position: 2,
             },
@@ -1285,10 +1182,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Utilitarismus besteht der Lebenssinn im Streben nach dem größtmöglichen Glück für die Mehrheit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Utilitarismus erkennt die Grenzen des Wissens an, betont jedoch die Bedeutung empirischer Analyse.",
-                position: 3,
-            },
+
 
         },
     },
@@ -1297,15 +1191,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     Strukturalismus: {
         description: "Strukturalismus analysiert gesellschaftliche und sprachliche Strukturen als bestimmend für das Individuum.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Strukturalismus ist das Ich ein Produkt gesellschaftlicher und sprachlicher Strukturen.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Strukturalismus sieht religiöse Konzepte oft als gesellschaftliche Konstruktionen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Strukturalismus konzentriert sich auf soziale Strukturen und äußert sich wenig zum Dualismus.",
                 position: 1,
             },
@@ -1321,25 +1215,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Strukturalismus betrachtet den Lebenssinn als gesellschaftlich konstruiert und nicht inhärent.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Strukturalismus sieht Wissen als begrenzt und geprägt durch gesellschaftliche Strukturen.",
-                position: 2,
-            },
+
 
         },
     },
     Pragmatismus: {
         description: "Pragmatismus bewertet Ideen nach ihrer praktischen Umsetzbarkeit und ihren Ergebnissen.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Pragmatismus ist das Ich flexibel und anwendbar auf praktische Ziele und Ergebnisse.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Pragmatismus sieht den Nutzen eines personifizierten Gottes an seinem Effekt gemessen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Pragmatismus legt selten Wert auf Dualismus, fokussiert stattdessen auf praktische Auswirkungen.",
                 position: 2,
             },
@@ -1355,25 +1246,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Pragmatismus wird der Lebenssinn in praktischen Zielen und deren Umsetzung gesehen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Pragmatismus erkennt die Grenzen des Wissens und misst Erkenntnisse an ihrem praktischen Nutzen.",
-                position: 3,
-            },
+
 
         },
     },
     Poststrukturalismus: {
         description: "Poststrukturalismus hinterfragt feste Strukturen und die Stabilität von Sprache und Bedeutung.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Poststrukturalismus ist das Ich fragmentiert und durch flexible Bedeutungen geprägt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Poststrukturalismus lehnt einen festen personifizierten Gott ab und hinterfragt alle festen Bedeutungen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Poststrukturalismus lehnt feste Konzepte wie den Dualismus oft ab.",
                 position: 1,
             },
@@ -1389,25 +1277,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Poststrukturalismus verneint einen festen Lebenssinn und betrachtet Bedeutung als fluid und kontextabhängig.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Poststrukturalismus sieht Wissen als begrenzt und abhängig von wechselnden Diskursen und Kontexten.",
-                position: 2,
-            },
+
 
         },
     },
     Stoizismus: {
         description: "Der Stoizismus ist eine antike Philosophie, die Gelassenheit und Selbstbeherrschung lehrt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Stoizismus ist das Ich Teil eines kosmischen Ganzen und durch die Vernunft beständig, aber veränderlich.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Stoizismus glaubt an eine universelle Vernunft, aber nicht an einen personifizierten Gott.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Stoizismus befürwortet eine Form des Dualismus, in dem der Geist die Vernunft verkörpert.",
                 position: 3,
             },
@@ -1423,25 +1308,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Stoizismus sieht den Lebenssinn im Streben nach Tugend und Gelassenheit im Einklang mit der Natur.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Stoizismus erkennt die Grenzen des Wissens und betont das Verständnis natürlicher Gesetze.",
-                position: 3,
-            },
+
 
         },
     },
     Shinto: {
         description: "Shinto ist die indigene Religion Japans, die die Verehrung von Kami beinhaltet.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Shinto existiert ein Ich in Verbindung mit Natur und Gemeinschaft, ohne feste Beständigkeit.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Shinto verehrt viele Kami als Naturgeister, aber keinen personifizierten Gott.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Shinto bejaht eine spirituelle Dimension, betont jedoch den Einklang mit der physischen Welt.",
                 position: 2,
             },
@@ -1457,25 +1339,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Shinto sieht den Lebenssinn in der Harmonie mit der Natur und der Ehrung der Kami.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Shinto erkennt die Grenzen des Wissens an und betont die intuitive Verbindung zu Natur und Kami.",
-                position: 2,
-            },
+
 
         },
     },
     Christentum: {
         description: "Das Christentum ist eine monotheistische Religion, die auf den Lehren von Jesus Christus basiert.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Christentum besitzt das Individuum eine beständige Seele in Beziehung zu Gott.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Das Christentum glaubt an einen personifizierten Gott, der eine persönliche Beziehung zu den Gläubigen hat.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Christentum bejaht den Dualismus, mit der Seele als unsterblichem Wesen, das über den Körper hinaus besteht.",
                 position: 3,
             },
@@ -1491,25 +1370,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Christentum liegt der Lebenssinn in der Beziehung zu Gott und dem Erreichen des ewigen Lebens.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Christentum erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als Quelle höherer Erkenntnis.",
-                position: 3,
-            },
+
 
         },
     },
     Buddhismus: {
         description: "Der Buddhismus ist eine spirituelle Tradition, die auf den Lehren Buddhas basiert.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Buddhismus gilt das Ich als Illusion, eine Ansammlung veränderlicher Elemente.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Buddhismus kennt keinen personifizierten Gott, sondern fokussiert auf persönliche Erleuchtung.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Buddhismus lehnt den Dualismus ab und sieht das Selbst als vergängliche Kombination von Elementen.",
                 position: 1,
             },
@@ -1525,25 +1401,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Buddhismus sieht den Lebenssinn in der Überwindung des Leidens und dem Erreichen des Nirvana.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Buddhismus erkennt die Grenzen des Wissens und betont das Erleben der Realität jenseits intellektueller Erkenntnis.",
-                position: 2,
-            },
+
 
         },
     },
     Hinduismus: {
         description: "Der Hinduismus ist eine der ältesten Religionen der Welt und hat ein komplexes Glaubenssystem.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Hinduismus ist das Ich, das Atman, eine unsterbliche Seele, die Reinkarnation durchläuft.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Hinduismus verehrt mehrere personifizierte Götter, die Aspekte des Göttlichen repräsentieren.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Der Hinduismus bejaht den Dualismus, wobei die unsterbliche Seele den physischen Körper überdauert.",
                 position: 3,
             },
@@ -1559,25 +1432,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Hinduismus liegt der Lebenssinn im Erreichen der Befreiung (Moksha) und der Vereinigung mit dem Göttlichen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Hinduismus erkennt die Grenzen des Wissens an und sieht Erleuchtung als Weg zur Erkenntnis.",
-                position: 3,
-            },
+
 
         },
     },
     Judentum: {
         description: "Das Judentum ist die älteste abrahamitische Religion, die auf den Bund mit Gott basiert.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Judentum wird das Ich als individuelle, beständige Seele in Beziehung zu Gott verstanden.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Das Judentum verehrt einen personifizierten Gott, der über persönliche Beziehungen zu den Menschen wacht.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Judentum bejaht den Dualismus mit der Seele als unvergänglicher Essenz.",
                 position: 3,
             },
@@ -1593,24 +1463,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Judentum besteht der Lebenssinn in der Erfüllung des Bundes mit Gott und dem Streben nach Gerechtigkeit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Judentum erkennt die Grenzen des Wissens an und betrachtet göttliche Gebote als Wegweiser zur Wahrheit.",
-                position: 3,
-            },
+
         },
     },
     Islam: {
         description: "Der Islam ist eine monotheistische Religion, die durch die Offenbarungen an den Propheten Mohammed entstand.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Islam wird das Ich als Seele verstanden, die durch Glauben und Taten eine ewige Beständigkeit erlangen kann.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Islam verehrt Allah als personifizierten Gott mit persönlichen, jedoch übermenschlichen Eigenschaften.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Islam bejaht den Dualismus, wobei die Seele den Körper überdauert und das Jenseits erwartet.",
                 position: 3,
             },
@@ -1626,10 +1493,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Islam wird der Lebenssinn in der Hingabe an Gott und der Erfüllung seiner Gebote gesehen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Islam erkennt die Begrenztheit menschlichen Wissens an und sieht göttliche Offenbarung als höchste Erkenntnisquelle.",
-                position: 3,
-            },
+
         },
 
 
@@ -1637,15 +1501,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Nietzsche, Friedrich": {
         description: "Friedrich Nietzsche war ein deutscher Philosoph des 19. Jahrhunderts, der den Übermenschen und den Willen zur Macht betonte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Nietzsche sieht das Ich als Konstruktion und dynamische Projektion, beeinflusst durch soziale und psychologische Faktoren.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Nietzsche erklärte 'Gott ist tot' und lehnte die Existenz eines personifizierten Gottes ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Nietzsche lehnte den Dualismus ab und betrachtete den Körper als primäre Existenzbasis.",
                 position: 1,
             },
@@ -1661,25 +1525,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Nietzsche sah den Lebenssinn in der Überwindung des Individuums durch den Willen zur Macht.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Nietzsche betonte die Grenzen des Wissens und betrachtete Wahrheit als Perspektive des Willens zur Macht.",
-                position: 3,
-            },
+
 
         },
     },
     Aristoteles: {
         description: "Aristoteles war ein antiker griechischer Philosoph, der als Schüler Platons wesentliche Grundlagen der westlichen Philosophie prägte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Aristoteles ist das Ich eine vernunftbegabte Seele, die beständig nach Glück und Tugend strebt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Aristoteles glaubte an einen 'unbewegten Beweger', der jedoch keinen personifizierten Gott darstellt.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Aristoteles sah die Seele als untrennbar mit dem Körper verbunden, betonte jedoch geistige Elemente.",
                 position: 2,
             },
@@ -1695,25 +1556,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Aristoteles liegt der Lebenssinn im Streben nach Eudaimonia, dem guten Leben durch Tugend.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Aristoteles erkannte die Grenzen des Wissens und betonte die Bedeutung der empirischen Beobachtung.",
-                position: 3,
-            },
+
 
         },
     },
     "Cioran, Emil": {
         description: "Emil Cioran war ein pessimistischer Philosoph des 20. Jahrhunderts, der das Leben als absurde Existenz sah.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Cioran ist das Ich ein quälender Zustand, der die Illusion eines stabilen Selbst erzeugt.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Cioran lehnte die Vorstellung eines personifizierten Gottes ab und sah den Glauben als illusionär.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Cioran verwarf den Dualismus und betrachtete das Selbst als vergängliche Illusion.",
                 position: 1,
             },
@@ -1729,25 +1587,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Cioran verneinte die Existenz eines objektiven Lebenssinns und betrachtete das Leben als absurden Zustand.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Cioran sah das Wissen als begrenzt und empfand Erkenntnis oft als sinnlose Last.",
-                position: 3,
-            },
+
 
         },
     },
     Platon: {
         description: "Platon war ein antiker griechischer Philosoph und Begründer der idealistischen Philosophie.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Für Platon ist das Ich eine unsterbliche Seele, die an den Ideen teilhat und in den Körper eingebunden ist.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Platon sprach von einer göttlichen Ordnung, lehnte aber einen personifizierten Gott ab.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Platon befürwortete den Dualismus und sah die Seele als von den Ideen beeinflusst und ewig.",
                 position: 3,
             },
@@ -1763,10 +1618,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Platon sah den Lebenssinn in der Annäherung an die Ideenwelt und dem Streben nach Weisheit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Platon betrachtete Wissen als begrenzt, da es auf den Schattenbildern der wahren Ideenwelt basiert.",
-                position: 3,
-            },
+
 
         },
     },
@@ -1774,15 +1626,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Hobbes, Thomas": {
         description: "Thomas Hobbes war ein englischer Philosoph, der den Gesellschaftsvertrag und den Leviathan postulierte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Hobbes sieht das Ich als egoistisches, materielles Wesen, das vom Selbsterhaltungstrieb geprägt ist.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Hobbes betrachtete Gott als notwendiges Konzept für gesellschaftliche Ordnung, aber nicht als personifiziertes Wesen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Hobbes verwarf den Dualismus und sah den Menschen als rein materielles Wesen.",
                 position: 1,
             },
@@ -1798,25 +1650,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Hobbes bestand der Lebenssinn im Selbsterhalt und der Stabilität durch den Gesellschaftsvertrag.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Hobbes erkannte die Grenzen des Wissens an und betrachtete das Verstehen der Naturgesetze als zentral.",
-                position: 2,
-            },
+
 
         },
     },
     "Descartes, René": {
         description: "René Descartes war ein französischer Philosoph und Mathematiker, bekannt für seinen Dualismus von Körper und Geist.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Descartes identifizierte das Ich als denkendes Wesen (*cogito*), das klar und beständig existiert.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Descartes glaubte an einen vollkommenen Gott, den er als notwendig für die Existenz des Ichs ansah.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Descartes war ein starker Befürworter des Dualismus und sah Geist und Körper als getrennte Substanzen.",
                 position: 3,
             },
@@ -1832,25 +1681,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Descartes sah den Lebenssinn in der Suche nach Gewissheit und der Befolgung göttlicher Vernunft.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Descartes erkannte die Grenzen des Wissens an, suchte jedoch absolute Gewissheit durch den Verstand.",
-                position: 3,
-            },
+
 
         },
     },
     "Feuerbach, Ludwig": {
         description: "Ludwig Feuerbach war ein deutscher Philosoph, der die Religion als Projektion menschlicher Wünsche verstand.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Feuerbach sah das Ich als Produkt sozialer und psychologischer Projektionen, ohne metaphysische Beständigkeit.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Für Feuerbach ist Gott eine Projektion menschlicher Ideale, kein personifiziertes Wesen.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Feuerbach verwarf den Dualismus und sah das Selbst als rein materiell.",
                 position: 1,
             },
@@ -1866,25 +1712,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Feuerbach sah den Lebenssinn in der Selbstverwirklichung und der Projektion menschlicher Ideale.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Feuerbach betrachtete Wissen als begrenzt und beeinflusst durch menschliche Projektionen.",
-                position: 2,
-            },
+
 
         },
     },
     "Frege, Gottlob": {
         description: "Gottlob Frege war ein deutscher Mathematiker und Philosoph, der die Grundlagen der modernen Logik legte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Frege befasste sich wenig mit dem Ich, das er als bedeutungslos für objektive Logik ansah.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Frege äußerte sich kaum zu einem personifizierten Gott und sah Logik als unabhängig von Religion.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Frege äußerte sich nicht explizit zum Dualismus und fokussierte auf formale Logik.",
                 position: 1,
             },
@@ -1900,25 +1743,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Frege äußerte sich kaum zum Lebenssinn und konzentrierte sich auf die objektive Logik.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Frege sah Wissen als begrenzt auf logische Strukturen und analytische Wahrheit.",
-                position: 3,
-            },
 
         },
     },
     "Wittgenstein, Ludwig": {
         description: "Ludwig Wittgenstein war ein österreichischer Philosoph, der die Sprachphilosophie revolutionierte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Wittgenstein sah das Ich als unbestimmt und durch Sprache konstruiert, ohne stabile Identität.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Wittgenstein diskutierte Gott als sprachliches Konzept, jedoch nicht als personifiziertes Wesen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Wittgenstein äußerte sich selten direkt zum Dualismus, konzentrierte sich auf Sprache als Realitätsfilter.",
                 position: 1,
             },
@@ -1934,25 +1773,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Wittgenstein sah den Lebenssinn als unaussprechlich und jenseits sprachlicher Begriffe.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Wittgenstein betonte die Grenzen des Wissens, das durch Sprache beschränkt ist.",
-                position: 2,
-            },
+
 
         },
     },
     "Schopenhauer, Arthur": {
         description: "Arthur Schopenhauer war ein deutscher Philosoph, der die Welt als 'Wille und Vorstellung' erklärte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Schopenhauer sah das Ich als Ausdruck des universellen Willens, letztlich illusionär und leidvoll.",
                 position: 1,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Schopenhauer verneinte einen personifizierten Gott und sah das Weltgeschehen als blindem Willen unterworfen.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Schopenhauer betrachtete den Dualismus kritisch und sah den Willen als universelle Kraft.",
                 position: 2,
             },
@@ -1968,24 +1804,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Schopenhauer verneinte einen positiven Lebenssinn und sah das Leben als von Leiden geprägt.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Schopenhauer sah Wissen als durch den Willen begrenzt und betonte das Verständnis von Leid.",
-                position: 3,
-            },
+
         },   },
 
             Pantheismus: {
                 description: "Pantheismus ist die religiöse Überzeugung, dass Gott und das Universum identisch sind und Gott in allem existiert.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Im Pantheismus wird das Ich als Teil des allumfassenden Göttlichen betrachtet.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Pantheismus lehnt einen personifizierten Gott ab und sieht das Göttliche in allen Dingen.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Pantheismus verneint die Trennung von Geist und Materie und sieht alles als Einheit.",
                         position: 1,
                     },
@@ -2001,24 +1834,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Der Pantheismus sieht den Lebenssinn in der Harmonie und Verbindung mit dem Universum.",
                         position: 2,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Pantheismus erkennt die Grenzen des Wissens und fördert ein intuitives Verständnis der Welt.",
-                        position: 2,
-                    },
+
                 },
             },
             "Zen-Buddhismus": {
                 description: "Zen-Buddhismus ist eine Schule des Buddhismus, die Meditation und das unmittelbare Erleben des Seins betont.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Im Zen-Buddhismus gilt das Ich als Illusion und wird durch Meditation transzendiert.",
                         position: 1,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Zen-Buddhismus lehnt die Vorstellung eines personifizierten Gottes ab und betont das Erwachen.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Zen-Buddhismus verneint den Dualismus und sieht Geist und Körper als Einheit im Moment.",
                         position: 1,
                     },
@@ -2034,24 +1864,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Zen-Buddhismus sieht den Lebenssinn in der Befreiung vom Leiden und dem Erleben des Jetzt.",
                         position: 2,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Zen erkennt die Begrenzungen des Wissens und betont das direkte Erleben der Wirklichkeit.",
-                        position: 2,
-                    },
+
                 },
             },
             Heraklit: {
                 description: "Heraklit war ein vorsokratischer Philosoph, der die Lehre vom ständigen Wandel und der Einheit der Gegensätze entwickelte.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Heraklit sieht das Ich als ständig im Wandel begriffen und Teil des ewigen Flusses.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Heraklit sprach von einem universalen Logos, jedoch nicht von einem personifizierten Gott.",
                         position: 2,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Heraklit sah das Selbst als dynamischen Teil des Weltgesetzes, ohne strikten Dualismus.",
                         position: 1,
                     },
@@ -2067,24 +1894,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Für Heraklit besteht der Lebenssinn in der Erkenntnis des ewigen Wandels.",
                         position: 2,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Heraklit betonte die Begrenztheit des Wissens und die Notwendigkeit, den Logos zu verstehen.",
-                        position: 2,
-                    },
+
                 },
             },
             "Berkeley, George": {
                 description: "George Berkeley war ein irischer Philosoph und Bischof, der den subjektiven Idealismus entwickelte.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Berkeley sieht das Ich als denkendes Wesen, das durch Wahrnehmung existiert.",
                         position: 3,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Berkeley glaubte an einen personifizierten Gott, der als Grundlage aller Wahrnehmung dient.",
                         position: 3,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Berkeley verneinte die Materie, glaubte jedoch an das Geistige als primäre Realität.",
                         position: 2,
                     },
@@ -2100,24 +1924,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Berkeley sah den Lebenssinn in der Nähe zu Gott und dem Streben nach Tugend.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Berkeley erkannte die Grenzen des Wissens und sah Wahrnehmung als einzige Quelle der Erkenntnis.",
-                        position: 3,
-                    },
+
                 },
             },
             "Ockham, William": {
                 description: "Wilhelm von Ockham war ein mittelalterlicher Philosoph, bekannt für das Sparsamkeitsprinzip 'Ockhams Rasiermesser'.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Für Ockham ist das Ich ein individuelles Wesen, das keine überflüssigen Annahmen benötigt.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Ockham glaubte an einen personifizierten Gott, dessen Existenz einfach postuliert wird.",
                         position: 3,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Ockham bejahte die Existenz einer Seele, ohne überflüssige Metaphysik.",
                         position: 3,
                     },
@@ -2133,24 +1954,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Für Ockham liegt der Lebenssinn in der Einhaltung göttlicher Gebote und der Einfachheit des Glaubens.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Ockham sah Wissen als begrenzt und erkannte die Notwendigkeit von Einfachheit in Erkenntnisprozessen.",
-                        position: 3,
-                    },
+
                 },
             },
             "Hume, David": {
                 description: "David Hume war ein schottischer Philosoph, der für seinen Empirismus und seine Skepsis bekannt ist.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Hume sah das Ich als Bündel von Wahrnehmungen, ohne beständige Essenz.",
                         position: 1,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Hume war skeptisch gegenüber einem personifizierten Gott und sah Glauben als irrational.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Hume lehnte den Dualismus ab und betrachtete das Selbst als Ansammlung von Wahrnehmungen.",
                         position: 1,
                     },
@@ -2166,24 +1984,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Hume sah keinen objektiven Lebenssinn, sondern betonte den Wert des Lebensgenusses.",
                         position: 1,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Hume erkannte die Begrenzungen des Wissens und sah Erkenntnis als begrenzt auf Erfahrung.",
-                        position: 3,
-                    },
+
                 },
             },
             "Fichte, Johann Gottlieb": {
                 description: "Johann Gottlieb Fichte war ein deutscher Idealist, der das Ich und die Freiheit des Individuums betonte.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Fichte sah das Ich als aktiven, schaffenden Grund aller Realität.",
                         position: 3,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Fichte sprach von einem göttlichen Prinzip, jedoch nicht von einem personifizierten Gott.",
                         position: 2,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Fichte verneinte den Dualismus und sah das Ich als Einheit des Seins.",
                         position: 2,
                     },
@@ -2199,24 +2014,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Für Fichte besteht der Lebenssinn im Streben des Ichs nach Selbstverwirklichung und Freiheit.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Fichte erkannte die Begrenzungen des Wissens und betonte das Ich als Quelle der Erkenntnis.",
-                        position: 3,
-                    },
+
                 },
             },
             "Kierkegaard, Søren": {
                 description: "Søren Kierkegaard war ein dänischer Philosoph und Vater des Existentialismus, der die persönliche Entscheidung betonte.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Kierkegaard sieht das Ich als in der Wahl und Existenz befindlich, ständig in Spannung.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Kierkegaard glaubte an einen personifizierten Gott, zu dem das Individuum eine persönliche Beziehung eingeht.",
                         position: 3,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Kierkegaard befürwortete die Existenz einer Seele, die das Individuum in die Beziehung zu Gott führt.",
                         position: 3,
                     },
@@ -2232,24 +2044,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Kierkegaard sah den Lebenssinn in der individuellen Beziehung zu Gott und der Selbstfindung.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Kierkegaard erkannte die Grenzen des Wissens und betonte die Bedeutung des Glaubens.",
-                        position: 2,
-                    },
+
                 },
             },
             "Mill, John Stuart": {
                 description: "John Stuart Mill war ein britischer Philosoph und Ökonom, bekannt für seinen Utilitarismus und Liberalismus.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Für Mill ist das Ich ein empfindendes Wesen, das nach Glück strebt.",
                         position: 3,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Mill äußerte sich kaum zu einem personifizierten Gott, da er empirische Beobachtung bevorzugte.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Mill äußerte sich wenig zum Dualismus und fokussierte sich auf das empirische Selbst.",
                         position: 2,
                     },
@@ -2265,24 +2074,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Für Mill liegt der Lebenssinn in der Maximierung des Glücks und der Freiheit des Individuums.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Mill erkannte die Grenzen des Wissens und betonte empirische Überprüfung als Erkenntnisquelle.",
-                        position: 3,
-                    },
+
                 },
             },
             "de Beauvoir, Simone": {
                 description: "Simone de Beauvoir war eine französische Existentialistin und Feministin, die das Verhältnis von Freiheit und Geschlecht untersuchte.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Für de Beauvoir ist das Ich ein freies Wesen, das sich in sozialer und geschlechtlicher Identität konstruiert.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "De Beauvoir lehnte einen personifizierten Gott ab und betonte das Individuum als frei.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "De Beauvoir sah den Körper als primäre Erfahrung des Selbst, ohne metaphysischen Dualismus.",
                         position: 1,
                     },
@@ -2298,24 +2104,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "De Beauvoir sah den Lebenssinn in der freien Selbstgestaltung und im Engagement für soziale Gerechtigkeit.",
                         position: 2,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "De Beauvoir erkannte die Begrenzungen des Wissens und betonte das Erleben über rationale Erkenntnis.",
-                        position: 2,
-                    },
+
                 },
             },
             "Habermas, Jürgen": {
                 description: "Jürgen Habermas ist ein deutscher Philosoph, bekannt für seine Theorie des kommunikativen Handelns.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Für Habermas ist das Ich ein kommunikatives Wesen, das sich in sozialen Interaktionen formt.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Habermas äußerte sich wenig zu einem personifizierten Gott und konzentrierte sich auf säkulare Kommunikation.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Habermas legte wenig Wert auf den Dualismus und sah das Selbst als sozial konstruiert.",
                         position: 1,
                     },
@@ -2331,24 +2134,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Habermas sieht den Lebenssinn in der Partizipation an rationaler Kommunikation und sozialem Zusammenleben.",
                         position: 3,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Habermas erkannte die Begrenzungen des Wissens und betonte die Rolle der kommunikativen Vernunft.",
-                        position: 3,
-                    },
+
                 },
             },
             "Zizek, Slavoj": {
                 description: "Slavoj Zizek ist ein slowenischer Philosoph und Kulturkritiker, bekannt für seine postmarxistische Theorie und Psychoanalyse.",
                 details: {
-                    "das Ich (Existenz eines beständigen Selbst)": {
+                    "Existenz eines Ichs bzw. beständigen Selbst": {
                         description: "Zizek sieht das Ich als durch ideologische Strukturen und unbewusste Triebe geprägt.",
                         position: 2,
                     },
-                    "ein personifizierter Gott": {
+                    "Existenz eines (personifizierten) Gottes": {
                         description: "Zizek analysiert die Idee eines personifizierten Gottes als ideologisches Konstrukt.",
                         position: 1,
                     },
-                    "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                    "Existenz einer Seele (Geist-Körper-Dualismus)": {
                         description: "Zizek verneint einen traditionellen Dualismus und betont den Einfluss des Unbewussten.",
                         position: 2,
                     },
@@ -2364,10 +2164,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                         description: "Zizek sieht keinen objektiven Lebenssinn, analysiert jedoch den ideologischen Bedarf daran.",
                         position: 2,
                     },
-                    "Begrenzung des menschlichen Wissens": {
-                        description: "Zizek betont die Grenzen des Wissens und die Rolle des Unbewussten in der Erkenntnis.",
-                        position: 2,
-                    },
+
                 },
             },
 
@@ -2376,15 +2173,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Scientology": {
         description: "Scientology ist eine moderne spirituelle Bewegung, die persönliche Freiheit und geistige Erlösung durch spezielle Techniken anstrebt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Scientology betrachtet das Ich als unsterbliches Wesen (Thetan), das von körperlicher und geistiger Existenz getrennt ist.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Scientology hat keine klare Vorstellung eines personifizierten Gottes, sondern fördert individuelle spirituelle Freiheit.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Scientology sieht eine deutliche Trennung zwischen Körper und Geist, wobei das wahre Selbst als unsterblicher Thetan existiert.",
                 position: 3,
             },
@@ -2400,25 +2197,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Scientology sieht den Lebenssinn in der Selbstverwirklichung und dem Erreichen geistiger Freiheit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Scientology betrachtet Wissen als erweiterbar und durch spezielle Praktiken zugänglich.",
-                position: 2,
-            },
+
         },
     },
 
     "Absurdismus": {
         description: "Absurdismus, besonders geprägt durch Albert Camus, betont das unvermeidbare Paradox zwischen menschlichem Streben nach Bedeutung und einer sinnlosen Welt.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Absurdismus erkennt das Ich an, jedoch als Entität in ständiger Konfrontation mit der Sinnlosigkeit.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Der Absurdismus weist die Existenz eines personifizierten Gottes zurück und sieht Gott als irrelevant für die menschliche Existenz.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Absurdismus beschäftigt sich weniger mit Dualismus und sieht das Selbst als rein existenziell.",
                 position: 2,
             },
@@ -2434,25 +2228,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Absurdismus lehnt einen inhärenten Lebenssinn ab und fordert, dass der Mensch selbst einen Sinn schafft.",
                 position: 1,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Absurdismus erkennt die Begrenztheit menschlichen Wissens im Verständnis des Universums an.",
-                position: 3,
-            },
+
         },
     },
 
     "Hedonismus": {
         description: "Hedonismus ist eine ethische Theorie, die das Streben nach Lust und das Vermeiden von Schmerz als höchstes Gut ansieht.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Im Hedonismus ist das Ich oft als Empfänger von Lust und Schmerz zentral.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Hedonismus betrachtet die Existenz eines Gottes als irrelevant zur Lustmaximierung.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Hedonismus bezieht sich selten auf Dualismus und fokussiert eher auf das physische Erleben.",
                 position: 2,
             },
@@ -2468,24 +2259,21 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für den Hedonismus ist der Sinn des Lebens das Erreichen von maximalem Vergnügen.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Hedonismus ist in Bezug auf Wissen nicht spezifisch, sondern eher auf Erfahrung fokussiert.",
-                position: 2,
-            },
+
         },
     },
     "Transzendentalismus": {
         description: "Der Transzendentalismus betont die spirituelle Natur und die Verbundenheit des Individuums mit der Natur.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Der Transzendentalismus betrachtet das Selbst als spirituelle, mit der Natur verbundene Einheit.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Transzendentalisten neigen dazu, Gott als unpersönliche, allgegenwärtige Kraft in der Natur zu sehen.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Transzendentalismus sieht den Geist als immanentes Teil des Selbst, das über den Körper hinausgeht.",
                 position: 3,
             },
@@ -2501,25 +2289,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Im Transzendentalismus ist der Lebenssinn die persönliche Verbindung mit dem Göttlichen und der Natur.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Transzendentalismus akzeptiert, dass menschliches Wissen begrenzt ist und Inspiration über das Rationale hinausgeht.",
-                position: 2,
-            },
+
         },
     },
 
     "Arendt, Hannah": {
         description: "Hannah Arendt war eine politische Theoretikerin, die sich mit den Konzepten von Macht, Freiheit und Totalitarismus beschäftigte.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Arendt betrachtet das Ich als Ergebnis von Handlungen und Beziehungen in der sozialen Welt.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Arendt äußerte sich kaum über einen personalen Gott und hielt Religion für eine private Angelegenheit.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Arendt äußerte sich selten explizit zum Dualismus, betonte jedoch das Denken als spirituelle Praxis.",
                 position: 2,
             },
@@ -2535,25 +2320,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Arendt betrachtete den Lebenssinn als eingebettet in die aktive Teilnahme am politischen und sozialen Leben.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Arendt erkannte an, dass Wissen begrenzt ist und betonte die Wichtigkeit des kritischen Denkens.",
-                position: 3,
-            },
+
         },
     },
 
     "von Canterbury, Anselm": {
         description: "Anselm von Canterbury war ein mittelalterlicher Theologe und Philosoph, bekannt für das ontologische Argument für Gottes Existenz.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Anselm sah das Ich als von Gott erschaffenes, unsterbliches Wesen.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Anselm postulierte einen personifizierten Gott, der als höchste Realität existiert.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Anselm bejahte eine unsterbliche Seele als Teil des göttlichen Plans.",
                 position: 3,
             },
@@ -2569,10 +2351,7 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Anselm sah den Lebenssinn in der Gotteserkenntnis und dem Streben nach Tugend.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Anselm erkannte, dass menschliches Wissen gegenüber göttlicher Weisheit begrenzt ist.",
-                position: 3,
-            },
+
         },
     },
 
@@ -2580,15 +2359,15 @@ export const logosEntries: { [key: string]: LogosEntry } = {
     "Chomsky, Noam": {
         description: "Noam Chomsky ist ein amerikanischer Linguist und Philosoph, bekannt für seine Theorie der generativen Grammatik und seine politische Kritik.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Chomsky sieht das Ich als veränderbares Ergebnis von Sprache und Kultur.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Chomsky äußerte sich skeptisch über Religion und glaubt nicht an einen personalen Gott.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Chomsky betrachtet das Denken als Produkt biologischer Prozesse, bleibt jedoch offen für philosophische Fragen des Bewusstseins.",
                 position: 2,
             },
@@ -2604,25 +2383,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Chomsky sieht den Sinn des Lebens in der intellektuellen und moralischen Weiterentwicklung.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Chomsky erkennt die Grenzen des menschlichen Wissens an, besonders in der Linguistik und politischen Realität.",
-                position: 3,
-            },
+
         },
     },
 
     "Rawls, John": {
         description: "John Rawls war ein amerikanischer Philosoph, bekannt für seine Theorie der Gerechtigkeit und seine Idee des 'Schleiers des Nichtwissens'.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Rawls sieht das Ich als autonomes moralisches Wesen, das Gerechtigkeit anstrebt.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Rawls äußerte sich selten über die Existenz eines personifizierten Gottes, sah jedoch moralische Prinzipien als universell.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Rawls konzentriert sich eher auf ethische als metaphysische Fragen und äußerte sich wenig zum Dualismus.",
                 position: 2,
             },
@@ -2638,25 +2414,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Rawls sah den Lebenssinn im Streben nach einer gerechten und fairen Gesellschaft.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Rawls erkennt an, dass Wissen begrenzt ist, und legt den Fokus auf ethische Prinzipien zur Überwindung dieser Grenzen.",
-                position: 2,
-            },
+
         },
     },
 
     "Popper, Karl": {
         description: "Karl Popper war ein österreichisch-britischer Philosoph, bekannt für seine Theorie der Falsifizierbarkeit und seine Arbeiten zur offenen Gesellschaft.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Popper sah das Ich als Ergebnis von Handlungen und bewussten Entscheidungen.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Popper war skeptisch gegenüber Religion und lehnte einen personalen Gott ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Popper entwickelte eine Theorie des 'Drei-Welten-Modells', die das Mentale als eigenständige Dimension ansieht.",
                 position: 3,
             },
@@ -2672,25 +2445,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Popper sah den Sinn des Lebens in der wissenschaftlichen Erkenntnis und dem Streben nach Freiheit.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Popper betonte die Begrenzung menschlichen Wissens und sah die Falsifizierbarkeit als zentralen Mechanismus der Wissenschaft.",
-                position: 3,
-            },
+
         },
     },
 
     "Russell, Bertrand": {
         description: "Bertrand Russell war ein britischer Philosoph und Mathematiker, bekannt für seine Arbeiten zur Logik und seine Kritik an Religion.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Russell betrachtete das Ich eher skeptisch und sah es als Produkt der menschlichen Erfahrung.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Russell war ein bekannter Atheist und lehnte die Existenz eines personalen Gottes ab.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Russell sah die Seele skeptisch und befürwortete eine materialistische Sichtweise.",
                 position: 1,
             },
@@ -2706,25 +2476,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Russell sah keinen inhärenten Lebenssinn und betrachtete das Streben nach Wissen als Zweck.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Russell betonte die Begrenztheit menschlichen Wissens und forderte logische und wissenschaftliche Methoden.",
-                position: 3,
-            },
+
         },
     },
 
     "Leibniz, Gottfried Wilhelm": {
         description: "Gottfried Wilhelm Leibniz war ein deutscher Philosoph und Mathematiker, bekannt für seine Theorie der Monaden und den Optimismus.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Leibniz sah das Ich als Monade, eine unteilbare und beständige Einheit des Bewusstseins.",
                 position: 3,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Leibniz glaubte an einen personalen Gott, der die beste aller möglichen Welten geschaffen hat.",
                 position: 3,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Leibniz bejahte den Dualismus und sah die Monaden als geistige Substanzen.",
                 position: 3,
             },
@@ -2740,25 +2507,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Leibniz sah den Lebenssinn im Verständnis und Nachahmen der göttlichen Ordnung.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Leibniz erkannte die Grenzen menschlichen Wissens, glaubte aber an die Fähigkeit zur unendlichen Erkenntnissteigerung.",
-                position: 3,
-            },
+
         },
     },
 
     "Comte, Auguste": {
         description: "Auguste Comte war ein französischer Philosoph, Begründer des Positivismus und der Soziologie.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Comte sah das Ich als Produkt sozialer Einflüsse und Erfahrungen.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Comte lehnte einen personalen Gott ab und sah die Religion als soziologisches Phänomen.",
                 position: 1,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Comte akzeptierte keinen Dualismus und sah das menschliche Bewusstsein als rein biologisch.",
                 position: 1,
             },
@@ -2774,25 +2538,22 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Comte sah den Sinn des Lebens in der Verbesserung der Gesellschaft durch wissenschaftliche Fortschritte.",
                 position: 3,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Comte erkannte die Grenzen menschlichen Wissens und betonte die Bedeutung empirischer Forschung.",
-                position: 3,
-            },
+
         },
     },
 
     "Machiavelli, Niccolo": {
         description: "Niccolo Machiavelli war ein italienischer Philosoph und Politiker, bekannt für seine realistische Sicht auf Macht und Politik.",
         details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
                 description: "Machiavelli sah das Ich als flexibel, anpassungsfähig und von politischen Umständen beeinflusst.",
                 position: 2,
             },
-            "ein personifizierter Gott": {
+            "Existenz eines (personifizierten) Gottes": {
                 description: "Machiavelli zeigte wenig Interesse an einem personalen Gott und betonte die Rolle des Schicksals.",
                 position: 2,
             },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
                 description: "Machiavelli befasste sich nicht explizit mit dem Dualismus, sah aber den Menschen als pragmatisch und materiell.",
                 position: 2,
             },
@@ -2808,17 +2569,9 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                 description: "Für Machiavelli bestand der Lebenssinn im Erfolg und dem Streben nach politischer Macht.",
                 position: 2,
             },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Machiavelli erkannte die Grenzen menschlicher Weisheit und die Bedeutung von strategischer Anpassung.",
-                position: 3,
-            },
+
         },
     },
-
-
-
-
-
 
 
 
