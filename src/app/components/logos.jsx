@@ -68,6 +68,7 @@ export default function Logos() {
                     </div>
 
                     {/* Zweites Dropdown */}
+
                     {categorySelection && (
                         <div className="mb-4">
                             <label className="block mb-2">Unterkategorie auswählen:</label>
@@ -77,14 +78,39 @@ export default function Logos() {
                                 onChange={handleSubcategorySelection}
                             >
                                 <option value="">Bitte auswählen</option>
-                                {subcategoryOptions[categorySelection].map((option) => (
-                                    <option key={option} value={option}>
-                                        {option}
-                                    </option>
-                                ))}
+
+                                {/* Dynamische Generierung der Dropdown-Optionen */}
+                                {categorySelection === "Person" ? (
+                                    Object.entries(subcategoryOptions["Person"]).map(([group, options]) => (
+                                        <optgroup key={group} label={group}>
+                                            {options.map((option) => (
+                                                <option key={option} value={option}>
+                                                    {option}
+                                                </option>
+                                            ))}
+                                        </optgroup>
+                                    ))
+                                ) :     categorySelection === "Religion" ? (
+                                        Object.entries(subcategoryOptions["Religion"]).map(([group, options]) => (
+                                            <optgroup key={group} label={group}>
+                                                {options.map((option) => (
+                                                    <option key={option} value={option}>
+                                                        {option}
+                                                    </option>
+                                                ))}
+                                            </optgroup>
+                                        ))
+                                    ) :     (
+                                    subcategoryOptions[categorySelection].map((option) => (
+                                        <option key={option} value={option}>
+                                            {option}
+                                        </option>
+                                    ))
+                                )}
                             </select>
                         </div>
                     )}
+
                 </div>
 
 

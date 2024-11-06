@@ -11,106 +11,133 @@ interface LogosEntry {
     };
 }
 
-export const categoryOptions = ["philosophische Strömung", "Religion", "Person"];
+export const categoryOptions = ["Person", "Religion", "philosophische Strömung"];
 
 export const subcategoryOptions = {
-        "philosophische Strömung": [
-            "Stoizismus",
-            "Zynismus",
-            "Antinatalismus",
-            "Idealismus",
-            "Realismus",
-            "Empirismus",
-            "Rationalismus",
-            "Existentialismus",
-            "Nihilismus",
-            "Utilitarismus",
-            "Strukturalismus",
-            "Pragmatismus",
-            "Poststrukturalismus",
-            "Relativismus",
-            "Konsequentialismus",
-            "Deontologismus",
-            "Absurdismus",
-            "Hedonismus",
-            "Transzendentalismus"
+    "philosophische Strömung": [
+        "Existentialismus",
+        "Rationalismus",
+        "Realismus",
+        "Idealismus",
+        "Empirismus",
+        "Stoizismus",
+        "Nihilismus",
+        "Pragmatismus",
+        "Utilitarismus",
+        "Zynismus",
+        "Hedonismus",
+        "Strukturalismus",
+        "Relativismus",
+        "Antinatalismus",
+        "Deontologismus",
+        "Konsequentialismus",
+        "Poststrukturalismus",
+        "Absurdismus",
+        "Transzendentalismus"
+    ],
+    Religion: {
+        "Abrahamitische Religionen": [
+            "Judentum",
+            "Christentum",
+            "Islam"
         ],
-    Religion: [
-        "Shinto",
-        "Christentum",
-        "Buddhismus",
-        "Hinduismus",
-        "Judentum",
-        "Islam",
-        "Asatru",
-        "Sikhismus",
-        "Taoismus",
-        "Konfuzianismus",
-        "Gnostizismus",
-        "Zoroastrismus",
-        "Voodoo",
-        "Pantheismus",
-        "Zen-Buddhismus",
-        "Scientology"
-    ],
-    Person: [
-        "Nietzsche, Friedrich",
-        "Aristoteles",
-        "Cioran, Emil",
-        "Platon",
-        "Hobbes, Thomas",
-        "Descartes, René",
-        "Feuerbach, Ludwig",
-        "Frege, Gottlob",
-        "Wittgenstein, Ludwig",
-        "Schopenhauer, Arthur",
-        "Sokrates",
-        "Locke, John",
-        "Spinoza, Baruch",
-        "Kant, Immanuel",
-        "Sartre, Jean-Paul",
-        "Camus, Albert",
-        "Marx, Karl",
-        "Foucault, Michel",
-        "Heidegger, Martin",
-        "Epikur",
-        "Thomas von Aquin",
-        "Diogenes",
-        "Konfuzius",
-        "Laotse",
-        "Derrida, Jacques",
-        "Bacon, Francis",
-        "Heraklit",
-        "Berkeley, George",
-        "Ockham, William",
-        "Hume, David",
-        "Fichte, Johann Gottlieb",
-        "Kierkegaard, Søren",
-        "Mill, John Stuart",
-        "de Beauvoir, Simone",
-        "Habermas, Jürgen",
-        "Zizek, Slavoj",
-        "Arendt, Hannah",
-        "von Canterbury, Anselm",
-        "Chomsky, Noam",
-        "Rawls, John",
-        "Popper, Karl",
-        "Russell, Bertrand",
-        "Leibniz, Gottfried Wilhelm",
-        "Comte, Auguste",
-        "Machiavelli, Niccolo",
-        "Demokrit",
-        "Anaximander",
-        "Plotin",
-        "Aurel, Mark",
-        "Augustinus",
-        "Averroes",
-        "de Montaigne, Michel",
-        "de Spinoza, Baruch",
-        "Baudrillard, Jean"
-    ],
-
+        "Dharmische Religionen": [
+            "Hinduismus",
+            "Buddhismus",
+            "Sikhismus",
+            "Zen-Buddhismus"
+        ],
+        "Chinesische Religionen und Philosophien": [
+            "Taoismus",
+            "Konfuzianismus"
+        ],
+        "Japanische Religionen": [
+            "Shinto",
+            "Zen-Buddhismus"
+        ],
+        "Dualistische und esoterische Religionen": [
+            "Gnostizismus",
+            "Zoroastrismus"
+        ],
+        "Natur- und indigene Religionen": [
+            "Asatru",
+            "Voodoo"
+        ],
+        "Moderne Religionen und spirituelle Bewegungen": [
+            "Scientology",
+            "Pantheismus"
+        ]
+    },
+    Person: {
+        "Philosophen der Antike": [
+            "Aristoteles",
+            "Platon",
+            "Sokrates",
+            "Epikur",
+            "Diogenes",
+            "Heraklit",
+            "Demokrit",
+            "Anaximander",
+            "Plotin",
+            "Konfuzius",
+            "Laotse",
+            "Aurel, Mark"
+        ],
+        "Philosophen des Mittelalters": [
+            "Thomas von Aquin",
+            "Augustinus",
+            "Averroes",
+            "von Canterbury, Anselm",
+            "Ockham, William"
+        ],
+        "Philosophen der Renaissance": [
+            "Machiavelli, Niccolo",
+            "Bacon, Francis",
+            "de Montaigne, Michel"
+        ],
+        "Philosophen des 17. Jahrhunderts": [
+            "Descartes, René",
+            "Hobbes, Thomas",
+            "Spinoza, Baruch",
+            "Locke, John",
+            "Leibniz, Gottfried Wilhelm",
+            "Berkeley, George"
+        ],
+        "Philosophen des 18. Jahrhunderts": [
+            "Kant, Immanuel",
+            "Hume, David",
+            "Comte, Auguste"
+        ],
+        "Philosophen des 19. Jahrhunderts": [
+            "Nietzsche, Friedrich",
+            "Kierkegaard, Søren",
+            "Feuerbach, Ludwig",
+            "Mill, John Stuart",
+            "Marx, Karl",
+            "Schopenhauer, Arthur",
+            "Fichte, Johann Gottlieb"
+        ],
+        "Philosophen des 20. Jahrhunderts": [
+            "Wittgenstein, Ludwig",
+            "Sartre, Jean-Paul",
+            "Camus, Albert",
+            "Foucault, Michel",
+            "Heidegger, Martin",
+            "Derrida, Jacques",
+            "Russell, Bertrand",
+            "Zizek, Slavoj",
+            "Arendt, Hannah",
+            "Popper, Karl",
+            "Habermas, Jürgen",
+            "Frege, Gottlob",
+            "Rawls, John",
+            "Chomsky, Noam",
+            "Baudrillard, Jean",
+            "de Beauvoir, Simone"
+        ]
+    }
 };
+
 
 export const themeOptions = ["Existenz eines Ichs bzw. beständigen Selbst", "Existenz eines (personifizierten) Gottes", "Existenz einer Seele (Geist-Körper-Dualismus)",
     "Existenz von objektiver Moral", "Existenz eines freien Willens", "Existenz eines Lebenssinns"];
