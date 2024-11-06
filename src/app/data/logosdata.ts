@@ -33,7 +33,6 @@ export const subcategoryOptions = {
             "Deontologismus",
             "Absurdismus",
             "Hedonismus",
-            "Empirismus",
             "Transzendentalismus"
         ],
     Religion: [
@@ -2364,6 +2363,9 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                     },
                 },
             },
+
+
+
     "Scientology": {
         description: "Scientology ist eine moderne spirituelle Bewegung, die persönliche Freiheit und geistige Erlösung durch spezielle Techniken anstrebt.",
         details: {
@@ -2465,41 +2467,6 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
-
-    "Empirismus": {
-        description: "Empirismus ist eine erkenntnistheoretische Strömung, die Wissen aus Sinneserfahrung ableitet.",
-        details: {
-            "das Ich (Existenz eines beständigen Selbst)": {
-                description: "Empiristen sehen das Ich als eine Ansammlung von Erfahrungen, nicht als beständige Entität.",
-                position: 2,
-            },
-            "ein personifizierter Gott": {
-                description: "Empirismus sieht die Existenz eines Gottes skeptisch, da dieser nicht empirisch nachweisbar ist.",
-                position: 1,
-            },
-            "Geist-Körper-Dualismus (Existenz einer Seele)": {
-                description: "Empirismus bevorzugt eine monistische Sichtweise, da Dualismus schwer empirisch zu belegen ist.",
-                position: 2,
-            },
-            "Existenz von objektiver Moral": {
-                description: "Empiristen neigen dazu, moralische Werte als relativ und kulturbedingt zu sehen.",
-                position: 2,
-            },
-            "Existenz eines freien Willens": {
-                description: "Empirismus macht keine direkten Aussagen über freien Willen, tendiert jedoch zu deterministischen Ansätzen.",
-                position: 2,
-            },
-            "Existenz eines Lebenssinns": {
-                description: "Empirismus betrachtet den Lebenssinn als interpretativ und aus Erfahrung ableitbar.",
-                position: 2,
-            },
-            "Begrenzung des menschlichen Wissens": {
-                description: "Empirismus erkennt an, dass Wissen auf die Erfahrung beschränkt ist und absolute Erkenntnis unmöglich bleibt.",
-                position: 3,
-            },
-        },
-    },
-
     "Transzendentalismus": {
         description: "Der Transzendentalismus betont die spirituelle Natur und die Verbundenheit des Individuums mit der Natur.",
         details: {
