@@ -3,91 +3,91 @@ import {
     categoryOptions,
     subcategoryOptions,
     themeOptions,
-    judgmentOptions,
     logosEntries,
 } from "@/app/data/logosdata";
 
 export default function Logos() {
     const [categorySelection, setCategorySelection] = useState("");
     const [subcategorySelection, setSubcategorySelection] = useState("");
-    const [judgmentSelection, setJudgmentSelection] = useState("");
+    const [selectedTheme, setSelectedTheme] = useState("");
+    const [selectedJudgment, setSelectedJudgment] = useState(null);
 
     const handleCategorySelection = (value) => {
         setCategorySelection(value);
         setSubcategorySelection("");
-        setJudgmentSelection("");
     };
 
     const handleSubcategorySelection = (e) => {
         setSubcategorySelection(e.target.value);
-        setJudgmentSelection("");
     };
 
-    const handleJudgmentSelection = (e) => {
-        setJudgmentSelection(e.target.value);
+    const handleThemeSelection = (e) => {
+        setSelectedTheme(e.target.value);
+    };
+
+    const handleJudgmentSelection = (value) => {
+        setSelectedJudgment(value);
     };
 
     // Angepasste Logik für gefilterte Einträge
     const filteredEntries = Object.entries(logosEntries)
         .filter(([_, entry]) => {
-            if (!subcategorySelection) return false;
-            const details = entry.details;
-            if (!details) return false;
-
-            // Überprüfen, ob irgendein Thema den ausgewählten Urteilskriterien entspricht
-            const matchingThemes = Object.values(details).filter((detail) => {
-                if (judgmentSelection === "Klare Ablehnung") return detail.position === 1;
-                if (judgmentSelection === "Uneindeutig") return detail.position === 2;
-                if (judgmentSelection === "Klare Zustimmung") return detail.position === 3;
-                return false;
-            });
-
-            return matchingThemes.length > 0;
+            if (!selectedTheme || selectedJudgment === null) return false;
+            const detail = entry.details[selectedTheme];
+            if (!detail) return false;
+            return detail.position === selectedJudgment;
         })
         .map(([name]) => name)
         .join(" | ");
 
     return (
         <div className="p-12 bg-black text-white m-3">
-            <span className="text-l font-bold mb-2">Wer sagt eigentlich was?</span><br />
-            <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
-                Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br />
+            <div className="flex flex-col md:flex-row md:justify-between">
+                {/* Linke Seite mit Kategorie und Unterkategorie */}
+                <div>
+                    <span className="text-l font-bold mb-2">Wer sagt eigentlich was?</span><br />
+                    <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
+                        Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br />
 
-            {/* Kategorie-Buttons */}
-            <div className="mb-4 mt-4">
-                <label className="block mb-2">Kategorie auswählen:</label>
-                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-                    {categoryOptions.map((option) => (
-                        <button
-                            key={option}
-                            onClick={() => handleCategorySelection(option)}
-                            className={`p-2 ${categorySelection === option ? "bg-blue-500" : "bg-gray-600"} 
-                            hover:bg-blue-700 text-white rounded`}
-                        >
-                            {option}
-                        </button>
-                    ))}
+                    {/* Kategorie-Buttons */}
+                    <div className="mb-4 mt-4">
+                        <label className="block mb-2">Kategorie auswählen:</label>
+                        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                            {categoryOptions.map((option) => (
+                                <button
+                                    key={option}
+                                    onClick={() => handleCategorySelection(option)}
+                                    className={`p-2 ${categorySelection === option ? "bg-blue-500" : "bg-gray-600"} 
+                                    hover:bg-blue-700 text-white rounded`}
+                                >
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Zweites Dropdown */}
+                    {categorySelection && (
+                        <div className="mb-4">
+                            <label className="block mb-2">Unterkategorie auswählen:</label>
+                            <select
+                                className="text-black p-2 mr-4"
+                                value={subcategorySelection}
+                                onChange={handleSubcategorySelection}
+                            >
+                                <option value="">Bitte auswählen</option>
+                                {subcategoryOptions[categorySelection].map((option) => (
+                                    <option key={option} value={option}>
+                                        {option}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
                 </div>
+
+
             </div>
-
-            {/* Zweites Dropdown */}
-            {categorySelection && (
-                <div className="mb-4">
-                    <label className="block mb-2">Unterkategorie auswählen:</label>
-                    <select
-                        className="text-black p-2 mr-4"
-                        value={subcategorySelection}
-                        onChange={handleSubcategorySelection}
-                    >
-                        <option value="">Bitte auswählen</option>
-                        {subcategoryOptions[categorySelection].map((option) => (
-                            <option key={option} value={option}>
-                                {option}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            )}
 
             {/* Beschreibung nach dem zweiten Dropdown */}
             {subcategorySelection && (
@@ -148,31 +148,64 @@ export default function Logos() {
                 );
             })}
 
-            {/* Urteilsauswahl */}
-            {subcategorySelection && (
-                <div className="mb-4 mt-16">
-                    <label className="block mb-2">Alle DB-Einträge nach Position filtern:</label>
+
+            {/* Rechte Seite mit Urteilsauswahl */}
+            <div className="mt-4 md:mt-0">
+                {/* Themenauswahl */}
+                <div className="mb-4">
+                    <span className="font-extrabold"> Gesamte Datenbank filtern:</span>
+                    <label className="block mb-2">Thema auswählen:</label>
                     <select
-                        className="text-black p-2"
-                        value={judgmentSelection}
-                        onChange={handleJudgmentSelection}
+                        className="text-black p-2 w-full"
+                        value={selectedTheme}
+                        onChange={handleThemeSelection}
                     >
                         <option value="">Bitte auswählen</option>
-                        {judgmentOptions.map((option) => (
+                        {themeOptions.map((option) => (
                             <option key={option} value={option}>
                                 {option}
                             </option>
                         ))}
                     </select>
                 </div>
-            )}
 
-            {/* Liste der gefilterten Namen */}
-            {judgmentSelection && (
-                <div className="mt-4 p-4 bg-gray-800 rounded">
-                    <p>{filteredEntries || "Keine passenden Einträge gefunden."}</p>
-                </div>
-            )}
+                {/* Urteilsauswahl mit Buttons */}
+                {selectedTheme && (
+                    <div className="mb-4">
+                        <label className="block mb-2">Position auswählen:</label>
+                        <div className="flex space-x-4">
+                            <button
+                                onClick={() => handleJudgmentSelection(1)}
+                                className={`p-2 ${selectedJudgment === 1 ? "bg-blue-500" : "bg-gray-600"} 
+                                    hover:bg-blue-700 text-white rounded flex items-center`}
+                            >
+                                <span className="text-2xl">👎</span>
+                            </button>
+                            <button
+                                onClick={() => handleJudgmentSelection(2)}
+                                className={`p-2 ${selectedJudgment === 2 ? "bg-blue-500" : "bg-gray-600"} 
+                                    hover:bg-blue-700 text-white rounded flex items-center`}
+                            >
+                                <span className="text-2xl">👈</span>
+                            </button>
+                            <button
+                                onClick={() => handleJudgmentSelection(3)}
+                                className={`p-2 ${selectedJudgment === 3 ? "bg-blue-500" : "bg-gray-600"} 
+                                    hover:bg-blue-700 text-white rounded flex items-center`}
+                            >
+                                <span className="text-2xl">👍</span>
+                            </button>
+                        </div>
+
+                    </div>
+                )}
+                {/* Liste der gefilterten Namen */}
+                {selectedTheme && selectedJudgment !== null && (
+                    <div className="mt-4 p-4 bg-gray-800 max-w-2xl rounded">
+                        <p>{filteredEntries || "Keine passenden Einträge gefunden."}</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

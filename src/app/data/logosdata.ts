@@ -2357,8 +2357,6 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                     },
                 },
             },
-
-
 };
 
 export const judgmentOptions = ["Klare Ablehnung", "Uneindeutig", "Klare Zustimmung"];
