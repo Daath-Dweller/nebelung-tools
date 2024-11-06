@@ -45,12 +45,13 @@ export default function Logos() {
             <div className="flex flex-col md:flex-row md:justify-between">
                 {/* Linke Seite mit Kategorie und Unterkategorie */}
                 <div>
-                    <span className="text-l font-bold mb-2">Wer sagt eigentlich was?</span><br />
-                    <span className="text-xs">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
-                        Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br />
+                    <span className="text-xl font-bold mb-2">Wer sagt eigentlich was?</span><br/>
+                    <span className="text-sm">Die 5 Kernfragen der Philosophie: Was ist Wirklichkeit? Was können wir wissen? Wie sollten wir leben?
+                        Was ist Bewusstsein? Was ist der Sinn des Lebens?</span><br/><br/>
 
                     {/* Kategorie-Buttons */}
-                    <div className="mb-4 mt-4">
+                    <span className="font-extrabold"> [ Einzelne Einträge aufrufen ]</span>
+                    <div className="mb-4 mt-2">
                         <label className="block mb-2">Kategorie auswählen:</label>
                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                             {categoryOptions.map((option) => (
@@ -149,12 +150,12 @@ export default function Logos() {
             })}
 
 
-            {/* Rechte Seite mit Urteilsauswahl */}
-            <div className="mt-4 md:mt-0">
+            {/* Urteilsauswahl */}
+            <div className="mt-8">
                 {/* Themenauswahl */}
                 <div className="mb-4">
-                    <span className="font-extrabold"> Gesamte Datenbank filtern:</span>
-                    <label className="block mb-2">Thema auswählen:</label>
+                    <span className="font-extrabold"> [ Gesamte Datenbank filtern ]</span>
+                    <label className="block mb-2 mt-2">Thema auswählen:</label>
                     <select
                         className="text-black p-2 w-full"
                         value={selectedTheme}

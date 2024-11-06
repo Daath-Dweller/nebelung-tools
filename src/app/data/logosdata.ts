@@ -91,7 +91,14 @@ export const subcategoryOptions = {
         "Habermas, Jürgen",
         "Zizek, Slavoj",
         "Arendt, Hannah",
-        "von Canterbury, Anselm"
+        "von Canterbury, Anselm",
+        "Chomsky, Noam",
+        "Rawls, John",
+        "Popper, Karl",
+        "Russell, Bertrand",
+        "Leibniz, Gottfried Wilhelm",
+        "Comte, Auguste",
+        "Machiavelli, Niccolo"
     ],
 
 };
@@ -2568,6 +2575,251 @@ export const logosEntries: { [key: string]: LogosEntry } = {
             },
         },
     },
+
+
+    "Chomsky, Noam": {
+        description: "Noam Chomsky ist ein amerikanischer Linguist und Philosoph, bekannt für seine Theorie der generativen Grammatik und seine politische Kritik.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Chomsky sieht das Ich als veränderbares Ergebnis von Sprache und Kultur.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Chomsky äußerte sich skeptisch über Religion und glaubt nicht an einen personalen Gott.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Chomsky betrachtet das Denken als Produkt biologischer Prozesse, bleibt jedoch offen für philosophische Fragen des Bewusstseins.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Chomsky sieht moralische Prinzipien als tief in menschlicher Natur und Vernunft verwurzelt, aber nicht absolut.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Chomsky bejaht freien Willen in einem natürlichen und gesellschaftlichen Rahmen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Chomsky sieht den Sinn des Lebens in der intellektuellen und moralischen Weiterentwicklung.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Chomsky erkennt die Grenzen des menschlichen Wissens an, besonders in der Linguistik und politischen Realität.",
+                position: 3,
+            },
+        },
+    },
+
+    "Rawls, John": {
+        description: "John Rawls war ein amerikanischer Philosoph, bekannt für seine Theorie der Gerechtigkeit und seine Idee des 'Schleiers des Nichtwissens'.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Rawls sieht das Ich als autonomes moralisches Wesen, das Gerechtigkeit anstrebt.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Rawls äußerte sich selten über die Existenz eines personifizierten Gottes, sah jedoch moralische Prinzipien als universell.",
+                position: 2,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Rawls konzentriert sich eher auf ethische als metaphysische Fragen und äußerte sich wenig zum Dualismus.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Rawls glaubte an objektive Gerechtigkeitsprinzipien, die unabhängig von Religion oder Kultur bestehen.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Rawls unterstützt freien Willen, um gerechte Entscheidungen im 'Schleier des Nichtwissens' zu treffen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Rawls sah den Lebenssinn im Streben nach einer gerechten und fairen Gesellschaft.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Rawls erkennt an, dass Wissen begrenzt ist, und legt den Fokus auf ethische Prinzipien zur Überwindung dieser Grenzen.",
+                position: 2,
+            },
+        },
+    },
+
+    "Popper, Karl": {
+        description: "Karl Popper war ein österreichisch-britischer Philosoph, bekannt für seine Theorie der Falsifizierbarkeit und seine Arbeiten zur offenen Gesellschaft.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Popper sah das Ich als Ergebnis von Handlungen und bewussten Entscheidungen.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Popper war skeptisch gegenüber Religion und lehnte einen personalen Gott ab.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Popper entwickelte eine Theorie des 'Drei-Welten-Modells', die das Mentale als eigenständige Dimension ansieht.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Popper hielt an universellen ethischen Prinzipien fest, die eine offene Gesellschaft ermöglichen.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Popper unterstützte die Idee des freien Willens als notwendigen Bestandteil der offenen Gesellschaft.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Popper sah den Sinn des Lebens in der wissenschaftlichen Erkenntnis und dem Streben nach Freiheit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Popper betonte die Begrenzung menschlichen Wissens und sah die Falsifizierbarkeit als zentralen Mechanismus der Wissenschaft.",
+                position: 3,
+            },
+        },
+    },
+
+    "Russell, Bertrand": {
+        description: "Bertrand Russell war ein britischer Philosoph und Mathematiker, bekannt für seine Arbeiten zur Logik und seine Kritik an Religion.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Russell betrachtete das Ich eher skeptisch und sah es als Produkt der menschlichen Erfahrung.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Russell war ein bekannter Atheist und lehnte die Existenz eines personalen Gottes ab.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Russell sah die Seele skeptisch und befürwortete eine materialistische Sichtweise.",
+                position: 1,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Russell sah Moral als weitgehend relativ und auf menschlicher Vernunft basierend.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Russell war unentschlossen und sah den freien Willen als problematisch im Kontext der Determinismus-Debatte.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Russell sah keinen inhärenten Lebenssinn und betrachtete das Streben nach Wissen als Zweck.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Russell betonte die Begrenztheit menschlichen Wissens und forderte logische und wissenschaftliche Methoden.",
+                position: 3,
+            },
+        },
+    },
+
+    "Leibniz, Gottfried Wilhelm": {
+        description: "Gottfried Wilhelm Leibniz war ein deutscher Philosoph und Mathematiker, bekannt für seine Theorie der Monaden und den Optimismus.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Leibniz sah das Ich als Monade, eine unteilbare und beständige Einheit des Bewusstseins.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Leibniz glaubte an einen personalen Gott, der die beste aller möglichen Welten geschaffen hat.",
+                position: 3,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Leibniz bejahte den Dualismus und sah die Monaden als geistige Substanzen.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Leibniz vertrat die Existenz einer objektiven Moral, die in der göttlichen Vernunft begründet ist.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Leibniz unterstützte den freien Willen im Rahmen einer prästabilierten Harmonie.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Leibniz sah den Lebenssinn im Verständnis und Nachahmen der göttlichen Ordnung.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Leibniz erkannte die Grenzen menschlichen Wissens, glaubte aber an die Fähigkeit zur unendlichen Erkenntnissteigerung.",
+                position: 3,
+            },
+        },
+    },
+
+    "Comte, Auguste": {
+        description: "Auguste Comte war ein französischer Philosoph, Begründer des Positivismus und der Soziologie.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Comte sah das Ich als Produkt sozialer Einflüsse und Erfahrungen.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Comte lehnte einen personalen Gott ab und sah die Religion als soziologisches Phänomen.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Comte akzeptierte keinen Dualismus und sah das menschliche Bewusstsein als rein biologisch.",
+                position: 1,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Comte sah moralische Prinzipien als sozial bedingt und durch wissenschaftliche Erkenntnis formbar.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Comte betrachtete den freien Willen als eingeschränkt durch soziale und biologische Gesetze.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Comte sah den Sinn des Lebens in der Verbesserung der Gesellschaft durch wissenschaftliche Fortschritte.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Comte erkannte die Grenzen menschlichen Wissens und betonte die Bedeutung empirischer Forschung.",
+                position: 3,
+            },
+        },
+    },
+
+    "Machiavelli, Niccolo": {
+        description: "Niccolo Machiavelli war ein italienischer Philosoph und Politiker, bekannt für seine realistische Sicht auf Macht und Politik.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Machiavelli sah das Ich als flexibel, anpassungsfähig und von politischen Umständen beeinflusst.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Machiavelli zeigte wenig Interesse an einem personalen Gott und betonte die Rolle des Schicksals.",
+                position: 2,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Machiavelli befasste sich nicht explizit mit dem Dualismus, sah aber den Menschen als pragmatisch und materiell.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Machiavelli betonte die politische Realität und sah moralische Flexibilität als notwendig an.",
+                position: 1,
+            },
+            "Existenz eines freien Willens": {
+                description: "Machiavelli bejahte den freien Willen, sah ihn jedoch durch Schicksal und Machtkämpfe eingeschränkt.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Für Machiavelli bestand der Lebenssinn im Erfolg und dem Streben nach politischer Macht.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Machiavelli erkannte die Grenzen menschlicher Weisheit und die Bedeutung von strategischer Anpassung.",
+                position: 3,
+            },
+        },
+    },
+
+
+
+
+
+
 
 
 };
