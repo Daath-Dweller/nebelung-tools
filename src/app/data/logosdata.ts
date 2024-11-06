@@ -44,8 +44,7 @@ export const subcategoryOptions = {
         "Dharmische Religionen": [
             "Hinduismus",
             "Buddhismus",
-            "Sikhismus",
-            "Zen-Buddhismus"
+            "Sikhismus"
         ],
         "Chinesische Religionen und Philosophien": [
             "Taoismus",
