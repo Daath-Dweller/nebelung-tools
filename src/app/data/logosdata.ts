@@ -98,7 +98,16 @@ export const subcategoryOptions = {
         "Russell, Bertrand",
         "Leibniz, Gottfried Wilhelm",
         "Comte, Auguste",
-        "Machiavelli, Niccolo"
+        "Machiavelli, Niccolo",
+        "Demokrit",
+        "Anaximander",
+        "Plotin",
+        "Aurel, Mark",
+        "Augustinus",
+        "Averroes",
+        "de Montaigne, Michel",
+        "de Spinoza, Baruch",
+        "Baudrillard, Jean"
     ],
 
 };
@@ -2572,7 +2581,275 @@ export const logosEntries: { [key: string]: LogosEntry } = {
 
         },
     },
+    "Demokrit": {
+        description: "Demokrit war ein antiker griechischer Philosoph und Atomist, bekannt für seine Lehre, dass alles aus Atomen und leerem Raum besteht.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Demokrit sah das Ich als eine Ansammlung von Atomen, die keinen festen Kern besitzt.",
+                position: 1,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Demokrit lehnte die Existenz eines personalen Gottes ab und sah alles als natürliche Prozesse an.",
+                position: 1,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Er sah die Seele als eine besondere Anordnung von Atomen, die mit dem Körper vergeht.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Demokrit glaubte an ethische Prinzipien, die zur Harmonie beitragen, aber nicht als göttlich fundiert.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Für Demokrit war freier Wille stark eingeschränkt durch die Naturgesetze und Atombewegungen.",
+                position: 1,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Sinn des Lebens bestand für Demokrit im Glück, das durch seelische Harmonie erreicht wird.",
+                position: 2,
+            },
+        },
+    },
 
+    "Anaximander": {
+        description: "Anaximander war ein vorsokratischer griechischer Philosoph, der das Prinzip des 'Apeiron' als Ursprung aller Dinge postulierte.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Anaximander sah das Ich als vergänglich und durch das unendliche Prinzip des Apeiron beeinflusst.",
+                position: 2,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Anaximander vertrat kein Bild eines personalen Gottes, sondern das Apeiron als unendliches Prinzip.",
+                position: 1,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Anaximander sprach dem Menschen keine unsterbliche Seele zu, sondern sah ihn als Teil des natürlichen Kreislaufs.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Für Anaximander existiert eine kosmische Ordnung, die als moralische Richtschnur verstanden werden kann.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Anaximander hielt den freien Willen für begrenzt durch kosmische Prinzipien.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Lebenssinn bestand für Anaximander im Einklang mit dem kosmischen Prinzip des Apeiron.",
+                position: 2,
+            },
+        },
+    },
+
+    "Plotin": {
+        description: "Plotin war ein antiker Philosoph und Begründer des Neuplatonismus, der die Seele als Streben nach dem 'Einen' sah.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Für Plotin ist das Ich eine unsterbliche Seele, die nach Vereinigung mit dem 'Einen' strebt.",
+                position: 3,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Plotin beschrieb das 'Eine' als eine überpersonale, schöpferische Quelle.",
+                position: 2,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Plotin bejahte den Dualismus, wobei die Seele vom Körper getrennt und unsterblich ist.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Moral wird durch die Nähe zum 'Einen' objektiv bestimmt und drückt kosmische Ordnung aus.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Plotin befürwortete freien Willen, der es der Seele erlaubt, dem 'Einen' näher zu kommen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Sinn des Lebens liegt im Streben der Seele, zum 'Einen' zurückzukehren.",
+                position: 3,
+            },
+        },
+    },
+
+    "Aurel, Mark": {
+        description: "Mark Aurel war ein römischer Kaiser und Stoiker, bekannt für seine philosophischen Betrachtungen über Tugend und das Leben.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Mark Aurel betrachtete das Ich als vernünftige Seele, die beständig nach Tugend strebt.",
+                position: 3,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Er sah das Göttliche als universelle Vernunft, aber nicht als personalen Gott.",
+                position: 2,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Die Seele wird als vom Körper getrennt betrachtet und bleibt nach dem Tod bestehen.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Für Mark Aurel ist die Moral objektiv und orientiert sich an der kosmischen Ordnung.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Freier Wille ist notwendig, um gemäß der stoischen Tugend zu handeln.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Sinn des Lebens liegt für ihn im tugendhaften Leben und im Einklang mit der Natur.",
+                position: 3,
+            },
+        },
+    },
+
+    "Augustinus": {
+        description: "Augustinus war ein christlicher Philosoph und Theologe, der die Idee der Erbsünde und göttlichen Gnade prägte.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Für Augustinus ist das Ich eine beständige Seele, die im göttlichen Heil ihren Sinn findet.",
+                position: 3,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Augustinus sah Gott als personalen und allmächtigen Schöpfer.",
+                position: 3,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Er bejahte den Dualismus und betrachtete die Seele als unsterblich.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Moral ist für Augustinus objektiv und durch Gottes Gebote bestimmt.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Freier Wille existiert, wird jedoch durch die Erbsünde beeinflusst.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Lebenssinn liegt für Augustinus in der Liebe zu Gott und der Erlangung des ewigen Heils.",
+                position: 3,
+            },
+        },
+    },
+
+    "Averroes": {
+        description: "Averroes war ein muslimischer Philosoph und Kommentator von Aristoteles, bekannt für seine Versuche, Vernunft und Glauben zu verbinden.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Averroes sah das Ich als individuelle Seele, die durch Wissen vervollkommnet wird.",
+                position: 2,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Er bejahte einen personalen Gott als Schöpfer und Ursprung der Vernunft.",
+                position: 3,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Die Seele ist nach Averroes unsterblich und von körperlichen Beschränkungen unabhängig.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Moral wird als objektiv betrachtet und durch göttliche Gesetze festgelegt.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Freier Wille existiert im Einklang mit göttlicher Vorsehung und Vernunft.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Lebenssinn liegt für Averroes im Streben nach Wissen und Tugend zur Ehre Gottes.",
+                position: 3,
+            },
+        },
+    },
+
+    "de Montaigne, Michel": {
+        description: "Michel de Montaigne war ein französischer Philosoph und Essayist, bekannt für seine skeptischen Reflexionen über das menschliche Leben.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Montaigne sah das Ich als veränderlich und geprägt von Selbstzweifel und Reflexion.",
+                position: 2,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Er zeigte sich skeptisch gegenüber einem personalen Gott und betrachtete Glauben als persönlichen Weg.",
+                position: 2,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Montaigne äußerte sich selten zum Dualismus und sah das Selbst als ständig wandelbar.",
+                position: 1,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Er zweifelte an objektiver Moral und befürwortete eine individualisierte, selbstkritische Ethik.",
+                position: 1,
+            },
+            "Existenz eines freien Willens": {
+                description: "Montaigne erkannte freien Willen an, sah ihn jedoch als eingeschränkt durch menschliche Schwächen.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Für Montaigne bestand der Lebenssinn im Verständnis der menschlichen Natur und der Selbstreflexion.",
+                position: 2,
+            },
+        },
+    },
+
+    "de Spinoza, Baruch": {
+        description: "Baruch de Spinoza war ein rationalistischer Philosoph, der Gott als die gesamte Natur begriff.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Für Spinoza ist das Ich ein Teil der universellen Substanz und daher illusionär.",
+                position: 1,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Spinoza lehnte einen personalen Gott ab und sah Gott als identisch mit der Natur.",
+                position: 1,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Er verwarf den Dualismus und sah Geist und Körper als zwei Seiten derselben Substanz.",
+                position: 1,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Für Spinoza existiert objektive Moral, die durch die Vernunft und die Harmonie mit der Natur bestimmt wird.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Spinoza verneinte den freien Willen und sah Handlungen als durch Naturgesetze determiniert.",
+                position: 1,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Der Sinn des Lebens besteht für Spinoza im Erreichen von Wissen und Harmonie mit der Natur.",
+                position: 3,
+            },
+        },
+    },
+
+    "Baudrillard, Jean": {
+        description: "Jean Baudrillard war ein französischer Philosoph und Soziologe, der die Theorie des Hyperrealismus entwickelte.",
+        details: {
+            "Existenz eines Ichs bzw. beständigen Selbst": {
+                description: "Baudrillard sah das Ich als fragmentiert und durch simulierte Realität beeinflusst.",
+                position: 1,
+            },
+            "Existenz eines (personifizierten) Gottes": {
+                description: "Baudrillard betrachtete Gott als überflüssig in einer Welt des Hyperrealismus.",
+                position: 1,
+            },
+            "Existenz einer Seele (Geist-Körper-Dualismus)": {
+                description: "Er lehnte eine beständige Seele ab und sah das Selbst als durch Medien und Simulation geprägt.",
+                position: 1,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Baudrillard verwarf objektive Moral und sah ethische Werte als durch Medien verzerrt.",
+                position: 1,
+            },
+            "Existenz eines freien Willens": {
+                description: "Freier Wille wird als durch die Simulation und Medienmacht beeinflusst und stark begrenzt betrachtet.",
+                position: 1,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Baudrillard sah keinen festen Lebenssinn und betrachtete das Leben als eine Simulation ohne tiefere Bedeutung.",
+                position: 1,
+            },
+        },
+    },
 
 
 };
