@@ -30,8 +30,8 @@ export default function Logik() {
     };
 
     return (
-        <div className="p-12 bg-black text-white m-3">
-            <h1 className="text-2xl font-bold mb-4">Logische Fehlschlüsse & Heuristika</h1>
+        <div className="md:p-12 bg-black text-white m-3">
+            <h1 className="text-2xl font-bold mb-2 pl-4 pt-2">Logische Fehlschlüsse & Heuristika</h1>
 
             <div className="p-12 bg-black text-white">
                 <div id="wrapper" className="md:grid md:grid-cols-3 gap-4 flex flex-col">
@@ -57,27 +57,28 @@ export default function Logik() {
                             return (
                                 <div
                                     key={key}
-                                    className={`relative w-full min-h-80 flex items-center justify-center text-center p-4 m-2 
-                                    ${fehlschluss.bgcolor} text-white rounded-lg`}
+                                    className={`w-full min-h-80 flex items-center justify-between text-center p-4 ${fehlschluss.bgcolor} text-white rounded-lg`}
                                 >
                                     <button
                                         onClick={() => flipBackward(key)}
-                                        className="absolute left-2 text-black text-xl font-bold bg-gray-200
-                                        hover:bg-gray-400 p-2 rounded-full"
+                                        className="text-black text-xl font-bold bg-gray-200 hover:bg-gray-400 p-2 rounded-full flex-shrink-0"
                                     >
                                         {"<"}
                                     </button>
 
-                                    <div className="font-bold px-10">{content}</div>
+                                    <div className="font-bold px-4 flex-grow text-center min-w-0">
+                                        {content}
+                                    </div>
 
                                     <button
                                         onClick={() => flipForward(key)}
-                                        className="absolute right-2 text-black text-xl font-bold
-                                        bg-gray-200 hover:bg-gray-400 p-2 rounded-full"
+                                        className="text-black text-xl font-bold bg-gray-200 hover:bg-gray-400 p-2 rounded-full flex-shrink-0"
                                     >
                                         {">"}
                                     </button>
                                 </div>
+
+
                             );
                         })
                     )}
