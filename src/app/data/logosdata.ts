@@ -30,7 +30,11 @@ export const subcategoryOptions = {
             "Poststrukturalismus",
             "Relativismus",
             "Konsequentialismus",
-            "Deontologismus"
+            "Deontologismus",
+            "Absurdismus",
+            "Hedonismus",
+            "Empirismus",
+            "Transzendentalismus"
         ],
     Religion: [
         "Shinto",
@@ -47,7 +51,8 @@ export const subcategoryOptions = {
         "Zoroastrismus",
         "Voodoo",
         "Pantheismus",
-        "Zen-Buddhismus"
+        "Zen-Buddhismus",
+        "Scientology"
     ],
     Person: [
         "Nietzsche, Friedrich",
@@ -85,7 +90,9 @@ export const subcategoryOptions = {
         "Mill, John Stuart",
         "de Beauvoir, Simone",
         "Habermas, Jürgen",
-        "Zizek, Slavoj"
+        "Zizek, Slavoj",
+        "Arendt, Hannah",
+        "von Canterbury, Anselm"
     ],
 
 };
@@ -2357,6 +2364,245 @@ export const logosEntries: { [key: string]: LogosEntry } = {
                     },
                 },
             },
+    "Scientology": {
+        description: "Scientology ist eine moderne spirituelle Bewegung, die persönliche Freiheit und geistige Erlösung durch spezielle Techniken anstrebt.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Scientology betrachtet das Ich als unsterbliches Wesen (Thetan), das von körperlicher und geistiger Existenz getrennt ist.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Scientology hat keine klare Vorstellung eines personifizierten Gottes, sondern fördert individuelle spirituelle Freiheit.",
+                position: 2,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Scientology sieht eine deutliche Trennung zwischen Körper und Geist, wobei das wahre Selbst als unsterblicher Thetan existiert.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Scientology lehrt ethische Grundsätze, jedoch ohne den Anspruch auf objektive Moral.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Scientology betont, dass jeder Mensch die Freiheit hat, seinen Weg zu wählen und sein Schicksal zu bestimmen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Scientology sieht den Lebenssinn in der Selbstverwirklichung und dem Erreichen geistiger Freiheit.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Scientology betrachtet Wissen als erweiterbar und durch spezielle Praktiken zugänglich.",
+                position: 2,
+            },
+        },
+    },
+
+    "Absurdismus": {
+        description: "Absurdismus, besonders geprägt durch Albert Camus, betont das unvermeidbare Paradox zwischen menschlichem Streben nach Bedeutung und einer sinnlosen Welt.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Absurdismus erkennt das Ich an, jedoch als Entität in ständiger Konfrontation mit der Sinnlosigkeit.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Der Absurdismus weist die Existenz eines personifizierten Gottes zurück und sieht Gott als irrelevant für die menschliche Existenz.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Absurdismus beschäftigt sich weniger mit Dualismus und sieht das Selbst als rein existenziell.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Camus betonte die Abwesenheit einer objektiven Moral, da das Universum bedeutungslos ist.",
+                position: 1,
+            },
+            "Existenz eines freien Willens": {
+                description: "Absurdismus unterstützt den freien Willen als individuelle Entscheidung gegen die Absurdität.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Absurdismus lehnt einen inhärenten Lebenssinn ab und fordert, dass der Mensch selbst einen Sinn schafft.",
+                position: 1,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Absurdismus erkennt die Begrenztheit menschlichen Wissens im Verständnis des Universums an.",
+                position: 3,
+            },
+        },
+    },
+
+    "Hedonismus": {
+        description: "Hedonismus ist eine ethische Theorie, die das Streben nach Lust und das Vermeiden von Schmerz als höchstes Gut ansieht.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Im Hedonismus ist das Ich oft als Empfänger von Lust und Schmerz zentral.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Hedonismus betrachtet die Existenz eines Gottes als irrelevant zur Lustmaximierung.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Hedonismus bezieht sich selten auf Dualismus und fokussiert eher auf das physische Erleben.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Hedonismus erkennt keine objektive Moral an, da es auf subjektive Lustmaximierung abzielt.",
+                position: 1,
+            },
+            "Existenz eines freien Willens": {
+                description: "Der freie Wille wird im Hedonismus als Wahlmöglichkeit zur Lustmaximierung gesehen.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Für den Hedonismus ist der Sinn des Lebens das Erreichen von maximalem Vergnügen.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Hedonismus ist in Bezug auf Wissen nicht spezifisch, sondern eher auf Erfahrung fokussiert.",
+                position: 2,
+            },
+        },
+    },
+
+    "Empirismus": {
+        description: "Empirismus ist eine erkenntnistheoretische Strömung, die Wissen aus Sinneserfahrung ableitet.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Empiristen sehen das Ich als eine Ansammlung von Erfahrungen, nicht als beständige Entität.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Empirismus sieht die Existenz eines Gottes skeptisch, da dieser nicht empirisch nachweisbar ist.",
+                position: 1,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Empirismus bevorzugt eine monistische Sichtweise, da Dualismus schwer empirisch zu belegen ist.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Empiristen neigen dazu, moralische Werte als relativ und kulturbedingt zu sehen.",
+                position: 2,
+            },
+            "Existenz eines freien Willens": {
+                description: "Empirismus macht keine direkten Aussagen über freien Willen, tendiert jedoch zu deterministischen Ansätzen.",
+                position: 2,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Empirismus betrachtet den Lebenssinn als interpretativ und aus Erfahrung ableitbar.",
+                position: 2,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Empirismus erkennt an, dass Wissen auf die Erfahrung beschränkt ist und absolute Erkenntnis unmöglich bleibt.",
+                position: 3,
+            },
+        },
+    },
+
+    "Transzendentalismus": {
+        description: "Der Transzendentalismus betont die spirituelle Natur und die Verbundenheit des Individuums mit der Natur.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Der Transzendentalismus betrachtet das Selbst als spirituelle, mit der Natur verbundene Einheit.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Transzendentalisten neigen dazu, Gott als unpersönliche, allgegenwärtige Kraft in der Natur zu sehen.",
+                position: 2,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Transzendentalismus sieht den Geist als immanentes Teil des Selbst, das über den Körper hinausgeht.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Transzendentalismus erkennt moralische Prinzipien als eingebettet in die Natur und das universelle Gute.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Der Transzendentalismus bejaht den freien Willen als Ausdruck der individuellen Seele.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Im Transzendentalismus ist der Lebenssinn die persönliche Verbindung mit dem Göttlichen und der Natur.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Transzendentalismus akzeptiert, dass menschliches Wissen begrenzt ist und Inspiration über das Rationale hinausgeht.",
+                position: 2,
+            },
+        },
+    },
+
+    "Arendt, Hannah": {
+        description: "Hannah Arendt war eine politische Theoretikerin, die sich mit den Konzepten von Macht, Freiheit und Totalitarismus beschäftigte.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Arendt betrachtet das Ich als Ergebnis von Handlungen und Beziehungen in der sozialen Welt.",
+                position: 2,
+            },
+            "ein personifizierter Gott": {
+                description: "Arendt äußerte sich kaum über einen personalen Gott und hielt Religion für eine private Angelegenheit.",
+                position: 2,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Arendt äußerte sich selten explizit zum Dualismus, betonte jedoch das Denken als spirituelle Praxis.",
+                position: 2,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Arendt hielt an moralischen Prinzipien fest, insbesondere im Kontext von Verantwortung und Menschlichkeit.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Arendt sah den freien Willen als zentral für das menschliche Handeln und die politische Freiheit.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Arendt betrachtete den Lebenssinn als eingebettet in die aktive Teilnahme am politischen und sozialen Leben.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Arendt erkannte an, dass Wissen begrenzt ist und betonte die Wichtigkeit des kritischen Denkens.",
+                position: 3,
+            },
+        },
+    },
+
+    "von Canterbury, Anselm": {
+        description: "Anselm von Canterbury war ein mittelalterlicher Theologe und Philosoph, bekannt für das ontologische Argument für Gottes Existenz.",
+        details: {
+            "das Ich (Existenz eines beständigen Selbst)": {
+                description: "Anselm sah das Ich als von Gott erschaffenes, unsterbliches Wesen.",
+                position: 3,
+            },
+            "ein personifizierter Gott": {
+                description: "Anselm postulierte einen personifizierten Gott, der als höchste Realität existiert.",
+                position: 3,
+            },
+            "Geist-Körper-Dualismus (Existenz einer Seele)": {
+                description: "Anselm bejahte eine unsterbliche Seele als Teil des göttlichen Plans.",
+                position: 3,
+            },
+            "Existenz von objektiver Moral": {
+                description: "Anselm betrachtete Moral als objektiv und von Gottes Natur abgeleitet.",
+                position: 3,
+            },
+            "Existenz eines freien Willens": {
+                description: "Anselm glaubte an den freien Willen als Geschenk Gottes zur moralischen Entscheidungsfreiheit.",
+                position: 3,
+            },
+            "Existenz eines Lebenssinns": {
+                description: "Anselm sah den Lebenssinn in der Gotteserkenntnis und dem Streben nach Tugend.",
+                position: 3,
+            },
+            "Begrenzung des menschlichen Wissens": {
+                description: "Anselm erkannte, dass menschliches Wissen gegenüber göttlicher Weisheit begrenzt ist.",
+                position: 3,
+            },
+        },
+    },
+
+
 };
 
-export const judgmentOptions = ["Klare Ablehnung", "Uneindeutig", "Klare Zustimmung"];
+

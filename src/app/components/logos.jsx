@@ -201,7 +201,7 @@ export default function Logos() {
                 )}
                 {/* Liste der gefilterten Namen */}
                 {selectedTheme && selectedJudgment !== null && (
-                    <div className="mt-4 p-4 bg-gray-800 max-w-2xl rounded">
+                    <div className="mt-4 p-4 bg-gray-800 rounded">
                         <p>{filteredEntries || "Keine passenden Einträge gefunden."}</p>
                     </div>
                 )}
