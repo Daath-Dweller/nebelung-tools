@@ -6,25 +6,32 @@ import NutritianAlmanac from "@/app/components/nutrition-almanac";
 import Logik from "@/app/components/logik";
 import Logos from "@/app/components/logos";
 import Lingua from "@/app/components/lingua";
+import { FaBrain, FaTools } from "react-icons/fa";
+import { IoIosBody } from "react-icons/io";
+import { SlSpeech } from "react-icons/sl";
 
 export default function Home() {
-    const [activeTab, setActiveTab] = useState("home");
+    const [activeTab, setActiveTab] = useState("logos");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // State für offene Menüs
     const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
 
-    // Menüstrukturen definieren
     const menuItems = [
         {
+            icon: <FaBrain />,
+            label: "Wissenschaft",
+            subItems: [{ key: "logos", label: "Philoskop" }],
+        },
+        {
+            icon: <SlSpeech />,
             label: "Sprache",
             subItems: [
-                { key: "logos", label: "Philoskop" },
                 { key: "logik", label: "Logigramm" },
                 { key: "lingua", label: "Verbastrum" },
             ],
         },
         {
+            icon: <IoIosBody />,
             label: "Gesundheit",
             subItems: [
                 { key: "rechner", label: "Kalorien-Rechner" },
@@ -32,12 +39,12 @@ export default function Home() {
             ],
         },
         {
-            label: "Tools",
+            icon: <FaTools />,
+            label: "Sonstige Tools",
             subItems: [{ key: "anagram", label: "Anagramm-Generator" }],
         },
     ];
 
-    // Funktion zum Öffnen eines Menüs und Schließen der anderen
     const openMenu = (label: string) => {
         setOpenMenus({ [label]: true });
     };
@@ -84,15 +91,15 @@ export default function Home() {
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex space-x-4 ml-4">
-                        {menuItems.map((menuItem) => (
-                            <li key={menuItem.label} className="relative">
+                        {menuItems.map((menuItem, index) => (
+                            <li key={index} className="relative">
                                 <button
                                     onClick={() => openMenu(menuItem.label)}
-                                    className="text-white tracking-wider focus:outline-none"
+                                    className="text-white tracking-wider focus:outline-none flex items-center space-x-2" // Flex layout für Icon und Label
                                 >
-                                    {menuItem.label}
+                                    {menuItem.icon}
+                                    <span>{menuItem.label}</span>
                                 </button>
-                                {/* Untermenü */}
                                 {openMenus[menuItem.label] && (
                                     <ul className="absolute left-0 mt-2 bg-black">
                                         {menuItem.subItems.map((subItem) => (
@@ -123,11 +130,12 @@ export default function Home() {
                 {/* Mobiles Menü */}
                 {isMenuOpen && (
                     <ul className="md:hidden bg-black">
-                        {menuItems.map((menuItem) => (
-                            <li key={menuItem.label} className="border-b border-gray-700">
-                <span className="block px-4 py-2 text-white font-bold">
-                  {menuItem.label}
-                </span>
+                        {menuItems.map((menuItem, index) => (
+                            <li key={index} className="border-b border-gray-700">
+                                <span className="block px-4 py-2 text-white font-bold flex items-center space-x-2">
+                                    {menuItem.icon}
+                                    <span>{menuItem.label}</span>
+                                </span>
                                 {menuItem.subItems.map((subItem) => (
                                     <a
                                         key={subItem.key}
