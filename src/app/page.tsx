@@ -12,7 +12,7 @@ export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // State für offene Menüs
-    const [openMenus, setOpenMenus] = useState({});
+    const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
 
     // Menüstrukturen definieren
     const menuItems = [
