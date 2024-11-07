@@ -5,17 +5,47 @@ import Rechner from "@/app/components/calc";
 import NutritianAlmanac from "@/app/components/nutrition-almanac";
 import Logik from "@/app/components/logik";
 import Logos from "@/app/components/logos";
+import Lingua from "@/app/components/lingua";
 
 export default function Home() {
-    const [activeTab, setActiveTab] = useState("logos");
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
+    const [activeTab, setActiveTab] = useState("home");
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // State für offene Menüs
+    const [openMenus, setOpenMenus] = useState({});
+
+    // Menüstrukturen definieren
+    const menuItems = [
+        {
+            label: "Sprache",
+            subItems: [
+                { key: "logos", label: "Philoskop" },
+                { key: "logik", label: "Logigramm" },
+                { key: "lingua", label: "Verbastrum" },
+            ],
+        },
+        {
+            label: "Gesundheit",
+            subItems: [
+                { key: "rechner", label: "Kalorien-Rechner" },
+                { key: "nutritionalmanac", label: "Nutrition-Almanac" },
+            ],
+        },
+        {
+            label: "Tools",
+            subItems: [{ key: "anagram", label: "Anagramm-Generator" }],
+        },
+    ];
+
+    // Funktion zum Öffnen eines Menüs und Schließen der anderen
+    const openMenu = (label) => {
+        setOpenMenus({ [label]: true });
+    };
 
     return (
         <div className="bg-gray-700 min-h-screen">
-            {/* Navigation */}
             <nav className="bg-black select-none">
                 <div className="md:pl-6 md:pr-12 md:py-12 md:h-28 flex items-center justify-between md:justify-start">
-                    {/* Logo */}
                     <div className="ml-4 md:ml-0 w-16 text-center md:text-left">
                         <a
                             href="#"
@@ -24,25 +54,23 @@ export default function Home() {
                                     ? "text-teal-500 font-extrabold"
                                     : "text-white font-bold"
                             }`}
-                            onClick={() => setActiveTab("home")}
+                            onClick={() => {
+                                setActiveTab("home");
+                            }}
                         >
                             NT
                         </a>
                     </div>
-
-                    {/* Hamburger Icon */}
                     <div className="md:hidden mr-6 mt-4 mb-4">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-white focus:outline-none"
                         >
-                            {/* Simple Hamburger Icon */}
                             <svg
                                 className="w-6 h-6"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
                                     strokeLinecap="round"
@@ -56,77 +84,77 @@ export default function Home() {
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex space-x-4 ml-4">
-                        {/* Menu Items */}
-                        {["logos", "logik", "rechner", "nutritionalmanac", "anagram"].map(
-                            (tab) => (
-                                <li key={tab}>
-                                    <a
-                                        href="#"
-                                        className={`text-white tracking-wider relative after:absolute after:inset-x-0 after:bottom-[-10px] 
-                                        after:h-px after:bg-gray-500 after:transform after:scale-x-0 
-                                        after:origin-center after:transition-transform after:duration-300 
-                                        ${
-                                            activeTab === tab
-                                                ? "font-bold after:scale-x-100 after:bg-white"
-                                                : "hover:after:scale-x-100"
-                                        }`}
-                                        onClick={() => setActiveTab(tab)}
-                                    >
-                                        {tab === "logos"
-                                            ? "PhiloScope"
-                                            : tab === "logik"
-                                                ? "Sprachlogik"
-                                                : tab === "rechner"
-                                                    ? "Kalorien-Rechner"
-                                                    : tab === "nutritionalmanac"
-                                                        ? "Nutrition-Almanac"
-                                                        : "Anagramm-Generator"}
-                                    </a>
-                                </li>
-                            )
-                        )}
+                        {menuItems.map((menuItem) => (
+                            <li key={menuItem.label} className="relative">
+                                <button
+                                    onClick={() => openMenu(menuItem.label)}
+                                    className="text-white tracking-wider focus:outline-none"
+                                >
+                                    {menuItem.label}
+                                </button>
+                                {/* Untermenü */}
+                                {openMenus[menuItem.label] && (
+                                    <ul className="absolute left-0 mt-2 bg-black">
+                                        {menuItem.subItems.map((subItem) => (
+                                            <li key={subItem.key}>
+                                                <a
+                                                    href="#"
+                                                    className={`block px-4 py-2 text-white whitespace-no-wrap ${
+                                                        activeTab === subItem.key
+                                                            ? "bg-gray-800"
+                                                            : "hover:bg-gray-700"
+                                                    }`}
+                                                    onClick={() => {
+                                                        setActiveTab(subItem.key);
+                                                        setOpenMenus({});
+                                                    }}
+                                                >
+                                                    {subItem.label}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Mobiles Menü */}
                 {isMenuOpen && (
                     <ul className="md:hidden bg-black">
-                        {/* Menu Items */}
-                        {["logos", "logik", "rechner", "nutritionalmanac", "anagram"].map(
-                            (tab) => (
-                                <li key={tab} className="border-b border-gray-700">
+                        {menuItems.map((menuItem) => (
+                            <li key={menuItem.label} className="border-b border-gray-700">
+                <span className="block px-4 py-2 text-white font-bold">
+                  {menuItem.label}
+                </span>
+                                {menuItem.subItems.map((subItem) => (
                                     <a
+                                        key={subItem.key}
                                         href="#"
-                                        className={`block px-4 py-2 text-white ${
-                                            activeTab === tab ? "bg-gray-800" : ""
+                                        className={`block pl-8 pr-4 py-2 text-white ${
+                                            activeTab === subItem.key ? "bg-gray-800" : ""
                                         }`}
                                         onClick={() => {
-                                            setActiveTab(tab);
-                                            setIsMenuOpen(false); // Close menu after selection
+                                            setActiveTab(subItem.key);
+                                            setIsMenuOpen(false);
                                         }}
                                     >
-                                        {tab === "logos"
-                                            ? "PhiloScope"
-                                            : tab === "logik"
-                                                ? "Sprachlogik"
-                                                : tab === "rechner"
-                                                    ? "Kalorien-Rechner"
-                                                    : tab === "nutritionalmanac"
-                                                        ? "Nutrition-Almanac"
-                                                        : "Anagramm-Generator"}
+                                        {subItem.label}
                                     </a>
-                                </li>
-                            )
-                        )}
+                                ))}
+                            </li>
+                        ))}
                     </ul>
                 )}
             </nav>
 
-            {/* Content */}
+            {/* Inhalt */}
             <div className="p-4">
                 {activeTab === "home" && "Home"}
                 {activeTab === "nutritionalmanac" && <NutritianAlmanac />}
                 {activeTab === "anagram" && <AnagramGenerator />}
+                {activeTab === "lingua" && <Lingua />}
                 {activeTab === "rechner" && <Rechner />}
                 {activeTab === "logik" && <Logik />}
                 {activeTab === "logos" && <Logos />}
