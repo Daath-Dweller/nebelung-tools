@@ -38,7 +38,7 @@ export default function Home() {
     ];
 
     // Funktion zum Öffnen eines Menüs und Schließen der anderen
-    const openMenu = (label) => {
+    const openMenu = (label: string) => {
         setOpenMenus({ [label]: true });
     };
 
