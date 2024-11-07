@@ -6,6 +6,7 @@ import NutritianAlmanac from "@/app/components/nutrition-almanac";
 import Logik from "@/app/components/logik";
 import Logos from "@/app/components/logos";
 import Lingua from "@/app/components/lingua";
+import About from "@/app/components/about";
 import { FaBrain, FaTools } from "react-icons/fa";
 import { IoIosBody } from "react-icons/io";
 import { SlSpeech } from "react-icons/sl";
@@ -65,7 +66,7 @@ export default function Home() {
                                 setActiveTab("home");
                             }}
                         >
-                            NT
+                            DA
                         </a>
                     </div>
                     <div className="md:hidden mr-6 mt-4 mb-4">
@@ -159,7 +160,7 @@ export default function Home() {
 
             {/* Inhalt */}
             <div className="p-4">
-                {activeTab === "home" && "Home"}
+                {activeTab === "home" && <About />}
                 {activeTab === "nutritionalmanac" && <NutritianAlmanac />}
                 {activeTab === "anagram" && <AnagramGenerator />}
                 {activeTab === "lingua" && <Lingua />}
