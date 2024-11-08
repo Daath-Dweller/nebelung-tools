@@ -42,6 +42,7 @@ const AnagramGenerator = () => {
     const [input, setInput] = useState(''); // State für das Eingabefeld des Hauptwortes
     const [filter, setFilter] = useState(''); // State für das Filtereingabefeld
     const [anagrams, setAnagrams] = useState([]); // State für die Liste der Anagramme
+    const [displayLimit, setDisplayLimit] = useState(1000); // Neues State für die Anzeigegrenze
     const [replacements, setReplacements] = useState({
         ss: false,
         ae: false,
@@ -55,14 +56,17 @@ const AnagramGenerator = () => {
         if (value) {
             const generatedAnagrams = generateAnagrams(value); // Generiert Anagramme für das eingegebene Wort
             setAnagrams(generatedAnagrams);
+            setDisplayLimit(1000); // Reset der Anzeigegrenze
         } else {
             setAnagrams([]); // Setzt die Anagrammliste zurück, wenn das Eingabefeld leer ist
+            setDisplayLimit(1000); // Reset der Anzeigegrenze
         }
     };
 
     const handleChangeFilter = (event) => {
         const value = event.target.value.toLowerCase(); // Macht alles klein
         setFilter(value); // Aktualisiert den Filterstate
+        setDisplayLimit(500); // Reset der Anzeigegrenze
     };
 
     const handleCheckboxChange = (event) => {
@@ -71,15 +75,22 @@ const AnagramGenerator = () => {
             ...prevState,
             [name]: checked
         }));
+        setDisplayLimit(1000); // Reset der Anzeigegrenze
     };
 
-    const filteredAnagrams = applyReplacements(
+    const handleLoadMore = () => {
+        setDisplayLimit(prevLimit => prevLimit + 1000);
+    };
+
+    // Filtere und ersetze Anagramme, ohne sie zu begrenzen
+    const allFilteredAnagrams = applyReplacements(
         anagrams.filter((anagram) =>
             filter ? anagram.startsWith(filter) : true // Filtert die Anagramme basierend auf dem eingegebenen Filter
         ), replacements
-    ).slice(0, 20000); // Begrenze die Anzeige auf 20.000 Anagramme
+    );
 
-    const isMaxReached = filteredAnagrams.length === 20000;
+    // Begrenze die angezeigten Anagramme auf die aktuelle Anzeigegrenze
+    const displayedAnagrams = allFilteredAnagrams.slice(0, displayLimit);
 
     return (
         <div className="p-12 bg-black text-white m-3">
@@ -144,23 +155,23 @@ const AnagramGenerator = () => {
 
             <div>
                 <h2 className="text-xl mb-2">
-                    Anzahl der Anagramme: {filteredAnagrams.length} {isMaxReached && '(Maximum)'}
+                    Gesamtanzahl der möglichen Anagramme: {allFilteredAnagrams.length}
                 </h2>
                 <h2 className="text-xl mb-2">Mögliche Anagramme:</h2>
                 <table className="table-auto border-collapse w-full">
                     <tbody>
-                    {filteredAnagrams.length > 0 && (
-                        filteredAnagrams.map((anagram, index) => {
+                    {displayedAnagrams.length > 0 && (
+                        displayedAnagrams.map((anagram, index) => {
                             if (index % 4 === 0) {
                                 return (
                                     <tr key={index}>
                                         <td className="border p-2">{anagram}</td>
-                                        {filteredAnagrams[index + 1] &&
-                                            <td className="border p-2">{filteredAnagrams[index + 1]}</td>}
-                                        {filteredAnagrams[index + 2] &&
-                                            <td className="border p-2">{filteredAnagrams[index + 2]}</td>}
-                                        {filteredAnagrams[index + 3] &&
-                                            <td className="border p-2">{filteredAnagrams[index + 3]}</td>}
+                                        {displayedAnagrams[index + 1] &&
+                                            <td className="border p-2">{displayedAnagrams[index + 1]}</td>}
+                                        {displayedAnagrams[index + 2] &&
+                                            <td className="border p-2">{displayedAnagrams[index + 2]}</td>}
+                                        {displayedAnagrams[index + 3] &&
+                                            <td className="border p-2">{displayedAnagrams[index + 3]}</td>}
                                     </tr>
                                 );
                             }
@@ -169,6 +180,14 @@ const AnagramGenerator = () => {
                     )}
                     </tbody>
                 </table>
+                {displayLimit < allFilteredAnagrams.length && (
+                    <button
+                        onClick={handleLoadMore}
+                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                    >
+                        500 weitere laden
+                    </button>
+                )}
             </div>
 
         </div>
