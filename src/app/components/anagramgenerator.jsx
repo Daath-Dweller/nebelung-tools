@@ -79,15 +79,23 @@ const AnagramGenerator = () => {
     };
 
     const handleLoadMore = () => {
-        setDisplayLimit(prevLimit => prevLimit + 1000);
+        setDisplayLimit(prevLimit => prevLimit + 500);
     };
 
-    // Filtere und ersetze Anagramme, ohne sie zu begrenzen
+    const handleLoadAll = () => {
+        setDisplayLimit(20000); // Maximal 20.000 Einträge laden
+    };
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Filtere und ersetze Anagramme, begrenzt auf maximal 20.000
     const allFilteredAnagrams = applyReplacements(
         anagrams.filter((anagram) =>
             filter ? anagram.startsWith(filter) : true // Filtert die Anagramme basierend auf dem eingegebenen Filter
         ), replacements
-    );
+    ).slice(0, 20000); // Begrenze die Gesamtzahl auf 20.000
 
     // Begrenze die angezeigten Anagramme auf die aktuelle Anzeigegrenze
     const displayedAnagrams = allFilteredAnagrams.slice(0, displayLimit);
@@ -154,9 +162,20 @@ const AnagramGenerator = () => {
             </div>
 
             <div>
-                <h2 className="text-xl mb-2">
-                    Gesamtanzahl der möglichen Anagramme: {allFilteredAnagrams.length}
-                </h2>
+                <div className="flex items-center justify-between mb-2">
+                    <h2 className="text-xl">
+                        Gesamtanzahl der möglichen Anagramme: {allFilteredAnagrams.length}{' '}
+                        (aktuell angezeigt: {displayedAnagrams.length})
+                    </h2>
+                    {displayLimit < allFilteredAnagrams.length && (
+                        <button
+                            onClick={handleLoadAll}
+                            className="px-4 py-2 bg-gray-500 hover:bg-gray-800 text-white rounded"
+                        >
+                            Alle laden (max. 20.000)
+                        </button>
+                    )}
+                </div>
                 <h2 className="text-xl mb-2">Mögliche Anagramme:</h2>
                 <table className="table-auto border-collapse w-full">
                     <tbody>
@@ -180,13 +199,23 @@ const AnagramGenerator = () => {
                     )}
                     </tbody>
                 </table>
-                {displayLimit < allFilteredAnagrams.length && (
-                    <button
-                        onClick={handleLoadMore}
-                        className="mt-4 px-4 py-2 bg-gray-500 hover:bg-gray-800 text-white rounded"
-                    >
-                        500 weitere laden
-                    </button>
+                {(displayLimit < allFilteredAnagrams.length || displayLimit >= 500) && (
+                    <div className="flex justify-between items-center mt-4">
+                        {displayLimit < allFilteredAnagrams.length && (
+                            <button
+                                onClick={handleLoadMore}
+                                className="px-4 py-2 bg-gray-500 hover:bg-gray-800 text-white rounded"
+                            >
+                                500 weitere laden
+                            </button>
+                        )}
+                        <button
+                            onClick={handleScrollToTop}
+                            className="px-4 py-2 bg-gray-500 hover:bg-gray-800 text-white rounded"
+                        >
+                            Nach oben
+                        </button>
+                    </div>
                 )}
             </div>
 
