@@ -183,7 +183,7 @@ const AnagramGenerator = () => {
                 {displayLimit < allFilteredAnagrams.length && (
                     <button
                         onClick={handleLoadMore}
-                        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                        className="mt-4 px-4 py-2 bg-gray-500 hover:bg-gray-800 text-white rounded"
                     >
                         500 weitere laden
                     </button>

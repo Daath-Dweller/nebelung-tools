@@ -58,8 +58,8 @@ export default function Logos() {
                                 <button
                                     key={option}
                                     onClick={() => handleCategorySelection(option)}
-                                    className={`p-2 ${categorySelection === option ? "bg-blue-500" : "bg-gray-600"} 
-                                    hover:bg-blue-700 text-white rounded`}
+                                    className={`p-2 ${categorySelection === option ? "bg-black border-white border-2 border-dotted" : "bg-gray-500"} 
+                                     hover:bg-gray-800 text-white rounded`}
                                 >
                                     {option}
                                 </button>
