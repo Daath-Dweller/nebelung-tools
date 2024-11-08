@@ -61,7 +61,6 @@ export const words = [
         article: 'der',
         explanation: 'Der Pathos - (selten, historisch) Eine Personifikation von Leidenschaft und emotionalem Ausdruck.',
     },
-    ort const words = [
     {
         word: 'Virus',
         article: 'das',
