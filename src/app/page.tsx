@@ -14,13 +14,12 @@ import { SlSpeech } from "react-icons/sl";
 export default function Home() {
     const [activeTab, setActiveTab] = useState("logos");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
 
     const menuItems = [
         {
             icon: <FaBrain />,
-            label: "Wissenschaft",
+            label: "Wissen",
             subItems: [{ key: "logos", label: "Philoskop" }],
         },
         {

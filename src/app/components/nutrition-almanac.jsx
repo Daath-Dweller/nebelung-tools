@@ -39,17 +39,17 @@ const NutritionAlmanac = () => {
 
     return (<div className="p-12 bg-black text-white m-3">
         <h1 className="text-2xl font-bold mb-4">Nutrition Almanac</h1>
-        <button onClick={toggleAllFilters} className="bg-blue-500 text-white p-1 mb-4">
+        <button onClick={toggleAllFilters} className="bg-gray-500 text-white p-1 mb-4 hover:bg-gray-800">
             {showAllFilters ? "Weniger Filter anzeigen" : "Alle Filter anzeigen"}
         </button>
         {showAllFilters && (<div className="md:mb-4 md:grid md:grid-cols-3 flex flex-col gap-2">
             {allTags.map(tag => (<span key={tag}
-                                       className={`cursor-pointer p-1 ${filters.includes(tag) ? 'bg-gray-500' : 'bg-gray-200'} text-white`}
+                                       className={`cursor-pointer p-1 ${filters.includes(tag) ? 'bg-gray-500' : 'bg-gray-200'} text-white hover:bg-gray-800`}
                                        onClick={() => toggleFilter(tag)}>{tag}</span>))}
         </div>)}
         <div className="mb-4">
             Aktive Filter: {filters.length > 0 ? filters.map(filter => (
-            <span key={filter} className="bg-gray-500 text-white p-1 mr-2 cursor-pointer"
+            <span key={filter} className="bg-gray-500 text-white p-1 mr-2 cursor-pointer hover:bg-gray-800"
                   onClick={() => toggleFilter(filter)}>
                         {filter}
             </span>)) : 'Keine'}
@@ -59,17 +59,17 @@ const NutritionAlmanac = () => {
             {filteredNaehrstoffe.map((item, index) => (
                 <div key={index} className="border-2">
                     {item.name}<br/>
-                    {item.stoffgruppe.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1"
+                    {item.stoffgruppe.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1 hover:bg-gray-800"
                                                           onClick={() => toggleFilter(tag)}>
                         {tag}
                     </button>))}
                     <br/>
-                    {item.nutzungSport.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1"
+                    {item.nutzungSport.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1 hover:bg-gray-800"
                                                            onClick={() => toggleFilter(tag)}>
                         {tag}
                     </button>))}
                     <br/>
-                    <button className="bg-gray-300 p-1"
+                    <button className="bg-gray-300 p-1 hover:bg-gray-800"
                             onClick={() => handlePopup(item.beschreibung)}>Beschreibung
                     </button>
                     <br/>
@@ -93,19 +93,19 @@ const NutritionAlmanac = () => {
             {filteredNaehrstoffe.map((item, index) => (<tr key={index}>
                 <td className="border-2 p-2">{item.name}</td>
                 <td className="border-2 p-2">
-                    {item.stoffgruppe.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1"
+                    {item.stoffgruppe.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1 hover:bg-gray-800"
                                                           onClick={() => toggleFilter(tag)}>
                         {tag}
                     </button>))}
                 </td>
                 <td className="border-2 p-2">
-                    {item.nutzungSport.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1"
+                    {item.nutzungSport.map(tag => (<button key={tag} className="bg-gray-500 text-white p-1 m-1 hover:bg-gray-800"
                                                            onClick={() => toggleFilter(tag)}>
                         {tag}
                     </button>))}
                 </td>
                 <td className="border-2 p-2">
-                    <button className="bg-gray-300 p-1"
+                    <button className="bg-gray-300 p-1 hover:bg-gray-800"
                             onClick={() => handlePopup(item.beschreibung)}>Beschreibung
                     </button>
                 </td>
@@ -117,7 +117,7 @@ const NutritionAlmanac = () => {
         {popup.active && (<div className="popup-overlay">
             <div className="popup-content">
                 <p>{popup.content}</p>
-                <button className="bg-gray-300 p-1" onClick={closePopup}>Schließen</button>
+                <button className="bg-gray-300 p-1 hover:bg-gray-800" onClick={closePopup}>Schließen</button>
             </div>
         </div>)}
     </div>);
