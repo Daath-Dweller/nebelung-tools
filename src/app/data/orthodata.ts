@@ -24,7 +24,7 @@ export const Rechtschreibfehler: { [key: string]: Rechtschreibfehler } = {
         beispielFalsch: "Wir gehen in's Haus. Vor Bernd's Haus stehen LKW's." ,
         beispielKorrekt: "Wir gehen ins Haus. Vor Bernds Haus stehen LKW.",
         erlaeuterung: "Der Apostroph zeigt nur beim Genitiv-S im Englischen den Fall bzw. ein Besitzverhältnis an. Im Standarddeutschen gibt es keinen Genitivapostroph." +
-            " Akronyme die Mehrzahlen meinen, wie LKW oder CD benötigen keinen Apostroph, weder mit noch ohne Apostroph. Lastkraftwagens ist genauso Unsinn wie Lastkraftwagen's. " +
+            " Akronyme die Mehrzahlen meinen, wie LKW oder CD benötigen kein Plural-S, weder mit noch ohne Apostroph. Lastkraftwagens ist genauso Unsinn wie Lastkraftwagen's. " +
             "Ins ist eine gebräuchliche zusammengezogene Form von in das und wird nicht apostrophiert.",
     },
     GenitivTot: {
