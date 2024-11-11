@@ -34,5 +34,13 @@ export const Rechtschreibfehler: { [key: string]: Rechtschreibfehler } = {
         beispielKorrekt: "Das ist Tanjas Tasche und Alfreds Geld. Wegen des Regens ist er nass. Laut des Wetteberichts ...",
         erlaeuterung: "Wessen Tasche und wessen Geld? Tanjas, Alfreds. Genitiv statt Dativ. Sehr viele Präpositionen erfordern im Standarddeutschen den Genitiv: U.a. wegen, während, " +
             "anstatt, trotz, infolge, laut, ... ",
+    },
+    Deppenleerzeichen: {
+        name: 'Deppenleerzeichen',
+        name2: "Bernds Garten Haus.",
+        beispielFalsch: "Das ist ein Hochsicherheits Gefängnis mit vielen Stein mauern. Der LSD Schmuggel bereitet den Nachtwächtern Probleme." ,
+        beispielKorrekt: "Das ist ein Hochsicherheitsgefängnis mit vielen Steinmauern. Der LSD-Schmuggel bereitet den Nachtwächtern Probleme.",
+        erlaeuterung: "Leerzeichen innerhalb Komposita (zusammengesetzten Worten) sind ein grammatischer Anglizismus. Im Standarddeutschen werden Worte quasi unendlich lange zusammengeschrieben." +
+            " Der Lesbarkeit halber sind auch Bindestriche erlaubt. Das längste Wort in offiziellen Dokumenten lautet Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz.",
     }
 };
