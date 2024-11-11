@@ -1,6 +1,11 @@
 // genusratenData.js
+interface WordEntry {
+    word: string;
+    article: string;
+    explanation: string;
+}
 
-export const words = [
+export const words: WordEntry[] = [
     {
         word: 'Diabetes',
         article: 'der',
@@ -71,4 +76,25 @@ export const words = [
         article: 'der',
         explanation: 'Der Joghurt - Standard im Hochdeutschen. In Österreich und Teilen Süddeutschlands ist "das Joghurt" üblich. "Die Joghurt" kommt vereinzelt im Dialekt vor, gilt jedoch als unüblich.',
     },
+    {
+        word: 'Standard',
+        article: 'der',
+        explanation: 'Der Standard - Bezeichnet einen allgemein anerkannten Maßstab oder eine Norm, an der sich andere Dinge messen lassen. Beispiel: "der Industriestandard". Synonyme sind Norm, Richtlinie und Maßstab.'
+    },
+    {
+        word: 'Standarte',
+        article: 'die',
+        explanation: 'Die Standarte - Ein befestigtes Banner oder Feldzeichen, das oft von militärischen oder königlichen Einheiten getragen wird. Beispiel: "die königliche Standarte". Synonyme sind Feldzeichen, Fahne und Banner.'
+    },
+    {
+        word: 'Schild (Hinweis-)',
+        article: 'das',
+        explanation: 'Das Schild - Ein Objekt, das Informationen oder Hinweise gibt, wie ein Straßenschild. Beispiel: "das Warnschild". In diesem Fall bezeichnet "das Schild" eine Informationstafel, nicht eine Schutzwaffe.'
+    },
+    {
+        word: 'Schild (& Schwert)',
+        article: 'der',
+        explanation: 'Der Schild - Eine Schutzwaffe, die in der Antike und im Mittelalter im Kampf verwendet wurde. Beispiel: "der Ritterschild". Synonyme sind Schutzschild oder Panzerplatte.'
+    },
+
 ];

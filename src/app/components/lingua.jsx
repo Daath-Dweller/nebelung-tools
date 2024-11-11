@@ -16,19 +16,19 @@ export default function Lingua() {
                     className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
                     onClick={() => setActiveContent('genus')}
                 >
-                    Genus-Raten
+                    Wortgeschlecht-Raten
                 </button>
                 <button
                     className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
                     onClick={() => setActiveContent('rechtschreibfehler')}
                 >
-                    Rechtschreibfehler
+                    Rechtschreib-Wissen
                 </button>
                 <button
                     className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
                     onClick={() => setActiveContent('fachbegriffe')}
                 >
-                    Fachbegriffe und Bildungssprache
+                  Wortschatz-Quiz
                 </button>
             </div>
             <div className="mt-8">

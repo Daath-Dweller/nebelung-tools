@@ -7,6 +7,7 @@ export default function Linguagenus() {
     const [isAnswered, setIsAnswered] = useState(false);
     const [score, setScore] = useState(0);
     const [isQuizCompleted, setIsQuizCompleted] = useState(false);
+    const [showAllEntries, setShowAllEntries] = useState(false);
 
     const currentWord = words[currentIndex];
 
@@ -39,6 +40,11 @@ export default function Linguagenus() {
         setSelectedArticle(null);
         setIsAnswered(false);
         setIsQuizCompleted(false);
+        setShowAllEntries(false);
+    };
+
+    const toggleShowAllEntries = () => {
+        setShowAllEntries(!showAllEntries);
     };
 
     const isCorrect = selectedArticle === currentWord.article;
@@ -46,7 +52,7 @@ export default function Linguagenus() {
     return (
         <div className="md:p-12 bg-gray-800 text-white m-3">
             <h1 className="text-2xl font-bold mb-4 p-4 text-center">
-                Genusraten
+                Wortgeschlecht-Raten (Der, Die oder Das?)
             </h1>
             {!isQuizCompleted ? (
                 <div className="text-center">
@@ -73,7 +79,7 @@ export default function Linguagenus() {
                             </p>
                             <p className="text-lg mb-4">{currentWord.explanation}</p>
                             <button
-                                className="text-lg font-bold py-2 px-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg"
+                                className="text-lg font-bold py-2 px-4  bg-gray-500 hover:bg-gray-700 text-white rounded-lg"
                                 onClick={handleNextWord}
                             >
                                 Nächstes Wort
@@ -88,11 +94,35 @@ export default function Linguagenus() {
                         Du hast {score} von {words.length} richtig beantwortet.
                     </p>
                     <button
-                        className="text-lg font-bold py-2 px-4 bg-green-600 hover:bg-green-500 text-white rounded-lg"
+                        className="text-lg font-bold py-2 px-4  bg-gray-500 hover:bg-gray-700  text-white rounded-lg"
                         onClick={handleRestartQuiz}
                     >
                         Von vorne beginnen
                     </button>
+                </div>
+            )}
+
+            {/* Button to toggle all entries */}
+            <div className="text-center mt-8">
+                <button
+                    className="text-lg font-bold py-2 px-4  bg-gray-500 hover:bg-gray-700  text-white rounded-lg"
+                    onClick={toggleShowAllEntries}
+                >
+                    {showAllEntries ? "Antworten ausblenden" : "Alle Antworten anzeigen"}
+                </button>
+            </div>
+
+            {/* Display all entries if showAllEntries is true */}
+            {showAllEntries && (
+                <div className="mt-8 bg-gray-700 p-6 rounded-lg">
+                    {words.map((word, index) => (
+                        <div key={index} className="mb-4 border-b border-gray-600 pb-2">
+                            <p className="text-xl font-semibold">
+                                {word.article} {word.word}
+                            </p>
+                            <p className="text-sm text-gray-300">{word.explanation}</p>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
