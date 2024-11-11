@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import AnagramGenerator from "@/app/components/anagramgenerator";
-import Rechner from "@/app/components/calc";
-import NutritianAlmanac from "@/app/components/nutrition-almanac";
-import Logik from "@/app/components/logik";
-import Logos from "@/app/components/logos";
-import Lingua from "@/app/components/lingua";
+import AnagramGenerator from "@/app/components/tools/anagramgenerator";
+import Rechner from "@/app/components/knowledge/fitness/calc";
+import NutritianAlmanac from "@/app/components/knowledge/fitness/nutrition-almanac";
+import Logik from "@/app/components/knowledge/language/logik";
+import Logos from "@/app/components/knowledge/logos";
+import Lingua from "@/app/components/knowledge/language/lingua";
 import About from "@/app/components/about";
 import { FaBrain, FaTools } from "react-icons/fa";
 import { IoIosBody } from "react-icons/io";

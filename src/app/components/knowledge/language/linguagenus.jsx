@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { words } from "@/app/data/genusdata";
+import React, {useState} from "react";
+import {words} from "@/app/data/genusdata";
 
 export default function Linguagenus() {
     const [currentIndex, setCurrentIndex] = useState(0);

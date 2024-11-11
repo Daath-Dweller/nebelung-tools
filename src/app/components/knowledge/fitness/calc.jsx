@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import SubwayRechner from "@/app/components/subwaycalc";
-import KfcRechner from "@/app/components/kfccalc";
-import McDRechner from "@/app/components/mcdonaldscalc";
+import SubwayRechner from "@/app/components/knowledge/fitness/subwaycalc";
+import KfcRechner from "@/app/components/knowledge/fitness/kfccalc";
+import McDRechner from "@/app/components/knowledge/fitness/mcdonaldscalc";
 
 export default function Rechner() {
     const [activeTab, setActiveTab] = useState("Subway");
