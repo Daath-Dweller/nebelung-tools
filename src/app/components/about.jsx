@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import PokeTable from "@/app/components/tools/pkmn.jsx";
 export default function About() {
+
+
 
 
     return (

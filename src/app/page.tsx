@@ -10,6 +10,8 @@ import About from "@/app/components/about";
 import { FaBrain, FaTools } from "react-icons/fa";
 import { IoIosBody } from "react-icons/io";
 import { SlSpeech } from "react-icons/sl";
+import PokeTable from "@/app/components/tools/pkmn";
+import {CgPokemon} from "react-icons/cg";
 
 export default function Home() {
     const [activeTab, setActiveTab] = useState("logos");
@@ -41,7 +43,8 @@ export default function Home() {
         {
             icon: <FaTools />,
             label: "Sonstige Tools",
-            subItems: [{ key: "anagram", label: "Anagramm-Generator" }],
+            subItems: [{ key: "anagram", label: "Anagramm-Generator" },
+                { key: "pkmn", label: "Pokemontabelle" },],
         },
     ];
 
@@ -166,6 +169,7 @@ export default function Home() {
                 {activeTab === "rechner" && <Rechner />}
                 {activeTab === "logik" && <Logik />}
                 {activeTab === "logos" && <Logos />}
+                {activeTab === "pkmn" && <PokeTable />}
             </div>
         </div>
     );
