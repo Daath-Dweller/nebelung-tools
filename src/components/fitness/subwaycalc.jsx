@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { zutaten } from '@/app/data/subwaydata.ts'; // Daten importieren
+import { zutaten } from '@/data/subwaydata.ts'; // Daten importieren
 
 const getDisplayName = (item) => {
     return `${item.name} | + ${item.kcal} Kcal | + ${item.fett} F | + ${item.kohlenhydrate} KH | + ${item.protein} P`;

@@ -4,7 +4,7 @@ import {
     subcategoryOptions,
     themeOptions,
     logosEntries,
-} from "@/app/data/logosdata";
+} from "@/data/logosdata";
 
 export default function Logos() {
     const [categorySelection, setCategorySelection] = useState("");

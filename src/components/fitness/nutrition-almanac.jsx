@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {naehrstoffe} from '@/app/data/nadata.ts';
+import {naehrstoffe} from '@/data/nadata.ts';
 
 const NutritionAlmanac = () => {
     const [popup, setPopup] = useState({active: false, content: ''});

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fehlschluesse } from "@/app/data/logikdata"; // Importiere die Daten
+import { fehlschluesse } from "@/data/logikdata"; // Importiere die Daten
 
 export default function Logik() {
     // Zustand für die aktuelle Ansicht pro Fehlschluss initialisieren

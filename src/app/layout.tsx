@@ -49,7 +49,7 @@ export default function RootLayout({
     {
       icon: <FaTools />,
       label: "Sonstige Tools",
-      subItems: [
+      subItems: [  { key: "/politikdach", label: "Parteien DACH", href: "/politikdach" },
         { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
         { key: "/pkmn", label: "Pokemontabelle", href: "/pkmn" },
       ],

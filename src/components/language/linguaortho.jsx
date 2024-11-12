@@ -1,5 +1,5 @@
 import React from "react";
-import {Rechtschreibfehler} from "@/app/data/orthodata";
+import {Rechtschreibfehler} from "@/data/orthodata";
 
 export default function Linguaortho() {
     return (

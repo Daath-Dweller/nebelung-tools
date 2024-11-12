@@ -2,7 +2,7 @@
 
 // Komponente KfcRechner
 import {useState} from 'react';
-import {produkte} from '@/app/data/mcdonaldsdata.ts';
+import {produkte} from '@/data/mcdonaldsdata.ts';
 
 export default function McDRechner({updateUserValues}) {
     const [selectedProducts, setSelectedProducts] = useState([]);

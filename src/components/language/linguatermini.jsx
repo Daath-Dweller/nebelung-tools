@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Fachbegriffe } from "@/app/data/terminidata";
+import { Fachbegriffe } from "@/data/terminidata";
 
 export default function Linguatermini() {
     const [currentIndex, setCurrentIndex] = useState(0);

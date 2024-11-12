@@ -2,7 +2,7 @@
 
 // Komponente KfcRechner
 import {useState} from 'react';
-import {produkte} from '@/app/data/kfcdata.ts';
+import {produkte} from '@/data/kfcdata.ts';
 
 export default function KfcRechner({updateUserValues}) {
     const [selectedProducts, setSelectedProducts] = useState([]);

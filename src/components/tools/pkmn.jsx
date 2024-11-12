@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { pokemonData, typenData } from "@/app/data/pkmndata.ts";
+import { pokemonData, typenData } from "@/data/pkmndata.ts";
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
