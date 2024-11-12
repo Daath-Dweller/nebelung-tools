@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Linguagenus from "@/app/components/knowledge/language/linguagenus";
-import Linguatermini from "@/app/components/knowledge/language/linguatermini";
-import Linguaortho from "@/app/components/knowledge/language/linguaortho";
+import Linguagenus from "@/components/language/linguagenus";
+import Linguatermini from "@/components/language/linguatermini";
+import Linguaortho from "@/components/language/linguaortho";
 
 export default function Lingua() {
     const [activeContent, setActiveContent] = useState(null);

@@ -17743,7 +17743,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10190,
-        "name_de": "Endynalos",
+        "name_de": "Eternamax-Endynalos",
         "name_en": "eternatus-eternamax",
         "type1": "Gift",
         "type2": "Drache",

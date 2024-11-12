@@ -140,8 +140,8 @@ const PokeTable = () => {
     };
 
     return (
-        <div className="md:p-12 p-4 bg-black text-white m-3">
-            <div className="flex justify-between items-center mb-2">
+        <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
+            <div className="flex justify-between items-center mb-2 gap-x-2">
                 <button onClick={() => setShowInfo(!showInfo)} className="text-white bg-gray-600 px-2 py-1 rounded">
                     ℹ️
                 </button>
@@ -176,7 +176,7 @@ const PokeTable = () => {
                 </div>
             )}
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 pr-2">
                 <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount} )</h2>
                 {displayedCount < pokemonData.length && (
                     <button onClick={loadAllPokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-8 px-4 rounded">
@@ -184,7 +184,7 @@ const PokeTable = () => {
                     </button>
                 )}
 
-                <table className="table-auto w-full border-collapse">
+                <table className="table-auto w-full border-collapse ">
                     <thead>
                     <tr>
                         {[
