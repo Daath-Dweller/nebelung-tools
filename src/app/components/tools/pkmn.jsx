@@ -152,11 +152,21 @@ const PokeTable = () => {
 
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-6 mx-auto">
-                    Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr effektiven, nicht effektiven und wirkungslosen Angriffen gegen ein Pokemon oder von einem Pokemon ausgehend.
-                    Normale Effektivität gibt 1 Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr gegen Typen.<br/><br/>
-                    GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus Typ-Off und Typ-Def in Verbindung mit gewichtetem Angr/SpAngr/Init und Vert/SpVert/HP, sowie gewichteten HP und Initiative. Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder Verteidigungswerte sehr klein ist, was Spezial- oder Angriffe, bzw Abwehr gegen diese, enorm schlecht macht.<br/><br/>
-                    Nicht berücksichtigt werden Fähigkeiten und Wesen, die die Offensive und Defensive beträchtlich beeinflussen können.<br/><br/>
-                    Der Monotypenbonus verdoppelt die Typenoffensive und Defensive, da PKMN mit einem Typ sonst einen starken Nachteil in der Berechnung haben. Je nach Situation kann ein Doppeltyp vorteilhaft oder nachteilig sein.
+                    Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr effektiven, nicht effektiven und
+                    wirkungslosen Angriffen gegen ein Pokemon oder von einem Pokemon ausgehend.
+                    Normale Effektivität gibt 1 Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und
+                    wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr gegen Typen.<br/><br/>
+                    GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus Typ-Off und Typ-Def in Verbindung mit
+                    gewichtetem Angr/SpAngr/Init und Vert/SpVert/HP.
+                    Typen die sehr oft effektiv sind, oder wenige Schwächen haben, nützen umso mehr, umso stärker die
+                    Offensiv-/Defensivwerte sind.<br/><br/>
+                    Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder Verteidigungswerte sehr klein
+                    ist, was Spezial- oder Angriffe, bzw Abwehr gegen diese, enorm schlecht macht.<br/><br/>
+                    Nicht berücksichtigt werden Fähigkeiten und Wesen, die die Offensive und Defensive beträchtlich
+                    beeinflussen können.<br/><br/>
+                    Der Monotypenbonus verdoppelt die Typenoffensive und Defensive, da PKMN mit einem Typ sonst einen
+                    starken Nachteil in der Berechnung haben. Je nach Situation kann ein Doppeltyp vorteilhaft oder
+                    nachteilig sein.
                 </div>
             )}
 
