@@ -15998,7 +15998,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10034,
-        "name_de": "Glurak",
+        "name_de": "Glurak-X",
         "name_en": "charizard-mega-x",
         "type1": "Feuer",
         "type2": "Drache",
@@ -16013,7 +16013,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10035,
-        "name_de": "Glurak",
+        "name_de": "Glurak-Y",
         "name_en": "charizard-mega-y",
         "type1": "Feuer",
         "type2": "Flug",
@@ -16133,7 +16133,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10043,
-        "name_de": "Mewtu",
+        "name_de": "Mewtu-X",
         "name_en": "mewtwo-mega-x",
         "type1": "Psycho",
         "type2": "Kampf",
@@ -16148,7 +16148,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10044,
-        "name_de": "Mewtu",
+        "name_de": "Mewtu-Yglu",
         "name_en": "mewtwo-mega-y",
         "type1": "Psycho",
         "type2": "",
