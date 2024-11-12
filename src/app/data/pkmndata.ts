@@ -10340,7 +10340,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 681,
-        "name_de": "Durengard",
+        "name_de": "Durengard (Schild)",
         "name_en": "aegislash-shield",
         "type1": "Stahl",
         "type2": "Geist",
@@ -13265,7 +13265,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 876,
-        "name_de": "Servol",
+        "name_de": "Servol (m)",
         "name_en": "indeedee-male",
         "type1": "Psycho",
         "type2": "Normal",
@@ -13280,7 +13280,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 877,
-        "name_de": "Morpeko",
+        "name_de": "Morpeko (satt)",
         "name_en": "morpeko-full-belly",
         "type1": "Elektro",
         "type2": "Unlicht",
@@ -13505,7 +13505,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 892,
-        "name_de": "Wulaosu",
+        "name_de": "Wulaosu (fok.)",
         "name_en": "urshifu-single-strike",
         "type1": "Kampf",
         "type2": "Unlicht",
@@ -15515,7 +15515,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10001,
-        "name_de": "Deoxys",
+        "name_de": "Deoxys (Angr)",
         "name_en": "deoxys-attack",
         "type1": "Psycho",
         "type2": "",
@@ -15530,7 +15530,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10002,
-        "name_de": "Deoxys",
+        "name_de": "Deoxys (Abw)",
         "name_en": "deoxys-defense",
         "type1": "Psycho",
         "type2": "",
@@ -15545,7 +15545,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10003,
-        "name_de": "Deoxys",
+        "name_de": "Deoxys (Init)",
         "name_en": "deoxys-speed",
         "type1": "Psycho",
         "type2": "",
@@ -15560,7 +15560,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10004,
-        "name_de": "Burmadame",
+        "name_de": "Burmadame (Sand)",
         "name_en": "wormadam-sandy",
         "type1": "Käfer",
         "type2": "Boden",
@@ -15575,7 +15575,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10005,
-        "name_de": "Burmadame",
+        "name_de": "Burmadame (Müll)",
         "name_en": "wormadam-trash",
         "type1": "Käfer",
         "type2": "Stahl",
@@ -15590,7 +15590,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10006,
-        "name_de": "Shaymin",
+        "name_de": "Shaymin (Zenit)",
         "name_en": "shaymin-sky",
         "type1": "Pflanze",
         "type2": "Flug",
@@ -15605,7 +15605,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10007,
-        "name_de": "Giratina",
+        "name_de": "Giratina (Ur)",
         "name_en": "giratina-origin",
         "type1": "Geist",
         "type2": "Drache",
@@ -15620,7 +15620,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10008,
-        "name_de": "Rotom",
+        "name_de": "Rotom (Hitze)",
         "name_en": "rotom-heat",
         "type1": "Elektro",
         "type2": "Feuer",
@@ -15635,7 +15635,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10009,
-        "name_de": "Rotom",
+        "name_de": "Rotom (Wasch)",
         "name_en": "rotom-wash",
         "type1": "Elektro",
         "type2": "Wasser",
@@ -15650,7 +15650,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10010,
-        "name_de": "Rotom",
+        "name_de": "Rotom (Frost)",
         "name_en": "rotom-frost",
         "type1": "Elektro",
         "type2": "Eis",
@@ -15665,7 +15665,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10011,
-        "name_de": "Rotom",
+        "name_de": "Rotom (Wirbel)",
         "name_en": "rotom-fan",
         "type1": "Elektro",
         "type2": "Flug",
@@ -15680,7 +15680,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10012,
-        "name_de": "Rotom",
+        "name_de": "Rotom (Schneid)",
         "name_en": "rotom-mow",
         "type1": "Elektro",
         "type2": "Pflanze",
@@ -15695,7 +15695,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10013,
-        "name_de": "Formeo",
+        "name_de": "Formeo (sonnig)",
         "name_en": "castform-sunny",
         "type1": "Feuer",
         "type2": "",
@@ -15710,7 +15710,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10014,
-        "name_de": "Formeo",
+        "name_de": "Formeo (Regen)",
         "name_en": "castform-rainy",
         "type1": "Wasser",
         "type2": "",
@@ -15725,7 +15725,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10015,
-        "name_de": "Formeo",
+        "name_de": "Formeo (Schnee)",
         "name_en": "castform-snowy",
         "type1": "Eis",
         "type2": "",
@@ -15738,24 +15738,12 @@ export const pokemonData: Pokemon[] = [
             "speed": 70
         }
     },
-    {
-        "id": 10016,
-        "name_de": "Barschuft",
-        "name_en": "basculin-blue-striped",
-        "type1": "Wasser",
-        "type2": "",
-        "stats": {
-            "hp": 70,
-            "attack": 92,
-            "defense": 65,
-            "specialAttack": 80,
-            "specialDefense": 55,
-            "speed": 98
-        }
-    },
+
+
+
     {
         "id": 10017,
-        "name_de": "Flampivian",
+        "name_de": "Flampivian (Zen)",
         "name_en": "darmanitan-zen",
         "type1": "Feuer",
         "type2": "Psycho",
@@ -15770,7 +15758,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10018,
-        "name_de": "Meloetta",
+        "name_de": "Meloetta (Pir.)",
         "name_en": "meloetta-pirouette",
         "type1": "Normal",
         "type2": "Kampf",
@@ -15785,7 +15773,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10019,
-        "name_de": "Boreos",
+        "name_de": "Boreos (Tier)",
         "name_en": "tornadus-therian",
         "type1": "Flug",
         "type2": "",
@@ -15800,7 +15788,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10020,
-        "name_de": "Voltolos",
+        "name_de": "Voltolos (Tier)",
         "name_en": "thundurus-therian",
         "type1": "Elektro",
         "type2": "Flug",
@@ -15815,7 +15803,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10021,
-        "name_de": "Demeteros",
+        "name_de": "Demeteros (Tier)",
         "name_en": "landorus-therian",
         "type1": "Boden",
         "type2": "Flug",
@@ -15830,7 +15818,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10022,
-        "name_de": "Kyurem",
+        "name_de": "Kyurem schwarz",
         "name_en": "kyurem-black",
         "type1": "Drache",
         "type2": "Eis",
@@ -15845,7 +15833,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10023,
-        "name_de": "Kyurem",
+        "name_de": "Kyurem weiss",
         "name_en": "kyurem-white",
         "type1": "Drache",
         "type2": "Eis",
@@ -15860,7 +15848,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10024,
-        "name_de": "Keldeo",
+        "name_de": "Keldeo (res.)",
         "name_en": "keldeo-resolute",
         "type1": "Wasser",
         "type2": "Kampf",
@@ -15875,7 +15863,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10025,
-        "name_de": "Psiaugon",
+        "name_de": "Psiaugon (w)",
         "name_en": "meowstic-female",
         "type1": "Psycho",
         "type2": "",
@@ -15890,7 +15878,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10026,
-        "name_de": "Durengard",
+        "name_de": "Durengard (Klinge)",
         "name_en": "aegislash-blade",
         "type1": "Stahl",
         "type2": "Geist",
@@ -15905,7 +15893,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10027,
-        "name_de": "Irrbis",
+        "name_de": "Irrbis S",
         "name_en": "pumpkaboo-small",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -15920,7 +15908,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10028,
-        "name_de": "Irrbis",
+        "name_de": "Irrbis L",
         "name_en": "pumpkaboo-large",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -15935,7 +15923,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10029,
-        "name_de": "Irrbis",
+        "name_de": "Irrbis XL",
         "name_en": "pumpkaboo-super",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -15950,7 +15938,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10030,
-        "name_de": "Pumpdjinn",
+        "name_de": "Pumpdjinn S",
         "name_en": "gourgeist-small",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -15965,7 +15953,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10031,
-        "name_de": "Pumpdjinn",
+        "name_de": "Pumpdjinn L",
         "name_en": "gourgeist-large",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -15980,7 +15968,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10032,
-        "name_de": "Pumpdjinn",
+        "name_de": "Pumpdjinn XL",
         "name_en": "gourgeist-super",
         "type1": "Geist",
         "type2": "Pflanze",
@@ -16653,36 +16641,7 @@ export const pokemonData: Pokemon[] = [
             "speed": 110
         }
     },
-    {
-        "id": 10077,
-        "name_de": "Kyogre",
-        "name_en": "kyogre-primal",
-        "type1": "Wasser",
-        "type2": "",
-        "stats": {
-            "hp": 100,
-            "attack": 150,
-            "defense": 90,
-            "specialAttack": 180,
-            "specialDefense": 160,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10078,
-        "name_de": "Groudon",
-        "name_en": "groudon-primal",
-        "type1": "Boden",
-        "type2": "Feuer",
-        "stats": {
-            "hp": 100,
-            "attack": 180,
-            "defense": 160,
-            "specialAttack": 150,
-            "specialDefense": 90,
-            "speed": 90
-        }
-    },
+
     {
         "id": 10079,
         "name_de": "Rayquaza",
@@ -16698,111 +16657,7 @@ export const pokemonData: Pokemon[] = [
             "speed": 115
         }
     },
-    {
-        "id": 10080,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-rock-star",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10081,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-belle",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10082,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-pop-star",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10083,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-phd",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10084,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-libre",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10085,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-cosplay",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10086,
-        "name_de": "Hoopa",
-        "name_en": "hoopa-unbound",
-        "type1": "Psycho",
-        "type2": "Unlicht",
-        "stats": {
-            "hp": 80,
-            "attack": 160,
-            "defense": 60,
-            "specialAttack": 170,
-            "specialDefense": 130,
-            "speed": 80
-        }
-    },
+
     {
         "id": 10087,
         "name_de": "Camerupt",
@@ -16861,6 +16716,21 @@ export const pokemonData: Pokemon[] = [
             "specialAttack": 15,
             "specialDefense": 80,
             "speed": 145
+        }
+    },
+    {
+        "id": 10278,
+        "name_de": "Hoopa (entf.)",
+        "name_en": "hoopa-unbound",
+        "type1": "Psycho",
+        "type2": "Unlicht",
+        "stats": {
+            "hp": 80,
+            "attack": 160,
+            "defense": 60,
+            "specialAttack": 170,
+            "specialDefense": 130,
+            "speed": 80
         }
     },
     {
@@ -17240,7 +17110,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10116,
-        "name_de": "Quajutsu",
+        "name_de": "Quajutsu (Fr-Akt)",
         "name_en": "greninja-battle-bond",
         "type1": "Wasser",
         "type2": "Unlicht",
@@ -17255,7 +17125,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10117,
-        "name_de": "Quajutsu",
+        "name_de": "Ashs Quajutsu",
         "name_en": "greninja-ash",
         "type1": "Wasser",
         "type2": "Unlicht",
@@ -17270,7 +17140,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10118,
-        "name_de": "Zygarde",
+        "name_de": "Zygarde (10)",
         "name_en": "zygarde-10-power-construct",
         "type1": "Drache",
         "type2": "Boden",
@@ -17285,7 +17155,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10119,
-        "name_de": "Zygarde",
+        "name_de": "Zygarde (50)",
         "name_en": "zygarde-50-power-construct",
         "type1": "Drache",
         "type2": "Boden",
@@ -17300,7 +17170,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10120,
-        "name_de": "Zygarde",
+        "name_de": "Zygarde (100)",
         "name_en": "zygarde-complete",
         "type1": "Drache",
         "type2": "Boden",
@@ -17314,38 +17184,8 @@ export const pokemonData: Pokemon[] = [
         }
     },
     {
-        "id": 10121,
-        "name_de": "Manguspektor",
-        "name_en": "gumshoos-totem",
-        "type1": "Normal",
-        "type2": "",
-        "stats": {
-            "hp": 88,
-            "attack": 110,
-            "defense": 60,
-            "specialAttack": 55,
-            "specialDefense": 60,
-            "speed": 45
-        }
-    },
-    {
-        "id": 10122,
-        "name_de": "Donarion",
-        "name_en": "vikavolt-totem",
-        "type1": "Käfer",
-        "type2": "Elektro",
-        "stats": {
-            "hp": 77,
-            "attack": 70,
-            "defense": 90,
-            "specialAttack": 145,
-            "specialDefense": 75,
-            "speed": 43
-        }
-    },
-    {
         "id": 10123,
-        "name_de": "Choreogel",
+        "name_de": "Choreogel (Cheerl.)",
         "name_en": "oricorio-pom-pom",
         "type1": "Elektro",
         "type2": "Flug",
@@ -17360,7 +17200,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10124,
-        "name_de": "Choreogel",
+        "name_de": "Choreogel (Hula)",
         "name_en": "oricorio-pau",
         "type1": "Psycho",
         "type2": "Flug",
@@ -17375,7 +17215,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10125,
-        "name_de": "Choreogel",
+        "name_de": "Choreogel (Buyo)",
         "name_en": "oricorio-sensu",
         "type1": "Geist",
         "type2": "Flug",
@@ -17390,7 +17230,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10126,
-        "name_de": "Wolwerock",
+        "name_de": "Wolwerock (Nacht.)",
         "name_en": "lycanroc-midnight",
         "type1": "Gestein",
         "type2": "",
@@ -17405,7 +17245,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10127,
-        "name_de": "Lusardin",
+        "name_de": "Lusardin (Schwarm)",
         "name_en": "wishiwashi-school",
         "type1": "Wasser",
         "type2": "",
@@ -17419,128 +17259,8 @@ export const pokemonData: Pokemon[] = [
         }
     },
     {
-        "id": 10128,
-        "name_de": "Mantidea",
-        "name_en": "lurantis-totem",
-        "type1": "Pflanze",
-        "type2": "",
-        "stats": {
-            "hp": 70,
-            "attack": 105,
-            "defense": 90,
-            "specialAttack": 80,
-            "specialDefense": 90,
-            "speed": 45
-        }
-    },
-    {
-        "id": 10129,
-        "name_de": "Amfira",
-        "name_en": "salazzle-totem",
-        "type1": "Gift",
-        "type2": "Feuer",
-        "stats": {
-            "hp": 68,
-            "attack": 64,
-            "defense": 60,
-            "specialAttack": 111,
-            "specialDefense": 60,
-            "speed": 117
-        }
-    },
-    {
-        "id": 10130,
-        "name_de": "Meteno",
-        "name_en": "minior-orange-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
-        "id": 10131,
-        "name_de": "Meteno",
-        "name_en": "minior-yellow-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
-        "id": 10132,
-        "name_de": "Meteno",
-        "name_en": "minior-green-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
-        "id": 10133,
-        "name_de": "Meteno",
-        "name_en": "minior-blue-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
-        "id": 10134,
-        "name_de": "Meteno",
-        "name_en": "minior-indigo-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
-        "id": 10135,
-        "name_de": "Meteno",
-        "name_en": "minior-violet-meteor",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 60,
-            "defense": 100,
-            "specialAttack": 60,
-            "specialDefense": 100,
-            "speed": 60
-        }
-    },
-    {
         "id": 10136,
-        "name_de": "Meteno",
+        "name_de": "Meteno (Kern)",
         "name_en": "minior-red",
         "type1": "Gestein",
         "type2": "Flug",
@@ -17553,234 +17273,10 @@ export const pokemonData: Pokemon[] = [
             "speed": 120
         }
     },
-    {
-        "id": 10137,
-        "name_de": "Meteno",
-        "name_en": "minior-orange",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10138,
-        "name_de": "Meteno",
-        "name_en": "minior-yellow",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10139,
-        "name_de": "Meteno",
-        "name_en": "minior-green",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10140,
-        "name_de": "Meteno",
-        "name_en": "minior-blue",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10141,
-        "name_de": "Meteno",
-        "name_en": "minior-indigo",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10142,
-        "name_de": "Meteno",
-        "name_en": "minior-violet",
-        "type1": "Gestein",
-        "type2": "Flug",
-        "stats": {
-            "hp": 60,
-            "attack": 100,
-            "defense": 60,
-            "specialAttack": 100,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10143,
-        "name_de": "Mimigma",
-        "name_en": "mimikyu-busted",
-        "type1": "Geist",
-        "type2": "Fee",
-        "stats": {
-            "hp": 55,
-            "attack": 90,
-            "defense": 80,
-            "specialAttack": 50,
-            "specialDefense": 105,
-            "speed": 96
-        }
-    },
-    {
-        "id": 10144,
-        "name_de": "Mimigma",
-        "name_en": "mimikyu-totem-disguised",
-        "type1": "Geist",
-        "type2": "Fee",
-        "stats": {
-            "hp": 55,
-            "attack": 90,
-            "defense": 80,
-            "specialAttack": 50,
-            "specialDefense": 105,
-            "speed": 96
-        }
-    },
-    {
-        "id": 10145,
-        "name_de": "Mimigma",
-        "name_en": "mimikyu-totem-busted",
-        "type1": "Geist",
-        "type2": "Fee",
-        "stats": {
-            "hp": 55,
-            "attack": 90,
-            "defense": 80,
-            "specialAttack": 50,
-            "specialDefense": 105,
-            "speed": 96
-        }
-    },
-    {
-        "id": 10146,
-        "name_de": "Grandiras",
-        "name_en": "kommo-o-totem",
-        "type1": "Drache",
-        "type2": "Kampf",
-        "stats": {
-            "hp": 75,
-            "attack": 110,
-            "defense": 125,
-            "specialAttack": 100,
-            "specialDefense": 105,
-            "speed": 85
-        }
-    },
-    {
-        "id": 10147,
-        "name_de": "Magearna",
-        "name_en": "magearna-original",
-        "type1": "Stahl",
-        "type2": "Fee",
-        "stats": {
-            "hp": 80,
-            "attack": 95,
-            "defense": 115,
-            "specialAttack": 130,
-            "specialDefense": 115,
-            "speed": 65
-        }
-    },
-    {
-        "id": 10148,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-partner-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10149,
-        "name_de": "Knogga",
-        "name_en": "marowak-totem",
-        "type1": "Feuer",
-        "type2": "Geist",
-        "stats": {
-            "hp": 60,
-            "attack": 80,
-            "defense": 110,
-            "specialAttack": 50,
-            "specialDefense": 80,
-            "speed": 45
-        }
-    },
-    {
-        "id": 10150,
-        "name_de": "Bandelby",
-        "name_en": "ribombee-totem",
-        "type1": "Käfer",
-        "type2": "Fee",
-        "stats": {
-            "hp": 60,
-            "attack": 55,
-            "defense": 60,
-            "specialAttack": 95,
-            "specialDefense": 70,
-            "speed": 124
-        }
-    },
-    {
-        "id": 10151,
-        "name_de": "Wuffels",
-        "name_en": "rockruff-own-tempo",
-        "type1": "Gestein",
-        "type2": "",
-        "stats": {
-            "hp": 45,
-            "attack": 65,
-            "defense": 40,
-            "specialAttack": 30,
-            "specialDefense": 40,
-            "speed": 60
-        }
-    },
+
     {
         "id": 10152,
-        "name_de": "Wolwerock",
+        "name_de": "Wolwerock (Zwielicht)",
         "name_en": "lycanroc-dusk",
         "type1": "Gestein",
         "type2": "",
@@ -17793,39 +17289,10 @@ export const pokemonData: Pokemon[] = [
             "speed": 110
         }
     },
-    {
-        "id": 10153,
-        "name_de": "Aranestro",
-        "name_en": "araquanid-totem",
-        "type1": "Wasser",
-        "type2": "Käfer",
-        "stats": {
-            "hp": 68,
-            "attack": 70,
-            "defense": 92,
-            "specialAttack": 50,
-            "specialDefense": 132,
-            "speed": 42
-        }
-    },
-    {
-        "id": 10154,
-        "name_de": "Togedemaru",
-        "name_en": "togedemaru-totem",
-        "type1": "Elektro",
-        "type2": "Stahl",
-        "stats": {
-            "hp": 65,
-            "attack": 98,
-            "defense": 63,
-            "specialAttack": 40,
-            "specialDefense": 73,
-            "speed": 96
-        }
-    },
+
     {
         "id": 10155,
-        "name_de": "Necrozma",
+        "name_de": "Necrozma (AM)",
         "name_en": "necrozma-dusk",
         "type1": "Psycho",
         "type2": "Stahl",
@@ -17840,7 +17307,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10156,
-        "name_de": "Necrozma",
+        "name_de": "Necrozma (MS)",
         "name_en": "necrozma-dawn",
         "type1": "Psycho",
         "type2": "Geist",
@@ -17855,7 +17322,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10157,
-        "name_de": "Necrozma",
+        "name_de": "Ultra-Necrozma",
         "name_en": "necrozma-ultra",
         "type1": "Psycho",
         "type2": "Drache",
@@ -17868,51 +17335,7 @@ export const pokemonData: Pokemon[] = [
             "speed": 129
         }
     },
-    {
-        "id": 10158,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-starter",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 45,
-            "attack": 80,
-            "defense": 50,
-            "specialAttack": 75,
-            "specialDefense": 60,
-            "speed": 120
-        }
-    },
-    {
-        "id": 10159,
-        "name_de": "Evoli",
-        "name_en": "eevee-starter",
-        "type1": "Normal",
-        "type2": "",
-        "stats": {
-            "hp": 65,
-            "attack": 75,
-            "defense": 70,
-            "specialAttack": 65,
-            "specialDefense": 85,
-            "speed": 75
-        }
-    },
-    {
-        "id": 10160,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-world-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
+
     {
         "id": 10161,
         "name_de": "Mauzi",
@@ -18170,7 +17593,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10178,
-        "name_de": "Flampivian",
+        "name_de": "Flampivian (Zen)",
         "name_en": "darmanitan-galar-zen",
         "type1": "Eis",
         "type2": "Feuer",
@@ -18215,7 +17638,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10181,
-        "name_de": "Zygarde",
+        "name_de": "Zygarde (10)",
         "name_en": "zygarde-10",
         "type1": "Drache",
         "type2": "Boden",
@@ -18226,36 +17649,6 @@ export const pokemonData: Pokemon[] = [
             "specialAttack": 61,
             "specialDefense": 85,
             "speed": 115
-        }
-    },
-    {
-        "id": 10182,
-        "name_de": "Urgl",
-        "name_en": "cramorant-gulping",
-        "type1": "Flug",
-        "type2": "Wasser",
-        "stats": {
-            "hp": 70,
-            "attack": 85,
-            "defense": 55,
-            "specialAttack": 85,
-            "specialDefense": 95,
-            "speed": 85
-        }
-    },
-    {
-        "id": 10183,
-        "name_de": "Urgl",
-        "name_en": "cramorant-gorging",
-        "type1": "Flug",
-        "type2": "Wasser",
-        "stats": {
-            "hp": 70,
-            "attack": 85,
-            "defense": 55,
-            "specialAttack": 85,
-            "specialDefense": 95,
-            "speed": 85
         }
     },
     {
@@ -18290,7 +17683,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10186,
-        "name_de": "Servol",
+        "name_de": "Servol (w)",
         "name_en": "indeedee-female",
         "type1": "Psycho",
         "type2": "Normal",
@@ -18305,7 +17698,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10187,
-        "name_de": "Morpeko",
+        "name_de": "Morpeko (Kohldampf)",
         "name_en": "morpeko-hangry",
         "type1": "Elektro",
         "type2": "Unlicht",
@@ -18320,7 +17713,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10188,
-        "name_de": "Zacian",
+        "name_de": "Zacian (Krone)",
         "name_en": "zacian-crowned",
         "type1": "Fee",
         "type2": "Stahl",
@@ -18335,7 +17728,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10189,
-        "name_de": "Zamazenta",
+        "name_de": "Zamazenta (Krone)",
         "name_en": "zamazenta-crowned",
         "type1": "Kampf",
         "type2": "Stahl",
@@ -18365,7 +17758,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10191,
-        "name_de": "Wulaosu",
+        "name_de": "Wulaosu (fliess.)",
         "name_en": "urshifu-rapid-strike",
         "type1": "Kampf",
         "type2": "Wasser",
@@ -18378,24 +17771,10 @@ export const pokemonData: Pokemon[] = [
             "speed": 97
         }
     },
-    {
-        "id": 10192,
-        "name_de": "Zarude",
-        "name_en": "zarude-dada",
-        "type1": "Unlicht",
-        "type2": "Pflanze",
-        "stats": {
-            "hp": 105,
-            "attack": 120,
-            "defense": 105,
-            "specialAttack": 70,
-            "specialDefense": 95,
-            "speed": 105
-        }
-    },
+
     {
         "id": 10193,
-        "name_de": "Coronospa",
+        "name_de": "Coronospa (PoR)",
         "name_en": "calyrex-ice",
         "type1": "Psycho",
         "type2": "Eis",
@@ -18410,7 +17789,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10194,
-        "name_de": "Coronospa",
+        "name_de": "Coronospa (PhR)",
         "name_en": "calyrex-shadow",
         "type1": "Psycho",
         "type2": "Geist",
@@ -18890,7 +18269,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10226,
-        "name_de": "Wulaosu",
+        "name_de": "Wulaosu (fok.)",
         "name_en": "urshifu-single-strike-gmax",
         "type1": "Kampf",
         "type2": "Unlicht",
@@ -18905,7 +18284,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10227,
-        "name_de": "Wulaosu",
+        "name_de": "Wulaosu (fliess.)",
         "name_en": "urshifu-rapid-strike-gmax",
         "type1": "Kampf",
         "type2": "Wasser",
@@ -18916,21 +18295,6 @@ export const pokemonData: Pokemon[] = [
             "specialAttack": 63,
             "specialDefense": 60,
             "speed": 97
-        }
-    },
-    {
-        "id": 10228,
-        "name_de": "Riffex",
-        "name_en": "toxtricity-low-key-gmax",
-        "type1": "Elektro",
-        "type2": "Gift",
-        "stats": {
-            "hp": 75,
-            "attack": 98,
-            "defense": 70,
-            "specialAttack": 114,
-            "specialDefense": 70,
-            "speed": 75
         }
     },
     {
@@ -19175,7 +18539,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10245,
-        "name_de": "Dialga",
+        "name_de": "Dialga (Ur)",
         "name_en": "dialga-origin",
         "type1": "Stahl",
         "type2": "Drache",
@@ -19190,7 +18554,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10246,
-        "name_de": "Palkia",
+        "name_de": "Palkia (Ur)",
         "name_en": "palkia-origin",
         "type1": "Wasser",
         "type2": "Drache",
@@ -19203,24 +18567,10 @@ export const pokemonData: Pokemon[] = [
             "speed": 120
         }
     },
-    {
-        "id": 10247,
-        "name_de": "Barschuft",
-        "name_en": "basculin-white-striped",
-        "type1": "Wasser",
-        "type2": "",
-        "stats": {
-            "hp": 70,
-            "attack": 92,
-            "defense": 65,
-            "specialAttack": 80,
-            "specialDefense": 55,
-            "speed": 98
-        }
-    },
+
     {
         "id": 10248,
-        "name_de": "Salmagnis",
+        "name_de": "Salmagnis (w)",
         "name_en": "basculegion-female",
         "type1": "Wasser",
         "type2": "Geist",
@@ -19235,7 +18585,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10249,
-        "name_de": "Cupidos",
+        "name_de": "Cupidos (Tier)",
         "name_en": "enamorus-therian",
         "type1": "Fee",
         "type2": "Flug",
@@ -19250,7 +18600,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10250,
-        "name_de": "Tauros",
+        "name_de": "Tauros (Kampf)",
         "name_en": "tauros-paldea-combat-breed",
         "type1": "Kampf",
         "type2": "",
@@ -19265,7 +18615,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10251,
-        "name_de": "Tauros",
+        "name_de": "Tauros (Feuer)",
         "name_en": "tauros-paldea-blaze-breed",
         "type1": "Kampf",
         "type2": "Feuer",
@@ -19280,7 +18630,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10252,
-        "name_de": "Tauros",
+        "name_de": "Tauros (Wasser)",
         "name_en": "tauros-paldea-aqua-breed",
         "type1": "Kampf",
         "type2": "Wasser",
@@ -19310,7 +18660,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10254,
-        "name_de": "Fragrunz",
+        "name_de": "Fragrunz (w)",
         "name_en": "oinkologne-female",
         "type1": "Normal",
         "type2": "",
@@ -19325,7 +18675,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10255,
-        "name_de": "Dummimisel",
+        "name_de": "Dummimisel (3)",
         "name_en": "dudunsparce-three-segment",
         "type1": "Normal",
         "type2": "",
@@ -19340,7 +18690,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10256,
-        "name_de": "Delfinator",
+        "name_de": "Delfinator (Held)",
         "name_en": "palafin-hero",
         "type1": "Wasser",
         "type2": "",
@@ -19355,7 +18705,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10257,
-        "name_de": "Famieps",
+        "name_de": "Famieps (3)",
         "name_en": "maushold-family-of-three",
         "type1": "Normal",
         "type2": "",
@@ -19368,84 +18718,14 @@ export const pokemonData: Pokemon[] = [
             "speed": 111
         }
     },
-    {
-        "id": 10258,
-        "name_de": "Nigiragi",
-        "name_en": "tatsugiri-droopy",
-        "type1": "Drache",
-        "type2": "Wasser",
-        "stats": {
-            "hp": 68,
-            "attack": 50,
-            "defense": 60,
-            "specialAttack": 120,
-            "specialDefense": 95,
-            "speed": 82
-        }
-    },
-    {
-        "id": 10259,
-        "name_de": "Nigiragi",
-        "name_en": "tatsugiri-stretchy",
-        "type1": "Drache",
-        "type2": "Wasser",
-        "stats": {
-            "hp": 68,
-            "attack": 50,
-            "defense": 60,
-            "specialAttack": 120,
-            "specialDefense": 95,
-            "speed": 82
-        }
-    },
-    {
-        "id": 10260,
-        "name_de": "Krawalloro",
-        "name_en": "squawkabilly-blue-plumage",
-        "type1": "Normal",
-        "type2": "Flug",
-        "stats": {
-            "hp": 82,
-            "attack": 96,
-            "defense": 51,
-            "specialAttack": 45,
-            "specialDefense": 51,
-            "speed": 92
-        }
-    },
-    {
-        "id": 10261,
-        "name_de": "Krawalloro",
-        "name_en": "squawkabilly-yellow-plumage",
-        "type1": "Normal",
-        "type2": "Flug",
-        "stats": {
-            "hp": 82,
-            "attack": 96,
-            "defense": 51,
-            "specialAttack": 45,
-            "specialDefense": 51,
-            "speed": 92
-        }
-    },
-    {
-        "id": 10262,
-        "name_de": "Krawalloro",
-        "name_en": "squawkabilly-white-plumage",
-        "type1": "Normal",
-        "type2": "Flug",
-        "stats": {
-            "hp": 82,
-            "attack": 96,
-            "defense": 51,
-            "specialAttack": 45,
-            "specialDefense": 51,
-            "speed": 92
-        }
-    },
+
+
+
+
+
     {
         "id": 10263,
-        "name_de": "Gierspenst",
+        "name_de": "Gierspenst (Wanderf.)",
         "name_en": "gimmighoul-roaming",
         "type1": "Geist",
         "type2": "",
@@ -19458,129 +18738,10 @@ export const pokemonData: Pokemon[] = [
             "speed": 80
         }
     },
-    {
-        "id": 10264,
-        "name_de": "Koraidon",
-        "name_en": "koraidon-limited-build",
-        "type1": "Kampf",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 135,
-            "defense": 115,
-            "specialAttack": 85,
-            "specialDefense": 100,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10265,
-        "name_de": "Koraidon",
-        "name_en": "koraidon-sprinting-build",
-        "type1": "Kampf",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 135,
-            "defense": 115,
-            "specialAttack": 85,
-            "specialDefense": 100,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10266,
-        "name_de": "Koraidon",
-        "name_en": "koraidon-swimming-build",
-        "type1": "Kampf",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 135,
-            "defense": 115,
-            "specialAttack": 85,
-            "specialDefense": 100,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10267,
-        "name_de": "Koraidon",
-        "name_en": "koraidon-gliding-build",
-        "type1": "Kampf",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 135,
-            "defense": 115,
-            "specialAttack": 85,
-            "specialDefense": 100,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10268,
-        "name_de": "Miraidon",
-        "name_en": "miraidon-low-power-mode",
-        "type1": "Elektro",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 85,
-            "defense": 100,
-            "specialAttack": 135,
-            "specialDefense": 115,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10269,
-        "name_de": "Miraidon",
-        "name_en": "miraidon-drive-mode",
-        "type1": "Elektro",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 85,
-            "defense": 100,
-            "specialAttack": 135,
-            "specialDefense": 115,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10270,
-        "name_de": "Miraidon",
-        "name_en": "miraidon-aquatic-mode",
-        "type1": "Elektro",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 85,
-            "defense": 100,
-            "specialAttack": 135,
-            "specialDefense": 115,
-            "speed": 135
-        }
-    },
-    {
-        "id": 10271,
-        "name_de": "Miraidon",
-        "name_en": "miraidon-glide-mode",
-        "type1": "Elektro",
-        "type2": "Drache",
-        "stats": {
-            "hp": 100,
-            "attack": 85,
-            "defense": 100,
-            "specialAttack": 135,
-            "specialDefense": 115,
-            "speed": 135
-        }
-    },
-    {
+
+        {
         "id": 10272,
-        "name_de": "Ursaluna",
+        "name_de": "Blutmond-Ursaluna",
         "name_en": "ursaluna-bloodmoon",
         "type1": "Boden",
         "type2": "Normal",
@@ -19595,7 +18756,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10273,
-        "name_de": "Ogerpon",
+        "name_de": "Ogerpon (BM)",
         "name_en": "ogerpon-wellspring-mask",
         "type1": "Pflanze",
         "type2": "Wasser",
@@ -19610,7 +18771,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10274,
-        "name_de": "Ogerpon",
+        "name_de": "Ogerpon (OM)",
         "name_en": "ogerpon-hearthflame-mask",
         "type1": "Pflanze",
         "type2": "Feuer",
@@ -19625,7 +18786,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10275,
-        "name_de": "Ogerpon",
+        "name_de": "Ogerpon (FM)",
         "name_en": "ogerpon-cornerstone-mask",
         "type1": "Pflanze",
         "type2": "Gestein",
@@ -19640,7 +18801,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10276,
-        "name_de": "Terapagos",
+        "name_de": "Terakr.-Terapagos",
         "name_en": "terapagos-terastal",
         "type1": "Normal",
         "type2": "",
@@ -19655,7 +18816,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10277,
-        "name_de": "Terapagos",
+        "name_de": "Stellar-Terapagos",
         "name_en": "terapagos-stellar",
         "type1": "Normal",
         "type2": "",
@@ -19667,5 +18828,35 @@ export const pokemonData: Pokemon[] = [
             "specialDefense": 110,
             "speed": 85
         }
-    }
+    },
+    {
+        "id": 10280,
+        "name_de": "Kyogre (Ur)",
+        "name_en": "kyogre-primal",
+        "type1": "Wasser",
+        "type2": "",
+        "stats": {
+            "hp": 100,
+            "attack": 150,
+            "defense": 90,
+            "specialAttack": 180,
+            "specialDefense": 160,
+            "speed": 90
+        }
+    },
+    {
+        "id": 10279,
+        "name_de": "Groudon (Ur)",
+        "name_en": "groudon-primal",
+        "type1": "Boden",
+        "type2": "Feuer",
+        "stats": {
+            "hp": 100,
+            "attack": 180,
+            "defense": 160,
+            "specialAttack": 150,
+            "specialDefense": 90,
+            "speed": 90
+        }
+    },
 ];
