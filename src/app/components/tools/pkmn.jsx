@@ -161,7 +161,7 @@ const PokeTable = () => {
                     Typen die sehr oft effektiv sind, oder wenige Schwächen haben, nützen umso mehr, umso stärker die
                     Offensiv-/Defensivwerte sind.<br/><br/>
                     Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder Verteidigungswerte sehr klein
-                    ist, was Spezial- oder Angriffe, bzw Abwehr gegen diese, enorm schlecht macht.<br/><br/>
+                    ist, was Spezial- oder -angriffe, bzw Abwehr gegen diese, enorm ineffektiv werden lässt.<br/><br/>
                     Nicht berücksichtigt werden Fähigkeiten und Wesen, die die Offensive und Defensive beträchtlich
                     beeinflussen können.<br/><br/>
                     Der Monotypenbonus verdoppelt die Typenoffensive und Defensive, da PKMN mit einem Typ sonst einen
