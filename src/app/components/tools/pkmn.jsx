@@ -171,7 +171,7 @@ const PokeTable = () => {
             )}
 
             <div className="text-center mt-12">
-                <h2 className="text-lg mb-4">Pokémon Liste (Deutsch) - inklusive aller Sonderformen</h2>
+                <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount} )</h2>
                 {displayedCount < pokemonData.length && (
                     <button onClick={loadAllPokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-8 px-4 rounded">
                         Alle Einträge laden ({pokemonData.length})
