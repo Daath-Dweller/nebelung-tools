@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { pokemonData, typenData } from "@/app/data/pkmndata.ts";
 
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Funktioniert für Scrollen nach oben
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 const PokeTable = () => {
     const [displayedCount, setDisplayedCount] = useState(100);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [showInfo, setShowInfo] = useState(false);
-    const [showStats, setShowStats] = useState(true); // Neuer State für die Anzeige der Statuswerte
-    const [hideLegendary, setHideLegendary] = useState(false); // Neuer State für das Ausblenden legendärer Pokémon
+    const [showStats, setShowStats] = useState(true);
+    const [hideSpecialforms, setHideSpecialForms] = useState(false);
+    const [monoTypeBonus, setMonoTypeBonus] = useState(false); // Neuer State für den Monotypen-Bonus
 
     const loadMorePokemon = () => {
         setDisplayedCount((prevCount) => prevCount + 100);
@@ -20,24 +21,34 @@ const PokeTable = () => {
         setDisplayedCount(pokemonData.length);
     };
 
-    const toggleHideLegendary = () => {
-        setHideLegendary((prev) => !prev);
+    const toggleHideSpecialforms = () => {
+        setHideSpecialForms((prev) => !prev);
+    };
+
+    const toggleMonoTypeBonus = () => {
+        setMonoTypeBonus((prev) => !prev);
     };
 
     const getTypeDataSum = (type1, type2) => {
         const type1Data = typenData.find(t => t.name === type1) || { offensiv: 0, defensiv: 0 };
         const type2Data = typenData.find(t => t.name === type2) || { offensiv: 0, defensiv: 0 };
 
-        const offensivSum = type1Data.offensiv + type2Data.offensiv;
-        const defensivSum = type1Data.defensiv + type2Data.defensiv;
+        let offensivSum = type1Data.offensiv + type2Data.offensiv;
+        let defensivSum = type1Data.defensiv + type2Data.defensiv;
+
+        // Monotypen-Bonus aktivieren, wenn nur ein Typ vorhanden ist und der Bonus aktiviert ist
+        if (monoTypeBonus && (!type2 || type2 === "")) {
+            offensivSum *= 2;
+            defensivSum *= 2;
+        }
 
         return { offensivSum, defensivSum };
     };
 
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
         let gd = defensivSum + defense + specialDefense;
-        if (defense <= 252 || specialDefense <= 252) {
-            gd -= 150;
+        if (defense <= 60 || specialDefense <= 70) {
+            gd -= 400;
         }
         if (defense >= specialDefense) {
             gd += defense;
@@ -53,8 +64,8 @@ const PokeTable = () => {
 
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
         let go = offensivSum + attack + specialAttack;
-        if (attack <= 252 || specialAttack <= 252) {
-            go -= 150;
+        if (attack <= 60 || specialAttack <= 70) {
+            go -= 400;
         }
         if (attack >= specialAttack) {
             go += attack;
@@ -64,11 +75,11 @@ const PokeTable = () => {
             go += offensivSum * specialAttack;
         }
         go += speed * 6;
-        go = go / 10;
+        go = (go / 10) + 20;
         return Math.round(go);
     };
 
-    const filteredPokemon = pokemonData.filter(pokemon => !hideLegendary || pokemon.id < 5000);
+    const filteredPokemon = pokemonData.filter(pokemon => !hideSpecialforms || pokemon.id < 5000);
 
     const sortedPokemon = [...filteredPokemon.slice(0, displayedCount)].sort((a, b) => {
         if (!sortConfig.key) return 0;
@@ -125,36 +136,37 @@ const PokeTable = () => {
     return (
         <div className="md:p-12 p-4 bg-black text-white m-3">
             <div className="flex justify-between items-center mb-2">
-                <h1 className="text-2xl font-bold pl-4 pt-2">Pokemon</h1>
                 <button onClick={() => setShowInfo(!showInfo)} className="text-white bg-gray-600 px-2 py-1 rounded">
                     ℹ️
                 </button>
                 <button onClick={() => setShowStats(!showStats)} className="text-white bg-gray-600 px-2 py-1 rounded">
                     {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
                 </button>
-                <button onClick={toggleHideLegendary}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                    {hideLegendary ? "Legendäre und Sonderformen anzeigen" : "Legendäre und Sonderformen ausblenden"}
+                <button onClick={toggleHideSpecialforms} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden"}
+                </button>
+                <button onClick={toggleMonoTypeBonus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
                 </button>
             </div>
+
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-6 mx-auto">
-                    Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr effektiven, nicht effektiven und
-                    wirkungslosen Angriffen gegen ein Pokemon oder von einem Pokemon ausgehend.
-                    Normale Effektivität gibt 1 Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr gegen Typen.<br/>
-                    Weitere Erklärungen
+                    Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr effektiven, nicht effektiven und wirkungslosen Angriffen gegen ein Pokemon oder von einem Pokemon ausgehend.
+                    Normale Effektivität gibt 1 Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr gegen Typen.<br/><br/>
+                    GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus Typ-Off und Typ-Def in Verbindung mit gewichtetem Angr/SpAngr/Init und Vert/SpVert/HP, sowie gewichteten HP und Initiative. Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder Verteidigungswerte sehr klein ist, was Spezial- oder Angriffe, bzw Abwehr gegen diese, enorm schlecht macht.<br/><br/>
+                    Nicht berücksichtigt werden Fähigkeiten und Wesen, die die Offensive und Defensive beträchtlich beeinflussen können.<br/><br/>
+                    Der Monotypenbonus verdoppelt die Typenoffensive und Defensive, da PKMN mit einem Typ sonst einen starken Nachteil in der Berechnung haben. Je nach Situation kann ein Doppeltyp vorteilhaft oder nachteilig sein.
                 </div>
             )}
-            <div className="flex gap-4">
+
+            <div className="text-center mt-12">
+                <h2 className="text-lg mb-4">Pokémon Liste (Deutsch) - inklusive aller Sonderformen</h2>
                 {displayedCount < pokemonData.length && (
-                    <button onClick={loadAllPokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button onClick={loadAllPokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-8 px-4 rounded">
                         Alle Einträge laden ({pokemonData.length})
                     </button>
                 )}
-
-            </div>
-            <div className="text-center mt-12">
-                <h2 className="text-lg mb-4">Pokémon Liste (Deutsch) - inklusive aller Sonderformen</h2>
 
                 <table className="table-auto w-full border-collapse">
                     <thead>
@@ -206,9 +218,7 @@ const PokeTable = () => {
                                             pokemon.id >= 10195 && pokemon.id <= 10228 ? `G-Max-${pokemon.name_de}` :
                                                 pokemon.id >= 10229 && pokemon.id <= 10244 ? `Hisui-${pokemon.name_de}` :
                                                     pokemon.id >= 10250 && pokemon.id <= 10253 ? `Paldea-${pokemon.name_de}` :
-
                                                         pokemon.id >= 10161 && pokemon.id <= 10180 ? `Galar-${pokemon.name_de}` :
-
                                                             pokemon.name_de}
                                 </td>
 
