@@ -93,6 +93,12 @@ const PokeTable = () => {
                 const { offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
                 return calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
             }
+            if (sortConfig.key === "GS") {
+                const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+                const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                return gd + go;
+            }
             if (sortConfig.key === "offensivSum" || sortConfig.key === "defensivSum") {
                 const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
                 return sortConfig.key === "offensivSum" ? offensivSum : defensivSum;
@@ -199,6 +205,7 @@ const PokeTable = () => {
                             ] : []),
                             { key: "GD", label: "GD" },
                             { key: "GO", label: "GO" },
+                            { key: "GS", label: "GS" },
                         ].map((col) => (
                             <th
                                 key={col.key}
@@ -218,6 +225,7 @@ const PokeTable = () => {
                         const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
                         const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
                         const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                        const gs = gd + go;
 
                         return (
                             <tr key={pokemon.id} className="border-t border-gray-600">
@@ -250,6 +258,7 @@ const PokeTable = () => {
 
                                 <td className="border border-gray-600 p-2">{gd}</td>
                                 <td className="border border-gray-600 p-2">{go}</td>
+                                <td className="border border-gray-600 p-2">{gs}</td>
                             </tr>
                         );
                     })}
