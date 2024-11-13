@@ -36,8 +36,6 @@ export const countries: Country[] = [
 
 export const regions: Region[] = [
     // Switzerland Cantons
-    { id: 1, name: 'Zürich (ZH)', countryId: 1 },
-    { id: 2, name: 'Zug (ZG)', countryId: 1 },
     { id: 3, name: 'Aargau (AG)', countryId: 1 },
     { id: 4, name: 'Appenzell Ausserrhoden (AR)', countryId: 1 },
     { id: 5, name: 'Appenzell Innerrhoden (AI)', countryId: 1 },
@@ -62,36 +60,38 @@ export const regions: Region[] = [
     { id: 24, name: 'Uri (UR)', countryId: 1 },
     { id: 25, name: 'Waadt (VD)', countryId: 1 },
     { id: 26, name: 'Wallis (VS)', countryId: 1 },
+    { id: 27, name: 'Zürich (ZH)', countryId: 1 },
+    { id: 28, name: 'Zug (ZG)', countryId: 1 },
 
 
     // Germany Bundesländer
-    { id: 27, name: 'Bayern', countryId: 2 },
-    { id: 28, name: 'Berlin', countryId: 2 },
-    { id: 29, name: 'Nordrhein-Westfalen', countryId: 2 },
-    { id: 30, name: 'Baden-Württemberg', countryId: 2 },
-    { id: 31, name: 'Brandenburg', countryId: 2 },
-    { id: 32, name: 'Bremen', countryId: 2 },
-    { id: 33, name: 'Hamburg', countryId: 2 },
-    { id: 34, name: 'Hessen', countryId: 2 },
-    { id: 35, name: 'Mecklenburg-Vorpommern', countryId: 2 },
-    { id: 36, name: 'Niedersachsen', countryId: 2 },
-    { id: 37, name: 'Rheinland-Pfalz', countryId: 2 },
-    { id: 38, name: 'Saarland', countryId: 2 },
-    { id: 39, name: 'Sachsen', countryId: 2 },
-    { id: 40, name: 'Sachsen-Anhalt', countryId: 2 },
-    { id: 41, name: 'Schleswig-Holstein', countryId: 2 },
-    { id: 42, name: 'Thüringen', countryId: 2 },
+    { id: 29, name: 'Bayern', countryId: 2 },
+    { id: 30, name: 'Berlin', countryId: 2 },
+    { id: 31, name: 'Nordrhein-Westfalen', countryId: 2 },
+    { id: 32, name: 'Baden-Württemberg', countryId: 2 },
+    { id: 33, name: 'Brandenburg', countryId: 2 },
+    { id: 34, name: 'Bremen', countryId: 2 },
+    { id: 35, name: 'Hamburg', countryId: 2 },
+    { id: 36, name: 'Hessen', countryId: 2 },
+    { id: 37, name: 'Mecklenburg-Vorpommern', countryId: 2 },
+    { id: 38, name: 'Niedersachsen', countryId: 2 },
+    { id: 39, name: 'Rheinland-Pfalz', countryId: 2 },
+    { id: 40, name: 'Saarland', countryId: 2 },
+    { id: 41, name: 'Sachsen', countryId: 2 },
+    { id: 42, name: 'Sachsen-Anhalt', countryId: 2 },
+    { id: 43, name: 'Schleswig-Holstein', countryId: 2 },
+    { id: 44, name: 'Thüringen', countryId: 2 },
 
-    // Austria Bundesländer
-    { id: 43, name: 'Wien', countryId: 3 },
-    { id: 44, name: 'Tirol', countryId: 3 },
-    { id: 45, name: 'Steiermark', countryId: 3 },
-    { id: 46, name: 'Vorarlberg', countryId: 3 },
-    { id: 47, name: 'Salzburg', countryId: 3 },
-    { id: 48, name: 'Oberösterreich', countryId: 3 },
-    { id: 49, name: 'Niederösterreich', countryId: 3 },
-    { id: 50, name: 'Kärnten', countryId: 3 },
-    { id: 51, name: 'Burgenland', countryId: 3 }
+// Austria Bundesländer
+    { id: 45, name: 'Wien', countryId: 3 },
+    { id: 46, name: 'Tirol', countryId: 3 },
+    { id: 47, name: 'Steiermark', countryId: 3 },
+    { id: 48, name: 'Vorarlberg', countryId: 3 },
+    { id: 49, name: 'Salzburg', countryId: 3 },
+    { id: 50, name: 'Oberösterreich', countryId: 3 },
+    { id: 51, name: 'Niederösterreich', countryId: 3 },
+    { id: 52, name: 'Kärnten', countryId: 3 },
+    { id: 53, name: 'Burgenland', countryId: 3 }
 
 ];
 
@@ -150,24 +150,24 @@ export const seatDistributions: SeatDistribution[] = [
     // Seat distributions for regions
 
     // Zürich, CH
-    { id: 1, regionId: 1, partyId: 1, seats: 46 }, // SVP
-    { id: 2, regionId: 1, partyId: 2, seats: 36 }, // SP
-    { id: 3, regionId: 1, partyId: 3, seats: 29 }, // FDP
-    { id: 4, regionId: 1, partyId: 4, seats: 11 }, // Mitte
-    { id: 5, regionId: 1, partyId: 5, seats: 19 }, // GPS
-    { id: 6, regionId: 1, partyId: 6, seats: 24 }, // GLP
-    { id: 7, regionId: 1, partyId: 7, seats: 7 },  // EVP
-    { id: 8, regionId: 1, partyId: 8, seats: 3 },  // EDU
-    { id: 9, regionId: 1, partyId: 9, seats: 5 },  // AL
+    { id: 1, regionId: 27, partyId: 1, seats: 46 }, // SVP
+    { id: 2, regionId: 27, partyId: 2, seats: 36 }, // SP
+    { id: 3, regionId: 27, partyId: 3, seats: 29 }, // FDP
+    { id: 4, regionId: 27, partyId: 4, seats: 11 }, // Mitte
+    { id: 5, regionId: 27, partyId: 5, seats: 19 }, // GPS
+    { id: 6, regionId: 27, partyId: 6, seats: 24 }, // GLP
+    { id: 7, regionId: 27, partyId: 7, seats: 7 },  // EVP
+    { id: 8, regionId: 27, partyId: 8, seats: 3 },  // EDU
+    { id: 9, regionId: 27, partyId: 9, seats: 5 },  // AL
 
     // Zug, CH
-    { id: 1, regionId: 2, partyId: 1, seats: 18 }, // SVP
-    { id: 2, regionId: 2, partyId: 2, seats: 8 }, // SP
-    { id: 3, regionId: 2, partyId: 3, seats: 18 }, // FDP
-    { id: 4, regionId: 2, partyId: 4, seats: 19 }, // Mitte
-    { id: 5, regionId: 2, partyId: 5, seats: 11 }, // GPS
-    { id: 6, regionId: 2, partyId: 6, seats: 6 }, // GLP
-    { id: 7, regionId: 2, partyId: 19, seats: 20 }, //PL
+    { id: 1, regionId: 28, partyId: 1, seats: 18 }, // SVP
+    { id: 2, regionId: 28, partyId: 2, seats: 8 }, // SP
+    { id: 3, regionId: 28, partyId: 3, seats: 18 }, // FDP
+    { id: 4, regionId: 28, partyId: 4, seats: 19 }, // Mitte
+    { id: 5, regionId: 28, partyId: 5, seats: 11 }, // GPS
+    { id: 6, regionId: 28, partyId: 6, seats: 6 }, // GLP
+    { id: 7, regionId: 28, partyId: 19, seats: 20 }, //PL
 
     // Aargau, CH
     { id: 1, regionId: 3, partyId: 1, seats: 48 }, // SVP
