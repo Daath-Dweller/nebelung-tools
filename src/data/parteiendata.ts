@@ -27,27 +27,27 @@ export interface SeatDistribution {
 }
 
 export const countries: Country[] = [
-    { id: 1, name: 'Switzerland' },
-    { id: 2, name: 'Germany' },
-    { id: 3, name: 'Austria' },
+    { id: 1, name: 'Schweiz (CH)' },
+    { id: 2, name: 'Deutschland (D)' },
+    { id: 3, name: 'Österreich (A)' },
 ];
 
 export const regions: Region[] = [
     // Switzerland Cantons
-    { id: 1, name: 'Zurich', countryId: 1 },
+    { id: 1, name: 'Zürich', countryId: 1 },
     { id: 2, name: 'Bern', countryId: 1 },
     // ... add all 26 cantons
 
     // Germany Bundesländer
-    { id: 27, name: 'Bavaria', countryId: 2 },
+    { id: 27, name: 'Bayern', countryId: 2 },
     { id: 28, name: 'Berlin', countryId: 2 },
-    { id: 29, name: 'North Rhine-Westphalia', countryId: 2 },
+    { id: 29, name: 'NRW', countryId: 2 },
     // ... add all 16 Bundesländer
 
     // Austria Bundesländer
-    { id: 43, name: 'Vienna', countryId: 3 },
-    { id: 44, name: 'Tyrol', countryId: 3 },
-    { id: 45, name: 'Styria', countryId: 3 },
+    { id: 43, name: 'Wien', countryId: 3 },
+    { id: 44, name: 'Tirol', countryId: 3 },
+    { id: 45, name: 'Steiermark', countryId: 3 },
     // ... add all 9 Bundesländer
 ];
 
