@@ -170,4 +170,18 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         korrekt: 0,
         etymologie: 'Vom althochdeutschen „standan“ (stehen) und „arta“ (Art), ursprünglich ein stehendes Feldzeichen für militärische Einheiten.'
     },
+    idiotikon: {
+        name: 'Idiotikon',
+        erklaerungUndSynonyme: 'Ein historisches Wörterbuch oder Lexikon, das die Eigenheiten einer bestimmten Sprache oder eines Dialekts aufzeigt, oft mit regionalem Fokus. Synonyme: Dialektwörterbuch, Sprachlexikon.',
+        options: ['Idiotikon', 'Idiotikum', 'Idiothek', 'Idiomikon'],
+        korrekt: 0,
+        etymologie: 'Vom griechischen „idiotikos“ (eigen, speziell) und „-ikon“ (Endung für Verzeichnisse), also ein Verzeichnis der Eigenheiten einer Sprache.'
+    },
+    sillage: {
+        name: 'Sillage',
+        erklaerungUndSynonyme: 'Der Duft, den ein Parfum oder eine Person in der Luft hinterlässt. Synonyme: Duftspur, Parfumspur.',
+        options: ['Sillage', 'Silage', 'Silhouette', 'Silaj'],
+        korrekt: 0,
+        etymologie: 'Aus dem Französischen „sillage“ (Spur, Kielwasser), ursprünglich aus dem Seefahrtsjargon entlehnt und im Duftkontext für die Duftspur verwendet, die ein Parfum hinterlässt.'
+    }
 };
