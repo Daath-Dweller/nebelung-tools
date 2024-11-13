@@ -30,10 +30,11 @@ export default function Logik() {
     };
 
     return (
-        <div className="md:p-12  bg-black text-white m-3">
-            <h1 className="text-2xl font-bold mb-2 p-4 ">Logigramm (Logik + griech. gramma, „Geschriebenes“; eine
-                strukturierte Sammlung und Darstellung logischer Prinzipien)</h1>
-            <h2 className="text-xl font-bold mb-2 p-4">Logische Fehlschlüsse & Heuristika</h2>
+        <div className="md:p-12  bg-black text-white m-3 text-center">
+            <span className="text-2xl font-bold mb-2 p-4">Logigramm </span><br/>
+            <span className="text-sm">(Logik + griech. gramma, „Geschriebenes“; eine
+                strukturierte Sammlung und Darstellung logischer Prinzipien)</span>
+            <p className="text-xl font-bold mt-14">Logische Fehlschlüsse & Heuristika</p>
 
             <div className="p-12 bg-black text-white">
                 <div id="wrapper" className="md:grid md:grid-cols-3 gap-4 flex flex-col">
