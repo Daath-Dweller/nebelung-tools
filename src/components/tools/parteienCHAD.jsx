@@ -131,7 +131,7 @@ const Parteien = () => {
                         className="text-black mt-2 p-1"
                     >
                         <option value="">Wähle Region</option>
-                        <option value="0">Durchschnitt</option>
+                        <option value="0">Gesamt</option>
                         {filteredRegions.map((region) => (
                             <option key={region.id} value={region.id}>
                                 {region.name}
