@@ -322,7 +322,7 @@ export const fehlschluesse: FehlschluesseUndHeuristika = {
             erlaeuterung: 'Die Tendenz, Mitglieder der eigenen Gruppe gegenüber Außenstehenden zu bevorzugen und positivere Eigenschaften zuzuschreiben.',
             bgcolor: 'bg-gray-400'
         },
-        ingroup_bias: {
+        ingroupbias: {
             name: 'Falsche Übereinstimmung-Effekt',
             name2: 'False Consensus Bias',
             beispiel: 'Ja, aber denken doch alle so!',
