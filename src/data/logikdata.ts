@@ -321,6 +321,13 @@ export const fehlschluesse: FehlschluesseUndHeuristika = {
             beispiel: 'Ein Mitglied des eigenen Teams wird eher unterstützt als ein Externer, auch wenn letzterer objektiv besser qualifiziert wäre.',
             erlaeuterung: 'Die Tendenz, Mitglieder der eigenen Gruppe gegenüber Außenstehenden zu bevorzugen und positivere Eigenschaften zuzuschreiben.',
             bgcolor: 'bg-gray-400'
+        },
+        ingroup_bias: {
+            name: 'Falsche Übereinstimmung-Effekt',
+            name2: 'False Consensus Bias',
+            beispiel: 'Ja, aber denken doch alle so!',
+            erlaeuterung: 'Die Annahme, dass die meisten Menschen genauso denken, wie man selbst, ohne sichere Grundlage für diese Annahme.',
+            bgcolor: 'bg-gray-400'
         }
     }
 };
