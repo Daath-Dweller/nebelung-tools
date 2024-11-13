@@ -38,9 +38,37 @@ export const Rechtschreibfehler: { [key: string]: Rechtschreibfehler } = {
     Deppenleerzeichen: {
         name: 'Deppenleerzeichen',
         name2: "Bernds Garten Haus.",
-        beispielFalsch: "Das ist ein Hochsicherheits Gefängnis mit vielen Stein mauern. Der LSD Schmuggel bereitet den Nachtwächtern Probleme." ,
-        beispielKorrekt: "Das ist ein Hochsicherheitsgefängnis mit vielen Steinmauern. Der LSD-Schmuggel bereitet den Nachtwächtern Probleme.",
+        beispielFalsch: "Das ist ein Hochsicherheits Gefängnis mit vielen Stein mauern. Das Benutzer Erlebnis des LSD Schmuggels bereitet den Nachtwächtern Probleme." ,
+        beispielKorrekt: "Das ist ein Hochsicherheitsgefängnis mit vielen Steinmauern. Das Benutzererlebnis des LSD-Schmuggels bereitet den Nachtwächtern Probleme.",
         erlaeuterung: "Leerzeichen innerhalb Komposita (zusammengesetzten Worten) sind ein grammatischer Anglizismus. Im Standarddeutschen werden Worte quasi unendlich lange zusammengeschrieben." +
             " Der Lesbarkeit halber sind auch Bindestriche erlaubt. Das längste Wort in offiziellen Dokumenten lautet Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz.",
-    }
+    },
+    DasUndDass: {
+        name: 'Das und Dass',
+        name2: '"das" oder "dass"?',
+        beispielFalsch: "Ich hoffe, das du kommst. Das Auto, dass dort steht.",
+        beispielKorrekt: "Ich hoffe, dass du kommst. Das Auto, das dort steht.",
+        erlaeuterung: '„Das“ ist ein Artikel oder ein Relativpronomen, „dass“ ist eine Konjunktion. Wenn man „dieses“, „jenes“ oder „welches“ einsetzen kann, wird „das“ verwendet.',
+    },
+    SeidUndSeit: {
+        name: 'Seid und Seit',
+        name2: '"seid" oder "seit"?',
+        beispielFalsch: "Ihr seit spät dran. Seit ihr schon fertig?",
+        beispielKorrekt: "Ihr seid spät dran. Seid ihr schon fertig?",
+        erlaeuterung: "„Seid“ ist die 2. Person Plural von „sein“, „seit“ bezieht sich auf Zeitangaben.",
+    },
+    WiederUndWider: {
+        name: 'Wieder und Wider',
+        name2: '"wieder" oder "wider"?',
+        beispielFalsch: "Er handelte wieder besseres Wissen.",
+        beispielKorrekt: "Er handelte wider besseren Wissens.",
+        erlaeuterung: "„Wieder“ bedeutet „noch einmal“, „wider“ bedeutet „gegen“.",
+    },
+    GetrenntZusammenSchreibung: {
+        name: 'Getrennt- und Zusammenschreibung',
+        name2: 'Verbindungen aus Verb und Verb oder Präfix',
+        beispielFalsch: "Ich möchte dich kennen lernen. Sie wusste Bescheid, das kann ich zu Gute halten.",
+        beispielKorrekt: "Ich möchte dich kennenlernen. Sie wusste Bescheid, das kann ich zugute halten.",
+        erlaeuterung: "Bei bestimmten Verbindungen, wie Verb + Verb oder Präfixe, schreibt man zusammen, z. B. 'kennenlernen', 'zusammenschreiben' und  'zugutekommen'.",
+    },
 };
