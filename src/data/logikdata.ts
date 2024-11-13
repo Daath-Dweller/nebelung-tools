@@ -305,7 +305,9 @@ export const fehlschluesse: FehlschluesseUndHeuristika = {
             name: 'Dunning-Kruger-Effekt',
             name2: 'Dunning-Kruger Effect',
             beispiel: 'Ein Anfänger denkt, er sei sehr gut, während ein Experte eher Zweifel an seiner eigenen Perfektion hat.',
-            erlaeuterung: 'Die Fähigkeit zu einem korrekten Ergebnis zu gelangen ist identisch mit der Fähigkeit, dieses korrekte Ergebnis andernorts als richtig zu erkennen. Menschen mit geringer Kompetenz in einem Bereich neigen dazu, ihre Fähigkeiten zu überschätzen, während Experten ihre Fähigkeiten oft unterschätzen.',
+            erlaeuterung: 'Die Fähigkeit zu einem korrekten Ergebnis zu gelangen ist identisch mit der Fähigkeit, dieses korrekte Ergebnis ' +
+                'andernorts als richtig zu erkennen. Menschen mit geringer Kompetenz in einem Bereich neigen dazu, ihre Fähigkeiten zu ' +
+                'überschätzen, während Experten ihre Fähigkeiten oft unterschätzen.',
             bgcolor:  'bg-gray-900',
         },
         status_quo_bias: {

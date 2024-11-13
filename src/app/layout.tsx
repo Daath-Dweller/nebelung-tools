@@ -16,14 +16,14 @@ export default function RootLayout({
                                    }: {
   children: React.ReactNode;
 }) {
-  // Zustände müssen innerhalb der Funktion deklariert werden
+  // States must be declared within the function
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
 
-  // Aktueller Pfad, um aktive Tabs zu markieren
+  // Current path to highlight active tabs
   const pathname = usePathname();
 
-  // Menüelemente mit den entsprechenden Routen
+  // Menu items with corresponding routes
   const menuItems = [
     {
       icon: <FaBrain />,
@@ -49,19 +49,13 @@ export default function RootLayout({
     {
       icon: <FaTools />,
       label: "Sonstige Tools",
-      subItems: [  { key: "/politikdach", label: "Parteien DACH", href: "/politikdach" },
+      subItems: [
+        { key: "/politikdach", label: "Parteien-CHAD", href: "/politikdach" },
         { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
         { key: "/pkmn", label: "Pokemontabelle", href: "/pkmn" },
       ],
     },
   ];
-
-  const openMenu = (label: string) => {
-    setOpenMenus((prevOpenMenus) => ({
-      ...prevOpenMenus,
-      [label]: !prevOpenMenus[label],
-    }));
-  };
 
   return (
       <html lang="de">
@@ -102,62 +96,66 @@ export default function RootLayout({
             </button>
           </div>
 
-          {/* Desktop-Menü */}
+          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-4 ml-4">
             {menuItems.map((menuItem, index) => (
-                <li key={index} className="relative">
-                  <button
-                      onClick={() => openMenu(menuItem.label)}
-                      className="text-white tracking-wider focus:outline-none flex items-center space-x-2"
-                  >
+                <li key={index} className="relative group">
+                  <div className="text-white tracking-wider flex items-center space-x-2 cursor-pointer">
                     {menuItem.icon}
                     <span>{menuItem.label}</span>
-                  </button>
-                  {openMenus[menuItem.label] && (
-                      <ul className="absolute left-0 mt-2 bg-black">
-                        {menuItem.subItems.map((subItem) => (
-                            <li key={subItem.key}>
-                              <Link
-                                  href={subItem.href}
-                                  className={`block px-4 py-2 text-white whitespace-no-wrap cursor-pointer ${
-                                      pathname === subItem.href
-                                          ? "bg-gray-800"
-                                          : "hover:bg-gray-700"
-                                  }`}
-                                  onClick={() => setOpenMenus({})} // Menü schließen
-                              >
-                                {subItem.label}
-                              </Link>
-                            </li>
-                        ))}
-                      </ul>
-                  )}
+                  </div>
+                  <ul className="absolute left-0 top-full bg-black hidden group-hover:block z-10">
+                    {menuItem.subItems.map((subItem) => (
+                        <li key={subItem.key}>
+                          <Link
+                              href={subItem.href}
+                              className={`block px-4 py-2 text-white whitespace-no-wrap cursor-pointer ${
+                                  pathname === subItem.href
+                                      ? "bg-gray-800"
+                                      : "hover:bg-gray-700"
+                              }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        </li>
+                    ))}
+                  </ul>
                 </li>
             ))}
           </ul>
         </div>
 
-        {/* Mobiles Menü */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
             <ul className="md:hidden bg-black">
               {menuItems.map((menuItem, index) => (
                   <li key={index} className="border-b border-gray-700">
-                  <span className="block px-4 py-2 text-white font-bold flex items-center space-x-2">
-                    {menuItem.icon}
-                    <span>{menuItem.label}</span>
-                  </span>
-                    {menuItem.subItems.map((subItem) => (
-                        <Link
-                            href={subItem.href}
-                            key={subItem.key}
-                            className={`block pl-8 pr-4 py-2 text-white ${
-                                pathname === subItem.href ? "bg-gray-800" : ""
-                            }`}
-                            onClick={() => setIsMenuOpen(false)} // Menü schließen
-                        >
-                          {subItem.label}
-                        </Link>
-                    ))}
+                    <button
+                        onClick={() => {
+                          if (openMobileMenu === menuItem.label) {
+                            setOpenMobileMenu(null);
+                          } else {
+                            setOpenMobileMenu(menuItem.label);
+                          }
+                        }}
+                        className="block w-full text-left px-4 py-2 text-white font-bold flex items-center space-x-2 focus:outline-none"
+                    >
+                      {menuItem.icon}
+                      <span>{menuItem.label}</span>
+                    </button>
+                    {openMobileMenu === menuItem.label &&
+                        menuItem.subItems.map((subItem) => (
+                            <Link
+                                href={subItem.href}
+                                key={subItem.key}
+                                className={`block pl-8 pr-4 py-2 text-white ${
+                                    pathname === subItem.href ? "bg-gray-800" : ""
+                                }`}
+                                onClick={() => setIsMenuOpen(false)} // Close menu
+                            >
+                              {subItem.label}
+                            </Link>
+                        ))}
                   </li>
               ))}
             </ul>
