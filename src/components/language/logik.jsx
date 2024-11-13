@@ -59,7 +59,7 @@ export default function Logik() {
                             return (
                                 <div
                                     key={key}
-                                    className={`w-full min-h-80 flex items-center justify-between text-center p-4 ${fehlschluss.bgcolor} text-white rounded-lg`}
+                                    className={`w-full min-h-80 flex items-center justify-between text-center p-4 ${fehlschluss.bgcolor || 'bg-white'} text-white rounded-lg`}
                                 >
                                     <button
                                         onClick={() => flipBackward(key)}

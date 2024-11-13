@@ -20,5 +20,11 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    // List all the dynamic bg-color classes you use
+    'bg-blue-800',
+    'bg-gray-900',
+    'bg-gray-400'
+  ],
 };
 export default config;

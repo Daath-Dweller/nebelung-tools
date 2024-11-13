@@ -1,7 +1,7 @@
 // Parteien.jsx
-
 import React, { useState } from 'react';
 import { countries, regions, parties, seatDistributions } from '@/data/parteiendata.ts';
+
 
 const Parteien = () => {
     const [selectedCountryId, setSelectedCountryId] = useState(null);
@@ -27,6 +27,7 @@ const Parteien = () => {
 
     return (
         <div className="p-12 bg-black text-white m-3">
+
             <h1>Select a Country</h1>
             {/* Country Selection */}
             <select onChange={handleCountryChange} value={selectedCountryId || ''}>
@@ -53,6 +54,7 @@ const Parteien = () => {
                 </>
             )}
 
+
             {/* Display Parties and Seat Distribution */}
             {selectedRegionId && (
                 <div>
@@ -71,6 +73,7 @@ const Parteien = () => {
                     </ul>
                 </div>
             )}
+
         </div>
     );
 };
