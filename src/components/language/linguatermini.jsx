@@ -132,6 +132,7 @@ export default function Linguatermini() {
                             </p>
                             <p className="text-sm text-gray-300">{item.erklaerungUndSynonyme}</p>
                             <p className="text-sm text-gray-300">{item.etymologie}</p>
+                            <p className="text-sm text-gray-300">{item.beispielSatz}</p>
                         </div>
                     ))}
                 </div>
