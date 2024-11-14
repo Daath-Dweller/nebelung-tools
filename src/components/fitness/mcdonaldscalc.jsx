@@ -90,7 +90,8 @@ export default function McDRechner({ updateUserValues }) {
             </div>
 
             <div className="mt-8">
-                <h2 className="text-xl font-bold mb-4">Deine McDonald's Produkte:</h2>
+                <h2 className="text-xl font-bold mb-4">Deine McDonald&apos;s Produkte:</h2>
+
                 <ul>
                     {selectedProducts.map((produkt, index) => {
                         const proteinPer100Kcal = produkt.kcal
