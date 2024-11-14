@@ -7,7 +7,7 @@ export default function Lingua() {
     const [activeContent, setActiveContent] = useState(null);
 
     return (
-        <div className="md:p-12 bg-black text-white m-3 text-center">
+        <div className="md:p-12 bg-black text-white m-2 text-center">
 
 
 

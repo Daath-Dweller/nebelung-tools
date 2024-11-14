@@ -93,7 +93,7 @@ const NutritionAlmanac = () => {
                             ))}
                         </div>
                         <div className="p-2">
-                            <strong>Nutzung (Sport):</strong><br />
+                            <strong>Nutzen / Stoffgruppe:</strong><br />
                             {item.nutzungGesundheit.map(index => (
                                 <button
                                     key={index}

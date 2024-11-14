@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from "react";
 import SubwayRechner from "@/components/fitness/subwaycalc";
 import KfcRechner from "@/components/fitness/kfccalc";
@@ -19,7 +20,7 @@ export default function Rechner() {
     });
 
     const handleDoubleClick = (key) => {
-        const newValue = prompt(`Enter new value for ${key}`, targetValues[key]);
+        const newValue = prompt(`Neuen Wert für ${key} eingeben:`, targetValues[key]);
         if (newValue !== null) {
             setTargetValues({ ...targetValues, [key]: parseFloat(newValue) });
         }
@@ -57,74 +58,65 @@ export default function Rechner() {
     };
 
     return (
-        <div className="bg-black">
-            <nav className="bg-black md:p-4 md:flex md:flex-row md:justify-between">
-                <div id="navwrap" className="md:flex md:flex-col md:space-y-4 flex flex-row justify-center ">
-                    <ul className="flex md:space-x-4 space-x-2">
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "Subway" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("Subway")}
-                            >
-                                Subway
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "KFC" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("KFC")}
-                            >
-                                KFC
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "McDonalds" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("McDonalds")}
-                            >
-                                McDonalds
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="flex md:space-x-4 space-x-2">
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "BK" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("BK")}
-                            >
-                                BK
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "Nordsee" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("Nordsee")}
-                            >
-                                Nordsee
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className={`text-white ${activeTab === "????" ? "underline" : ""}`}
-                                onClick={() => setActiveTab("????")}
-                            >
-                                ????
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="valuesNBtns" className="md:flex md:flex-row md:space-x-4 flex flex-col space-x-2">
-                    <div id="nutrition"
-                         className="text-white md:flex md:flex-row md:space-x-4 md:mb-4 items-center md:m-0 m-2 flex flex-col space-x-2 space-y-2">
+        <div className="bg-black m-2 pt-6 px-2">
+            <div id="navwrap" className="flex md:flex-row justify-center pb-4 mb-2 text-center">
+                <ul className="flex md:flex-row flex-col gap-x-2 md:gap-y-0 gap-y-8">
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "Subway" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("Subway")}
+                        >
+                            Subway
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "KFC" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("KFC")}
+                        >
+                            KFC
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "McDonalds" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("McDonalds")}
+                        >
+                            McDonalds
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "BK" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("BK")}
+                        >
+                            BK
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "Nordsee" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("Nordsee")}
+                        >
+                            Nordsee
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className={`border-white p-2 border-2 ${activeTab === "????" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            onClick={() => setActiveTab("????")}
+                        >
+                            ????
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <nav className="bg-black md:p-4 md:flex md:flex-row md:justify-around">
+                <div id="valuesNBtns" className="md:flex md:flex-row md:space-x-10 flex flex-col space-x-2">
+                    <div id="nutrition" className="text-white md:flex md:flex-row md:space-x-4 md:mb-4 items-center md:m-0 m-2 flex flex-col space-x-2 space-y-2">
                         {["Kalorien", "Protein", "Fett", "Kohlenhydrate"].map((label) => (
-                            <div key={label}
-                                 className="md:flex md:flex-col items-center md:space-y-2 md:m-0 m-2 flex flex-col space-x-2 space-y-2">
+                            <div key={label} className="md:flex md:flex-col items-center md:space-y-2 md:m-0 m-2 flex flex-col space-x-2 space-y-2">
                                 <div className="flex items-center space-x-2">
                                     <span>{label} (Ziel): </span>
                                     <span
@@ -146,28 +138,29 @@ export default function Rechner() {
                                         {userValues[label.toLowerCase()]} ({calculatePercentage(userValues[label.toLowerCase()], targetValues[label.toLowerCase()])}%)
                                     </span>
                                 </div>
-                            </div>))}
+                            </div>
+                        ))}
                     </div>
                     <div className="flex justify-between space-x-2 md:p-0 p-4">
                         <button
                             onClick={resetTargetValues}
                             className="text-sm bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
                         >
-                            Zielwerte <br/>zurücksetzen
+                            Zielwerte <br />zurücksetzen
                         </button>
                         <button
                             onClick={resetUserValues}
                             className="text-sm bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
                         >
-                            Benutzerwerte <br/>zurücksetzen
+                            Benutzerwerte <br />zurücksetzen
                         </button>
                     </div>
                 </div>
             </nav>
-            <div className="p-4">
-                {activeTab === "Subway" && <SubwayRechner updateUserValues={updateUserValues}/>}
-                {activeTab === "KFC" && <KfcRechner updateUserValues={updateUserValues}/>}
-                {activeTab === "McDonalds" && <McDRechner updateUserValues={updateUserValues}/>}
+            <div>
+                {activeTab === "Subway" && <SubwayRechner updateUserValues={updateUserValues} />}
+                {activeTab === "KFC" && <KfcRechner updateUserValues={updateUserValues} />}
+                {activeTab === "McDonalds" && <McDRechner updateUserValues={updateUserValues} />}
                 {activeTab === "BK" && <div>BK Component</div>}
                 {activeTab === "Nordsee" && <div>Nordsee Component</div>}
                 {activeTab === "????" && <div>???? Component</div>}
