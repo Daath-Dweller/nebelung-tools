@@ -24,9 +24,6 @@ const getCircleColor = (value) => {
     }
 };
 
-
-
-
 export default function SubwayRechner({ updateUserValues }) {
     const [brot, setBrot] = useState('');
     const [belag, setBelag] = useState('');
@@ -159,8 +156,6 @@ export default function SubwayRechner({ updateUserValues }) {
         });
     };
 
-
-
     const resetAll = () => {
         setBrot('');
         setBelag('');
@@ -176,7 +171,6 @@ export default function SubwayRechner({ updateUserValues }) {
         setFootlongSeries(false);
     };
 
-
     return (
         <div className="md:p-12 p-4 bg-black text-white">
             <div className="flex md:flex-row md:justify-around flex-col">
@@ -188,8 +182,8 @@ export default function SubwayRechner({ updateUserValues }) {
                     >
                         Subway Series (vorzusammengestellt)&nbsp;
                         <span className="float-right">
-        {subwaySeriesExpanded ? '▲' : ''}
-      </span>
+                            {subwaySeriesExpanded ? '▲' : ''}
+                        </span>
                     </button>
                 </div>
 
@@ -201,21 +195,20 @@ export default function SubwayRechner({ updateUserValues }) {
                     >
                         Selbst zusammenstellen&nbsp;
                         <span className="float-right">
-        {!subwaySeriesExpanded ? '▲' : ''}
-      </span>
+                            {!subwaySeriesExpanded ? '▲' : ''}
+                        </span>
                     </button>
                 </div>
             </div>
 
-
             {subwaySeriesExpanded && (
                 <div className="mb-8">
-
                     <div>
                         {Object.keys(zutaten.subwaySeries).map((subwaySeriesItem) => (
                             <label key={subwaySeriesItem} className="flex items-center space-x-2 mb-2">
                                 <input
                                     type="checkbox"
+                                    id={`subwaySeries-${subwaySeriesItem}`}
                                     checked={subwaySeries[subwaySeriesItem]}
                                     onChange={(e) =>
                                         setSubwaySeries({
@@ -231,17 +224,16 @@ export default function SubwayRechner({ updateUserValues }) {
                         <label className="flex items-center space-x-2 mt-4">
                             <input
                                 type="checkbox"
+                                id="footlongSeries"
                                 checked={footlongSeries}
                                 onChange={(e) => setFootlongSeries(e.target.checked)}
                                 className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                             />
-                            <span>
-Footlong (30-cm-Sub)</span>
+                            <span>Footlong (30-cm-Sub)</span>
                         </label>
                     </div>
                 </div>
             )}
-
 
             {!subwaySeriesExpanded && (
                 <div className="md:flex md:items-center md:space-x-2 md:mt-4">
@@ -252,6 +244,8 @@ Footlong (30-cm-Sub)</span>
                                 onChange={(e) => setBrot(e.target.value)}
                                 className="border p-2 mt-2 w-full text-black"
                                 value={brot}
+                                id="brot"
+                                name="brot"
                             >
                                 <option value="">kein Brot / Salat</option>
                                 {Object.keys(zutaten.brot).map((brotKey) => (
@@ -269,6 +263,8 @@ Footlong (30-cm-Sub)</span>
                                 onChange={(e) => setBelag(e.target.value)}
                                 className="border p-2 mt-2 w-full text-black"
                                 value={belag}
+                                id="belag"
+                                name="belag"
                             >
                                 <option value="">kein Belag</option>
                                 {Object.keys(zutaten.belag).map((belagKey) => (
@@ -286,6 +282,8 @@ Footlong (30-cm-Sub)</span>
                                 onChange={(e) => setSosse(e.target.value)}
                                 className="border p-2 mt-2 w-full text-black"
                                 value={sosse}
+                                id="sosse"
+                                name="sosse"
                             >
                                 <option value="">keine Sosse</option>
                                 {Object.keys(zutaten.sosse).map((sosseKey) => (
@@ -303,6 +301,8 @@ Footlong (30-cm-Sub)</span>
                                 onChange={(e) => setKaese(e.target.value)}
                                 className="border p-2 mt-2 w-full text-black"
                                 value={kaese}
+                                id="kaese"
+                                name="kaese"
                             >
                                 <option value="">kein Käse</option>
                                 {Object.keys(zutaten.kaese).map((kaeseKey) => (
@@ -315,14 +315,16 @@ Footlong (30-cm-Sub)</span>
                     </div>
                 </div>
             )}
+
             <div id="wrapper" className="md:grid md:grid-cols-3 gap-8">
                 {!subwaySeriesExpanded && (
                     <div id="left">
                         <div className="mb-8">
                             <label className="block font-extrabold md:text-xl mb-4 mt-2">Gemüse</label>
-                            <label className="flex items-center space-x-2 mb-4">
+                            <label className="flex items-center space-x-2 mb-4" htmlFor="allGemuese">
                                 <input
                                     type="checkbox"
+                                    id="allGemuese"
                                     onChange={(e) => handleAllGemueseChange(e.target.checked)}
                                     className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
                                 />
@@ -330,9 +332,10 @@ Footlong (30-cm-Sub)</span>
                             </label>
 
                             {Object.keys(zutaten.gemuese).map((gemuesItem) => (
-                                <label key={gemuesItem} className="flex items-center space-x-2 mb-2">
+                                <label key={gemuesItem} className="flex items-center space-x-2 mb-2" htmlFor={`gemuese-${gemuesItem}`}>
                                     <input
                                         type="checkbox"
+                                        id={`gemuese-${gemuesItem}`}
                                         checked={gemuese[gemuesItem]}
                                         onChange={(e) =>
                                             setGemuese({
@@ -352,9 +355,10 @@ Footlong (30-cm-Sub)</span>
                     <div id="middle">
                         <div className="mb-8">
                             <label className="block font-extrabold md:text-xl mb-4 mt-2">Sonstiges</label>
-                            <label className="flex items-center space-x-2 mb-4">
+                            <label className="flex items-center space-x-2 mb-4" htmlFor="doppelKaese">
                                 <input
                                     type="checkbox"
+                                    id="doppelKaese"
                                     checked={doppelKaese}
                                     onChange={(e) => setDoppelKaese(e.target.checked)}
                                     className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
@@ -363,9 +367,10 @@ Footlong (30-cm-Sub)</span>
                                     {getCheckboxDisplayName("Doppelt Käse", zutaten.kaese[kaese])}
                                 </span>
                             </label>
-                            <label className="flex items-center space-x-2 mb-4">
+                            <label className="flex items-center space-x-2 mb-4" htmlFor="doppelFleisch">
                                 <input
                                     type="checkbox"
+                                    id="doppelFleisch"
                                     checked={doppelFleisch}
                                     onChange={(e) => setDoppelFleisch(e.target.checked)}
                                     className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
@@ -374,9 +379,10 @@ Footlong (30-cm-Sub)</span>
                                     {getCheckboxDisplayName("Doppelt Fleisch", zutaten.belag[belag])}
                                 </span>
                             </label>
-                            <label className="flex items-center space-x-2 mb-4">
+                            <label className="flex items-center space-x-2 mb-4" htmlFor="bacon">
                                 <input
                                     type="checkbox"
+                                    id="bacon"
                                     checked={bacon}
                                     onChange={(e) => setBacon(e.target.checked)}
                                     className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
@@ -385,9 +391,10 @@ Footlong (30-cm-Sub)</span>
                                     Bacon: + 42 kcal | + 2.9 F | + 0.2 KH | + 3.2 P
                                 </span>
                             </label>
-                            <label className="flex items-center space-x-2 mb-4">
+                            <label className="flex items-center space-x-2 mb-4" htmlFor="footlong">
                                 <input
                                     type="checkbox"
+                                    id="footlong"
                                     checked={footlong}
                                     onChange={(e) => setFootlong(e.target.checked)}
                                     className="w-6 h-6 rounded-full bg-gray-500 border-2 border-white checked:bg-gray-700 checked:border-white"
@@ -397,7 +404,6 @@ Footlong (30-cm-Sub)</span>
                                 </span>
                             </label>
                         </div>
-
                     </div>
                 )}
 
