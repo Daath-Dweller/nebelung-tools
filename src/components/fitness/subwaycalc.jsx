@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { zutaten } from '@/data/subwaydata.ts'; // Daten importieren
 
 const getDisplayName = (item) => {
@@ -24,6 +24,9 @@ const getCircleColor = (value) => {
     }
 };
 
+
+
+
 export default function SubwayRechner({ updateUserValues }) {
     const [brot, setBrot] = useState('');
     const [belag, setBelag] = useState('');
@@ -41,6 +44,12 @@ export default function SubwayRechner({ updateUserValues }) {
     const [subwaySeries, setSubwaySeries] = useState(initialSubwaySeriesState);
     const [subwaySeriesExpanded, setSubwaySeriesExpanded] = useState(false);
     const [footlongSeries, setFootlongSeries] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // Client-only Logik
+        }
+    }, []);
 
     const handleAllGemueseChange = (checked) => {
         const newGemuese = Object.keys(gemuese).reduce((acc, key) => {
@@ -296,7 +305,7 @@ Footlong (30-cm-Sub)</span>
                 {!subwaySeriesExpanded && (
                     <div id="left">
                         <div className="mb-8">
-                            <label className="block font-extrabold md:text-xl mb-4 mt-4">Gemüse</label>
+                            <label className="block font-extrabold md:text-xl mb-4 mt-2">Gemüse</label>
                             <label className="flex items-center space-x-2 mb-4">
                                 <input
                                     type="checkbox"
@@ -328,7 +337,7 @@ Footlong (30-cm-Sub)</span>
                 {!subwaySeriesExpanded && (
                     <div id="middle">
                         <div className="mb-8">
-                            <label className="block font-extrabold md:text-xl mb-4">Sonstiges</label>
+                            <label className="block font-extrabold md:text-xl mb-4 mt-2">Sonstiges</label>
                             <label className="flex items-center space-x-2 mb-4">
                                 <input
                                     type="checkbox"
@@ -380,7 +389,7 @@ Footlong (30-cm-Sub)</span>
 
                 <div id="right">
                     <div className="mb-8">
-                        <h2 className="text-xl font-bold mb-4">
+                        <h2 className="text-xl font-bold mb-4 mt-2">
                             Kalorien deines Subs:
                         </h2>
                         <p>
