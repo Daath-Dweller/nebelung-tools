@@ -377,6 +377,23 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         korrekt: 1,
         etymologie: 'Aus dem Griechischen „taxis“ (Ordnung) und „nomos“ (Gesetz), ursprünglich in der Biologie verwendet, um Lebewesen zu klassifizieren.',
         beispielSatz: 'Der Biologe arbeitet an der Taxonomie einer neuen Pflanzenart.'
+    },
+    petrichor: {
+        name: 'Petrichor',
+        erklaerungUndSynonyme: 'Der besondere, erdige Geruch, der entsteht, wenn Regen auf trockenen Boden trifft. Synonyme: Erdduft, Regenaroma.',
+        options: ['Petricor', 'Petrichor', 'Petrikor', 'Petrychor'],
+        korrekt: 1,
+        etymologie: 'Aus dem Griechischen „petra“ (Stein) und „ichor“ (Götterblut), ursprünglich verwendet, um den Duft zu beschreiben, der nach Regen auftritt.',
+        beispielSatz: 'Nach dem Gewitter lag der Duft des Petrichors in der Luft.'
+    },
+
+    phosphene: {
+        name: 'Phosphene',
+        erklaerungUndSynonyme: 'Die Lichtmuster, die man sieht, wenn die Augen bei geschlossenen Lidern gedrückt werden. Synonyme: Sehhalluzinationen, Druckerscheinungen.',
+        options: ['Phosphene', 'Phosfeen', 'Phosfene', 'Fosphen'],
+        korrekt: 0,
+        etymologie: 'Aus dem Griechischen „phos“ (Licht) und „phainein“ (erscheinen), ursprünglich zur Beschreibung der leuchtenden Empfindungen im Auge.',
+        beispielSatz: 'Als sie sanft auf ihre Augen drückte, sah sie bunte Phosphene.'
     }
 
 };
