@@ -156,16 +156,16 @@ export default function SubwayRechner({ updateUserValues }) {
 
     return (
         <div className="md:p-12 p-4 bg-black text-white">
-            <div className="flex flex-row justify-around">
+            <div className="flex md:flex-row md:justify-around flex-col">
                 <div className="mb-8">
                     <button
                         onClick={() => setSubwaySeriesExpanded(true)}
-                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded-full
-        ${subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 bg-gray-700 text-white"}`}
+                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded
+        ${subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 hover:text-white bg-gray-700 text-gray-500"}`}
                     >
-                        Subway Series (vorzusammengestellt)
+                        Subway Series (vorzusammengestellt)&nbsp;
                         <span className="float-right">
-        {subwaySeriesExpanded ? '▲' : '▼'}
+        {subwaySeriesExpanded ? '▲' : ''}
       </span>
                     </button>
                 </div>
@@ -173,12 +173,12 @@ export default function SubwayRechner({ updateUserValues }) {
                 <div className="mb-8">
                     <button
                         onClick={() => setSubwaySeriesExpanded(false)}
-                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded-full
-        ${!subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 bg-gray-700 text-white"}`}
+                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded
+        ${!subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 hover:text-white bg-gray-700 text-gray-500"}`}
                     >
-                        Selbst zusammenstellen
+                        Selbst zusammenstellen&nbsp;
                         <span className="float-right">
-        {!subwaySeriesExpanded ? '▲' : '▼'}
+        {!subwaySeriesExpanded ? '▲' : ''}
       </span>
                     </button>
                 </div>
@@ -221,7 +221,7 @@ Footlong (30-cm-Sub)</span>
 
 
             {!subwaySeriesExpanded && (
-                <>
+                <div className="md:flex md:items-center md:space-x-2 md:mt-4">
                     <div className="md:mb-8">
                         <label className="block md:mb-4">
                             Brotsorte / Wrap:
@@ -239,7 +239,7 @@ Footlong (30-cm-Sub)</span>
                             </select>
                         </label>
                     </div>
-                    <div className="md:mb-8">
+                    <div className="md:mb-8 ">
                         <label className="block md:mb-4">
                             Belag:
                             <select
@@ -256,7 +256,7 @@ Footlong (30-cm-Sub)</span>
                             </select>
                         </label>
                     </div>
-                    <div className="md:mb-8">
+                    <div className="md:mb-8 ">
                         <label className="block md:mb-4">
                             Sosse:
                             <select
@@ -290,13 +290,13 @@ Footlong (30-cm-Sub)</span>
                             </select>
                         </label>
                     </div>
-                </>
+                </div>
             )}
             <div id="wrapper" className="md:grid md:grid-cols-3 gap-8">
                 {!subwaySeriesExpanded && (
                     <div id="left">
                         <div className="mb-8">
-                            <label className="block font-extrabold md:text-xl mb-4">Gemüse</label>
+                            <label className="block font-extrabold md:text-xl mb-4 mt-4">Gemüse</label>
                             <label className="flex items-center space-x-2 mb-4">
                                 <input
                                     type="checkbox"
