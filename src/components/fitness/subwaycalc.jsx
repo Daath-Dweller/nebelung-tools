@@ -159,9 +159,23 @@ export default function SubwayRechner({ updateUserValues }) {
         });
     };
 
-    const toggleSubwaySeries = () => {
-        setSubwaySeriesExpanded(!subwaySeriesExpanded);
+
+
+    const resetAll = () => {
+        setBrot('');
+        setBelag('');
+        setSosse('');
+        setKaese('');
+        setDoppelKaese(false);
+        setDoppelFleisch(false);
+        setFootlong(false);
+        setBacon(false);
+        setGemuese(initialGemueseState);
+        setSubwaySeries(initialSubwaySeriesState);
+        setSubwaySeriesExpanded(false);
+        setFootlongSeries(false);
     };
+
 
     return (
         <div className="md:p-12 p-4 bg-black text-white">
@@ -392,16 +406,22 @@ Footlong (30-cm-Sub)</span>
                         <h2 className="text-xl font-bold mb-4 mt-2">
                             Kalorien deines Subs:
                         </h2>
-                        <p>
+                        <p className="mb-4">
                             {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g Fett, {roundUp(werte.kohlenhydrate)} g
                             Kohlenhydrate, {roundUp(werte.protein)} g Protein
                             <span className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></span>
                         </p>
                         <button
                             onClick={handleTransferClick}
-                            className="mt-4 p-4 bg-gray-500 text-white border border-white rounded"
+                            className="m-2 p-4 bg-gray-500 text-white border border-white rounded"
                         >
                             Übertragen auf Nutzerwerte
+                        </button>
+                        <button
+                            onClick={resetAll}
+                            className="m-2 p-4 bg-red-500 text-white border border-white rounded"
+                        >
+                            Zurücksetzen
                         </button>
                     </div>
                 </div>
