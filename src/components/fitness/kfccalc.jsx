@@ -50,10 +50,11 @@ export default function KfcRechner({ updateUserValues }) {
     };
 
     return (
-        <div className="p-12 bg-black text-white">
-            <h1 className="text-2xl font-bold mb-8">KFC-Kalorien-Rechner</h1>
+        <div className="p-12 bg-black text-white md:flex md:flex-row md:justify-around">
 
-            <div id="wrapper" className="md:grid md:grid-cols-4 gap-4 flex flex-col">
+
+            <div id="wrapper" className="md:grid md:grid-cols-2 gap-4 flex flex-col">
+
                 {Object.keys(produkte).map((category) =>
                     Object.values(produkte[category]).map((produkt) => {
                         const proteinPer100Kcal = produkt.kcal
@@ -77,7 +78,7 @@ export default function KfcRechner({ updateUserValues }) {
                                 <div>
                                     <div className="font-bold">
                                         {produkt.name}
-                                        <br />
+                                        <br/>
                                         {produkt.fett}g F | {produkt.kohlenhydrate}g KH | {produkt.protein}g P
                                     </div>
                                     <div className="font-extrabold">{produkt.kcal} Kcal</div>
@@ -123,11 +124,11 @@ export default function KfcRechner({ updateUserValues }) {
                     onClick={handleTransferValues}
                     className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
                 >
-                    Übertrage Userwerte
+                    Übertrage Nutzerwerte
                 </button>
                 <button
                     onClick={handleClearProducts}
-                    className="mx-4 my-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+                    className="mt-4 my-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
                 >
                     Alle Produkte entfernen
                 </button>
