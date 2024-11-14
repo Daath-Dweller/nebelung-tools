@@ -156,19 +156,34 @@ export default function SubwayRechner({ updateUserValues }) {
 
     return (
         <div className="md:p-12 p-4 bg-black text-white">
-            <h1 className="md:text-2xl text-sm font-bold md:mb-8">Subway-Kalorien-Rechner</h1>
-            <div className="mb-8">
-                <button
-                    onClick={toggleSubwaySeries}
-                    className={`block font-extrabold text-xl mb-4 w-1/2 p-2 border-2 text-left
-    ${subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 bg-gray-700 text-white"} `}
-                >
-                    Subway Series (15 cm, vorzusammengestellt)
-                    <span className="float-right">
-      {subwaySeriesExpanded ? '▲' : '▼'}
-    </span>
-                </button>
+            <div className="flex flex-row justify-around">
+                <div className="mb-8">
+                    <button
+                        onClick={() => setSubwaySeriesExpanded(true)}
+                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded-full
+        ${subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 bg-gray-700 text-white"}`}
+                    >
+                        Subway Series (vorzusammengestellt)
+                        <span className="float-right">
+        {subwaySeriesExpanded ? '▲' : '▼'}
+      </span>
+                    </button>
+                </div>
+
+                <div className="mb-8">
+                    <button
+                        onClick={() => setSubwaySeriesExpanded(false)}
+                        className={`block font-extrabold text-xl mb-4 w-full p-2 border-2 text-left rounded-full
+        ${!subwaySeriesExpanded ? "bg-gray-100 text-black" : "hover:bg-gray-900 bg-gray-700 text-white"}`}
+                    >
+                        Selbst zusammenstellen
+                        <span className="float-right">
+        {!subwaySeriesExpanded ? '▲' : '▼'}
+      </span>
+                    </button>
+                </div>
             </div>
+
 
             {subwaySeriesExpanded && (
                 <div className="mb-8">
@@ -203,6 +218,8 @@ Footlong (30-cm-Sub)</span>
                     </div>
                 </div>
             )}
+
+
             {!subwaySeriesExpanded && (
                 <>
                     <div className="md:mb-8">
