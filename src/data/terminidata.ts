@@ -166,22 +166,170 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
     standarte: {
         name: 'Standarte',
         erklaerungUndSynonyme: 'Ein befestigtes Banner oder Feldzeichen, das oft von militärischen oder königlichen Einheiten getragen wird. Synonyme: Feldzeichen, Fahne, Banner.',
-        options: ['Standarte', 'Standard', 'Standart', 'Standerte'],
-        korrekt: 0,
+        options: ['Standard', 'Standarte', 'Standart', 'Standerte'],
+        korrekt: 1,
         etymologie: 'Vom althochdeutschen „standan“ (stehen) und „arta“ (Art), ursprünglich ein stehendes Feldzeichen für militärische Einheiten.'
     },
     idiotikon: {
         name: 'Idiotikon',
         erklaerungUndSynonyme: 'Ein historisches Wörterbuch oder Lexikon, das die Eigenheiten einer bestimmten Sprache oder eines Dialekts aufzeigt, oft mit regionalem Fokus. Synonyme: Dialektwörterbuch, Sprachlexikon.',
-        options: ['Idiotikon', 'Idiotikum', 'Idiothek', 'Idiomikon'],
-        korrekt: 0,
+        options: ['Idiotikum', 'Idiothek', 'Idiotikon', 'Idiomikon'],
+        korrekt: 2,
         etymologie: 'Vom griechischen „idiotikos“ (eigen, speziell) und „-ikon“ (Endung für Verzeichnisse), also ein Verzeichnis der Eigenheiten einer Sprache.'
     },
     sillage: {
         name: 'Sillage',
         erklaerungUndSynonyme: 'Der Duft, den ein Parfum oder eine Person in der Luft hinterlässt. Synonyme: Duftspur, Parfumspur.',
-        options: ['Sillage', 'Silage', 'Silhouette', 'Silaj'],
-        korrekt: 0,
+        options: ['Silage', 'Silhouette', 'Silaj', 'Sillage'],
+        korrekt: 3,
         etymologie: 'Aus dem Französischen „sillage“ (Spur, Kielwasser), ursprünglich aus dem Seefahrtsjargon entlehnt und im Duftkontext für die Duftspur verwendet, die ein Parfum hinterlässt.'
+    },
+   overtonfenster: {
+        name: 'Overtonfenster',
+        erklaerungUndSynonyme: 'Der Bereich von Ideen und Meinungen, die in einer Gesellschaft zu einer bestimmten Zeit als akzeptabel gelten. Synonyme: Akzeptanzrahmen, Akzeptanzspektrum.',
+        options: ['Overten-Fenster', 'Overtton-Fenster', 'Overton-Fenster', 'Overtonn-Fenster'],
+        korrekt: 2,
+        etymologie: 'Nach Joseph P. Overton, einem US-amerikanischen Politologen, der das Konzept formulierte, wonach der Bereich des gesellschaftlich Akzeptablen durch kulturelle und politische Einflüsse verschoben werden kann.'
+    },
+    hekatombe: {
+        name: 'Hekatombe',
+        erklaerungUndSynonyme: 'Ein großes, oft blutiges Opfer oder ein massenhafter Verlust. Synonyme: Massenopfer, Blutbad.',
+        options: ['Hecatombe', 'Hekkatombe', 'Hekatombe', 'Heckatombe'],
+        korrekt: 2,
+        etymologie: 'Aus dem Griechischen „hekatombē“ (Opfer von 100 Rindern), traditionell in der Antike für große Opfergaben verwendet, heute als Metapher für massenhafte Verluste.'
+    },
+    epigone: {
+        name: 'Epigone',
+        erklaerungUndSynonyme: 'Ein Nachahmer oder Nachfolger, oft ohne Originalität. Synonyme: Nachfolger, Nachahmer.',
+        options: ['Epigonne', 'Epihgone', 'Eppigone', 'Epigone'],
+        korrekt: 3,
+        etymologie: 'Aus dem Griechischen „epígonos“ (Nachgeborener), ursprünglich für Nachfahren großer Persönlichkeiten verwendet, heute meist abwertend für jemanden ohne kreative Eigenleistung.'
+    },
+    menetekel: {
+        name: 'Menetekel',
+        erklaerungUndSynonyme: 'Ein Warnzeichen für ein drohendes Unheil. Synonyme: Warnung, Schicksalszeichen.',
+        options: ['Meneteckel', 'Menetekel', 'Menetekl', 'Mennetekel'],
+        korrekt: 1,
+        etymologie: 'Biblischer Ursprung, aus dem Buch Daniel; das unheilvolle Zeichen „Mene mene tekel upharsin“ kündigte das Ende des babylonischen Reiches an. Heute metaphorisch für ein Vorzeichen des Scheiterns.'
+    },
+    verballhornung: {
+        name: 'Verballhornung',
+        erklaerungUndSynonyme: 'Die bewusste oder unbewusste Verfälschung, Verzerrung oder Entstellung eines Ausdrucks, oft humorvoll oder abwertend. Synonyme: Entstellung, Verfälschung.',
+        options: ['Werbalhornung', 'Verbahlhornung', 'Verballhornung', 'Verbellhornung'],
+        korrekt: 2,
+        etymologie: 'Der Begriff geht auf den Buchdrucker Johann Ballhorn zurück, der im 16. Jahrhundert Texte unabsichtlich fehlerhaft druckte. Heute bezeichnet er absichtliche oder unabsichtliche Entstellungen von Sprache.'
+    },
+    wortklauberei: {
+        name: 'Wortklauberei',
+        erklaerungUndSynonyme: 'Übertriebene Genauigkeit in der Interpretation von Worten, meist pedantisch oder als Kritik an Kleinlichkeit. Synonyme: Pedanterie, Haarspalterei.',
+        options: ['Wortklauberey', 'Wortglauberei', 'Wortklauberei', 'Wortglauberey'],
+        korrekt: 2,
+        etymologie: 'Wortklauberei leitet sich von „klauben“ ab, was „sorgfältig auswählen“ bedeutet, und beschreibt eine Tendenz, sich an Details in der Wortwahl aufzuhalten.'
+    },
+    rabulistik: {
+        name: 'Rabulistik',
+        erklaerungUndSynonyme: 'Einsatz von Spitzfindigkeiten und Haarspalterei, meist mit dem Ziel, die Wahrheit zu verdrehen. Synonyme: Wortklauberei, Haarspalterei.',
+        options: ['Rabulistik', 'Rabbulistik', 'Rabulistick', 'Rabullistik'],
+        korrekt: 0,
+        etymologie: 'Aus dem Lateinischen „rabulista“ (Streithansl), ursprünglich ein abwertender Begriff für Rechtsanwälte, die mit Spitzfindigkeiten arbeiten. Heute synonym für manipulative Argumentation.'
+    },
+    ueberbordend: {
+        name: 'Überbordend',
+        erklaerungUndSynonyme: 'Etwas, das im Übermaß vorhanden ist oder alle Grenzen überschreitet. Synonyme: maßlos, exzessiv.',
+        options: ['Überborend', 'Überbordernd', 'Überbordend', 'Überbordent'],
+        korrekt: 2,
+        etymologie: 'Aus dem nautischen Bereich, wo es „über Bord gehen“ bedeutet. Im übertragenen Sinne beschreibt es etwas, das das zulässige Maß überschreitet.'
+    },
+    sakrosankt: {
+        name: 'Sakrosankt',
+        erklaerungUndSynonyme: 'Unantastbar oder heilig, etwas, das als unverletzlich gilt. Synonyme: unantastbar, unfehlbar.',
+        options: ['Sackrosankt', 'Sakrosankt', 'Sakrosangt', 'Sakrosant'],
+        korrekt: 1,
+        etymologie: 'Aus dem Lateinischen „sacrosanctus“, das sich aus „sacer“ (heilig) und „sanctus“ (unverletzlich) zusammensetzt. Der Begriff bezeichnet etwas, das als absolut schützenswert oder heilig gilt.'
+    },
+    hanebuechen: {
+        name: 'Hanebüchen',
+        erklaerungUndSynonyme: 'Etwas, das extrem grob, unsinnig oder übertrieben ist. Synonyme: absurd, ungeheuerlich.',
+        options: ['Hanebüchen', 'Hanebüchern', 'Hahnebüchen', 'Hahnebüchern'],
+        korrekt: 0,
+        etymologie: 'Ursprünglich abgeleitet von „Hainbuche“, einem besonders zähen Holz, das für grobe Arbeiten verwendet wurde. Im übertragenen Sinne beschreibt es heute etwas, das besonders unsinnig oder plump ist.'
+    },
+    nebelkerze: {
+        name: 'Nebelkerze',
+        erklaerungUndSynonyme: 'Ein Mittel, um jemanden abzulenken oder zu täuschen. Synonyme: Ablenkungsmanöver, Täuschung.',
+        options: ['Nebelkatze', 'Nebelkerze', 'Nebelkertze', 'Nabelkerze'],
+        korrekt: 1,
+        etymologie: 'Militärischer Ursprung: Eine Nebelkerze wird gezündet, um ein Gebiet zu verschleiern und Verwirrung zu stiften. Heute im übertragenen Sinne für gezielte Ablenkung verwendet.'
+    },
+    raeuberpistole: {
+        name: 'Räuberpistole',
+        erklaerungUndSynonyme: 'Eine übertriebene, unglaubwürdige oder sensationelle Geschichte. Synonyme: Lügengeschichte, Schauermärchen.',
+        options: ['Räuberflinte', 'Räubergewehr', 'Räuberpistole', 'Raubpistole'],
+        korrekt: 2,
+        etymologie: 'Früher waren Räuberpistolen reißerische Abenteuergeschichten über Räuber und Banditen. Heute beschreibt der Begriff eine unglaubwürdige oder spektakulär ausgeschmückte Erzählung.'
+    },
+    spalier: {
+        name: 'Spalier',
+        erklaerungUndSynonyme: 'Eine Reihe von Personen oder Objekten, die eine Gasse bilden, durch die jemand hindurchgehen kann. Synonyme: Ehrenreihe, Reihenformation.',
+        options: ['Spalier', 'Spahlier', 'Spallier', 'Spalir'],
+        korrekt: 0,
+        etymologie: 'Aus dem Italienischen „spalliera“ (Schulterhöhe), ursprünglich für Pflanzen an Rankgittern verwendet, die eine Gasse bilden. Heute auch im übertragenen Sinne für eine Reihe von Personen verwendet.'
+    },
+    maeander: {
+        name: 'Mäander',
+        erklaerungUndSynonyme: 'Ein gewundener, sich schlängelnder Verlauf, oft von Flüssen oder Wegen. Synonyme: Schlingen, Windungen.',
+        options: ['Meander', 'Mäander', 'Mänder', 'Mäender'],
+        korrekt: 1,
+        etymologie: 'Vom griechischen Fluss „Maiandros“, bekannt für seine vielen Windungen. Heute bezeichnet es allgemein eine geschwungene, gewundene Form.'
+    },
+    holistisch: {
+        name: 'Holistisch',
+        erklaerungUndSynonyme: 'Eine Betrachtungsweise, die das Ganze und seine Zusammenhänge in den Fokus stellt, statt einzelner Teile. Synonyme: ganzheitlich, umfassend.',
+        options: ['Holistisch', 'Hohlistisch', 'Hollistisch', 'Holistich'],
+        korrekt: 0,
+        etymologie: 'Vom griechischen „holos“ (ganz), in der Philosophie und Wissenschaft als Ansatz, der das Gesamtsystem betrachtet.'
+    },
+    kongruent: {
+        name: 'Kongruent',
+        erklaerungUndSynonyme: 'Etwas, das in Form, Inhalt oder Bedeutung übereinstimmt. Synonyme: übereinstimmend, deckungsgleich.',
+        options: ['Kongruent', 'Konkruent', 'Konruent', 'Kongruend'],
+        korrekt: 0,
+        etymologie: 'Aus dem Lateinischen „congruere“ (zusammenpassen), in Mathematik und Geometrie für deckungsgleiche Formen und allgemein für Übereinstimmung verwendet.'
+    },
+    diametral: {
+        name: 'Diametral',
+        erklaerungUndSynonyme: 'Etwas, das in direktem Gegensatz steht oder genau entgegengesetzt ist. Synonyme: gegensätzlich, entgegengesetzt.',
+        options: ['Diermetral', 'Diametrahl', 'Diametral', 'Diamettral'],
+        korrekt: 2,
+        etymologie: 'Vom griechischen „diametros“ (Durchmesser), beschreibt eine Position auf der gegenüberliegenden Seite eines Durchmessers, im übertragenen Sinne für extreme Gegensätze verwendet.'
+    },
+    oikophob: {
+        name: 'Oikophob',
+        erklaerungUndSynonyme: 'Die Abneigung oder Feindseligkeit gegenüber der eigenen Kultur oder Heimat. Synonyme: Heimatfeindlich, kulturkritisch.',
+        options: ['Eukophob', 'Oikophob', 'Oukophob', 'Oikofob'],
+        korrekt: 1,
+        etymologie: 'Vom Griechischen „oikos“ (Haus) und „phobos“ (Angst), ein Begriff, der die Abneigung gegen die eigene Kultur oder Heimat beschreibt, meist im politischen Kontext verwendet.'
+    },
+    duktus: {
+        name: 'Duktus',
+        erklaerungUndSynonyme: 'Der charakteristische Stil oder die Art und Weise, wie etwas geschrieben oder gezeichnet wird. Synonyme: Stil, Ausdruck.',
+        options: ['Ducktus', 'Duktus', 'Duktuss', 'Ducktuss'],
+        korrekt: 1,
+        etymologie: 'Aus dem Lateinischen „ductus“ (Führung, Zug), beschreibt den individuellen Schreib- oder Zeichenstil einer Person.'
+    },
+    habitus: {
+        name: 'Habitus',
+        erklaerungUndSynonyme: 'Die äußere Erscheinung oder typische Haltung einer Person, die oft ihre Persönlichkeit oder sozialen Status widerspiegelt. Synonyme: Auftreten, Haltung.',
+        options: ['Habitus', 'Hahbitus', 'Habituss', 'Habbitus'],
+        korrekt: 0,
+        etymologie: 'Aus dem Lateinischen „habitus“ (Kleidung, Haltung), beschreibt die äußere Erscheinung oder das Auftreten, oft im soziologischen Kontext verwendet.'
+    },
+    taxonomie: {
+        name: 'Taxonomie',
+        erklaerungUndSynonyme: 'Ein System zur Klassifizierung und Einordnung von Dingen, häufig in der Biologie oder Wissensordnung verwendet. Synonyme: Klassifikation, Systematik.',
+        options: ['Taksonomie', 'Taxonomie', 'Taxonnomie', 'Taxonomi'],
+        korrekt: 1,
+        etymologie: 'Aus dem Griechischen „taxis“ (Ordnung) und „nomos“ (Gesetz), ursprünglich in der Biologie verwendet, um Lebewesen zu klassifizieren.'
     }
+
 };

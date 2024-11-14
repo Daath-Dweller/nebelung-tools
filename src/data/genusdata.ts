@@ -96,5 +96,11 @@ export const words: WordEntry[] = [
         article: 'der',
         explanation: 'Der Schild - Eine Schutzwaffe, die in der Antike und im Mittelalter im Kampf verwendet wurde. Beispiel: "der Ritterschild". Synonyme sind Schutzschild oder Panzerplatte.'
     },
+    {
+        word: 'Narrativ',
+        article: 'das',
+        explanation: 'Das Narrativ - Eine grundlegende Erzählstruktur oder Geschichte, die zur Vermittlung von Ideologien oder Weltbildern genutzt wird. Beispiel: "das Narrativ vom heldenhaften Widerstand". Synonyme sind Erzählung oder Darstellung.'
+    },
+
 
 ];
