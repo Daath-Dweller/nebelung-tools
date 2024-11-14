@@ -1,4 +1,3 @@
-// app/layout.tsx
 "use client";
 import React, { useState } from "react";
 import { Inter } from "next/font/google";
@@ -67,8 +66,8 @@ export default function RootLayout({
                 <span
                     className={`text-4xl tracking-wider cursor-pointer ${
                         pathname === "/"
-                            ? "text-teal-500 font-extrabold"
-                            : "text-white font-bold"
+                            ? "text-gray-100 font-extrabold"
+                            : "text-gray-300 font-bold hover:text-gray-100"
                     }`}
                 >
                   DA
@@ -98,66 +97,94 @@ export default function RootLayout({
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-4 ml-4">
-            {menuItems.map((menuItem, index) => (
-                <li key={index} className="relative group">
-                  <div className="text-white tracking-wider flex items-center space-x-2 cursor-pointer">
-                    {menuItem.icon}
-                    <span>{menuItem.label}</span>
-                  </div>
-                  <ul className="absolute left-0 top-full bg-black hidden group-hover:block z-10">
-                    {menuItem.subItems.map((subItem) => (
-                        <li key={subItem.key}>
-                          <Link
-                              href={subItem.href}
-                              className={`block px-4 py-2 text-white whitespace-no-wrap cursor-pointer ${
-                                  pathname === subItem.href
-                                      ? "bg-gray-800"
-                                      : "hover:bg-gray-700"
-                              }`}
-                          >
-                            {subItem.label}
-                          </Link>
-                        </li>
-                    ))}
-                  </ul>
-                </li>
-            ))}
+            {menuItems.map((menuItem) => {
+              const isParentActive = menuItem.subItems.some(
+                  (subItem) => pathname === subItem.href
+              );
+
+              return (
+                  <li key={menuItem.label} className="relative group">
+                    <div
+                        className={"tracking-wider flex items-center space-x-2 cursor-pointer"}
+                    >
+                      <span  className={`tracking-wider flex items-center space-x-2 cursor-pointer ${
+                          isParentActive
+                              ? "text-teal-800 font-bold"
+                              : "text-gray-300 font-bold hover:text-gray-100"
+                      }`}> {menuItem.icon}</span>
+                        <span  className={`tracking-wider flex items-center space-x-2 cursor-pointer ${
+                            isParentActive
+                                ? "text-white font-bold"
+                                : "text-gray-300 font-bold hover:text-gray-100"
+                        }`}>{menuItem.label}</span>
+                    </div>
+                    <ul className="absolute left-0 top-full bg-black hidden group-hover:block z-10 border border-gray-700">
+                      {menuItem.subItems.map((subItem) => (
+                          <li key={subItem.key}>
+                            <Link
+                                href={subItem.href}
+                                className={`block px-4 py-2 ${
+                                    pathname === subItem.href
+                                        ? "text-gray-100 font-bold bg-gray-800"
+                                        : "text-gray-300 hover:text-gray-100 hover:bg-gray-700"
+                                }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          </li>
+                      ))}
+                    </ul>
+                  </li>
+              );
+            })}
           </ul>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-            <ul className="md:hidden bg-black">
-              {menuItems.map((menuItem, index) => (
-                  <li key={index} className="border-b border-gray-700">
-                    <button
-                        onClick={() => {
-                          if (openMobileMenu === menuItem.label) {
-                            setOpenMobileMenu(null);
-                          } else {
-                            setOpenMobileMenu(menuItem.label);
-                          }
-                        }}
-                        className="block w-full text-left px-4 py-2 text-white font-bold flex items-center space-x-2 focus:outline-none"
-                    >
-                      {menuItem.icon}
-                      <span>{menuItem.label}</span>
-                    </button>
-                    {openMobileMenu === menuItem.label &&
-                        menuItem.subItems.map((subItem) => (
-                            <Link
-                                href={subItem.href}
-                                key={subItem.key}
-                                className={`block pl-8 pr-4 py-2 text-white ${
-                                    pathname === subItem.href ? "bg-gray-800" : ""
-                                }`}
-                                onClick={() => setIsMenuOpen(false)} // Close menu
-                            >
-                              {subItem.label}
-                            </Link>
-                        ))}
-                  </li>
-              ))}
+            <ul className="md:hidden bg-black border-t border-gray-700">
+              {menuItems.map((menuItem) => {
+                const isParentActive = menuItem.subItems.some(
+                    (subItem) => pathname === subItem.href
+                );
+
+                return (
+                    <li key={menuItem.label} className="border-b border-gray-700">
+                      <button
+                          onClick={() => {
+                            if (openMobileMenu === menuItem.label) {
+                              setOpenMobileMenu(null);
+                            } else {
+                              setOpenMobileMenu(menuItem.label);
+                            }
+                          }}
+                          className={`block w-full text-left px-4 py-2 font-bold flex items-center space-x-2 focus:outline-none ${
+                              isParentActive
+                                  ? "text-gray-100"
+                                  : "text-gray-300 hover:text-gray-100"
+                          }`}
+                      >
+                        {menuItem.icon}
+                        <span>{menuItem.label}</span>
+                      </button>
+                      {openMobileMenu === menuItem.label &&
+                          menuItem.subItems.map((subItem) => (
+                              <Link
+                                  href={subItem.href}
+                                  key={subItem.key}
+                                  className={`block pl-8 pr-4 py-2 ${
+                                      pathname === subItem.href
+                                          ? "text-gray-100 font-bold bg-gray-800"
+                                          : "text-gray-300 hover:text-gray-100 hover:bg-gray-700"
+                                  }`}
+                                  onClick={() => setIsMenuOpen(false)} // Close menu
+                              >
+                                {subItem.label}
+                              </Link>
+                          ))}
+                    </li>
+                );
+              })}
             </ul>
         )}
       </nav>

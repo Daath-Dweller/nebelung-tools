@@ -79,17 +79,22 @@ export default function Linguatermini() {
                         </div>
                     ) : (
                         <div>
-                            <p className="text-xl mb-4">
+                            <p className={`text-xl mb-4 ${isCorrect ? 'text-teal-800' : 'text-red-800'} text-white p-2 rounded`}>
                                 {isCorrect ? 'Richtig!' : 'Das ist nicht korrekt.'}
                             </p>
+
                             {!isCorrect && (
-                                <p className="text-lg mb-2">
-                                    Die richtige Antwort ist: <strong>{currentItem.options[currentItem.korrekt]}</strong>
+                                <p className="text-lg mb-6">
+                                    Die richtige Antwort
+                                    lautet: <strong>{currentItem.options[currentItem.korrekt]}</strong>
                                 </p>
                             )}
-                            <p className="text-lg mb-4">{currentItem.etymologie}</p>
+                            <p className="text-lg mb-4"><span
+                                className="font-extrabold">Etymologie:</span> {currentItem.etymologie}</p>
+                            <p className="text-lg mb-4"><span
+                                className="font-extrabold">Beispiel:</span> {currentItem.beispielSatz}</p>
                             <button
-                                className="text-lg font-bold py-2 px-4  bg-gray-500 hover:bg-gray-700  text-white rounded-lg"
+                                className="text-lg font-bold py-2 px-4 mt-4 bg-gray-500 hover:bg-gray-700  text-white rounded-lg"
                                 onClick={handleNextItem}
                             >
                                 Weiter
@@ -130,9 +135,12 @@ export default function Linguatermini() {
                             <p className="text-xl font-semibold">
                                 {item.options[item.korrekt]}
                             </p>
-                            <p className="text-sm text-gray-300">{item.erklaerungUndSynonyme}</p>
-                            <p className="text-sm text-gray-300">{item.etymologie}</p>
-                            <p className="text-sm text-gray-300">{item.beispielSatz}</p>
+                            <p className="text-sm text-gray-300"><span className="font-extrabold">Erläuterung: </span>{item.erklaerungUndSynonyme}
+                            </p>
+                            <p className="text-sm text-gray-300"><span className="font-extrabold">Etymologie: </span>{item.etymologie}
+                            </p>
+                            <p className="text-sm text-gray-300"><span className="font-extrabold">Beispiel: </span>{item.beispielSatz}
+                            </p>
                         </div>
                     ))}
                 </div>
