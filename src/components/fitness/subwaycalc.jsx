@@ -286,7 +286,7 @@ export default function SubwayRechner({ updateUserValues }) {
                         </label>
                     </div>
                     <label className="block md:mb-4">
-                        <label className="block md:mb-4 font-extrabold md:text-xl">Footlong</label>
+                        <span className="block md:mb-4 font-extrabold md:text-xl">Footlong</span>
                         <span>
                             30-cm-Sub:
                             {brot || belag || sosse || kaese ? `+ ${werte.kcal} kcal` : " keine Auswahl"}
@@ -321,7 +321,7 @@ export default function SubwayRechner({ updateUserValues }) {
                     <h2 className="md:text-xl font-bold md:mt-8">
                         Kalorien deines Subs: {roundUp(werte.kcal)} kcal, {roundUp(werte.fett)} g
                         Fett, {roundUp(werte.kohlenhydrate)} g Kohlenhydrate, {roundUp(werte.protein)} g Protein
-                        <div className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></div>
+                        <span className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></span>
                     </h2>
                     <button
                         onClick={handleTransferClick}

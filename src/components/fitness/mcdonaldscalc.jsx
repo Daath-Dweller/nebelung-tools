@@ -1,10 +1,7 @@
-// kfcdata.ts bleibt unverändert
+import { useState } from 'react';
+import { produkte } from '@/data/mcdonaldsdata.ts';
 
-// Komponente KfcRechner
-import {useState} from 'react';
-import {produkte} from '@/data/mcdonaldsdata.ts';
-
-export default function McDRechner({updateUserValues}) {
+export default function McDRechner({ updateUserValues }) {
     const [selectedProducts, setSelectedProducts] = useState([]);
 
     const handleProductClick = (produkt) => {
@@ -19,7 +16,7 @@ export default function McDRechner({updateUserValues}) {
                 kohlenhydrate: acc.kohlenhydrate + produkt.kohlenhydrate,
                 protein: acc.protein + produkt.protein,
             }),
-            {kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0}
+            { kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0 }
         );
         updateUserValues(totalValues);
     };
@@ -35,10 +32,12 @@ export default function McDRechner({updateUserValues}) {
             kohlenhydrate: acc.kohlenhydrate + produkt.kohlenhydrate,
             protein: acc.protein + produkt.protein,
         }),
-        {kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0}
+        { kalorien: 0, fett: 0, kohlenhydrate: 0, protein: 0 }
     );
 
-    const totalProteinPer100Kcal = totalValues.kalorien ? (totalValues.protein / (totalValues.kalorien / 100)).toFixed(2) : '0';
+    const totalProteinPer100Kcal = totalValues.kalorien
+        ? (totalValues.protein / (totalValues.kalorien / 100)).toFixed(2)
+        : '0';
 
     const getCircleColor = (value) => {
         if (value < 5) {
@@ -52,12 +51,14 @@ export default function McDRechner({updateUserValues}) {
 
     return (
         <div className="p-12 bg-black text-white">
-            <h1 className="text-2xl font-bold mb-8">KFC-Kalorien-Rechner</h1>
+            <h1 className="text-2xl font-bold mb-8">McDonald's-Kalorien-Rechner</h1>
 
             <div id="wrapper" className="md:grid md:grid-cols-4 gap-4 flex flex-col">
                 {Object.keys(produkte).map((category) =>
                     Object.values(produkte[category]).map((produkt) => {
-                        const proteinPer100Kcal = produkt.kcal ? (produkt.protein / (produkt.kcal / 100)).toFixed(2) : '0';
+                        const proteinPer100Kcal = produkt.kcal
+                            ? (produkt.protein / (produkt.kcal / 100)).toFixed(2)
+                            : '0';
                         const circleColorClass = getCircleColor(proteinPer100Kcal);
                         return (
                             <button
@@ -75,11 +76,12 @@ export default function McDRechner({updateUserValues}) {
                             >
                                 <div>
                                     <div className="font-bold">
-                                        {produkt.name}<br/>
+                                        {produkt.name}
+                                        <br />
                                         {produkt.fett}g F | {produkt.kohlenhydrate}g KH | {produkt.protein}g P
                                     </div>
                                     <div className="font-extrabold">{produkt.kcal} Kcal</div>
-                                    <div className={`w-4 h-4 rounded-full inline-block ${circleColorClass}`}></div>
+                                    <span className={`w-4 h-4 rounded-full inline-block ${circleColorClass}`}></span>
                                 </div>
                             </button>
                         );
@@ -88,16 +90,18 @@ export default function McDRechner({updateUserValues}) {
             </div>
 
             <div className="mt-8">
-                <h2 className="text-xl font-bold mb-4">Deine KFC Produkte:</h2>
+                <h2 className="text-xl font-bold mb-4">Deine McDonald's Produkte:</h2>
                 <ul>
                     {selectedProducts.map((produkt, index) => {
-                        const proteinPer100Kcal = produkt.kcal ? (produkt.protein / (produkt.kcal / 100)).toFixed(2) : '0';
+                        const proteinPer100Kcal = produkt.kcal
+                            ? (produkt.protein / (produkt.kcal / 100)).toFixed(2)
+                            : '0';
                         const circleColorClass = getCircleColor(proteinPer100Kcal);
                         return (
                             <li key={index} className="flex items-center">
                                 {produkt.name}: {produkt.kcal} Kcal, {produkt.kohlenhydrate}g KH, {produkt.fett}g
                                 F, {produkt.protein}g P
-                                <div className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></div>
+                                <span className={`w-4 h-4 rounded-full inline-block ${circleColorClass} ml-2`}></span>
                             </li>
                         );
                     })}
@@ -107,10 +111,14 @@ export default function McDRechner({updateUserValues}) {
                     {totalValues.kalorien} Kcal, {totalValues.kohlenhydrate}g KH, {totalValues.fett}g
                     F, {totalValues.protein}g P
                 </p>
-                <p className="flex items-center">
-                    Protein pro 100 Kcal: {totalProteinPer100Kcal}
-                    <div className={`w-4 h-4 rounded-full inline-block ${getCircleColor(totalProteinPer100Kcal)} ml-2`}></div>
-                </p>
+                <div className="flex items-center">
+                    <span>Protein pro 100 Kcal: {totalProteinPer100Kcal}</span>
+                    <span
+                        className={`w-4 h-4 rounded-full inline-block ${getCircleColor(
+                            totalProteinPer100Kcal
+                        )} ml-2`}
+                    ></span>
+                </div>
                 <button
                     onClick={handleTransferValues}
                     className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
