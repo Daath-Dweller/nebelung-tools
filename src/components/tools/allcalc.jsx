@@ -144,8 +144,8 @@ export default function AllCalc() {
 
     return (
         <div className="bg-black m-2 pt-6 pb-4 px-4">
-            <h1 className="text-white mb-4">
-                OmniMutator (lat. omni = alles, mutare = verändern)
+            <h1 className="text-white mb-4 italic">
+               Alles-Rechner - OmniMutator (lat. omni = alles, mutare = verändern)
             </h1>
             {/* Kategorie-Pulldown */}
             <div className="mb-4">

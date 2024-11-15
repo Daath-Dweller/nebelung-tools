@@ -12,7 +12,7 @@ export default function Lingua() {
 
 
             <span className="text-2xl font-bold mb-2 p-4">Verbastrum </span><br/>
-            <span className="text-sm"> (Verbum für Wort + astrum, „Reich/Umgebung“; eine Art „Wort-Universum“ für Sprach- und
+            <span className="text-sm italic"> (Verbum für Wort + astrum, „Reich/Umgebung“; eine Art „Wort-Universum“ für Sprach- und
                 Wortwissen)</span>
 
             <div className="flex flex-col md:flex-row justify-center mt-8">
