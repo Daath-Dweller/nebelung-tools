@@ -101,6 +101,11 @@ export const words: WordEntry[] = [
         article: 'das',
         explanation: 'Das Narrativ - Eine grundlegende Erzählstruktur oder Geschichte, die zur Vermittlung von Ideologien oder Weltbildern genutzt wird. Beispiel: "das Narrativ vom heldenhaften Widerstand". Synonyme sind Erzählung oder Darstellung.'
     },
+    {
+        word: "Python",
+        article: "der",
+        explanation: "Der Python - Eine große Würgeschlange aus der Familie der Pythons, bekannt für ihre beeindruckende Länge und Stärke. Sie lebt in tropischen Regionen und erlegt ihre Beute durch Umschlingen und Ersticken. Beispiel: \"Der Python schlängelt sich durch den Dschungel.\" Synonyme sind Würgeschlange oder Riesenschlange."
+    }
 
 
 ];
