@@ -202,7 +202,7 @@ export default function SubwayRechner({ updateUserValues }) {
             </div>
 
             {subwaySeriesExpanded && (
-                <div className="mb-8">
+                <div className="mb-8 flex justify-center">
                     <div>
                         {Object.keys(zutaten.subwaySeries).map((subwaySeriesItem) => (
                             <label key={subwaySeriesItem} className="flex items-center space-x-2 mb-2">
@@ -236,7 +236,7 @@ export default function SubwayRechner({ updateUserValues }) {
             )}
 
             {!subwaySeriesExpanded && (
-                <div className="md:flex md:items-center md:space-x-2 md:mt-4">
+                <div className="md:flex justify-center md:items-center md:space-x-2 md:mt-4">
                     <div className="md:mb-8">
                         <label className="block md:mb-4">
                             Brotsorte / Wrap:
@@ -316,7 +316,7 @@ export default function SubwayRechner({ updateUserValues }) {
                 </div>
             )}
 
-            <div id="wrapper" className="md:grid md:grid-cols-3 gap-8">
+            <div id="wrapper" className="flex md:justify-around md:flex-row flex-col">
                 {!subwaySeriesExpanded && (
                     <div id="left">
                         <div className="mb-8">
@@ -352,7 +352,7 @@ export default function SubwayRechner({ updateUserValues }) {
                     </div>
                 )}
                 {!subwaySeriesExpanded && (
-                    <div id="middle">
+                    <div id="middle ">
                         <div className="mb-8">
                             <label className="block font-extrabold md:text-xl mb-4 mt-2">Sonstiges</label>
                             <label className="flex items-center space-x-2 mb-4" htmlFor="doppelKaese">
@@ -408,7 +408,7 @@ export default function SubwayRechner({ updateUserValues }) {
                 )}
 
                 <div id="right">
-                    <div className="mb-8">
+                    <div className="mb-8 ">
                         <h2 className="text-xl font-bold mb-4 mt-2">
                             Kalorien deines Subs:
                         </h2>
@@ -419,13 +419,13 @@ export default function SubwayRechner({ updateUserValues }) {
                         </p>
                         <button
                             onClick={handleTransferClick}
-                            className="m-2 p-4 bg-gray-500 text-white border border-white rounded"
+                            className="m-2 p-4 bg-gray-500 text-white border border-teal-500 rounded hover:bg-black"
                         >
                             Übertragen auf Nutzerwerte
                         </button>
                         <button
                             onClick={resetAll}
-                            className="m-2 p-4 bg-red-500 text-white border border-white rounded"
+                            className="m-2 p-4 bg-gray-500 border-2 border-red-500 text-white rounded hover:bg-black"
                         >
                             Zurücksetzen
                         </button>
