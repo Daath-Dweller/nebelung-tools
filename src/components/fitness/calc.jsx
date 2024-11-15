@@ -63,7 +63,7 @@ export default function Rechner() {
                 <ul className="flex md:flex-row flex-col gap-x-2 md:gap-y-0 gap-y-8">
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "Subway" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "Subway" ? "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("Subway")}
                         >
                             Subway
@@ -71,7 +71,7 @@ export default function Rechner() {
                     </li>
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "KFC" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "KFC" ?  "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("KFC")}
                         >
                             KFC
@@ -79,7 +79,7 @@ export default function Rechner() {
                     </li>
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "McDonalds" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "McDonalds" ?  "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("McDonalds")}
                         >
                             McDonalds
@@ -87,7 +87,7 @@ export default function Rechner() {
                     </li>
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "BK" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "BK" ?  "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("BK")}
                         >
                             BK
@@ -95,7 +95,7 @@ export default function Rechner() {
                     </li>
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "Nordsee" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "Nordsee" ?  "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("Nordsee")}
                         >
                             Nordsee
@@ -103,7 +103,7 @@ export default function Rechner() {
                     </li>
                     <li>
                         <button
-                            className={`border-white p-2 border-2 ${activeTab === "????" ? "text-black bg-gray-100" : "text-white bg-gray-800"}`}
+                            className={`border-white p-2 border-2 ${activeTab === "????" ?  "text-black bg-gray-100 hover:bg-gray-800 hover:text-white" : "text-white bg-gray-800  hover:bg-gray-100 hover:text-black"}`}
                             onClick={() => setActiveTab("????")}
                         >
                             ????

@@ -71,7 +71,6 @@ export const conversions: { [unit: string]: { factor: number, category: string, 
     gallon_uk: { factor: 219.969, category: 'volume', kommastellen: 2, displayName: "Gallon (UK)" },
     kubikmillimeter: { factor: 1000000000, category: 'volume', kommastellen: 0, displayName: "Kubikmillimeter" },
 
-
     // Temperatur (Kategorie: temperature)
     celsius: { factor: 1, category: 'temperature', kommastellen: 2, displayName: "Grad Celsius" },
     fahrenheit: { factor: 1.8, category: 'temperature', kommastellen: 2, displayName: "Grad Fahrenheit" },
