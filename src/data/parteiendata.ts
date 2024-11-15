@@ -30,8 +30,8 @@ export interface SeatDistribution {
 
 export const countries: Country[] = [
     { id: 1, name: 'Schweiz (CH)' },
-    { id: 2, name: 'Deutschland (D)' },
     { id: 3, name: 'Österreich (A)' },
+    { id: 2, name: 'Deutschland (D)' },
 ];
 
 export const regions: Region[] = [

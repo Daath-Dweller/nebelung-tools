@@ -17,9 +17,11 @@ export default function AllCalc() {
         unit => conversions[unit].category === selectedCategory
     );
 
-    // Hilfsfunktion zur Berechnung des konvertierten Werts
+    // Hilfsfunktion zur Berechnung und Formatierung des konvertierten Werts
     const convertValue = (inputValue, fromUnit, toUnit) => {
-        const value = parseFloat(inputValue);
+        // Ersetze eventuell vorhandene ',' durch '.' für die korrekte Parse-Funktion
+        const normalizedInput = inputValue.replace(',', '.');
+        const value = parseFloat(normalizedInput);
         if (isNaN(value)) return "";
 
         const fromFactor = conversions[fromUnit]?.factor;
@@ -31,10 +33,16 @@ export default function AllCalc() {
 
         // Anzahl der Nachkommastellen bestimmen
         const decimals = conversions[toUnit]?.kommastellen ?? 2; // Standardwert 2, falls nicht angegeben
-        // Wert auf definierte Nachkommastellen runden
-        const roundedValue = isNaN(converted) ? "" : converted.toFixed(decimals);
 
-        return roundedValue;
+        // Intl.NumberFormat für die gewünschte Formatierung verwenden
+        const formatter = new Intl.NumberFormat('de-DE', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+        });
+
+        const formattedValue = formatter.format(converted);
+
+        return formattedValue;
     };
 
     const getDisplayName = (unit) => {
@@ -143,6 +151,7 @@ export default function AllCalc() {
                         value={leftValue}
                         onChange={handleLeftValueChange}
                         className="bg-gray-800 text-white p-2 ml-2"
+                        placeholder="0,00"
                     />
                 </div>
                 <span className="text-white">=</span>
@@ -163,6 +172,7 @@ export default function AllCalc() {
                         value={rightValue}
                         onChange={handleRightValueChange}
                         className="bg-gray-800 text-white p-2 ml-2"
+                        placeholder="0,00"
                     />
                 </div>
             </div>
