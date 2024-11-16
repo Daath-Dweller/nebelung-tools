@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from "react";
 import { categoryDisplayNames, conversions } from "@/data/allcalcdata.ts"; // Passe den Importpfad bei Bedarf an
+// Optional: Importiere NumberFormat, wenn du react-number-format verwenden möchtest
+// import NumberFormat from 'react-number-format';
 
 export default function AllCalc() {
     const categories = [...new Set(Object.values(conversions).map(item => item.category))];
@@ -10,7 +12,7 @@ export default function AllCalc() {
     const [rightValue, setRightValue] = useState("");
     const [leftUnit, setLeftUnit] = useState("meter");
     const [rightUnit, setRightUnit] = useState("zentimeter");
-    const [lastChangedSide, setLastChangedSide] = useState("left"); // neu
+    const [lastChangedSide, setLastChangedSide] = useState("left");
 
     // Filtere Einheiten basierend auf der ausgewählten Kategorie
     const unitsForSelectedCategory = Object.keys(conversions).filter(
@@ -19,8 +21,8 @@ export default function AllCalc() {
 
     // Hilfsfunktion zur Berechnung des konvertierten Werts
     const convertValue = (inputValue, fromUnit, toUnit) => {
-        // Ersetze eventuell vorhandene ',' durch '.' für die korrekte Parse-Funktion
-        const normalizedInput = inputValue.replace(',', '.');
+        // Entferne alle Tausender-Trennzeichen und ersetze das Komma durch einen Punkt
+        const normalizedInput = inputValue.replace(/\./g, '').replace(',', '.');
         const value = parseFloat(normalizedInput);
         if (isNaN(value)) return "";
 
@@ -81,7 +83,6 @@ export default function AllCalc() {
         const newUnit = e.target.value;
         setLeftUnit(newUnit);
         if (lastChangedSide === "left") {
-            // Behalte den Wert der linken Seite bei und konvertiere rechts
             const converted = convertValue(leftValue, newUnit, rightUnit);
             if (converted !== "") {
                 setRightValue(converted.toString());
@@ -89,7 +90,6 @@ export default function AllCalc() {
                 setRightValue("");
             }
         } else {
-            // Behalte den Wert der rechten Seite bei und konvertiere links
             const converted = convertValue(rightValue, rightUnit, newUnit);
             if (converted !== "") {
                 setLeftValue(converted.toString());
@@ -103,7 +103,6 @@ export default function AllCalc() {
         const newUnit = e.target.value;
         setRightUnit(newUnit);
         if (lastChangedSide === "right") {
-            // Behalte den Wert der rechten Seite bei und konvertiere links
             const converted = convertValue(rightValue, newUnit, leftUnit);
             if (converted !== "") {
                 setLeftValue(converted.toString());
@@ -111,7 +110,6 @@ export default function AllCalc() {
                 setLeftValue("");
             }
         } else {
-            // Behalte den Wert der linken Seite bei und konvertiere rechts
             const converted = convertValue(leftValue, leftUnit, newUnit);
             if (converted !== "") {
                 setRightValue(converted.toString());
@@ -132,8 +130,6 @@ export default function AllCalc() {
 
         if (defaultUnits.length > 0) {
             setLeftUnit(defaultUnits[0]);
-            // Wenn es mindestens zwei Einheiten in der Kategorie gibt, wähle die zweite als Standard für rechts
-            // andernfalls nimm die gleiche Einheit wie links
             setRightUnit(defaultUnits[1] || defaultUnits[0]);
         }
 
@@ -145,7 +141,7 @@ export default function AllCalc() {
     return (
         <div className="bg-black m-2 pt-6 pb-4 px-4">
             <h1 className="text-white mb-4 italic">
-               Alles-Rechner - OmniMutator (lat. omni = alles, mutare = verändern)
+                Alles-Rechner - OmniMutator (lat. omni = alles, mutare = verändern)
             </h1>
             {/* Kategorie-Pulldown */}
             <div className="mb-4">
@@ -177,11 +173,15 @@ export default function AllCalc() {
                     </select>
                     <input
                         type="text"
-                        value={formatNumber(parseFloat(leftValue) || 0, conversions[leftUnit]?.kommastellen)}
+                        value={leftValue}
                         onChange={handleLeftValueChange}
                         className="bg-gray-800 text-white md:p-2 md:ml-2 m-4"
                         placeholder="0,00"
                     />
+                    {/* Optional: Anzeige des formatierten Wertes */}
+                    {/* <div className="text-gray-400 text-sm">
+                        {leftValue && formatNumber(parseFloat(leftValue), conversions[leftUnit]?.kommastellen)}
+                    </div> */}
                 </div>
 
                 <span className="text-white font-extrabold text-3xl">=</span>
@@ -200,11 +200,15 @@ export default function AllCalc() {
                     </select>
                     <input
                         type="text"
-                        value={formatNumber(parseFloat(rightValue) || 0, conversions[rightUnit]?.kommastellen)}
+                        value={rightValue}
                         onChange={handleRightValueChange}
                         className="bg-gray-800 text-white md:p-2 md:ml-2 m-4"
                         placeholder="0,00"
                     />
+                    {/* Optional: Anzeige des formatierten Wertes */}
+                    {/* <div className="text-gray-400 text-sm">
+                        {rightValue && formatNumber(parseFloat(rightValue), conversions[rightUnit]?.kommastellen)}
+                    </div> */}
                 </div>
             </div>
         </div>
