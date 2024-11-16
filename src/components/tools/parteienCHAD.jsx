@@ -6,6 +6,7 @@ const Parteien = () => {
     const [selectedRegionId, setSelectedRegionId] = useState(null);
     const [selectedGroupAbbr, setSelectedGroupAbbr] = useState(null);
     const [showBarNames, setShowBarNames] = useState(false);
+    const [groupDistribution, setGroupDistribution] = useState(null);
 
     const handleCountryChange = (e) => {
         const countryId = parseInt(e.target.value, 10);
@@ -13,6 +14,7 @@ const Parteien = () => {
         setSelectedRegionId(null);
         setSelectedGroupAbbr(null);
         setShowBarNames(false);
+        setGroupDistribution(null);
     };
 
     const handleRegionChange = (e) => {
@@ -21,6 +23,7 @@ const Parteien = () => {
         setSelectedRegionId(regionId);
         setSelectedGroupAbbr(null);
         setShowBarNames(false);
+        setGroupDistribution(null);
     };
 
     const handleGroupButtonClick = (groupAbbr) => {
@@ -32,6 +35,40 @@ const Parteien = () => {
     const toggleBarNames = () => {
         setShowBarNames((prev) => !prev);
     };
+
+    const calculateGroupDistribution = () => {
+        if (!seatDistributionForDisplay.length) return;
+
+        const groups = {
+            TBR: { seats: 0 },
+            KMUA: { seats: 0 },
+            LGP: { seats: 0 },
+        };
+
+        seatDistributionForDisplay.forEach((seat) => {
+            const party = parties.find((p) => p.id === seat.partyId);
+            if (party?.groupAbbr && groups[party.groupAbbr]) { // Absicherung gegen undefined
+                groups[party.groupAbbr].seats += seat.seats;
+            }
+        });
+
+        const totalSeats = seatDistributionForDisplay.reduce(
+            (sum, seat) => sum + seat.seats,
+            0
+        );
+
+        const distribution = Object.entries(groups)
+            .map(([abbr, data]) => {
+                const percentage = totalSeats
+                    ? ((data.seats / totalSeats) * 100).toFixed(1)
+                    : 0;
+                return `${data.seats} Sitze (${percentage}%) ${abbr}`;
+            })
+            .join(' zu ');
+
+        setGroupDistribution(distribution);
+    };
+
 
     const filteredRegions = regions.filter(
         (region) => region.countryId === selectedCountryId
@@ -128,31 +165,33 @@ const Parteien = () => {
                 </>
             )}
 
-            {/* Sonderfall Appenzell Innerrhoden */}
-            {selectedRegionId === 5 && (
-                <div className="mt-6">
-                    <p>
-                        Appenzell Innerrhoden verfügt über ein einzigartiges politisches System, das
-                        sich von anderen Schweizer Kantonen unterscheidet. Die wichtigsten
-                        kantonalen Entscheidungen, einschließlich Wahlen und Abstimmungen, werden
-                        traditionell an der Landsgemeinde getroffen. Diese jährliche Versammlung
-                        findet unter freiem Himmel statt, wo die Stimmberechtigten durch Handerheben
-                        oder Zuruf über verschiedene Geschäfte entscheiden. Daher gibt es in
-                        Appenzell Innerrhoden keine klassischen kantonalen Wahlergebnisse, wie sie in
-                        anderen Kantonen üblich sind.
-                    </p>
-                </div>
-            )}
-
-            {selectedRegionId !== null && seatDistributionForDisplay.length > 0 && (
+            {selectedRegionId !== null &&  (
                 <div>
+                    {selectedRegionId === 5 && (
+                        <div className="mt-6">
+                            <p>
+                                Appenzell Innerrhoden verfügt über ein einzigartiges politisches System, das
+                                sich von anderen Schweizer Kantonen unterscheidet. Die wichtigsten
+                                kantonalen Entscheidungen, einschließlich Wahlen und Abstimmungen, werden
+                                traditionell an der Landsgemeinde getroffen. Diese jährliche Versammlung
+                                findet unter freiem Himmel statt, wo die Stimmberechtigten durch Handerheben
+                                oder Zuruf über verschiedene Geschäfte entscheiden. Daher gibt es in
+                                Appenzell Innerrhoden keine klassischen kantonalen Wahlergebnisse, wie sie in
+                                anderen Kantonen üblich sind.
+                            </p>
+                        </div>
+                    )}
+
+                    {seatDistributionForDisplay.length > 0 && (
+
+<>
+
                     <h3 className="mt-6">
                         Aktuelle Sitzverteilung in{' '}
                         {selectedRegionId === 0
                             ? countries.find((c) => c.id === selectedCountryId)?.name
                             : regions.find((r) => r.id === selectedRegionId)?.name}
                     </h3>
-
 
                     <div className="flex items-end h-[300px] mt-5">
                         {seatDistributionForDisplay.map((seat) => {
@@ -185,11 +224,11 @@ const Parteien = () => {
                                             {seat.seats} Sitze ({percentage}%)
                                         </div>
                                     </div>
-
                                 </div>
                             );
                         })}
                     </div>
+
                     <div className="mt-6 flex items-center">
                         <div className="flex">
                             <button
@@ -227,9 +266,23 @@ const Parteien = () => {
                             onClick={toggleBarNames}
                             className="bg-blue-500 px-4 py-2 text-white"
                         >
-                            {showBarNames ? 'Namen ausblenden' : 'Namen anzeigen'}
+                            {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
+                        </button>
+                        <button
+                            onClick={calculateGroupDistribution}
+                            className="bg-green-500 px-4 py-2 text-white ml-2"
+                        >
+                            Gruppenverteilung
                         </button>
                     </div>
+
+                    {groupDistribution && (
+                        <div className="mt-4">
+                            <p className="font-bold">Gruppenverteilung:</p>
+                            <p>{groupDistribution}</p>
+                        </div>
+                    )}
+
                     {selectedGroupAbbr && partiesInSelectedGroup.length > 0 && (
                         <div className="mt-4">
                             <p className="font-extrabold">
@@ -242,6 +295,7 @@ const Parteien = () => {
                             ))}
                         </div>
                     )}
+</>)}
                 </div>
             )}
         </div>

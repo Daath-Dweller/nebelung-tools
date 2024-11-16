@@ -121,6 +121,17 @@ export const parties: Party[] = [
     { id: 22, name: 'Basels starke Alternative', abbreviation: 'BastA!', color: '#FF00FF', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 23, name: 'Christlich-soziale Partei', abbreviation: 'CSP', color: '#a31234', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 24, name: 'Maudets Liste - libertes et justice sociale', abbreviation: 'LJS', color: '#451db9', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 25, name: 'Kommunistische Partei - Partito Comunista', abbreviation: 'PC', color: '#3f1372', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
+    { id: 26, name: 'Vorwärts Tessin & Arbeit - Avanti con Ticino & Lavoro', abbreviation: 'ATL', color: '#984417', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 27, name: 'HelvEthica Ticino', abbreviation: 'HET', color: '#dc5b0a', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 28, name: 'Più Donne - Mehr Frauen', abbreviation: 'PD', color: '#9111ea', countryId: 1,  group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
+    { id: 29, name: 'Bewegung für den Sozialismus - Movimento per il socialismo', abbreviation: 'MPS', color: '#b41db9', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 30, name: 'Aufrecht Schweiz', abbreviation: 'AS', color: '#1e4f1f', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 31, name: 'Décroissance Alternatives', abbreviation: 'DA', color: '#441c6b', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
+    { id: 32, name: 'Les Libres', abbreviation: 'LL', color: '#1f8085', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+
+
+
 // German Parties
     { id: 100, name: 'Christlich Demokratische Union Deutschlands', abbreviation: 'CDU', color: '#000000', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 101, name: 'Christlich-Soziale Union in Bayern', abbreviation: 'CSU', color: '#008AC5', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
@@ -160,15 +171,6 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 7, regionId: 27, partyId: 7, seats: 7 },  // EVP
     { id: 8, regionId: 27, partyId: 8, seats: 3 },  // EDU
     { id: 9, regionId: 27, partyId: 9, seats: 5 },  // AL
-
-    // Zug, CH
-    { id: 1, regionId: 28, partyId: 1, seats: 18 }, // SVP
-    { id: 2, regionId: 28, partyId: 2, seats: 8 }, // SP
-    { id: 3, regionId: 28, partyId: 3, seats: 18 }, // FDP
-    { id: 4, regionId: 28, partyId: 4, seats: 19 }, // Mitte
-    { id: 5, regionId: 28, partyId: 5, seats: 11 }, // GPS
-    { id: 6, regionId: 28, partyId: 6, seats: 6 }, // GLP
-    { id: 7, regionId: 28, partyId: 19, seats: 20 }, //PL
 
     // Aargau, CH
     { id: 1, regionId: 3, partyId: 1, seats: 48 }, // SVP
@@ -267,5 +269,137 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 6, regionId: 13, partyId: 6, seats: 2 }, // GLP
     { id: 7, regionId: 13, partyId: 9, seats: 2 },  // AL
     { id: 8, regionId: 13, partyId: 23, seats: 6 },  // CSP
+
+    // Luzern, CH
+    { id: 1, regionId: 14, partyId: 1, seats: 27 }, // SVP
+    { id: 2, regionId: 14, partyId: 2, seats: 19}, // SP
+    { id: 3, regionId: 14, partyId: 3, seats: 22 }, // FDP
+    { id: 4, regionId: 14, partyId: 4, seats: 32 }, // Mitte
+    { id: 5, regionId: 14, partyId: 5, seats: 8 }, // GPS
+
+    // Neuenburg, CH
+    { id: 1, regionId: 15, partyId: 1, seats: 8 }, // SVP
+    { id: 2, regionId: 15, partyId: 2, seats: 21 }, // SP
+    { id: 3, regionId: 15, partyId: 3, seats: 32 }, // FDP
+    { id: 4, regionId: 15, partyId: 4, seats: 4 }, // Mitte
+    { id: 5, regionId: 15, partyId: 5, seats: 19 }, // GPS
+    { id: 6, regionId: 15, partyId: 6, seats: 8 }, // GLP
+    { id: 7, regionId: 15, partyId: 9, seats: 8 },  // AL
+
+    // Nidwalden, CH
+    { id: 1, regionId: 16, partyId: 1, seats: 15 }, // SVP
+    { id: 2, regionId: 16, partyId: 2, seats: 2 }, // SP
+    { id: 3, regionId: 16, partyId: 3, seats: 16 }, // FDP
+    { id: 4, regionId: 16, partyId: 4, seats: 15 }, // Mitte
+    { id: 5, regionId: 16, partyId: 5, seats: 7 }, // GPS
+    { id: 6, regionId: 16, partyId: 6, seats: 5 }, // GLP
+
+    // Obwalden, CH
+    { id: 1, regionId: 17, partyId: 1, seats: 13 }, // SVP
+    { id: 2, regionId: 17, partyId: 2, seats: 6 }, // SP
+    { id: 3, regionId: 17, partyId: 3, seats: 11 }, // FDP
+    { id: 4, regionId: 17, partyId: 4, seats: 19 }, // Mitte
+    { id: 5, regionId: 17, partyId: 6, seats: 2}, // GLP
+    { id: 6, regionId: 17, partyId: 23, seats: 4 },  // CSP
+
+    // Schaffhausen, CH
+    { id: 1, regionId: 18, partyId: 1, seats: 21 }, // SVP
+    { id: 2, regionId: 18, partyId: 2, seats: 16 }, // SP
+    { id: 3, regionId: 18, partyId: 3, seats: 9 }, // FDP
+    { id: 4, regionId: 18, partyId: 4, seats: 2 }, // Mitte
+    { id: 5, regionId: 18, partyId: 5, seats: 3 }, // GPS
+    { id: 6, regionId: 18, partyId: 6, seats: 5 }, // GLP
+    { id: 7, regionId: 18, partyId: 7, seats: 2 },  // EVP
+    { id: 8, regionId: 18, partyId: 8, seats: 2 },  // EDU
+
+    // Schwyz, CH
+    { id: 1, regionId: 19, partyId: 1, seats: 38 }, // SVP
+    { id: 2, regionId: 19, partyId: 2, seats: 14 }, // SP
+    { id: 3, regionId: 19, partyId: 3, seats: 19 }, // FDP
+    { id: 4, regionId: 19, partyId: 4, seats: 23 }, // Mitte
+    { id: 5, regionId: 19, partyId: 5, seats: 1 }, // GPS
+    { id: 6, regionId: 19, partyId: 6, seats: 5 }, // GLP
+
+    // Solothurn, CH
+    { id: 1, regionId: 20, partyId: 1, seats: 21 }, // SVP
+    { id: 2, regionId: 20, partyId: 2, seats: 20 }, // SP
+    { id: 3, regionId: 20, partyId: 3, seats: 22 }, // FDP
+    { id: 4, regionId: 20, partyId: 4, seats: 20 }, // Mitte
+    { id: 5, regionId: 20, partyId: 5, seats: 10 }, // GPS
+    { id: 6, regionId: 20, partyId: 6, seats: 6 }, // GLP
+    { id: 7, regionId: 20, partyId: 7, seats: 1 },  // EVP
+
+    // St. Gallen, CH
+    { id: 1, regionId: 21, partyId: 1, seats: 42 }, // SVP
+    { id: 2, regionId: 21, partyId: 2, seats: 18 }, // SP
+    { id: 3, regionId: 21, partyId: 3, seats: 19 }, // FDP
+    { id: 4, regionId: 21, partyId: 4, seats: 27 }, // Mitte
+    { id: 5, regionId: 21, partyId: 5, seats: 6 }, // GPS
+    { id: 6, regionId: 21, partyId: 6, seats: 6 }, // GLP
+    { id: 7, regionId: 21, partyId: 7, seats: 2 },  // EVP
+
+    // Tessin, CH
+    { id: 1, regionId: 22, partyId: 1, seats: 9 }, // SVP
+    { id: 2, regionId: 22, partyId: 2, seats: 12 }, // SP
+    { id: 3, regionId: 22, partyId: 3, seats: 21 }, // FDP
+    { id: 4, regionId: 22, partyId: 4, seats: 16 }, // Mitte
+    { id: 5, regionId: 22, partyId: 5, seats: 5 }, // GPS
+    { id: 6, regionId: 22, partyId: 6, seats: 2 }, // GLP
+    { id: 7, regionId: 22, partyId: 9, seats: 4 },  // AL
+    { id: 8, regionId: 22, partyId: 12, seats: 14 },  // LEGA
+    { id: 9, regionId: 22, partyId: 25, seats: 2 },  // PC
+    { id: 10, regionId: 22, partyId: 26, seats: 3 },  // ATL
+    { id: 11, regionId: 22, partyId: 27, seats: 2 },  // HET
+    { id: 12, regionId: 22, partyId: 28, seats: 2 },  // PD
+    { id: 13, regionId: 22, partyId: 29, seats: 2 },  // MPS
+
+    // Thurgau, CH
+    { id: 1, regionId: 23, partyId: 1, seats: 42 }, // SVP
+    { id: 2, regionId: 23, partyId: 2, seats: 18 }, // SP
+    { id: 3, regionId: 23, partyId: 3, seats: 17 }, // FDP
+    { id: 4, regionId: 23, partyId: 4, seats: 21 }, // Mitte
+    { id: 5, regionId: 23, partyId: 5, seats: 13 }, // GPS
+    { id: 6, regionId: 23, partyId: 6, seats: 6 }, // GLP
+    { id: 7, regionId: 23, partyId: 9, seats: 6 },  // AL
+    { id: 8, regionId: 23, partyId: 8, seats: 5 },  // EDU
+    { id: 9, regionId: 23, partyId: 30, seats: 1 },  // AS
+
+    // Uri, CH
+    { id: 1, regionId: 24, partyId: 1, seats: 17 }, // SVP
+    { id: 2, regionId: 24, partyId: 2, seats: 4 }, // SP
+    { id: 3, regionId: 24, partyId: 3, seats: 12 }, // FDP
+    { id: 4, regionId: 24, partyId: 4, seats: 22 }, // Mitte
+    { id: 5, regionId: 24, partyId: 5, seats: 2 }, // GPS
+    { id: 6, regionId: 24, partyId: 6, seats: 3 }, // GLP
+    { id: 7, regionId: 24, partyId: 19, seats: 4 }, //PL
+
+    // Waadt, CH
+    { id: 1, regionId: 25, partyId: 1, seats: 23 }, // SVP
+    { id: 2, regionId: 25, partyId: 2, seats: 32 }, // SP
+    { id: 3, regionId: 25, partyId: 3, seats: 50 }, // FDP
+    { id: 5, regionId: 25, partyId: 5, seats: 25 }, // GPS
+    { id: 6, regionId: 25, partyId: 6, seats: 11 }, // GLP
+    { id: 7, regionId: 25, partyId: 9, seats: 5 },  // AL
+    { id: 8, regionId: 25, partyId: 31, seats: 2 },  // DA
+    { id: 9, regionId: 25, partyId: 11, seats: 1 },  // Sol
+    { id: 10, regionId: 25, partyId: 10, seats: 3 },  // PdA
+    { id: 11, regionId: 25, partyId: 32, seats: 2 },  // LL
+
+    // Wallis, CH
+    { id: 1, regionId: 26, partyId: 1, seats: 22 }, // SVP
+    { id: 2, regionId: 26, partyId: 2, seats: 15 }, // SP
+    { id: 3, regionId: 26, partyId: 3, seats: 27 }, // FDP
+    { id: 4, regionId: 26, partyId: 4, seats: 40 }, // Mitte
+    { id: 5, regionId: 26, partyId: 5, seats: 13 }, // GPS
+    { id: 6, regionId: 26, partyId: 9, seats: 1 },  // AL
+    { id: 7, regionId: 26, partyId: 23, seats: 4 },  // CSP
+
+    // Zug, CH
+    { id: 1, regionId: 28, partyId: 1, seats: 18 }, // SVP
+    { id: 2, regionId: 28, partyId: 2, seats: 8 }, // SP
+    { id: 3, regionId: 28, partyId: 3, seats: 18 }, // FDP
+    { id: 4, regionId: 28, partyId: 4, seats: 19 }, // Mitte
+    { id: 5, regionId: 28, partyId: 5, seats: 11 }, // GPS
+    { id: 6, regionId: 28, partyId: 6, seats: 6 }, // GLP
 
 ];
