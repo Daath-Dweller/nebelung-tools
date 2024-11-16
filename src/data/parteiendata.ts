@@ -110,8 +110,6 @@ export const parties: Party[] = [
     { id: 11, name: 'Solidarität', abbreviation: 'Sol.', color: '#FF4500', countryId: 1, group: 'Kleine Linksparteien', groupAbbr: 'LGP' },
     { id: 12, name: 'Lega dei Ticinesi', abbreviation: 'Lega', color: '#0000FF', countryId: 1, group: 'Kleine Rechtsparteien', groupAbbr: 'TBR' },
     { id: 13, name: 'Mouvement Citoyens Genevois', abbreviation: 'MCG', color: '#FFD700', countryId: 1, group: 'Kleine Rechtsparteien', groupAbbr: 'TBR' },
-    { id: 14, name: 'Christlichdemokratische Volkspartei', abbreviation: 'CVP', color: '#FFA500', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
-    { id: 15, name: 'Bürgerlich-Demokratische Partei', abbreviation: 'BDP', color: '#CCCC00', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 16, name: 'Freisinnig-Demokratische Partei', abbreviation: 'LPS', color: '#000080', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 17, name: 'Frauen für den Frieden', abbreviation: 'FGA', color: '#008B8B', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 18, name: 'Progressive Organisationen', abbreviation: 'POCH', color: '#696969', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
