@@ -21,7 +21,6 @@ export default function AllCalc() {
 
     // Hilfsfunktion zur Berechnung des konvertierten Werts
     const convertValue = (inputValue, fromUnit, toUnit) => {
-        // Entferne alle Tausender-Trennzeichen und ersetze das Komma durch einen Punkt
         const normalizedInput = inputValue.replace(/\./g, '').replace(',', '.');
         const value = parseFloat(normalizedInput);
         if (isNaN(value)) return "";
@@ -32,9 +31,10 @@ export default function AllCalc() {
         if (fromFactor === undefined || toFactor === undefined) return "";
 
         const converted = value * (toFactor / fromFactor);
-
-        return converted;
+        const decimals = conversions[toUnit]?.kommastellen || 2; // Default auf 2 Nachkommastellen
+        return formatNumber(converted, decimals);
     };
+
 
     // Hilfsfunktion zur Formatierung von Zahlen
     const formatNumber = (number, decimals) => {
@@ -45,6 +45,7 @@ export default function AllCalc() {
         });
         return formatter.format(number);
     };
+
 
     const getDisplayName = (unit) => {
         const unitData = conversions[unit];
@@ -57,27 +58,18 @@ export default function AllCalc() {
 
     const handleLeftValueChange = (e) => {
         const value = e.target.value;
-        setLeftValue(value);
+        setLeftValue(value); // Rohwert speichern
         const converted = convertValue(value, leftUnit, rightUnit);
-        if (converted !== "") {
-            setRightValue(converted.toString());
-        } else {
-            setRightValue("");
-        }
-        setLastChangedSide("left");
+        setRightValue(converted || ""); // Formatierten Wert setzen
     };
 
     const handleRightValueChange = (e) => {
         const value = e.target.value;
-        setRightValue(value);
+        setRightValue(value); // Rohwert speichern
         const converted = convertValue(value, rightUnit, leftUnit);
-        if (converted !== "") {
-            setLeftValue(converted.toString());
-        } else {
-            setLeftValue("");
-        }
-        setLastChangedSide("right");
+        setLeftValue(converted || ""); // Formatierten Wert setzen
     };
+
 
     const handleLeftUnitChange = (e) => {
         const newUnit = e.target.value;
@@ -145,11 +137,11 @@ export default function AllCalc() {
             </h1>
             {/* Kategorie-Pulldown */}
             <div className="mb-4">
-                <label className="text-white mr-2">Kategorie:</label>
+                <label className="text-white mr-2">Kategorie:</label><br/>
                 <select
                     value={selectedCategory}
                     onChange={handleCategoryChange}
-                    className="bg-gray-900 text-white p-2"
+                    className="bg-gray-900 text-white p-2 mt-2"
                 >
                     {categories.map((category) => (
                         <option key={category} value={category}>
