@@ -7,6 +7,7 @@ const Parteien = () => {
     const [selectedGroupAbbr, setSelectedGroupAbbr] = useState(null);
     const [showBarNames, setShowBarNames] = useState(false);
     const [groupDistribution, setGroupDistribution] = useState(null);
+    const [isInfoVisible, setIsInfoVisible] = useState(false);
 
     const handleCountryChange = (e) => {
         const countryId = parseInt(e.target.value, 10);
@@ -15,6 +16,7 @@ const Parteien = () => {
         setSelectedGroupAbbr(null);
         setShowBarNames(false);
         setGroupDistribution(null);
+        setIsInfoVisible(false);
     };
 
     const handleRegionChange = (e) => {
@@ -24,12 +26,18 @@ const Parteien = () => {
         setSelectedGroupAbbr(null);
         setShowBarNames(false);
         setGroupDistribution(null);
+        setIsInfoVisible(false);
     };
 
     const handleGroupButtonClick = (groupAbbr) => {
         setSelectedGroupAbbr((prevGroupAbbr) =>
             prevGroupAbbr === groupAbbr ? null : groupAbbr
         );
+        setIsInfoVisible(false);
+    };
+
+    const handleInfoIconClick = () => {
+        setIsInfoVisible((prev) => !prev);
     };
 
     const toggleBarNames = () => {
@@ -229,76 +237,124 @@ const Parteien = () => {
                         })}
                     </div>
 
-                    <div className="mt-6 flex items-center">
-                        <div className="flex">
-                            <button
-                                onClick={() => handleGroupButtonClick('TBR')}
-                                className={`px-4 py-2 mr-2 ${
-                                    selectedGroupAbbr === 'TBR'
-                                        ? 'bg-blue-500'
-                                        : 'bg-gray-700 hover:bg-gray-600'
-                                }`}
-                            >
-                                TBR
-                            </button>
-                            <button
-                                onClick={() => handleGroupButtonClick('KMUA')}
-                                className={`px-4 py-2 mr-2 ${
-                                    selectedGroupAbbr === 'KMUA'
-                                        ? 'bg-blue-500'
-                                        : 'bg-gray-700 hover:bg-gray-600'
-                                }`}
-                            >
-                                KMUA
-                            </button>
-                            <button
-                                onClick={() => handleGroupButtonClick('LGP')}
-                                className={`px-4 py-2 mr-4 ${
-                                    selectedGroupAbbr === 'LGP'
-                                        ? 'bg-blue-500'
-                                        : 'bg-gray-700 hover:bg-gray-600'
-                                }`}
-                            >
-                                LGP
-                            </button>
-                        </div>
-                        <button
-                            onClick={toggleBarNames}
-                            className="bg-blue-500 px-4 py-2 text-white"
-                        >
-                            {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
-                        </button>
-                        <button
-                            onClick={calculateGroupDistribution}
-                            className="bg-green-500 px-4 py-2 text-white ml-2"
-                        >
-                            Gruppenverteilung
-                        </button>
-                    </div>
+    <div className="mt-6 flex items-center gap-x-2">
+        <div className="flex">
+            <button
+                onClick={() => handleGroupButtonClick('TBR')}
+                className={`px-4 py-2 mr-2 ${
+                    selectedGroupAbbr === 'TBR'
+                        ? 'bg-blue-500'
+                        : 'bg-gray-700 hover:bg-gray-600'
+                }`}
+            >
+                TBR
+            </button>
+            <button
+                onClick={() => handleGroupButtonClick('KMUA')}
+                className={`px-4 py-2 mr-2 ${
+                    selectedGroupAbbr === 'KMUA'
+                        ? 'bg-blue-500'
+                        : 'bg-gray-700 hover:bg-gray-600'
+                }`}
+            >
+                KMUA
+            </button>
+            <button
+                onClick={() => handleGroupButtonClick('LGP')}
+                className={`px-4 py-2 mr-4 ${
+                    selectedGroupAbbr === 'LGP'
+                        ? 'bg-blue-500'
+                        : 'bg-gray-700 hover:bg-gray-600'
+                }`}
+            >
+                LGP
+            </button>
+        </div>
 
-                    {groupDistribution && (
-                        <div className="mt-4">
-                            <p className="font-bold">Gruppenverteilung:</p>
-                            <p>{groupDistribution}</p>
-                        </div>
-                    )}
 
-                    {selectedGroupAbbr && partiesInSelectedGroup.length > 0 && (
-                        <div className="mt-4">
-                            <p className="font-extrabold">
-                                {selectedGroupAbbr} ({groupName}):
-                            </p>
-                            {partiesInSelectedGroup.map((party) => (
-                                <p key={party.id}>
-                                    {party.name} ({party.abbreviation})
-                                </p>
-                            ))}
-                        </div>
-                    )}
+        <div>
+            <button
+                onClick={toggleBarNames}
+                className="bg-blue-500 px-4 py-2 text-white"
+            >
+                {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
+            </button>
+            <button
+                onClick={calculateGroupDistribution}
+                className="bg-green-500 px-4 py-2 text-white ml-2"
+            >
+                Gruppenverteilung
+            </button>
+        </div>
+
+        {groupDistribution && (
+            <div className="mt-4">
+                <p className="font-bold">Gruppenverteilung:</p>
+                <p>{groupDistribution}</p>
+            </div>
+        )}
+
+        {selectedGroupAbbr && partiesInSelectedGroup.length > 0 && (
+            <div className="mt-4">
+                <p className="font-extrabold">
+                    {selectedGroupAbbr} ({groupName}):
+                </p>
+                {partiesInSelectedGroup.map((party) => (
+                    <p key={party.id}>
+                        {party.name} ({party.abbreviation})
+                    </p>
+                ))}
+            </div>
+        )}
+
+
+
+        {/* TODO: Mobiles Layout, alles untereinander */}
+            {/* Info Icon */}
+            {selectedCountryId === 1 && (
+                <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                onClick={handleInfoIconClick}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
+                                />
+                            </svg>
+                        </span>)}
+
+            {/* Info Text */}
+
+
+        {isInfoVisible && (
+            <div className="text-sm bg-gray-800 p-2 rounded">
+                Offizielle Einordnung nach&nbsp;
+                <a
+                    href="https://www.bfs.admin.ch/asset/de/30146543"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline"
+                >
+                    BFS
+                </a>
+            </div>
+        )}
+
+
+    </div>
 </>)}
                 </div>
+
             )}
         </div>
+
     );
 };
 
