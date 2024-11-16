@@ -137,7 +137,8 @@ export default function AllCalc() {
             </h1>
             {/* Kategorie-Pulldown */}
             <div className="mb-4">
-                <label className="text-white mr-2">Kategorie:</label><br/>
+                <label className="text-white mr-2">Kategorie:</label>
+                <span className="md:hidden block"></span>
                 <select
                     value={selectedCategory}
                     onChange={handleCategoryChange}
