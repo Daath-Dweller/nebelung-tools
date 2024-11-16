@@ -287,6 +287,47 @@ const Parteien = () => {
             </button>
         </div>
 
+        {/* TODO: Mobiles Layout, alles untereinander */}
+        {/* Info Icon */}
+        {selectedCountryId === 1 && (
+            <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                onClick={handleInfoIconClick}
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
+                                />
+                            </svg>
+                        </span>)}
+
+        {/* Info Text */}
+
+
+        {isInfoVisible && (
+            <div className="text-sm bg-gray-800 p-2 rounded">
+                Offizielle Einordnung nach&nbsp;
+                <a
+                    href="https://www.bfs.admin.ch/asset/de/30146543"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline"
+                >
+                    BFS
+                </a>
+            </div>
+        )}
+
+
+    </div>
+
         {groupDistribution && (
             <div className="mt-4">
                 <p className="font-bold">Gruppenverteilung:</p>
@@ -309,46 +350,6 @@ const Parteien = () => {
 
 
 
-        {/* TODO: Mobiles Layout, alles untereinander */}
-            {/* Info Icon */}
-            {selectedCountryId === 1 && (
-                <span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                onClick={handleInfoIconClick}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
-                                />
-                            </svg>
-                        </span>)}
-
-            {/* Info Text */}
-
-
-        {isInfoVisible && (
-            <div className="text-sm bg-gray-800 p-2 rounded">
-                Offizielle Einordnung nach&nbsp;
-                <a
-                    href="https://www.bfs.admin.ch/asset/de/30146543"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 underline"
-                >
-                    BFS
-                </a>
-            </div>
-        )}
-
-
-    </div>
 </>)}
                 </div>
 
