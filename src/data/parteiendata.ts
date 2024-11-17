@@ -67,7 +67,6 @@ export const regions: Region[] = [
     // Germany Bundesländer
     { id: 29, name: 'Bayern', countryId: 2 },
     { id: 30, name: 'Berlin', countryId: 2 },
-    { id: 31, name: 'Nordrhein-Westfalen', countryId: 2 },
     { id: 32, name: 'Baden-Württemberg', countryId: 2 },
     { id: 33, name: 'Brandenburg', countryId: 2 },
     { id: 34, name: 'Bremen', countryId: 2 },
@@ -75,6 +74,7 @@ export const regions: Region[] = [
     { id: 36, name: 'Hessen', countryId: 2 },
     { id: 37, name: 'Mecklenburg-Vorpommern', countryId: 2 },
     { id: 38, name: 'Niedersachsen', countryId: 2 },
+    { id: 31, name: 'Nordrhein-Westfalen', countryId: 2 },
     { id: 39, name: 'Rheinland-Pfalz', countryId: 2 },
     { id: 40, name: 'Saarland', countryId: 2 },
     { id: 41, name: 'Sachsen', countryId: 2 },
@@ -102,30 +102,28 @@ export const parties: Party[] = [
     { id: 3, name: 'FDP.Die Liberalen', abbreviation: 'FDP', color: '#005F9E', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 4, name: 'Die Mitte', abbreviation: 'Mitte', color: '#FF7F00', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 5, name: 'GRÜNE Schweiz', abbreviation: 'GPS', color: '#64A12D', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 6, name: 'Grünliberale Partei', abbreviation: 'GLP', color: '#BBE440', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 7, name: 'Evangelische Volkspartei der Schweiz', abbreviation: 'EVP', color: '#FFD700', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 6, name: 'Grünliberale Partei', abbreviation: 'GLP', color: '#BBE440', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 7, name: 'Evangelische Volkspartei der Schweiz', abbreviation: 'EVP', color: '#FFD700', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 8, name: 'Eidgenössisch-Demokratische Union', abbreviation: 'EDU', color: '#800080', countryId: 1, group: 'Kleine Rechtsparteien', groupAbbr: 'TBR' },
     { id: 9, name: 'Alternative Liste', abbreviation: 'AL', color: '#FF00FF', countryId: 1, group: 'Kleine Linksparteien', groupAbbr: 'LGP' },
     { id: 10, name: 'Partei der Arbeit', abbreviation: 'PdA', color: '#FF0000', countryId: 1, group: 'Kleine Linksparteien', groupAbbr: 'LGP' },
     { id: 11, name: 'Solidarität', abbreviation: 'Sol.', color: '#FF4500', countryId: 1, group: 'Kleine Linksparteien', groupAbbr: 'LGP' },
-    { id: 12, name: 'Lega dei Ticinesi', abbreviation: 'Lega', color: '#0000FF', countryId: 1, group: 'Kleine Rechtsparteien', groupAbbr: 'TBR' },
-    { id: 13, name: 'Mouvement Citoyens Genevois', abbreviation: 'MCG', color: '#FFD700', countryId: 1, group: 'Kleine Rechtsparteien', groupAbbr: 'TBR' },
+    { id: 12, name: 'Lega dei Ticinesi', abbreviation: 'Lega', color: '#0000FF', countryId: 1,  group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 13, name: 'Mouvement Citoyens Genevois', abbreviation: 'MCG', color: '#FFD700', countryId: 1,  group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 19, name: 'Parteilos', abbreviation: 'PL', color: '#eaeaea', countryId: 1, group: 'Parteilos', groupAbbr: 'PL' },
     { id: 20, name: 'Parti socialiste autonome du Sud du Jura', abbreviation: 'PSA', color: '#8d5353', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 21, name: 'Liberal-Demokratische Partei ', abbreviation: 'LDP', color: '#005F9E', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteie', groupAbbr: 'TBR' },
     { id: 22, name: 'Basels starke Alternative', abbreviation: 'BastA!', color: '#FF00FF', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 23, name: 'Christlich-soziale Partei', abbreviation: 'CSP', color: '#a31234', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 24, name: 'Maudets Liste - libertes et justice sociale', abbreviation: 'LJS', color: '#451db9', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 23, name: 'Christlich-soziale Partei', abbreviation: 'CSP', color: '#a31234', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 24, name: 'Maudets Liste - libertes et justice sociale', abbreviation: 'LJS', color: '#451db9', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 25, name: 'Kommunistische Partei - Partito Comunista', abbreviation: 'PC', color: '#3f1372', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 26, name: 'Vorwärts Tessin & Arbeit - Avanti con Ticino & Lavoro', abbreviation: 'ATL', color: '#984417', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 27, name: 'HelvEthica Ticino', abbreviation: 'HET', color: '#dc5b0a', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 26, name: 'Vorwärts Tessin & Arbeit - Avanti con Ticino & Lavoro', abbreviation: 'ATL', color: '#984417', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 27, name: 'HelvEthica Ticino', abbreviation: 'HET', color: '#dc5b0a', countryId: 1, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 28, name: 'Più Donne - Mehr Frauen', abbreviation: 'PD', color: '#9111ea', countryId: 1,  group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 29, name: 'Bewegung für den Sozialismus - Movimento per il socialismo', abbreviation: 'MPS', color: '#b41db9', countryId: 1, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 29, name: 'Bewegung für den Sozialismus - Movimento per il socialismo', abbreviation: 'MPS', color: '#b41db9', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 30, name: 'Aufrecht Schweiz', abbreviation: 'AS', color: '#1e4f1f', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 31, name: 'Décroissance Alternatives', abbreviation: 'DA', color: '#441c6b', countryId: 1, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 32, name: 'Les Libres', abbreviation: 'LL', color: '#1f8085', countryId: 1, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
-
-
 
 // German Parties
     { id: 100, name: 'Christlich Demokratische Union Deutschlands', abbreviation: 'CDU', color: '#000000', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
@@ -135,19 +133,25 @@ export const parties: Party[] = [
     { id: 104, name: 'Bündnis 90/Die Grünen', abbreviation: 'Grüne', color: '#64A12D', countryId: 2, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 105, name: 'Die Linke', abbreviation: 'Linke', color: '#BE3075', countryId: 2, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 106, name: 'Alternative für Deutschland', abbreviation: 'AfD', color: '#009EE0', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
-    { id: 107, name: 'Piratenpartei Deutschland', abbreviation: 'Piraten', color: '#FF8800', countryId: 2, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 108, name: 'Partei Mensch Umwelt Tierschutz', abbreviation: 'Tierschutzpartei', color: '#008000', countryId: 2, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 109, name: 'Ökologisch-Demokratische Partei', abbreviation: 'ÖDP', color: '#FF6600', countryId: 2, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 110, name: 'Die Partei', abbreviation: 'Die PARTEI', color: '#DD0000', countryId: 2, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 107, name: 'Piratenpartei Deutschland', abbreviation: 'Piraten', color: '#FF8800', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 108, name: 'Partei Mensch Umwelt Tierschutz', abbreviation: 'Tierschutzpartei', color: '#008000', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 109, name: 'Ökologisch-Demokratische Partei', abbreviation: 'ÖDP', color: '#FF6600', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 110, name: 'Die Partei', abbreviation: 'Die PARTEI', color: '#DD0000', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 111, name: 'Freie Wähler', abbreviation: 'FW', color: '#cc6e29', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 112, name: 'Bündnis Sahra Wagenknecht', abbreviation: 'BSW', color: '#7d29cc', countryId: 2,  group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
+    { id: 113, name: 'Parteilos', abbreviation: 'PL', color: '#d0ccc8', countryId: 2, group: 'Parteilos', groupAbbr: 'PL' },
+    { id: 114, name: 'Bündnis Deutschland', abbreviation: 'BD', color: '#00dcff', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 115, name: 'Werteunion', abbreviation: 'WU', color: '#383e3f', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 116, name: 'Südschleswigscher Wählerverband', abbreviation: 'SSW', color: '#97bd39', countryId: 2, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
 
 // Austrian Parties
     { id: 200, name: 'Österreichische Volkspartei', abbreviation: 'ÖVP', color: '#63C3D0', countryId: 3, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 201, name: 'Sozialdemokratische Partei Österreichs', abbreviation: 'SPÖ', color: '#E2231A', countryId: 3, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 202, name: 'Freiheitliche Partei Österreichs', abbreviation: 'FPÖ', color: '#0E428E', countryId: 3, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
     { id: 203, name: 'Die Grünen – Die Grüne Alternative', abbreviation: 'Grüne', color: '#6BA539', countryId: 3, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 204, name: 'NEOS – Das Neue Österreich und Liberales Forum', abbreviation: 'NEOS', color: '#E91C80', countryId: 3, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 204, name: 'NEOS – Das Neue Österreich und Liberales Forum', abbreviation: 'NEOS', color: '#E91C80', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 205, name: 'Kommunistische Partei Österreichs', abbreviation: 'KPÖ', color: '#BE4B48', countryId: 3, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 206, name: 'Liste Pilz', abbreviation: 'JETZT', color: '#0072B8', countryId: 3, group: 'Kleine Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 206, name: 'Liste Pilz', abbreviation: 'JETZT', color: '#0072B8', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 207, name: 'Bündnis Zukunft Österreich', abbreviation: 'BZÖ', color: '#FF9900', countryId: 3, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
 
     // ... add other Austrian parties as needed
@@ -397,4 +401,129 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 5, regionId: 28, partyId: 5, seats: 11 }, // GPS
     { id: 6, regionId: 28, partyId: 6, seats: 6 }, // GLP
 
+
+    //BW, D
+    { id: 1, regionId: 32, partyId: 100, seats: 42 }, //CDU
+    { id: 2, regionId: 32, partyId: 102, seats: 19 }, //SPD
+    { id: 3, regionId: 32, partyId: 103, seats: 18 }, //FDP
+    { id: 4, regionId: 32, partyId: 104, seats: 58 }, //Grüne
+    { id: 5, regionId: 32, partyId: 106, seats: 17 }, //AfD
+
+    //Bayern, D
+    { id: 1, regionId: 29, partyId: 101, seats: 85 }, //CSU
+    { id: 2, regionId: 29, partyId: 102, seats: 17 }, //SPD
+    { id: 3, regionId: 29, partyId: 104, seats: 32 }, //Grüne
+    { id: 4, regionId: 29, partyId: 106, seats: 32 }, //AfD
+    { id: 5, regionId: 29, partyId: 111, seats: 37 }, //FW
+
+    //Berlin, D
+    { id: 1, regionId: 30, partyId: 100, seats: 52 }, //CDU
+    { id: 2, regionId: 30, partyId: 102, seats: 34 }, //SPD
+    { id: 3, regionId: 30, partyId: 103, seats: 18 }, //FDP
+    { id: 4, regionId: 30, partyId: 104, seats: 34 }, //Grüne
+    { id: 5, regionId: 30, partyId: 106, seats: 16 }, //AfD
+    { id: 6, regionId: 30, partyId: 105, seats: 21 }, //Linke
+    { id: 7, regionId: 30, partyId: 112, seats: 2 }, //BSW
+    { id: 8, regionId: 30, partyId: 113, seats: 1 }, //PL
+
+//Brandenburg, D
+    { id: 1, regionId: 33, partyId: 100, seats: 12 }, //CDU
+    { id: 2, regionId: 33, partyId: 102, seats: 32 }, //SPD
+    { id: 3, regionId: 33, partyId: 106, seats: 30 }, //AfD
+    { id: 4, regionId: 33, partyId: 112, seats: 14 }, //BSW
+
+    //Bremen, D
+    { id: 1, regionId: 34, partyId: 100, seats: 24 }, //CDU
+    { id: 2, regionId: 34, partyId: 102, seats: 28 }, //SPD
+    { id: 3, regionId: 34, partyId: 103, seats: 5 }, //FDP
+    { id: 4, regionId: 34, partyId: 104, seats: 10 }, //Grüne
+    { id: 5, regionId: 34, partyId: 105, seats: 10 }, //Linke
+    { id: 6, regionId: 34, partyId: 114, seats: 7 }, //BD
+    { id: 7, regionId: 34, partyId: 113, seats: 3 }, //PL
+
+    //Hamburg, D
+    { id: 1, regionId: 35, partyId: 100, seats: 16 }, //CDU
+    { id: 2, regionId: 35, partyId: 102, seats: 53 }, //SPD
+    { id: 3, regionId: 35, partyId: 104, seats: 32 }, //Grüne
+    { id: 4, regionId: 35, partyId: 103, seats: 1 }, //FDP
+    { id: 5, regionId: 35, partyId: 106, seats: 7 }, //AfD
+    { id: 6, regionId: 35, partyId: 112, seats: 1 }, //BSW
+    { id: 7, regionId: 35, partyId: 105, seats: 11 }, //Linke
+    { id: 8, regionId: 35, partyId: 113, seats: 2 }, //PL
+
+    //Hessen, D
+    { id: 1, regionId: 36, partyId: 100, seats: 52 }, //CDU
+    { id: 2, regionId: 36, partyId: 102, seats: 23 }, //SPD
+    { id: 3, regionId: 36, partyId: 104, seats: 22 }, //Grüne
+    { id: 4, regionId: 36, partyId: 103, seats: 8 }, //FDP
+    { id: 5, regionId: 36, partyId: 106, seats: 25 }, //AfD
+    { id: 8, regionId: 36, partyId: 113, seats: 3 }, //PL
+
+    //MP, D
+    { id: 1, regionId: 37, partyId: 100, seats: 13 }, //CDU
+    { id: 2, regionId: 37, partyId: 102, seats: 34 }, //SPD
+    { id: 3, regionId: 37, partyId: 104, seats: 5 }, //Grüne
+    { id: 4, regionId: 37, partyId: 103, seats: 4 }, //FDP
+    { id: 5, regionId: 37, partyId: 106, seats: 14 }, //AfD
+    { id: 7, regionId: 37, partyId: 105, seats: 9 }, //Linke
+
+    //NS, D
+    { id: 1, regionId: 38, partyId: 100, seats: 47 }, //CDU
+    { id: 2, regionId: 38, partyId: 102, seats: 57 }, //SPD
+    { id: 3, regionId: 38, partyId: 104, seats: 24 }, //Grüne
+    { id: 4, regionId: 38, partyId: 106, seats: 17 }, //AfD
+    { id: 5, regionId: 38, partyId: 115, seats: 1 }, //WU
+
+    //NRW, D
+    { id: 1, regionId: 31, partyId: 100, seats: 76 }, //CDU
+    { id: 2, regionId: 31, partyId: 102, seats: 56 }, //SPD
+    { id: 3, regionId: 31, partyId: 104, seats: 39 }, //Grüne
+    { id: 4, regionId: 31, partyId: 103, seats: 12 }, //FDP
+    { id: 5, regionId: 31, partyId: 106, seats: 12 }, //AfD
+
+    //RP, D
+    { id: 1, regionId: 39, partyId: 100, seats: 31 }, //CDU
+    { id: 2, regionId: 39, partyId: 102, seats: 39 }, //SPD
+    { id: 3, regionId: 39, partyId: 104, seats: 9 }, //Grüne
+    { id: 4, regionId: 39, partyId: 103, seats: 6 }, //FDP
+    { id: 5, regionId: 39, partyId: 106, seats: 6 }, //AfD
+    { id: 6, regionId: 39, partyId: 112, seats: 1 }, //BSW
+    { id: 7, regionId: 39, partyId: 111, seats: 6 }, //FW
+    { id: 8, regionId: 39, partyId: 113, seats: 3 }, //PL
+
+    //SL, D
+    { id: 1, regionId: 40, partyId: 100, seats: 19 }, //CDU
+    { id: 2, regionId: 40, partyId: 102, seats: 29 }, //SPD
+    { id: 5, regionId: 40, partyId: 106, seats: 3 }, //AfD
+
+    //SN, D
+    { id: 1, regionId: 41, partyId: 100, seats: 41 }, //CDU
+    { id: 2, regionId: 41, partyId: 102, seats: 10 }, //SPD
+    { id: 3, regionId: 41, partyId: 104, seats: 7 }, //Grüne
+    { id: 5, regionId: 41, partyId: 106, seats: 40 }, //AfD
+    { id: 7, regionId: 41, partyId: 105, seats: 6 }, //Linke
+    { id: 6, regionId: 41, partyId: 112, seats: 15 }, //BSW
+    { id: 8, regionId: 41, partyId: 113, seats: 1 }, //PL
+
+    //SNA, D
+    { id: 1, regionId: 42, partyId: 100, seats: 40 }, //CDU
+    { id: 2, regionId: 42, partyId: 102, seats: 9 }, //SPD
+    { id: 3, regionId: 42, partyId: 104, seats: 6 }, //Grüne
+    { id: 4, regionId: 42, partyId: 103, seats: 7 }, //FDP
+    { id: 5, regionId: 42, partyId: 106, seats: 23 }, //AfD
+    { id: 8, regionId: 42, partyId: 113, seats: 1 }, //PL
+
+    //SH, D
+    { id: 1, regionId: 43, partyId: 100, seats: 34 }, //CDU
+    { id: 2, regionId: 43, partyId: 102, seats: 12 }, //SPD
+    { id: 3, regionId: 43, partyId: 104, seats: 14 }, //Grüne
+    { id: 4, regionId: 43, partyId: 103, seats: 5 }, //FDP
+    { id: 5, regionId: 43, partyId: 116, seats: 4 }, //SSW
+
+    //THÜ, D
+    { id: 1, regionId: 44, partyId: 100, seats: 23 }, //CDU
+    { id: 2, regionId: 44, partyId: 102, seats: 6 }, //SPD
+    { id: 5, regionId: 44, partyId: 106, seats: 32 }, //AfD
+    { id: 7, regionId: 44, partyId: 105, seats: 12 }, //Linke
+    { id: 6, regionId: 44, partyId: 112, seats: 15 }, //BSW
 ];
