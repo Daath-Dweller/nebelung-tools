@@ -199,7 +199,7 @@ const Parteien = () => {
                                     : regions.find((r) => r.id === selectedRegionId)?.name}
                             </h3>
 
-                            <div className="flex md:items-end md:flex-row flex-col h-[300px] mt-5 gap-y-2">
+                            <div className="flex flex-col md:flex-row items-end h-[300px] mt-5 gap-y-1 md:gap-x-2">
                                 {seatDistributionForDisplay.map((seat) => {
                                     const party = parties.find((p) => p.id === seat.partyId);
                                     const heightPercent = (seat.seats / maxSeats) * 100;
@@ -211,7 +211,7 @@ const Parteien = () => {
                                     return (
                                         <div
                                             key={seat.id}
-                                            className="flex-1 mx-1 relative group border border-white"
+                                            className="relative group border border-white md:flex-1 w-full mx-1"
                                             style={{
                                                 height: `${heightPercent}%`,
                                                 backgroundColor: party?.color || '#FFFFFF',
@@ -226,14 +226,19 @@ const Parteien = () => {
                                                 }`}
                                             >
                                                 <div className="bg-gray-800 text-white text-xs rounded py-1 px-2">
-                                                    {party?.name} ({party?.abbreviation}) <br/>
-                                                    {seat.seats} Sitze ({percentage}%)
+                                                    <span
+                                                        className="md:hidden block"> {party?.abbreviation}: {seat.seats} Sitze ({percentage}%)</span>
+                                                    <span
+                                                        className="hidden md:block"> {party?.name} ({party?.abbreviation})  <br/> {seat.seats} Sitze ({percentage}%)</span>
+
+
                                                 </div>
                                             </div>
                                         </div>
                                     );
                                 })}
                             </div>
+
 
                             <div className="mt-6 flex md:flex-row flex-col md:items-center gap-x-2 gap-y-4 md:gap-y-0">
                                 <div className="flex">
@@ -270,16 +275,16 @@ const Parteien = () => {
                                 </div>
 
 
-                                <div>
+                                <div className="gap-x-2">
                                     <button
                                         onClick={toggleBarNames}
-                                        className="bg-blue-500 px-4 py-2 text-white"
+                                        className="bg-blue-500  px-4 md:py-2 text-white mr-2"
                                     >
                                         {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
                                     </button>
                                     <button
                                         onClick={calculateGroupDistribution}
-                                        className="bg-green-500 px-4 py-2 text-white ml-2"
+                                        className="bg-green-500 mt-2 md:mt-0 px-4 md:py-2 text-white md:ml-2"
                                     >
                                         Gruppenverteilung
                                     </button>
