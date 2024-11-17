@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { countries, regions, parties, seatDistributions } from '@/data/parteiendata.ts';
+import React, {useState} from 'react';
+import {countries, parties, regions, seatDistributions} from '@/data/parteiendata.ts';
 
 const Parteien = () => {
     const [selectedCountryId, setSelectedCountryId] = useState(null);
@@ -48,9 +48,9 @@ const Parteien = () => {
         if (!seatDistributionForDisplay.length) return;
 
         const groups = {
-            TBR: { seats: 0 },
-            KMUA: { seats: 0 },
-            LGP: { seats: 0 },
+            TBR: {seats: 0},
+            KMUA: {seats: 0},
+            LGP: {seats: 0},
         };
 
         seatDistributionForDisplay.forEach((seat) => {
@@ -173,7 +173,7 @@ const Parteien = () => {
                 </>
             )}
 
-            {selectedRegionId !== null &&  (
+            {selectedRegionId !== null && (
                 <div>
                     {selectedRegionId === 5 && (
                         <div className="mt-6">
@@ -191,106 +191,104 @@ const Parteien = () => {
                     )}
 
                     {seatDistributionForDisplay.length > 0 && (
+                        <>
+                            <h3 className="mt-6">
+                                Aktuelle Sitzverteilung in{' '}
+                                {selectedRegionId === 0
+                                    ? countries.find((c) => c.id === selectedCountryId)?.name
+                                    : regions.find((r) => r.id === selectedRegionId)?.name}
+                            </h3>
 
-<>
+                            <div className="flex md:items-end md:flex-row flex-col h-[300px] mt-5 gap-y-2">
+                                {seatDistributionForDisplay.map((seat) => {
+                                    const party = parties.find((p) => p.id === seat.partyId);
+                                    const heightPercent = (seat.seats / maxSeats) * 100;
+                                    const percentage =
+                                        totalSeats > 0
+                                            ? ((seat.seats / totalSeats) * 100).toFixed(1)
+                                            : 0;
 
-                    <h3 className="mt-6">
-                        Aktuelle Sitzverteilung in{' '}
-                        {selectedRegionId === 0
-                            ? countries.find((c) => c.id === selectedCountryId)?.name
-                            : regions.find((r) => r.id === selectedRegionId)?.name}
-                    </h3>
+                                    return (
+                                        <div
+                                            key={seat.id}
+                                            className="flex-1 mx-1 relative group border border-white"
+                                            style={{
+                                                height: `${heightPercent}%`,
+                                                backgroundColor: party?.color || '#FFFFFF',
+                                            }}
+                                            title={`${party?.name} (${party?.abbreviation}): ${
+                                                seat.seats
+                                            } Sitze (${percentage}%)`}
+                                        >
+                                            <div
+                                                className={`absolute bottom-full mb-2 left-0 right-0 ${
+                                                    showBarNames ? 'block' : 'hidden group-hover:block'
+                                                }`}
+                                            >
+                                                <div className="bg-gray-800 text-white text-xs rounded py-1 px-2">
+                                                    {party?.name} ({party?.abbreviation}) <br/>
+                                                    {seat.seats} Sitze ({percentage}%)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
 
-                    <div className="flex items-end h-[300px] mt-5">
-                        {seatDistributionForDisplay.map((seat) => {
-                            const party = parties.find((p) => p.id === seat.partyId);
-                            const heightPercent = (seat.seats / maxSeats) * 100;
-                            const percentage =
-                                totalSeats > 0
-                                    ? ((seat.seats / totalSeats) * 100).toFixed(1)
-                                    : 0;
-
-                            return (
-                                <div
-                                    key={seat.id}
-                                    className="flex-1 mx-1 relative group border border-white"
-                                    style={{
-                                        height: `${heightPercent}%`,
-                                        backgroundColor: party?.color || '#FFFFFF',
-                                    }}
-                                    title={`${party?.name} (${party?.abbreviation}): ${
-                                        seat.seats
-                                    } Sitze (${percentage}%)`}
-                                >
-                                    <div
-                                        className={`absolute bottom-full mb-2 left-0 right-0 ${
-                                            showBarNames ? 'block' : 'hidden group-hover:block'
+                            <div className="mt-6 flex md:flex-row flex-col md:items-center gap-x-2 gap-y-4 md:gap-y-0">
+                                <div className="flex">
+                                    <button
+                                        onClick={() => handleGroupButtonClick('TBR')}
+                                        className={`px-4 py-2 mr-2 ${
+                                            selectedGroupAbbr === 'TBR'
+                                                ? 'bg-blue-500'
+                                                : 'bg-gray-700 hover:bg-gray-600'
                                         }`}
                                     >
-                                        <div className="bg-gray-800 text-white text-xs rounded py-1 px-2">
-                                            {party?.name} ({party?.abbreviation}) <br/>
-                                            {seat.seats} Sitze ({percentage}%)
-                                        </div>
-                                    </div>
+                                        TBR
+                                    </button>
+                                    <button
+                                        onClick={() => handleGroupButtonClick('KMUA')}
+                                        className={`px-4 py-2 mr-2 ${
+                                            selectedGroupAbbr === 'KMUA'
+                                                ? 'bg-blue-500'
+                                                : 'bg-gray-700 hover:bg-gray-600'
+                                        }`}
+                                    >
+                                        KMUA
+                                    </button>
+                                    <button
+                                        onClick={() => handleGroupButtonClick('LGP')}
+                                        className={`px-4 py-2 mr-4 ${
+                                            selectedGroupAbbr === 'LGP'
+                                                ? 'bg-blue-500'
+                                                : 'bg-gray-700 hover:bg-gray-600'
+                                        }`}
+                                    >
+                                        LGP
+                                    </button>
                                 </div>
-                            );
-                        })}
-                    </div>
-
-    <div className="mt-6 flex items-center gap-x-2">
-        <div className="flex">
-            <button
-                onClick={() => handleGroupButtonClick('TBR')}
-                className={`px-4 py-2 mr-2 ${
-                    selectedGroupAbbr === 'TBR'
-                        ? 'bg-blue-500'
-                        : 'bg-gray-700 hover:bg-gray-600'
-                }`}
-            >
-                TBR
-            </button>
-            <button
-                onClick={() => handleGroupButtonClick('KMUA')}
-                className={`px-4 py-2 mr-2 ${
-                    selectedGroupAbbr === 'KMUA'
-                        ? 'bg-blue-500'
-                        : 'bg-gray-700 hover:bg-gray-600'
-                }`}
-            >
-                KMUA
-            </button>
-            <button
-                onClick={() => handleGroupButtonClick('LGP')}
-                className={`px-4 py-2 mr-4 ${
-                    selectedGroupAbbr === 'LGP'
-                        ? 'bg-blue-500'
-                        : 'bg-gray-700 hover:bg-gray-600'
-                }`}
-            >
-                LGP
-            </button>
-        </div>
 
 
-        <div>
-            <button
-                onClick={toggleBarNames}
-                className="bg-blue-500 px-4 py-2 text-white"
-            >
-                {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
-            </button>
-            <button
-                onClick={calculateGroupDistribution}
-                className="bg-green-500 px-4 py-2 text-white ml-2"
-            >
-                Gruppenverteilung
-            </button>
-        </div>
+                                <div>
+                                    <button
+                                        onClick={toggleBarNames}
+                                        className="bg-blue-500 px-4 py-2 text-white"
+                                    >
+                                        {showBarNames ? 'Infos ausblenden' : 'Infos anzeigen'}
+                                    </button>
+                                    <button
+                                        onClick={calculateGroupDistribution}
+                                        className="bg-green-500 px-4 py-2 text-white ml-2"
+                                    >
+                                        Gruppenverteilung
+                                    </button>
+                                </div>
 
-        {/* TODO: Mobiles Layout, alles untereinander */}
-        {/* Info Icon */}
-        {selectedCountryId === 1 && (
-            <span>
+                                {/* TODO: Mobiles Layout, alles untereinander */}
+                                {/* Info Icon */}
+                                {selectedCountryId === 1 && (
+                                    <span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-4 w-4"
@@ -308,49 +306,48 @@ const Parteien = () => {
                             </svg>
                         </span>)}
 
-        {/* Info Text */}
+                                {/* Info Text */}
 
 
-        {isInfoVisible && (
-            <div className="text-sm bg-gray-800 p-2 rounded">
-                Offizielle Einordnung nach&nbsp;
-                <a
-                    href="https://www.bfs.admin.ch/asset/de/30146543"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 underline"
-                >
-                    BFS
-                </a>
-            </div>
-        )}
+                                {isInfoVisible && (
+                                    <div className="text-sm bg-gray-800 p-2 rounded">
+                                        Offizielle Einordnung nach&nbsp;
+                                        <a
+                                            href="https://www.bfs.admin.ch/asset/de/30146543"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-blue-400 underline"
+                                        >
+                                            BFS
+                                        </a>
+                                    </div>
+                                )}
 
 
-    </div>
+                            </div>
 
-        {groupDistribution && (
-            <div className="mt-4">
-                <p className="font-bold">Gruppenverteilung:</p>
-                <p>{groupDistribution}</p>
-            </div>
-        )}
+                            {groupDistribution && (
+                                <div className="mt-4">
+                                    <p className="font-bold">Gruppenverteilung:</p>
+                                    <p>{groupDistribution}</p>
+                                </div>
+                            )}
 
-        {selectedGroupAbbr && partiesInSelectedGroup.length > 0 && (
-            <div className="mt-4">
-                <p className="font-extrabold">
-                    {selectedGroupAbbr} ({groupName}):
-                </p>
-                {partiesInSelectedGroup.map((party) => (
-                    <p key={party.id}>
-                        {party.name} ({party.abbreviation})
-                    </p>
-                ))}
-            </div>
-        )}
+                            {selectedGroupAbbr && partiesInSelectedGroup.length > 0 && (
+                                <div className="mt-4">
+                                    <p className="font-extrabold">
+                                        {selectedGroupAbbr} ({groupName}):
+                                    </p>
+                                    {partiesInSelectedGroup.map((party) => (
+                                        <p key={party.id}>
+                                            {party.name} ({party.abbreviation})
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
 
 
-
-</>)}
+                        </>)}
                 </div>
 
             )}
