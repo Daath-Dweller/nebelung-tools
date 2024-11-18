@@ -19,7 +19,7 @@ const CompView = () => {
     };
 
     return (
-        <div id="compView" className="mt-8 grid grid-cols-1 gap-8">
+        <div id="compView" className="mt-8 flex flex-col gap-8">
             {countries.map((country) => (
                 <div key={country.id} className="bg-gray-800 p-4 rounded shadow">
                     {/* Flagge und Buttons */}
@@ -27,7 +27,7 @@ const CompView = () => {
                         <span className="text-4xl">{country.flag}</span>
                         <span className="mt-2 text-lg">{country.name}</span>
                     </div>
-                    <div className="flex space-x-2 mb-4 justify-center">
+                    <div className="flex md:space-x-2 mb-4 justify-center md:flex-row md:gap-y-0 gap-y-4 flex-col">
                         <button
                             onClick={() => handleCompViewButtonClick(country.id, 'cantons')}
                             className={`px-3 py-1 rounded ${

@@ -3,7 +3,7 @@ import CompView from './CompView';
 import GovSeats from './GovSeats';
 
 const Parteien = () => {
-    const [viewGovSeats, setViewGovSeats] = useState(true);
+    const [viewGovSeats, setViewGovSeats] = useState(false);
     const [viewComp, setViewComp] = useState(false);
 
     const toggleGovSeats = () => {
@@ -18,10 +18,10 @@ const Parteien = () => {
 
     return (
         <div className="p-12 bg-black text-white m-3">
-            <div id="buttons" className="flex justify-around">
+            <div id="buttons" className="flex md:justify-around md:flex-row flex-col ">
                 <button
                     onClick={toggleGovSeats}
-                    className="border-2 border-dotted border-white p-4 rounded bg-gray-700 text-white hover:border-black hover:text-black hover:bg-gray-200 hover:cursor-pointer"
+                    className="mb-2 md:mb-0 border-2 border-dotted border-white p-4 rounded bg-gray-700 text-white hover:border-black hover:text-black hover:bg-gray-200 hover:cursor-pointer"
                 >
                     Regierungsübersichten (Diagramme)
                 </button>
