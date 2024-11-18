@@ -3,6 +3,7 @@
 export interface Country {
     id: number;
     name: string;
+    flag: string;
 }
 
 export interface Region {
@@ -29,9 +30,10 @@ export interface SeatDistribution {
 }
 
 export const countries: Country[] = [
-    { id: 1, name: 'Schweiz (CH)' },
-    { id: 3, name: 'Österreich (A)' },
-    { id: 2, name: 'Deutschland (D)' },
+    { id: 1, name: 'Schweiz (CH)', flag: '🇨🇭', },
+    { id: 3, name: 'Österreich (A)', flag: '🇦🇹', },
+    { id: 2, name: 'Deutschland (D)', flag: '🇩🇪',  },
+
 ];
 
 export const regions: Region[] = [
@@ -133,10 +135,6 @@ export const parties: Party[] = [
     { id: 104, name: 'Bündnis 90/Die Grünen', abbreviation: 'Grüne', color: '#64A12D', countryId: 2, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 105, name: 'Die Linke', abbreviation: 'Linke', color: '#BE3075', countryId: 2, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 106, name: 'Alternative für Deutschland', abbreviation: 'AfD', color: '#009EE0', countryId: 2, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
-    { id: 107, name: 'Piratenpartei Deutschland', abbreviation: 'Piraten', color: '#FF8800', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 108, name: 'Partei Mensch Umwelt Tierschutz', abbreviation: 'Tierschutzpartei', color: '#008000', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 109, name: 'Ökologisch-Demokratische Partei', abbreviation: 'ÖDP', color: '#FF6600', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
-    { id: 110, name: 'Die Partei', abbreviation: 'Die PARTEI', color: '#DD0000', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 111, name: 'Freie Wähler', abbreviation: 'FW', color: '#cc6e29', countryId: 2, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 112, name: 'Bündnis Sahra Wagenknecht', abbreviation: 'BSW', color: '#7d29cc', countryId: 2,  group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 113, name: 'Parteilos', abbreviation: 'PL', color: '#d0ccc8', countryId: 2, group: 'Parteilos', groupAbbr: 'PL' },
