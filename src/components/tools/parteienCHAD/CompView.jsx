@@ -36,7 +36,7 @@ const CompView = () => {
                                     : 'bg-gray-700 text-white hover:bg-gray-600'
                             }`}
                         >
-                            Kantone/Bundesländer
+                            Kantone / Bundesländer
                         </button>
                         <button
                             onClick={() => handleCompViewButtonClick(country.id, 'groups')}
