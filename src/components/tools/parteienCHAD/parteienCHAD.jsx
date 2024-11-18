@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {countries, parties, regions, seatDistributions} from '@/data/parteiendata.ts';
-import CantonTable from "@/components/tools/CantonTable";
-import GroupTable from "@/components/tools/GroupTable";
+import CantonTable from "@/components/tools/parteienCHAD/CantonTable";
+import GroupTable from "@/components/tools/parteienCHAD/GroupTable";
 
 const Parteien = () => {
     const [selectedCountryId, setSelectedCountryId] = useState(null);
