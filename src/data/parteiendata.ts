@@ -83,15 +83,15 @@ export const regions: Region[] = [
     { id: 44, name: 'Thüringen', countryId: 2 },
 
 // Austria Bundesländer
-    { id: 45, name: 'Wien', countryId: 3 },
-    { id: 46, name: 'Tirol', countryId: 3 },
-    { id: 47, name: 'Steiermark', countryId: 3 },
-    { id: 48, name: 'Vorarlberg', countryId: 3 },
-    { id: 49, name: 'Salzburg', countryId: 3 },
-    { id: 50, name: 'Oberösterreich', countryId: 3 },
-    { id: 51, name: 'Niederösterreich', countryId: 3 },
+    { id: 53, name: 'Burgenland', countryId: 3 },
     { id: 52, name: 'Kärnten', countryId: 3 },
-    { id: 53, name: 'Burgenland', countryId: 3 }
+    { id: 51, name: 'Niederösterreich', countryId: 3 },
+    { id: 50, name: 'Oberösterreich', countryId: 3 },
+    { id: 49, name: 'Salzburg', countryId: 3 },
+    { id: 47, name: 'Steiermark', countryId: 3 },
+    { id: 46, name: 'Tirol', countryId: 3 },
+    { id: 48, name: 'Vorarlberg', countryId: 3 },
+    { id: 45, name: 'Wien', countryId: 3 },
 
 ];
 
@@ -151,10 +151,12 @@ export const parties: Party[] = [
     { id: 203, name: 'Die Grünen – Die Grüne Alternative', abbreviation: 'Grüne', color: '#6BA539', countryId: 3, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
     { id: 204, name: 'NEOS – Das Neue Österreich und Liberales Forum', abbreviation: 'NEOS', color: '#E91C80', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 205, name: 'Kommunistische Partei Österreichs', abbreviation: 'KPÖ', color: '#BE4B48', countryId: 3, group: 'Linke und grüne Parteien', groupAbbr: 'LGP' },
-    { id: 206, name: 'Liste Pilz', abbreviation: 'JETZT', color: '#0072B8', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 206, name: 'Liste Fritz Dinkhauser', abbreviation: 'FRITZ', color: '#0072B8', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
     { id: 207, name: 'Bündnis Zukunft Österreich', abbreviation: 'BZÖ', color: '#FF9900', countryId: 3, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 208, name: 'MFG – Menschen Freiheit Grundrechte', abbreviation: 'MFG', color: '#9A9A9A', countryId: 3, group: 'Traditionelle bürgerliche und rechte Parteien', groupAbbr: 'TBR' },
+    { id: 209, name: 'Team Kärnten', abbreviation: 'TK', color: '#005BAC', countryId: 3, group: '(Kleine) Mitteparteien und andere', groupAbbr: 'KMUA' },
+    { id: 210, name: 'Parteilos', abbreviation: 'PL', color: '#d0ccc8', countryId: 3, group: 'Parteilos', groupAbbr: 'PL' },
 
-    // ... add other Austrian parties as needed
 ];
 
 export const seatDistributions: SeatDistribution[] = [
@@ -526,4 +528,70 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 5, regionId: 44, partyId: 106, seats: 32 }, //AfD
     { id: 7, regionId: 44, partyId: 105, seats: 12 }, //Linke
     { id: 6, regionId: 44, partyId: 112, seats: 15 }, //BSW
+
+
+    // Wien, Ö
+    { id: 1, regionId: 45, partyId: 200, seats: 22 }, //ÖVP
+    { id: 2, regionId: 45, partyId: 201, seats: 46 }, //SPÖ
+    { id: 3, regionId: 45, partyId: 202, seats: 8 }, //FPÖ
+    { id: 4, regionId: 45, partyId: 203, seats: 16 }, //Grüne
+    { id: 5, regionId: 45, partyId: 204, seats: 8 }, //Neos
+
+    // Vorarlberg, Ö
+    { id: 1, regionId: 48, partyId: 200, seats: 15 }, //ÖVP
+    { id: 2, regionId: 48, partyId: 201, seats: 3 }, //SPÖ
+    { id: 3, regionId: 48, partyId: 202, seats: 11 }, //FPÖ
+    { id: 4, regionId: 48, partyId: 203, seats: 4 }, //Grüne
+    { id: 5, regionId: 48, partyId: 204, seats: 3 }, //Neos
+
+    // Tirol, Ö
+    { id: 1, regionId: 46, partyId: 200, seats: 14 }, //ÖVP
+    { id: 2, regionId: 46, partyId: 201, seats: 7 }, //SPÖ
+    { id: 3, regionId: 46, partyId: 202, seats: 7 }, //FPÖ
+    { id: 4, regionId: 46, partyId: 203, seats: 3 }, //Grüne
+    { id: 5, regionId: 46, partyId: 204, seats: 2 }, //Neos
+    { id: 6, regionId: 46, partyId: 206, seats: 3 }, //LFD
+
+    // Steiermark, Ö
+    { id: 1, regionId: 47, partyId: 200, seats: 18 }, //ÖVP
+    { id: 2, regionId: 47, partyId: 201, seats: 12 }, //SPÖ
+    { id: 3, regionId: 47, partyId: 202, seats: 8 }, //FPÖ
+    { id: 4, regionId: 47, partyId: 203, seats: 6 }, //Grüne
+    { id: 5, regionId: 47, partyId: 204, seats: 2 }, //Neos
+    { id: 6, regionId: 47, partyId: 205, seats: 2 }, //KPÖ
+
+    // Salzburg, Ö
+    { id: 1, regionId: 49, partyId: 200, seats: 12 }, //ÖVP
+    { id: 2, regionId: 49, partyId: 201, seats: 7 }, //SPÖ
+    { id: 3, regionId: 49, partyId: 202, seats: 10 }, //FPÖ
+    { id: 4, regionId: 49, partyId: 203, seats: 3}, //Grüne
+    { id: 5, regionId: 49, partyId: 205, seats: 4 }, //KPÖ
+
+    // OÖ, Ö
+    { id: 1, regionId: 50, partyId: 200, seats: 22 }, //ÖVP
+    { id: 2, regionId: 50, partyId: 201, seats: 11 }, //SPÖ
+    { id: 3, regionId: 50, partyId: 202, seats: 11 }, //FPÖ
+    { id: 4, regionId: 50, partyId: 203, seats: 7 }, //Grüne
+    { id: 5, regionId: 50, partyId: 204, seats: 2 }, //Neos
+    { id: 6, regionId: 50, partyId: 208, seats: 3 }, //MFG
+
+    // NÖ, Ö
+    { id: 1, regionId: 51, partyId: 200, seats: 23 }, //ÖVP
+    { id: 2, regionId: 51, partyId: 201, seats: 12 }, //SPÖ
+    { id: 3, regionId: 51, partyId: 202, seats: 14 }, //FPÖ
+    { id: 4, regionId: 51, partyId: 203, seats: 4 }, //Grüne
+    { id: 5, regionId: 51, partyId: 204, seats: 3 }, //Neos
+
+    // Kärnten, Ö
+    { id: 1, regionId: 52, partyId: 200, seats: 7 }, //ÖVP
+    { id: 2, regionId: 52, partyId: 201, seats: 15 }, //SPÖ
+    { id: 3, regionId: 52, partyId: 202, seats: 9 }, //FPÖ
+    { id: 4, regionId: 52, partyId: 209, seats: 5 }, //TK
+
+    // BL, Ö
+    { id: 1, regionId: 53, partyId: 200, seats: 11 }, //ÖVP
+    { id: 2, regionId: 53, partyId: 201, seats: 19 }, //SPÖ
+    { id: 3, regionId: 53, partyId: 202, seats: 3 }, //FPÖ
+    { id: 4, regionId: 53, partyId: 203, seats: 2 }, //Grüne
+    { id: 5, regionId: 53, partyId: 210, seats: 1 }, //PL
 ];
