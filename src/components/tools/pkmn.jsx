@@ -204,19 +204,23 @@ const PokeTable = () => {
 
                 <div id="btndiv" className="flex md:flex-row flex-col gap-y-2 md:gap-y-0 gap-x-2">
                     <button onClick={() => setShowStats(!showStats)}
-                            className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${showStats ? "" : "bg-gray-900"}`}>
                     {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
                 </button>
                     <button onClick={toggleHideSpecialforms}
-                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">
-                    {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden"}
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${hideSpecialforms ? "bg-gray-900" : ""}`}>
+                    {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden "}
                 </button>
                     <button onClick={toggleHideLegendary}
-                            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-2">
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${hideLegendary ? "bg-gray-900" : ""}`}>
                         {hideLegendary ? "Legendäre anzeigen" : "Legendäre ausblenden"}
                     </button>
                     <button onClick={toggleMonoTypeBonus}
-                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${monoTypeBonus ? "bg-gray-900" : ""}`}>
                     {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
                 </button>
                 </div>
@@ -351,10 +355,24 @@ const PokeTable = () => {
                 </div>
 
                 <div className="flex justify-center mt-4">
-                    <button onClick={scrollToTop}
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Nach oben
+                    <button
+                        onClick={scrollToTop}
+                        className="fixed bottom-4 right-8 bg-teal-500 hover:bg-teal-700 text-white flex items-center justify-center w-12 h-12 rounded-full shadow-lg z-50 transition-colors duration-300"
+                        aria-label="Nach oben"
+                    >
+                        {/* SVG für den Pfeil nach oben */}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7"/>
+                        </svg>
                     </button>
+
                 </div>
             </div>
         </div>
