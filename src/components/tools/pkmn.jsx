@@ -1,8 +1,5 @@
 import React, {useState} from "react";
-import {generationRanges, legendaryIDs, pokemonData, typenData} from "@/data/pkmndata.ts";
-
-// Definieren Sie die legendaryIDs außerhalb der Komponente
-
+import {generationRanges, legendaryIDs, pokemonData, typenData, mysticIDs, ubIDs} from "@/data/pkmndata.ts";
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -345,14 +342,7 @@ const PokeTable = () => {
                     </tbody>
                 </table>
 
-                <div className="flex justify-center gap-2 mt-4">
-                    {displayedCount < filteredPokemon.length && (
-                        <button onClick={loadMorePokemon}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Mehr laden
-                        </button>
-                    )}
-                </div>
+
 
                 <div className="flex justify-center mt-4">
                     <button
