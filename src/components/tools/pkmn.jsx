@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { pokemonData, typenData, generationRanges } from "@/data/pkmndata.ts";
+import React, {useState} from "react";
+import {generationRanges, legendaryIDs, pokemonData, typenData} from "@/data/pkmndata.ts";
+
+// Definieren Sie die legendaryIDs außerhalb der Komponente
+
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -11,10 +14,9 @@ const PokeTable = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
     const [hideSpecialforms, setHideSpecialForms] = useState(false);
+    const [hideLegendary, setHideLegendary] = useState(false); // Neuer State für das Ausblenden von Legendären
     const [monoTypeBonus, setMonoTypeBonus] = useState(false); // Neuer State für den Monotypen-Bonus
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
-
-
 
     const loadMorePokemon = () => {
         setDisplayedCount((prevCount) => prevCount + 100);
@@ -22,6 +24,10 @@ const PokeTable = () => {
 
     const toggleHideSpecialforms = () => {
         setHideSpecialForms((prev) => !prev);
+    };
+
+    const toggleHideLegendary = () => { // Neue Toggle-Funktion
+        setHideLegendary((prev) => !prev);
     };
 
     const toggleMonoTypeBonus = () => {
@@ -41,6 +47,34 @@ const PokeTable = () => {
         }
 
         scrollToTop(); // Optional: Nach Generationwechsel nach oben scrollen
+    };
+
+    const getDisplayName = (pokemon) => {
+        let displayName = pokemon.name_de;
+        let specialChar = '';
+
+        if (pokemon.id >= 10033 && pokemon.id <= 10090) {
+            displayName = `${pokemon.name_de}`;
+            specialChar = '  Ⓜ️'; // Hier kannst du dein gewünschtes Sonderzeichen einfügen
+        } else if (pokemon.id >= 10091 && pokemon.id <= 10115) {
+            displayName = `Alola-${pokemon.name_de}`;
+        } else if (pokemon.id >= 10195 && pokemon.id <= 10228) {
+            displayName = `${pokemon.name_de}`;
+            specialChar = '  ⬆️';
+        } else if (pokemon.id >= 10229 && pokemon.id <= 10244) {
+            displayName = `Hisui-${pokemon.name_de}`;
+        } else if (pokemon.id >= 10250 && pokemon.id <= 10253) {
+            displayName = `Paldea-${pokemon.name_de}`;
+        } else if (pokemon.id >= 10161 && pokemon.id <= 10180) {
+            displayName = `Galar-${pokemon.name_de}`;
+        }
+
+        // IDs aller legendären Pokémon + spezielle IDs (151, 251, ...)
+        if (legendaryIDs.includes(pokemon.id)) {
+            specialChar += ' ✴️';
+        }
+
+        return `${displayName} ${specialChar}`;
     };
 
     const getTypeDataSum = (type1, type2) => {
@@ -93,10 +127,13 @@ const PokeTable = () => {
         return Math.round(go);
     };
 
-    // Filter basierend auf Sonderformen und ausgewählter Generation
+    // Filter basierend auf Sonderformen, Legendären und ausgewählter Generation
     const filteredPokemon = pokemonData.filter(pokemon => {
         // Filter für Sonderformen
         if (hideSpecialforms && pokemon.id >= 5000) return false;
+
+        // Filter für Legendäre
+        if (hideLegendary && legendaryIDs.includes(pokemon.id)) return false;
 
         // Filter für Generationen
         const range = generationRanges[selectedGeneration];
@@ -163,23 +200,29 @@ const PokeTable = () => {
 
     return (
         <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
-            <div className="flex flex-wrap justify-between items-center mb-4 gap-x-2">
-                <button onClick={() => setShowInfo(!showInfo)} className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
-                    ℹ️
-                </button>
-                <button onClick={() => setShowStats(!showStats)} className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
+            <div className="flex flex-col justify-between items-center mb-4 gap-x-2">
+
+                <div id="btndiv" className="flex md:flex-row flex-col gap-y-2 md:gap-y-0 gap-x-2">
+                    <button onClick={() => setShowStats(!showStats)}
+                            className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
                     {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
                 </button>
-                <button onClick={toggleHideSpecialforms} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">
+                    <button onClick={toggleHideSpecialforms}
+                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">
                     {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden"}
                 </button>
-                <button onClick={toggleMonoTypeBonus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
+                    <button onClick={toggleHideLegendary}
+                            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-2">
+                        {hideLegendary ? "Legendäre anzeigen" : "Legendäre ausblenden"}
+                    </button>
+                    <button onClick={toggleMonoTypeBonus}
+                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
                     {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
                 </button>
-
+                </div>
                 {/* Neuer Dropdown für die Generationen */}
-                <div className="mb-2">
-                    <label htmlFor="generation" className="mr-2">Generation:</label>
+                <div className="mt-4">
+
                     <select
                         id="generation"
                         value={selectedGeneration}
@@ -190,11 +233,17 @@ const PokeTable = () => {
                             <option key={gen} value={gen}>{gen}</option>
                         ))}
                     </select>
+
+                    <button onClick={() => setShowInfo(!showInfo)}
+                            className="text-white bg-gray-600 px-2 ml-2 py-1 rounded mb-2">
+                        ℹ️
+                    </button>
                 </div>
+
             </div>
 
             {showInfo && (
-                <div className="bg-gray-800 text-white p-4 rounded-md m-6 mx-auto">
+                <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
                     Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr effektiven, nicht effektiven und
                     wirkungslosen Angriffen gegen ein Pokemon oder von einem Pokemon ausgehend.
                     Normale Effektivität gibt 1 Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und
@@ -209,12 +258,15 @@ const PokeTable = () => {
                     beeinflussen können.<br/><br/>
                     Der Monotypenbonus verdoppelt die Typenoffensive und Defensive, da PKMN mit einem Typ sonst einen
                     starken Nachteil in der Berechnung haben. Je nach Situation kann ein Doppeltyp vorteilhaft oder
-                    nachteilig sein.
+                    nachteilig sein.<br/><br/>
+                    Ⓜ️: Megaevolution<br/>
+                    ⬆️: Gigadynamax<br/>
+                    ✴️️: Legendär
                 </div>
             )}
 
             <div className="text-center mt-12 pr-2">
-                <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount} )</h2>
+                <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount})</h2>
 
                 <table className="table-auto w-full border-collapse">
                     <thead>
@@ -263,15 +315,8 @@ const PokeTable = () => {
                             <tr key={pokemon.id} className="border-t border-gray-600">
                                 <td className="border border-gray-600 p-2">{pokemon.id}</td>
                                 <td className="border border-gray-600 p-2">
-                                    {pokemon.id >= 10033 && pokemon.id <= 10090 ? `Mega-${pokemon.name_de}` :
-                                        pokemon.id >= 10091 && pokemon.id <= 10115 ? `Alola-${pokemon.name_de}` :
-                                            pokemon.id >= 10195 && pokemon.id <= 10228 ? `G-Max-${pokemon.name_de}` :
-                                                pokemon.id >= 10229 && pokemon.id <= 10244 ? `Hisui-${pokemon.name_de}` :
-                                                    pokemon.id >= 10250 && pokemon.id <= 10253 ? `Paldea-${pokemon.name_de}` :
-                                                        pokemon.id >= 10161 && pokemon.id <= 10180 ? `Galar-${pokemon.name_de}` :
-                                                            pokemon.name_de}
+                                    {getDisplayName(pokemon)}
                                 </td>
-
                                 <td className="border border-gray-600 p-2">{pokemon.type1}</td>
                                 <td className="border border-gray-600 p-2">{pokemon.type2 || "-"}</td>
                                 <td className="border border-gray-600 p-2">{offensivSum}</td>
@@ -287,7 +332,6 @@ const PokeTable = () => {
                                         <td className="border border-gray-600 p-2">{sumStats}</td>
                                     </>
                                 )}
-
                                 <td className="border border-gray-600 p-2">{gd}</td>
                                 <td className="border border-gray-600 p-2">{go}</td>
                                 <td className="border border-gray-600 p-2">{gs}</td>
@@ -299,14 +343,16 @@ const PokeTable = () => {
 
                 <div className="flex justify-center gap-2 mt-4">
                     {displayedCount < filteredPokemon.length && (
-                        <button onClick={loadMorePokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button onClick={loadMorePokemon}
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Mehr laden
                         </button>
                     )}
                 </div>
 
                 <div className="flex justify-center mt-4">
-                    <button onClick={scrollToTop} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button onClick={scrollToTop}
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Nach oben
                     </button>
                 </div>

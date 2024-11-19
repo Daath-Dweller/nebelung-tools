@@ -23,6 +23,23 @@ export const generationRanges = {
     "Generation 9": { min: 906, max: 1025 },
 };
 
+export const legendaryIDs = [
+    144, 145, 146, 150, 151, // Gen 1
+    243, 244, 245, 249, 250, 251, // Gen 2
+    377, 378, 379, 380, 381, 382, 383, 384, 385, 386, // Gen 3
+    480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, // Gen 4
+    638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, // Gen 5
+    716, 717, 718, // Gen 6
+    772, 773, 785, 786, 787, 788, 789, 790, 791, 792, 800, 791, 792, 800, // Gen 7
+    888, 889, 890, 891, 892, 893, // Gen 8
+    1007, 1008, // Gen 9
+    10001, 10002, 10003, 10007, 10019, 10020, 10021, 10022, 10023, 10043, 1044, 10062, 10063, 10079,
+    10118, 10119, 10120, 10155, 10156, 10157, 10188, 10189, 10190, 10191, 10193, 10194, 10226, 10227,
+    10245, 10246, 10249, 10274, 10275, 10276, 10277, 10280, 10279 // Sonderformen
+
+    // Mystische PKMN
+    // Ultrabestien
+];
 
 export const typenData: Typen[] = [
     {
@@ -16163,7 +16180,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10044,
-        "name_de": "Mewtu-Yglu",
+        "name_de": "Mewtu-Y",
         "name_en": "mewtwo-mega-y",
         "type1": "Psycho",
         "type2": "",
@@ -17652,21 +17669,6 @@ export const pokemonData: Pokemon[] = [
         }
     },
     {
-        "id": 10181,
-        "name_de": "Zygarde (10)",
-        "name_en": "zygarde-10",
-        "type1": "Drache",
-        "type2": "Boden",
-        "stats": {
-            "hp": 54,
-            "attack": 100,
-            "defense": 71,
-            "specialAttack": 61,
-            "specialDefense": 85,
-            "speed": 115
-        }
-    },
-    {
         "id": 10184,
         "name_de": "Riffex",
         "name_en": "toxtricity-low-key",
@@ -18845,21 +18847,6 @@ export const pokemonData: Pokemon[] = [
         }
     },
     {
-        "id": 10280,
-        "name_de": "Kyogre (Ur)",
-        "name_en": "kyogre-primal",
-        "type1": "Wasser",
-        "type2": "",
-        "stats": {
-            "hp": 100,
-            "attack": 150,
-            "defense": 90,
-            "specialAttack": 180,
-            "specialDefense": 160,
-            "speed": 90
-        }
-    },
-    {
         "id": 10279,
         "name_de": "Groudon (Ur)",
         "name_en": "groudon-primal",
@@ -18874,4 +18861,20 @@ export const pokemonData: Pokemon[] = [
             "speed": 90
         }
     },
+    {
+        "id": 10280,
+        "name_de": "Kyogre (Ur)",
+        "name_en": "kyogre-primal",
+        "type1": "Wasser",
+        "type2": "",
+        "stats": {
+            "hp": 100,
+            "attack": 150,
+            "defense": 90,
+            "specialAttack": 180,
+            "specialDefense": 160,
+            "speed": 90
+        }
+    },
+
 ];
