@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { countries, parties, regions, seatDistributions } from '@/data/parteiendata.ts';
+import React, {useState} from 'react';
+import {countries, parties, regions, seatDistributions} from '@/data/parteiendata.ts';
 
 const GovSeats = () => {
     const [selectedCountryId, setSelectedCountryId] = useState(null);
@@ -141,10 +141,11 @@ const GovSeats = () => {
             ? partiesInSelectedGroup[0].group
             : '';
 
-    return (
-        <div id="govSeats">
-            <div id="choose" className="py-8">
-                <h1>Land wählen (CHAD-Region)</h1>
+    return (<div id="govSeats" className="flex flex-col">
+
+            <div className="md:flex md:justify-center">
+                <div id="choose" className="py-8 text-center">
+                <h1>Land wählen (CHAD-Region):</h1>
                 <select
                     onChange={handleCountryChange}
                     value={selectedCountryId || ''}
@@ -160,14 +161,14 @@ const GovSeats = () => {
 
                 {selectedCountryId && (
                     <>
-                        <h2 className="mt-4">Region wählen</h2>
+                        <h2 className="mt-4">Region wählen:</h2>
                         <select
                             onChange={handleRegionChange}
                             value={selectedRegionId !== null ? selectedRegionId : ''}
                             className="text-black mt-2 p-1"
                         >
                             <option value="">Wähle Region</option>
-                            <option value="0">Gesamt</option>
+                            <option value="0">[ Gesamt ]</option>
                             {filteredRegions.map((region) => (
                                 <option key={region.id} value={region.id}>
                                     {region.name}
@@ -176,6 +177,7 @@ const GovSeats = () => {
                         </select>
                     </>
                 )}
+                </div>
             </div>
 
             {selectedRegionId !== null && (
@@ -205,7 +207,7 @@ const GovSeats = () => {
                                     : regions.find((r) => r.id === selectedRegionId)?.name}
                             </h3>
 
-                            <div className="flex flex-col md:flex-row items-end h-[300px] mt-5 gap-y-1 md:gap-x-2">
+                            <div className="flex flex-col md:flex-row items-end h-[300px] mt-5 gap-y-1 md:gap-x-2 break-words">
                                 {seatDistributionForDisplay.map((seat) => {
                                     const party = parties.find((p) => p.id === seat.partyId);
                                     const heightPercent = (seat.seats / maxSeats) * 100;
@@ -232,14 +234,19 @@ const GovSeats = () => {
                                                 }`}
                                             >
                                                 <div className="bg-gray-800 text-white text-xs rounded py-1 px-2">
-                          <span className="md:hidden block">
-                            {party?.abbreviation}: {seat.seats} Sitze (
-                              {percentage}%)
-                          </span>
-                                                    <span className="hidden md:block">
-                            {party?.name} ({party?.abbreviation}) <br />
+
+
+
+                                                    <span className="md:hidden block">
+                                                        {party?.abbreviation}: {seat.seats} Sitze ({percentage}%)
+                                                    </span>
+
+                                                   <span className="hidden md:block">
+                                                        {party?.name} ({party?.abbreviation}) <br />
                                                         {seat.seats} Sitze ({percentage}%)
-                          </span>
+                                                   </span>
+
+
                                                 </div>
                                             </div>
                                         </div>

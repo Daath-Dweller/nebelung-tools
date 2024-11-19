@@ -131,7 +131,7 @@ const CantonTable = ({ countryId }) => {
                 </thead>
                 <tbody>
                 {sortedData.map(region => (
-                    <tr key={region.id} className="text-center">
+                    <tr key={region.id} className="text-center hover:bg-gray-100 hover:text-black">
                         <td className="border px-4 py-2">{region.name}</td>
                         {allParties.map(party => (
                             <React.Fragment key={party.abbreviation}>

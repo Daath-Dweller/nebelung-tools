@@ -19,7 +19,7 @@ const CompView = () => {
     };
 
     return (
-        <div id="compView" className="mt-8 flex flex-col gap-8">
+        <div id="compView" className="mt-8 flex flex-col gap-8 ">
             {countries.map((country) => (
                 <div key={country.id} className="bg-gray-800 p-4 rounded shadow">
                     {/* Flagge und Buttons */}

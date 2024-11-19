@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-import { pokemonData, typenData } from "@/data/pkmndata.ts";
+import { pokemonData, typenData, generationRanges } from "@/data/pkmndata.ts";
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 const PokeTable = () => {
-    const [displayedCount, setDisplayedCount] = useState(100);
+    const [displayedCount, setDisplayedCount] = useState(151); // Standard auf Gen 1 (151)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
     const [hideSpecialforms, setHideSpecialForms] = useState(false);
     const [monoTypeBonus, setMonoTypeBonus] = useState(false); // Neuer State für den Monotypen-Bonus
+    const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
+
+
 
     const loadMorePokemon = () => {
         setDisplayedCount((prevCount) => prevCount + 100);
-    };
-
-    const loadAllPokemon = () => {
-        setDisplayedCount(pokemonData.length);
     };
 
     const toggleHideSpecialforms = () => {
@@ -29,12 +28,27 @@ const PokeTable = () => {
         setMonoTypeBonus((prev) => !prev);
     };
 
+    const handleGenerationChange = (event) => {
+        const selectedGen = event.target.value;
+        setSelectedGeneration(selectedGen);
+
+        if (selectedGen === "Alle Generationen") {
+            setDisplayedCount(pokemonData.length);
+        } else {
+            const range = generationRanges[selectedGen];
+            const count = pokemonData.filter(pokemon => pokemon.id >= range.min && pokemon.id <= range.max).length;
+            setDisplayedCount(count);
+        }
+
+        scrollToTop(); // Optional: Nach Generationwechsel nach oben scrollen
+    };
+
     const getTypeDataSum = (type1, type2) => {
         const type1Data = typenData.find(t => t.name === type1) || { offensiv: 0, defensiv: 0 };
         const type2Data = typenData.find(t => t.name === type2) || { offensiv: 0, defensiv: 0 };
 
-        let offensivSum = type1Data.offensiv + type2Data.offensiv;
-        let defensivSum = type1Data.defensiv + type2Data.defensiv;
+        let offensivSum = type1Data.offensiv + (type2Data.offensiv || 0);
+        let defensivSum = type1Data.defensiv + (type2Data.defensiv || 0);
 
         // Monotypen-Bonus aktivieren, wenn nur ein Typ vorhanden ist und der Bonus aktiviert ist
         if (monoTypeBonus && (!type2 || type2 === "")) {
@@ -79,7 +93,15 @@ const PokeTable = () => {
         return Math.round(go);
     };
 
-    const filteredPokemon = pokemonData.filter(pokemon => !hideSpecialforms || pokemon.id < 5000);
+    // Filter basierend auf Sonderformen und ausgewählter Generation
+    const filteredPokemon = pokemonData.filter(pokemon => {
+        // Filter für Sonderformen
+        if (hideSpecialforms && pokemon.id >= 5000) return false;
+
+        // Filter für Generationen
+        const range = generationRanges[selectedGeneration];
+        return pokemon.id >= range.min && pokemon.id <= range.max;
+    });
 
     const sortedPokemon = [...filteredPokemon.slice(0, displayedCount)].sort((a, b) => {
         if (!sortConfig.key) return 0;
@@ -141,19 +163,34 @@ const PokeTable = () => {
 
     return (
         <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
-            <div className="flex justify-between items-center mb-2 gap-x-2">
-                <button onClick={() => setShowInfo(!showInfo)} className="text-white bg-gray-600 px-2 py-1 rounded">
+            <div className="flex flex-wrap justify-between items-center mb-4 gap-x-2">
+                <button onClick={() => setShowInfo(!showInfo)} className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
                     ℹ️
                 </button>
-                <button onClick={() => setShowStats(!showStats)} className="text-white bg-gray-600 px-2 py-1 rounded">
+                <button onClick={() => setShowStats(!showStats)} className="text-white bg-gray-600 px-2 py-1 rounded mb-2">
                     {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
                 </button>
-                <button onClick={toggleHideSpecialforms} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={toggleHideSpecialforms} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">
                     {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden"}
                 </button>
-                <button onClick={toggleMonoTypeBonus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={toggleMonoTypeBonus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
                     {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
                 </button>
+
+                {/* Neuer Dropdown für die Generationen */}
+                <div className="mb-2">
+                    <label htmlFor="generation" className="mr-2">Generation:</label>
+                    <select
+                        id="generation"
+                        value={selectedGeneration}
+                        onChange={handleGenerationChange}
+                        className="bg-gray-700 text-white p-2 rounded"
+                    >
+                        {Object.keys(generationRanges).map((gen) => (
+                            <option key={gen} value={gen}>{gen}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             {showInfo && (
@@ -178,13 +215,8 @@ const PokeTable = () => {
 
             <div className="text-center mt-12 pr-2">
                 <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount} )</h2>
-                {displayedCount < pokemonData.length && (
-                    <button onClick={loadAllPokemon} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-8 px-4 rounded">
-                        Alle Einträge laden ({pokemonData.length})
-                    </button>
-                )}
 
-                <table className="table-auto w-full border-collapse ">
+                <table className="table-auto w-full border-collapse">
                     <thead>
                     <tr>
                         {[

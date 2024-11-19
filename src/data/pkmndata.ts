@@ -9,6 +9,21 @@ export interface Typen {
     defensiv: number;
 }
 
+// Mapping der Generationen zu ihren ID-Bereichen
+export const generationRanges = {
+    "Alle Generationen": { min: 1, max: 10300 },
+    "Generation 1": { min: 1, max: 151 },
+    "Generation 2": { min: 152, max: 251 },
+    "Generation 3": { min: 252, max: 386 },
+    "Generation 4": { min: 387, max: 493 },
+    "Generation 5": { min: 494, max: 649 },
+    "Generation 6": { min: 650, max: 721 },
+    "Generation 7": { min: 722, max: 809 },
+    "Generation 8": { min: 810, max: 905 },
+    "Generation 9": { min: 906, max: 1025 },
+};
+
+
 export const typenData: Typen[] = [
     {
         id: 1,

@@ -99,6 +99,7 @@ const GroupTable = ({ countryId }) => {
                     {showSeats ? 'Sitze ausblenden' : 'Sitze anzeigen'}
                 </button>
             </div>
+
             <table className="min-w-full bg-gray-700 text-white">
                 <thead>
                 <tr>
@@ -112,7 +113,7 @@ const GroupTable = ({ countryId }) => {
                         <React.Fragment key={group}>
                             {showSeats && (
                                 <th
-                                    className="px-4 py-2 cursor-pointer"
+                                    className="px-4 py-2 cursor-pointer "
                                     onClick={() => requestSort(group, 'seats')}
                                 >
                                     {group} Sitze {getSortIndicator(group, 'seats')}
@@ -132,7 +133,7 @@ const GroupTable = ({ countryId }) => {
                 </thead>
                 <tbody>
                 {sortedData.map(region => (
-                    <tr key={region.id} className="text-center">
+                    <tr key={region.id} className="text-center hover:bg-gray-100 hover:text-black">
                         <td className="border px-4 py-2">{region.name}</td>
                         {groups.map(group => (
                             <React.Fragment key={group}>
@@ -152,6 +153,7 @@ const GroupTable = ({ countryId }) => {
                 ))}
                 </tbody>
             </table>
+
         </div>
     );
 };

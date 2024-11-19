@@ -38,6 +38,7 @@ export const countries: Country[] = [
 
 export const regions: Region[] = [
     // Switzerland Cantons
+    { id: 100, name: '[ Nationalrat ]', countryId: 1 },
     { id: 3, name: 'Aargau (AG)', countryId: 1 },
     { id: 4, name: 'Appenzell Ausserrhoden (AR)', countryId: 1 },
     { id: 5, name: 'Appenzell Innerrhoden (AI)', countryId: 1 },
@@ -66,7 +67,9 @@ export const regions: Region[] = [
     { id: 28, name: 'Zug (ZG)', countryId: 1 },
 
 
+
     // Germany Bundesländer
+    { id: 1, name: '[ Bundestag ]', countryId: 2 },
     { id: 29, name: 'Bayern', countryId: 2 },
     { id: 30, name: 'Berlin', countryId: 2 },
     { id: 32, name: 'Baden-Württemberg', countryId: 2 },
@@ -85,6 +88,7 @@ export const regions: Region[] = [
     { id: 44, name: 'Thüringen', countryId: 2 },
 
 // Austria Bundesländer
+    { id: 2, name: '[ Nationalrat ]', countryId: 3 },
     { id: 53, name: 'Burgenland', countryId: 3 },
     { id: 52, name: 'Kärnten', countryId: 3 },
     { id: 51, name: 'Niederösterreich', countryId: 3 },
@@ -159,6 +163,15 @@ export const parties: Party[] = [
 
 export const seatDistributions: SeatDistribution[] = [
     // Seat distributions for regions
+
+    // NR, CH
+    { id: 1, regionId: 100, partyId: 1, seats: 67 }, // SVP
+    { id: 2, regionId: 100, partyId: 2, seats: 41 }, // SP
+    { id: 3, regionId: 100, partyId: 3, seats: 28 }, // FDP
+    { id: 4, regionId: 100, partyId: 4, seats: 31 }, // Mitte
+    { id: 5, regionId: 100, partyId: 5, seats: 23 }, // GPS
+    { id: 6, regionId: 100, partyId: 6, seats: 10 }, // GLP
+
 
     // Zürich, CH
     { id: 1, regionId: 27, partyId: 1, seats: 46 }, // SVP
@@ -402,6 +415,18 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 6, regionId: 28, partyId: 6, seats: 6 }, // GLP
 
 
+
+    //Bundestag, D
+    { id: 1, regionId: 1, partyId: 100, seats: 153 }, //CDU
+    { id: 2, regionId: 1, partyId: 101, seats: 43 }, //CSU
+    { id: 3, regionId: 1, partyId: 102, seats: 207 }, //SPD
+    { id: 4, regionId: 1, partyId: 103, seats: 90 }, //FDP
+    { id: 5, regionId: 1, partyId: 104, seats: 117 }, //Grüne
+    { id: 6, regionId: 1, partyId: 106, seats: 77 }, //AfD
+    { id: 7, regionId: 1, partyId: 105, seats: 28 }, //Linke
+    { id: 8, regionId: 1, partyId: 112, seats: 10 }, //BSW
+    { id: 9, regionId: 1, partyId: 113, seats: 8 }, //PL
+
     //BW, D
     { id: 1, regionId: 32, partyId: 100, seats: 42 }, //CDU
     { id: 2, regionId: 32, partyId: 102, seats: 19 }, //SPD
@@ -527,6 +552,16 @@ export const seatDistributions: SeatDistribution[] = [
     { id: 7, regionId: 44, partyId: 105, seats: 12 }, //Linke
     { id: 6, regionId: 44, partyId: 112, seats: 15 }, //BSW
 
+
+
+
+
+    // NR, Ö
+    { id: 1, regionId: 2, partyId: 200, seats: 51 }, //ÖVP
+    { id: 2, regionId: 2, partyId: 201, seats: 41 }, //SPÖ
+    { id: 3, regionId: 2, partyId: 202, seats: 57 }, //FPÖ
+    { id: 4, regionId: 2, partyId: 203, seats: 16 }, //Grüne
+    { id: 5, regionId: 2, partyId: 204, seats: 18 }, //Neos
 
     // Wien, Ö
     { id: 1, regionId: 45, partyId: 200, seats: 22 }, //ÖVP
