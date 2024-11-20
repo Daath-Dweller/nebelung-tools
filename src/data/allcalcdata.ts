@@ -33,6 +33,16 @@ export const conversions: { [unit: string]: { factor: number, category: string, 
     leistenkrokodil: { factor: 0.2174, category: 'length', kommastellen: 1, displayName: "m. Leistenkrokodil (Ø)" },
     banane: { factor: 5.2632, category: 'length', kommastellen: 1, displayName: "Banane (Ø)" },
     cybertruck: { factor: 0.176, category: 'length', kommastellen: 1, displayName: "Tesla Cybertruck" },
+    chicken_mcnugget: { factor: 22.2222, category: 'length', kommastellen: 1, displayName: "Chicken McNugget MD (Ø)" },
+    eiffelturm: { factor: 0.00303, category: 'length', kommastellen: 4, displayName: "Eiffelturm (Höhe)" },
+    titanic: { factor: 0.00372, category: 'length', kommastellen: 4, displayName: "Titanic" },
+    burj_khalifa: { factor: 0.00121, category: 'length', kommastellen: 4, displayName: "Burj Khalifa (Höhe)" },
+    freiheitsstatue: { factor: 0.01075, category: 'length', kommastellen: 4, displayName: "Freiheitsstatue (Höhe)" },
+    big_ben: { factor: 0.01042, category: 'length', kommastellen: 4, displayName: "Big Ben (Höhe)" },
+    pikachu: { factor: 25, category: 'length', kommastellen: 1, displayName: "Pikachu (Höhe)" },
+    son_goku: { factor: 0.5714, category: 'length', kommastellen: 4, displayName: "Son Goku (Höhe)" },
+    super_mario: { factor: 0.6452, category: 'length', kommastellen: 4, displayName: "Super Mario (Höhe)" },
+
 
     // Masseneinheiten (Kategorie: weight)
     kilogramm: { factor: 1, category: 'weight', kommastellen: 2, displayName: "Kilogramm" },
@@ -51,7 +61,15 @@ export const conversions: { [unit: string]: { factor: number, category: string, 
     leistenkrokodil_w: { factor: 0.002, category: 'weight', kommastellen: 1, displayName: "Leistenkrokodil (Ø)" },
     banane_w: { factor: 6.6666667, category: 'weight', kommastellen: 1, displayName: "Banane (Ø)" },
     cybertruck_w: { factor: 0.00037037, category: 'weight', kommastellen: 1, displayName: "Tesla Cybertruck" },
-
+    chicken_mcnugget_w: { factor: 56.1798, category: 'weight', kommastellen: 1, displayName: "Chicken McNugget MD (Ø)" },
+    eiffelturm_w: { factor: 0.000000099, category: 'weight', kommastellen: 10, displayName: "Eiffelturm" },
+    titanic_w: { factor: 0.0000253942, category: 'weight', kommastellen: 10, displayName: "Titanic" },
+    burj_khalifa_w: { factor: 0.000002, category: 'weight', kommastellen: 10, displayName: "Burj Khalifa" },
+    freiheitsstatue_w: { factor: 0.0000044444, category: 'weight', kommastellen: 10, displayName: "Freiheitsstatue" },
+    big_ben_w: { factor: 0.0001162791, category: 'weight', kommastellen: 10, displayName: "Big Ben" },
+    pikachu_w: { factor: 0.1666667, category: 'weight', kommastellen: 4, displayName: "Pikachu" },
+    son_goku_w: { factor: 0.016129, category: 'weight', kommastellen: 6, displayName: "Son Goku" },
+    super_mario_w: { factor: 0.0111111, category: 'weight', kommastellen: 7, displayName: "Super Mario" },
 
     // Flächenmaßeinheiten (Kategorie: area)
     quadratmeter: { factor: 1, category: 'area', kommastellen: 2, displayName: "Quadratmeter" },

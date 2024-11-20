@@ -11,20 +11,26 @@ const PokeTable = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
     const [hideSpecialforms, setHideSpecialForms] = useState(false);
-    const [hideLegendary, setHideLegendary] = useState(false); // Neuer State für das Ausblenden von Legendären
-    const [monoTypeBonus, setMonoTypeBonus] = useState(false); // Neuer State für den Monotypen-Bonus
+    const [hideLegendary, setHideLegendary] = useState(false);
+    const [hideUB, setHideUB] = useState(false); // Neuer State für UB
+    const [hideMystic, setHideMystic] = useState(false); // Neuer State für Mystik
+    const [monoTypeBonus, setMonoTypeBonus] = useState(false);
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
-
-    const loadMorePokemon = () => {
-        setDisplayedCount((prevCount) => prevCount + 100);
-    };
 
     const toggleHideSpecialforms = () => {
         setHideSpecialForms((prev) => !prev);
     };
 
-    const toggleHideLegendary = () => { // Neue Toggle-Funktion
+    const toggleHideLegendary = () => {
         setHideLegendary((prev) => !prev);
+    };
+
+    const toggleHideUB = () => { // Neue Toggle-Funktion für UB
+        setHideUB((prev) => !prev);
+    };
+
+    const toggleHideMystic = () => { // Neue Toggle-Funktion für Mystik
+        setHideMystic((prev) => !prev);
     };
 
     const toggleMonoTypeBonus = () => {
@@ -66,9 +72,19 @@ const PokeTable = () => {
             displayName = `Galar-${pokemon.name_de}`;
         }
 
-        // IDs aller legendären Pokémon + spezielle IDs (151, 251, ...)
+        // IDs aller legendären Pokémon
         if (legendaryIDs.includes(pokemon.id)) {
             specialChar += ' ✴️';
+        }
+
+        // IDs aller UB Pokémon
+        if (ubIDs.includes(pokemon.id)) {
+            specialChar += ' 🛸';
+        }
+
+        // IDs aller mystischen Pokémon
+        if (mysticIDs.includes(pokemon.id)) {
+            specialChar += ' ✨';
         }
 
         return `${displayName} ${specialChar}`;
@@ -124,13 +140,19 @@ const PokeTable = () => {
         return Math.round(go);
     };
 
-    // Filter basierend auf Sonderformen, Legendären und ausgewählter Generation
+    // Filter basierend auf Sonderformen, Legendären, UB, Mystik und ausgewählter Generation
     const filteredPokemon = pokemonData.filter(pokemon => {
         // Filter für Sonderformen
         if (hideSpecialforms && pokemon.id >= 5000) return false;
 
         // Filter für Legendäre
         if (hideLegendary && legendaryIDs.includes(pokemon.id)) return false;
+
+        // Filter für UB
+        if (hideUB && ubIDs.includes(pokemon.id)) return false;
+
+        // Filter für Mystik
+        if (hideMystic && mysticIDs.includes(pokemon.id)) return false;
 
         // Filter für Generationen
         const range = generationRanges[selectedGeneration];
@@ -203,23 +225,33 @@ const PokeTable = () => {
                     <button onClick={() => setShowStats(!showStats)}
                             className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
                             rounded mb-2 ${showStats ? "" : "bg-gray-900"}`}>
-                    {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
-                </button>
+                        {showStats ? "Basiswerte zuklappen" : "Basiswerte anzeigen"}
+                    </button>
                     <button onClick={toggleHideSpecialforms}
                             className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
                             rounded mb-2 ${hideSpecialforms ? "bg-gray-900" : ""}`}>
-                    {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden "}
-                </button>
+                        {hideSpecialforms ? "Sonderformen anzeigen" : "Sonderformen ausblenden "}
+                    </button>
                     <button onClick={toggleHideLegendary}
                             className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
                             rounded mb-2 ${hideLegendary ? "bg-gray-900" : ""}`}>
                         {hideLegendary ? "Legendäre anzeigen" : "Legendäre ausblenden"}
                     </button>
+                    <button onClick={toggleHideUB}
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${hideUB ? "bg-gray-900" : ""}`}>
+                        {hideUB ? "UB anzeigen" : "UB ausblenden"}
+                    </button>
+                    <button onClick={toggleHideMystic}
+                            className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                            rounded mb-2 ${hideMystic ? "bg-gray-900" : ""}`}>
+                        {hideMystic ? "Mystik anzeigen" : "Mystik ausblenden"}
+                    </button>
                     <button onClick={toggleMonoTypeBonus}
                             className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
                             rounded mb-2 ${monoTypeBonus ? "bg-gray-900" : ""}`}>
-                    {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
-                </button>
+                        {monoTypeBonus ? "Monotypen-Bonus deaktivieren" : "Monotypen-Bonus aktivieren"}
+                    </button>
                 </div>
                 {/* Neuer Dropdown für die Generationen */}
                 <div className="mt-4">
@@ -262,7 +294,9 @@ const PokeTable = () => {
                     nachteilig sein.<br/><br/>
                     Ⓜ️: Megaevolution<br/>
                     ⬆️: Gigadynamax<br/>
-                    ✴️️: Legendär
+                    ✴️️: Legendär<br/>
+                    🛸: Ultra-Bestie<br/>
+                    ✨: Mystisch
                 </div>
             )}
 

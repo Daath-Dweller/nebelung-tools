@@ -21,7 +21,7 @@ const Parteien = () => {
             <div id="buttons" className="flex md:justify-around md:flex-row flex-col border border-dotted border-white bg-gray-800 p-12">
                 <button
                     onClick={toggleGovSeats}
-                    className="mb-2 md:mb-0 border-2 border-dotted border-white p-4 rounded bg-gray-700 text-white hover:border-black hover:text-black hover:bg-gray-200 hover:cursor-pointer"
+                    className="mb-2 md:mb-0 border-2 border-dotted border-white p-4 rounded break-words bg-gray-700 text-white hover:border-black hover:text-black hover:bg-gray-200 hover:cursor-pointer"
                 >
                     Regierungsübersichten (Diagramme)
                 </button>
