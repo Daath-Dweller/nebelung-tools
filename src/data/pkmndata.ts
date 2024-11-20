@@ -11,7 +11,7 @@ export interface Typen {
 
 // Mapping der Generationen zu ihren ID-Bereichen
 export const generationRanges = {
-    "Alle Generationen": { min: 1, max: 10300 },
+    "Alle Generationen": { min: 1, max: 12000 },
     "Generation 1": { min: 1, max: 151 },
     "Generation 2": { min: 152, max: 251 },
     "Generation 3": { min: 252, max: 386 },
@@ -18892,6 +18892,68 @@ export const pokemonData: Pokemon[] = [
             "specialAttack": 180,
             "specialDefense": 160,
             "speed": 90
+        }
+    },
+
+    {
+        "id": 11000,
+        "name_de": "absolutes Maximum (Doppeltyp)",
+        "name_en": "max",
+        "type1": "Geist",
+        "type2": "Stahl",
+        "stats": {
+            "hp": 255,
+            "attack": 190,
+            "defense": 250,
+            "specialAttack": 194,
+            "specialDefense": 250,
+            "speed": 200
+        }
+    },
+    {
+        "id": 11001,
+        "name_de": "absolutes Minimum (Doppeltyp)",
+        "name_en": "min",
+        "type1": "Pflanze",
+        "type2": "Käfer",
+        "stats": {
+            "hp": 1,
+            "attack": 5,
+            "defense": 5,
+            "specialAttack": 10,
+            "specialDefense": 20,
+            "speed": 5
+        }
+    },
+
+    {
+        "id": 11002,
+        "name_de": "absolutes Maximum (Monotyp)",
+        "name_en": "max",
+        "type1": "Geist",
+        "type2": "",
+        "stats": {
+            "hp": 255,
+            "attack": 190,
+            "defense": 250,
+            "specialAttack": 194,
+            "specialDefense": 250,
+            "speed": 200
+        }
+    },
+    {
+        "id": 11003,
+        "name_de": "absolutes Minimum (Monotyp)",
+        "name_en": "min",
+        "type1": "Pflanze",
+        "type2": "",
+        "stats": {
+            "hp": 1,
+            "attack": 5,
+            "defense": 5,
+            "specialAttack": 10,
+            "specialDefense": 20,
+            "speed": 5
         }
     },
 

@@ -146,8 +146,8 @@ const PokeTable = () => {
             gd += specialDefense;
             gd += defensivSum * specialDefense;
         }
-        gd += hp * 6;
-        gd = gd / 10;
+        gd += hp * 15; //höchter HP-Wert ist 59% höher als höchster Initwert, also /1.59
+        gd = gd / 10 + 20;  //kleinere Zahl und keine Minuswerte
         return Math.round(gd);
     };
 
@@ -163,8 +163,8 @@ const PokeTable = () => {
             go += specialAttack;
             go += offensivSum * specialAttack;
         }
-        go += speed * 6;
-        go = go / 10 + 20;
+        go += speed * 25;
+        go = go / 10 + 24; //kleinere Zahl und keine Minuswerte
         return Math.round(go);
     };
 
@@ -552,7 +552,7 @@ const PokeTable = () => {
                         const gs = gd + go;
 
                         return (
-                            <tr key={pokemon.id} className="border-t border-gray-600">
+                            <tr key={pokemon.id} className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black">
                                 <td className="border border-gray-600 p-2">{pokemon.id}</td>
                                 <td className="border border-gray-600 p-2">
                                     {getDisplayName(pokemon)}
