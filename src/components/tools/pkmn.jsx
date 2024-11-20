@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
     generationRanges,
@@ -20,6 +20,7 @@ const PokeTable = () => {
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
+    const [showTypeValues, setShowTypeValues] = useState(true); // Neuer State für Typwerte
     const [hideSpecialforms, setHideSpecialForms] = useState(false);
     const [hideLegendary, setHideLegendary] = useState(false);
     const [hideUB, setHideUB] = useState(false);
@@ -244,6 +245,13 @@ const PokeTable = () => {
                         ? offensivSum
                         : defensivSum;
                 }
+                if (sortConfig.key === "typeSum") {
+                    const { offensivSum, defensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2
+                    );
+                    return offensivSum + defensivSum;
+                }
                 if (sortConfig.key === "sumStats") {
                     return (
                         pokemon.stats.hp +
@@ -309,6 +317,23 @@ const PokeTable = () => {
                         ) : (
                             <div className="flex flex-col items-center">
                                 Basiswerte <br/>
+                                <FaEyeSlash/>
+                            </div>
+                        )}
+                    </button>
+                    <button
+                        onClick={() => setShowTypeValues(!showTypeValues)}
+                        className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
+                                rounded mb-2 ${showTypeValues ? "" : "bg-gray-900"}`}
+                    >
+                        {showTypeValues ? (
+                            <div className="flex flex-col items-center">
+                                Typwerte <br/>
+                                <FaEye/>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center">
+                                Typwerte <br/>
                                 <FaEyeSlash/>
                             </div>
                         )}
@@ -441,7 +466,7 @@ const PokeTable = () => {
                     Pokémon oder von einem Pokémon ausgehend. Normale Effektivität gibt 1
                     Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und
                     wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr
-                    gegen Typen.
+                    gegen Typen. Siehe auch <a className="text-teal-400" href="https://www.pokewiki.de/Typen#Wechselwirkungen" target="_blank">PokeWiki</a>.
                     <br/>
                     <br/>
                     GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus Typ-Off
@@ -496,8 +521,13 @@ const PokeTable = () => {
                             { key: "name_de", label: "Name" },
                             { key: "type1", label: "Typ 1" },
                             { key: "type2", label: "Typ 2" },
-                            { key: "offensivSum", label: "Typ-Off" },
-                            { key: "defensivSum", label: "Typ-Def" },
+                            ...(showTypeValues
+                                ? [
+                                    { key: "offensivSum", label: "Typ-Off" },
+                                    { key: "defensivSum", label: "Typ-Def" },
+                                    { key: "typeSum", label: "Typ-Sum" },
+                                ]
+                                : []),
                             ...(showStats
                                 ? [
                                     { key: "stats.hp", label: "HP" },
@@ -537,6 +567,7 @@ const PokeTable = () => {
                             pokemon.type1,
                             pokemon.type2
                         );
+                        const typeSum = offensivSum + defensivSum; // Berechnung von Typ-Sum
                         const gd = calculateGD(
                             defensivSum,
                             pokemon.stats.defense,
@@ -563,8 +594,13 @@ const PokeTable = () => {
                                 <td className="border border-gray-600 p-2">
                                     {pokemon.type2 || "-"}
                                 </td>
-                                <td className="border border-gray-600 p-2">{offensivSum}</td>
-                                <td className="border border-gray-600 p-2">{defensivSum}</td>
+                                {showTypeValues && (
+                                    <>
+                                        <td className="border border-gray-600 p-2">{offensivSum}</td>
+                                        <td className="border border-gray-600 p-2">{defensivSum}</td>
+                                        <td className="border border-gray-600 p-2">{typeSum}</td>
+                                    </>
+                                )}
                                 {showStats && (
                                     <>
                                         <td className="border border-gray-600 p-2">
