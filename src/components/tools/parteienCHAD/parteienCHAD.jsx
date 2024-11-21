@@ -23,7 +23,7 @@ const Parteien = () => {
                     onClick={toggleGovSeats}
                     className="mb-2 md:mb-0 border-2 border-dotted border-white p-4 rounded break-words bg-gray-700 text-white hover:border-black hover:text-black hover:bg-gray-200 hover:cursor-pointer"
                 >
-                    Regierungsübersichten (Diagramme)
+                    Regierungs&shy;übersichten (Diagramme)
                 </button>
                 <button
                     onClick={toggleComp}
