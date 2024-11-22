@@ -75,13 +75,13 @@ export const typenData: Typen[] = [
     {
         id: 3,
         name: "Pflanze",
-        offensiv: 1,
+        offensiv: 0,
         defensiv: 7,
     },
     {
         id: 4,
         name: "Käfer",
-        offensiv: 1,
+        offensiv: 0,
         defensiv: 12,
     },
     {
@@ -153,7 +153,7 @@ export const typenData: Typen[] = [
     {
         id: 16,
         name: "Kampf",
-        offensiv: 7,
+        offensiv: 1,
         defensiv: 12,
     },
     {
@@ -166,7 +166,7 @@ export const typenData: Typen[] = [
         id: 18,
         name: "Gestein",
         offensiv: 13,
-        defensiv: 7,
+        defensiv: 11,
     }
 ]
 

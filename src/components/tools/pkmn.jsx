@@ -129,8 +129,8 @@ const PokeTable = () => {
             defensiv: 0,
         };
 
-        let offensivSum = type1Data.offensiv + (type2Data.offensiv || 0);
-        let defensivSum = type1Data.defensiv + (type2Data.defensiv || 0);
+        let offensivSum = (type1Data.offensiv + 1 + (type2Data.offensiv + 1 || 0) * 2); //Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
+        let defensivSum = type1Data.defensiv + 1 + (type2Data.defensiv + 1 || 0); //+1 weil Käfer sonst 0 hat und man damit nicht rechnen kann
 
         // Monotypen-Bonus aktivieren, wenn nur ein Typ vorhanden ist und der Bonus aktiviert ist
         if (monoTypeBonus && (!type2 || type2 === "")) {
@@ -469,9 +469,9 @@ const PokeTable = () => {
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
                     Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr
                     effektiven, nicht effektiven und wirkungslosen Angriffen gegen ein
-                    Pokémon oder von einem Pokémon ausgehend. Normale Effektivität gibt 1
+                    Pokémon oder von einem Pokémon ausgehend, gewichtet bzw. angeglichen. Normale Effektivität gibt 1
                     Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und
-                    wirkungslos 6 Punkte Abzug. Gleichsam negativ angewendet für Abwehr
+                    wirkungslos 6 Punkte Abzug. Gleichsam entsprechend angewendet für Abwehr
                     gegen Typen. Siehe auch <a className="text-teal-400" href="https://www.pokewiki.de/Typen#Wechselwirkungen" target="_blank">PokeWiki</a>.
                     <br/>
                     <br/>
@@ -628,7 +628,7 @@ const PokeTable = () => {
                                         <td className="border border-gray-600 p-2">
                                             {pokemon.stats.speed}
                                         </td>
-                                        <td className="border border-gray-600 p-2">{sumStats}</td>
+                                        <td className="border border-gray-600 p-2">{formatNumber(sumStats)}</td>
                                     </>
                                 )}
                                 <td className="border border-gray-600 p-2">{formatNumber(gd)}</td>
