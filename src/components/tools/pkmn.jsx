@@ -11,16 +11,22 @@ import {
 } from "@/data/pkmndata.ts";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import der Icons
 
+// Hilfsfunktionen
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+
+const formatNumber = (num) => {
+    return num.toLocaleString('de-DE');
+};
 
 const PokeTable = () => {
     const [displayedCount, setDisplayedCount] = useState(151); // Standard auf Gen 1 (151)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
-    const [showTypeValues, setShowTypeValues] = useState(true); // Neuer State für Typwerte
+    const [showTypeValues, setShowTypeValues] = useState(false); // Neuer State für Typwerte
     const [hideSpecialforms, setHideSpecialForms] = useState(false);
     const [hideLegendary, setHideLegendary] = useState(false);
     const [hideUB, setHideUB] = useState(false);
@@ -583,7 +589,8 @@ const PokeTable = () => {
                         const gs = gd + go;
 
                         return (
-                            <tr key={pokemon.id} className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black">
+                            <tr key={pokemon.id}
+                                className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black">
                                 <td className="border border-gray-600 p-2">{pokemon.id}</td>
                                 <td className="border border-gray-600 p-2">
                                     {getDisplayName(pokemon)}
@@ -624,9 +631,9 @@ const PokeTable = () => {
                                         <td className="border border-gray-600 p-2">{sumStats}</td>
                                     </>
                                 )}
-                                <td className="border border-gray-600 p-2">{gd}</td>
-                                <td className="border border-gray-600 p-2">{go}</td>
-                                <td className="border border-gray-600 p-2">{gs}</td>
+                                <td className="border border-gray-600 p-2">{formatNumber(gd)}</td>
+                                <td className="border border-gray-600 p-2">{formatNumber(go)}</td>
+                                <td className="border border-gray-600 p-2">{formatNumber(gs)}</td>
                             </tr>
                         );
                     })}
