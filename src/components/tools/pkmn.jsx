@@ -170,8 +170,15 @@ const PokeTable = () => {
             go += specialAttack;
             go += offensivSum * specialAttack;
         }
+        if (speed >= 100){
+            go += 750 /// die 15% die sehr schnell sind, haben eine bedeutend relevantere Offensive weil Firststrike
+        }
+        if (speed <= 50){
+            go -= 750 /// die 15% die sehr schnell sind, haben eine bedeutend relevantere Offensive weil Firststrike
+        }
         go += speed * 25;
-        go = go / 10 + 24; //kleinere Zahl und keine Minuswerte
+
+        go = go / 10 + 100; //kleinere Zahl und keine Minuswerte
         return Math.round(go);
     };
 
