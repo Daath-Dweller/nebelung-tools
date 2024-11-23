@@ -1,15 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
     generationRanges,
     legendaryIDs,
+    mysticIDs,
+    paradoxIDs,
     pokemonData,
     typenData,
-    mysticIDs,
     ubIDs,
-    paradoxIDs,
 } from "@/data/pkmndata.ts";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import der Icons
+import {FaEye, FaEyeSlash} from "react-icons/fa"; // Import der Icons
 
 // Hilfsfunktionen
 function scrollToTop() {
@@ -119,6 +119,70 @@ const PokeTable = () => {
         return `${displayName} ${specialChar}`;
     };
 
+    const getStatWithEmoji = (value, statType) => {
+        let emoji = "";
+
+        //obere 15%
+        //untere 15%
+
+        switch (statType) {
+            case "hp":
+                if (value > 100) {
+                    emoji = "🩸"; // Sehr hoch
+                } else if (value <= 45) {
+                    emoji = "💀"; // Sehr niedrig
+                }
+                break;
+
+            case "attack":
+                if (value > 120) {
+                    emoji = "⚔️"; // Sehr hoch
+                } else if (value < 60) {
+                    emoji = "💀"; // Sehr niedrig
+                }
+                break;
+
+            case "defense":
+                if (value > 105) {
+                    emoji = "🧱"; // Sehr hoch
+                } else if (value <= 45) {
+                    emoji = "💀"; // Sehr niedrig
+                }
+                break;
+
+            case "specialAttack":
+                if (value > 109) {
+                    emoji = "🌀"; // Sehr hoch
+                } else if (value < 60) {
+                    emoji = "💀️"; // Sehr niedrig
+                }
+                break;
+
+            case "specialDefense":
+                if (value > 120) {
+                    emoji = "🍀"; // Sehr hoch
+                } else if (value < 46) {
+                    emoji = "💀"; // Sehr niedrig
+                }
+                break;
+
+            case "speed":
+                if (value > 100) {
+                    emoji = "🚀"; // Sehr hoch
+                } else if (value < 36) {
+                    emoji = "💀"; // Sehr niedrig
+                }
+                break;
+
+            default:
+                emoji = ""; // Kein Emoji, wenn der Typ nicht passt
+                break;
+        }
+
+        return `${value} ${emoji}`;
+    };
+
+
     const getTypeDataSum = (type1, type2) => {
         const type1Data = typenData.find((t) => t.name === type1) || {
             offensiv: 0,
@@ -128,6 +192,10 @@ const PokeTable = () => {
             offensiv: 0,
             defensiv: 0,
         };
+
+
+       // let offensivSumView = type1Data.offensiv + 1 + (type2Data.offensiv + 1 || 0);
+
 
         let offensivSum = (type1Data.offensiv + 1 + (type2Data.offensiv + 1 || 0) * 2); //Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
         let defensivSum = type1Data.defensiv + 1 + (type2Data.defensiv + 1 || 0); //+1 weil Käfer sonst 0 hat und man damit nicht rechnen kann
@@ -142,10 +210,12 @@ const PokeTable = () => {
     };
 
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
+
         let gd = defensivSum + defense + specialDefense;
         if (defense <= 60 || specialDefense <= 70) {
             gd -= 400;
         }
+
         if (defense >= specialDefense) {
             gd += defense;
             gd += defensivSum * defense;
@@ -153,16 +223,27 @@ const PokeTable = () => {
             gd += specialDefense;
             gd += defensivSum * specialDefense;
         }
+
+        if (hp >= 100){
+        gd += 750;
+        }
+        if (hp < 50){
+            gd -= 750;
+        }
+
         gd += hp * 15; //höchter HP-Wert ist 59% höher als höchster Initwert, also /1.59
-        gd = gd / 10 + 20;  //kleinere Zahl und keine Minuswerte
+        gd = gd / 10 + 100;  //kleinere Zahl und keine Minuswerte
+
         return Math.round(gd);
     };
 
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
+
         let go = offensivSum + attack + specialAttack;
         if (attack <= 60 || specialAttack <= 70) {
             go -= 400;
         }
+
         if (attack >= specialAttack) {
             go += attack;
             go += offensivSum * attack;
@@ -170,15 +251,17 @@ const PokeTable = () => {
             go += specialAttack;
             go += offensivSum * specialAttack;
         }
+
         if (speed >= 100){
             go += 750 /// die 15% die sehr schnell sind, haben eine bedeutend relevantere Offensive weil Firststrike
         }
         if (speed <= 50){
             go -= 750 /// die 15% die sehr schnell sind, haben eine bedeutend relevantere Offensive weil Firststrike
         }
-        go += speed * 25;
 
+        go += speed * 25;
         go = go / 10 + 100; //kleinere Zahl und keine Minuswerte
+
         return Math.round(go);
     };
 
@@ -295,6 +378,9 @@ const PokeTable = () => {
     );
 
     const handleSort = (key) => {
+        if (key === "Pos") {
+            return; // Keine Aktion für "Pos"
+        }
         setSortConfig((prevConfig) => {
             if (prevConfig.key === key && prevConfig.direction === "asc") {
                 return { key, direction: "desc" };
@@ -303,12 +389,19 @@ const PokeTable = () => {
         });
     };
 
+
     const renderSortArrow = (key) => {
-        if (sortConfig.key === key) {
-            return sortConfig.direction === "asc" ? "↑" : "↓";
+        if (key === "Pos") {
+            return ""; // Zeige nichts für den "Pos"-Key
         }
-        return "⇅";
+
+        return sortConfig.key === key
+            ? (sortConfig.direction === "asc" ? "↑" : "↓")
+            : "⇅";
     };
+
+
+
 
     return (
         <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
@@ -477,16 +570,19 @@ const PokeTable = () => {
                     Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr
                     effektiven, nicht effektiven und wirkungslosen Angriffen gegen ein
                     Pokémon oder von einem Pokémon ausgehend, gewichtet bzw. angeglichen. Normale Effektivität gibt 1
-                    Punkt. Sehr effektiv 2 Punkte. Nicht effektiv 2 Punkte Abzug und
+                    Punkt, sehr effektiv 2 Punkte, nicht effektiv 2 Punkte Abzug und
                     wirkungslos 6 Punkte Abzug. Gleichsam entsprechend angewendet für Abwehr
-                    gegen Typen. Siehe auch <a className="text-teal-400" href="https://www.pokewiki.de/Typen#Wechselwirkungen" target="_blank">PokeWiki</a>.
+                    gegen Typen. TO wird verdoppelt, da TD doppelt so hohe Werte hat, Offensive und Defensive aber gleich
+                    wichtig sind strategisch und gleichsam mit 3 Werten skalieren.
+                    Siehe auch <a className="text-teal-400" href="https://www.pokewiki.de/Typen#Wechselwirkungen" target="_blank">PokeWiki</a>.
                     <br/>
                     <br/>
                     GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus Typ-Off
                     und Typ-Def in Verbindung mit gewichtetem Angr/SpAngr/Init und
                     Vert/SpVert/HP. Typen die sehr oft effektiv sind, oder wenige
                     Schwächen haben, nützen umso mehr, umso stärker die
-                    Offensiv-/Defensivwerte sind.
+                    Offensiv-/Defensivwerte sind. Hohe bzw. niedrige HP-Werte geben einen Defensivbonus/-malus, hohe bzw. niedrige
+                    Initiativewerte geben einen Offensivbonus/-malus.
                     <br/>
                     <br/>
                     Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder
@@ -530,6 +626,7 @@ const PokeTable = () => {
                     <thead>
                     <tr>
                         {[
+                            { key: "Pos", label: "Pos." },
                             { key: "id", label: "Nr." },
                             { key: "name_de", label: "Name" },
                             { key: "type1", label: "Typ 1" },
@@ -567,7 +664,7 @@ const PokeTable = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {sortedPokemon.map((pokemon) => {
+                    {sortedPokemon.map((pokemon, index) => {
                         const sumStats =
                             pokemon.stats.hp +
                             pokemon.stats.attack +
@@ -598,6 +695,7 @@ const PokeTable = () => {
                         return (
                             <tr key={pokemon.id}
                                 className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black">
+                                <td className="border border-gray-600 p-2">{index + 1}</td>
                                 <td className="border border-gray-600 p-2">{pokemon.id}</td>
                                 <td className="border border-gray-600 p-2">
                                     {getDisplayName(pokemon)}
@@ -618,23 +716,24 @@ const PokeTable = () => {
                                 {showStats && (
                                     <>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.hp}
+                                            {getStatWithEmoji(pokemon.stats.hp, "hp")}
                                         </td>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.attack}
+                                            {getStatWithEmoji(pokemon.stats.attack, "attack")}
                                         </td>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.defense}
+                                            {getStatWithEmoji(pokemon.stats.defense, "defense")}
                                         </td>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.specialAttack}
+                                            {getStatWithEmoji(pokemon.stats.specialAttack, "specialAttack")}
                                         </td>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.specialDefense}
+                                            {getStatWithEmoji(pokemon.stats.specialDefense, "specialDefense")}
                                         </td>
                                         <td className="border border-gray-600 p-2">
-                                            {pokemon.stats.speed}
+                                            {getStatWithEmoji(pokemon.stats.speed, "speed")}
                                         </td>
+
                                         <td className="border border-gray-600 p-2">{formatNumber(sumStats)}</td>
                                     </>
                                 )}
