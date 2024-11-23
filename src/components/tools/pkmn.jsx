@@ -127,7 +127,7 @@ const PokeTable = () => {
 
         switch (statType) {
             case "hp":
-                if (value > 100) {
+                if (value >= 100) {
                     emoji = "🩸"; // Sehr hoch
                 } else if (value <= 45) {
                     emoji = "💀"; // Sehr niedrig
@@ -135,7 +135,7 @@ const PokeTable = () => {
                 break;
 
             case "attack":
-                if (value > 120) {
+                if (value >= 120) {
                     emoji = "⚔️"; // Sehr hoch
                 } else if (value < 60) {
                     emoji = "💀"; // Sehr niedrig
@@ -143,7 +143,7 @@ const PokeTable = () => {
                 break;
 
             case "defense":
-                if (value > 105) {
+                if (value >= 105) {
                     emoji = "🧱"; // Sehr hoch
                 } else if (value <= 45) {
                     emoji = "💀"; // Sehr niedrig
@@ -151,7 +151,7 @@ const PokeTable = () => {
                 break;
 
             case "specialAttack":
-                if (value > 109) {
+                if (value >= 109) {
                     emoji = "🌀"; // Sehr hoch
                 } else if (value < 60) {
                     emoji = "💀️"; // Sehr niedrig
@@ -159,7 +159,7 @@ const PokeTable = () => {
                 break;
 
             case "specialDefense":
-                if (value > 120) {
+                if (value >= 120) {
                     emoji = "🍀"; // Sehr hoch
                 } else if (value < 46) {
                     emoji = "💀"; // Sehr niedrig
@@ -167,7 +167,7 @@ const PokeTable = () => {
                 break;
 
             case "speed":
-                if (value > 100) {
+                if (value >= 100) {
                     emoji = "🚀"; // Sehr hoch
                 } else if (value < 36) {
                     emoji = "💀"; // Sehr niedrig

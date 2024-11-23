@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
-import { Inter } from "next/font/google";
+import React, {useState} from "react";
+import {Inter} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { FaBrain, FaTools } from "react-icons/fa";
-import { SlSpeech } from "react-icons/sl";
-import { IoIosBody } from "react-icons/io";
-import { usePathname } from "next/navigation";
+import {FaBrain, FaTools} from "react-icons/fa";
+import {SlSpeech} from "react-icons/sl";
+import {IoIosBody} from "react-icons/io";
+import {usePathname} from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,8 +51,8 @@ export default function RootLayout({
       subItems: [
         { key: "/politikdach", label: "Parteien-CHAD", href: "/politikdach" },
         { key: "/omnimutator", label: "Omnimutator", href: "/omnimutator" },
-        { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
         { key: "/pkmn", label: "Pokemontabelle", href: "/pkmn" },
+        { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
       ],
     },
   ];
