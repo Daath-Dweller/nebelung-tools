@@ -24,17 +24,17 @@ export const generationRanges = {
 };
 
 export const legendaryIDs = [
-    144, 145, 146, 150, 151, // Gen 1
-    243, 244, 245, 249, 250, 251, // Gen 2
-    377, 378, 379, 380, 381, 382, 383, 384, 385, 386, // Gen 3
-    480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, // Gen 4
-    638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, // Gen 5
+    144, 145, 146, 150, // Gen 1
+    243, 244, 245, 249, 250,  // Gen 2
+    377, 378, 379, 380, 381, 382, 383, 384,  // Gen 3
+    480, 481, 482, 483, 484, 485, 486, 487, 488, // Gen 4
+    638, 639, 640, 641, 642, 643, 644, 645, 646, , // Gen 5
     716, 717, 718, // Gen 6
     772, 773, 785, 786, 787, 788, 789, 790, 791, 792, 800, 791, 792, 800, // Gen 7
-   894,895, 888, 889, 890, 891, 892, 893, 905, // Gen 8
+   894,895, 888, 889, 890, 891, 892, 905, // Gen 8
     1001,1002,1003,1004,1007, 1008, 1014,1015, 1016, 1017, 1024, // Gen 9
-    10001, 10002, 10003, 10007, 10019, 10020, 10021, 10022, 10023, 10043, 1044, 10062, 10063, 10079,
-    10118, 10119, 10120, 10155, 10156, 10157, 10188, 10189, 10190, 10191, 10193, 10194, 10226, 10227,
+    10007, 10019, 10020, 10021, 10022, 10023, 10043, 1044, 10062, 10063, 10079,
+    10118, 10119, 10120, 10155, 10156, 10157, 10169,10170,10171, 10188, 10189, 10190, 10191, 10193, 10194, 10226, 10227,
     10245, 10246, 10249, 10273, 10274, 10275, 10276, 10277, 10280, 10279, 10044 // Sonderformen
 ];
 
@@ -48,7 +48,7 @@ export const mysticIDs = [
     801,802,807,808,809, //Gen 7
     893, //Gen 8
     1025, //Gen 9
-    10278, 10024, 10018
+    10006, 10278, 10024, 10018
 ];
 
 export const paradoxIDs = [
@@ -16813,112 +16813,7 @@ export const pokemonData: Pokemon[] = [
             "speed": 77
         }
     },
-    {
-        "id": 10093,
-        "name_de": "Rattikarl",
-        "name_en": "raticate-totem-alola",
-        "type1": "Unlicht",
-        "type2": "Normal",
-        "stats": {
-            "hp": 75,
-            "attack": 71,
-            "defense": 70,
-            "specialAttack": 40,
-            "specialDefense": 80,
-            "speed": 77
-        }
-    },
-    {
-        "id": 10094,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-original-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10095,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-hoenn-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10096,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-sinnoh-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10097,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-unova-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10098,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-kalos-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
-        "id": 10099,
-        "name_de": "Pikachu",
-        "name_en": "pikachu-alola-cap",
-        "type1": "Elektro",
-        "type2": "",
-        "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "specialAttack": 50,
-            "specialDefense": 50,
-            "speed": 90
-        }
-    },
-    {
+     {
         "id": 10100,
         "name_de": "Raichu",
         "name_en": "raichu-alola",
