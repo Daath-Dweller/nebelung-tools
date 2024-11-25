@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {countries, parties, regions, seatDistributions} from '@/data/parteiendata.ts';
+import React, { useState } from 'react';
+import { countries, parties, regions, seatDistributions } from '@/data/parteiendata.ts';
 
 const GovSeats = () => {
     const [selectedCountryId, setSelectedCountryId] = useState(null);
@@ -103,15 +103,39 @@ const GovSeats = () => {
             seatsPerParty[seat.partyId] += seat.seats;
         });
 
-        seatDistributionForDisplay = Object.keys(seatsPerParty).map((partyId) => ({
-            id: parseInt(partyId, 10),
-            partyId: parseInt(partyId, 10),
-            seats: seatsPerParty[partyId],
-        }));
+        // Gruppierung in Hauptparteien und "Sonstige"
+        let mainParties = [];
+        let sonstigeSeats = 0;
+        Object.entries(seatsPerParty).forEach(([partyId, seats]) => {
+            if (seats >= 30) {
+                mainParties.push({
+                    id: parseInt(partyId, 10),
+                    partyId: parseInt(partyId, 10),
+                    seats: seats,
+                });
+            } else {
+                sonstigeSeats += seats;
+            }
+        });
+
+        // Falls es Parteien mit weniger als 30 Sitzen gibt, füge "Sonstige" hinzu
+        if (sonstigeSeats > 0) {
+            mainParties.push({
+                id: 'sonstige', // Einzigartige Kennung
+                partyId: null, // Keine zugehörige Partei
+                name: 'Sonstige',
+                seats: sonstigeSeats,
+                color: '#CCCCCC', // Farbe für "Sonstige"
+            });
+        }
+
+        seatDistributionForDisplay = mainParties;
     } else if (selectedRegionId !== null) {
-        seatDistributionForDisplay = seatDistributions.filter(
-            (seat) => seat.regionId === selectedRegionId
-        );
+        seatDistributionForDisplay = seatDistributions
+            .filter((seat) => seat.regionId === selectedRegionId)
+            .map((seat) => ({
+                ...seat,
+            }));
     } else {
         seatDistributionForDisplay = [];
     }
@@ -141,42 +165,42 @@ const GovSeats = () => {
             ? partiesInSelectedGroup[0].group
             : '';
 
-    return (<div id="govSeats" className="flex flex-col">
-
+    return (
+        <div id="govSeats" className="flex flex-col">
             <div className="md:flex md:justify-center">
                 <div id="choose" className="py-8 text-center">
-                <h1>Land wählen (CHAD-Region):</h1>
-                <select
-                    onChange={handleCountryChange}
-                    value={selectedCountryId || ''}
-                    className="text-black mt-2 p-1"
-                >
-                    <option value="">Land wählen</option>
-                    {countries.map((country) => (
-                        <option key={country.id} value={country.id}>
-                            {country.name} {country.flag}
-                        </option>
-                    ))}
-                </select>
+                    <h1>Land wählen (CHAD-Region):</h1>
+                    <select
+                        onChange={handleCountryChange}
+                        value={selectedCountryId || ''}
+                        className="text-black mt-2 p-1"
+                    >
+                        <option value="">Land wählen</option>
+                        {countries.map((country) => (
+                            <option key={country.id} value={country.id}>
+                                {country.name} {country.flag}
+                            </option>
+                        ))}
+                    </select>
 
-                {selectedCountryId && (
-                    <>
-                        <h2 className="mt-4">Region wählen:</h2>
-                        <select
-                            onChange={handleRegionChange}
-                            value={selectedRegionId !== null ? selectedRegionId : ''}
-                            className="text-black mt-2 p-1"
-                        >
-                            <option value="">Wähle Region</option>
-                            <option value="0">[ Gesamt ]</option>
-                            {filteredRegions.map((region) => (
-                                <option key={region.id} value={region.id}>
-                                    {region.name}
-                                </option>
-                            ))}
-                        </select>
-                    </>
-                )}
+                    {selectedCountryId && (
+                        <>
+                            <h2 className="mt-4">Region wählen:</h2>
+                            <select
+                                onChange={handleRegionChange}
+                                value={selectedRegionId !== null ? selectedRegionId : ''}
+                                className="text-black mt-2 p-1"
+                            >
+                                <option value="">Wähle Region</option>
+                                <option value="0">[ Gesamt ]</option>
+                                {filteredRegions.map((region) => (
+                                    <option key={region.id} value={region.id}>
+                                        {region.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </>
+                    )}
                 </div>
             </div>
 
@@ -209,7 +233,12 @@ const GovSeats = () => {
 
                             <div className="flex flex-col md:flex-row items-end h-[300px] mt-5 gap-y-1 md:gap-x-2 break-words">
                                 {seatDistributionForDisplay.map((seat) => {
-                                    const party = parties.find((p) => p.id === seat.partyId);
+                                    // Wenn es sich um "Sonstige" handelt, verwende die entsprechenden Daten
+                                    const isSonstige = seat.partyId === null;
+                                    const party = isSonstige
+                                        ? { name: 'Sonstige', abbreviation: 'Sonstige', color: '#CCCCCC' }
+                                        : parties.find((p) => p.id === seat.partyId);
+
                                     const heightPercent = (seat.seats / maxSeats) * 100;
                                     const percentage =
                                         totalSeats > 0
@@ -234,19 +263,14 @@ const GovSeats = () => {
                                                 }`}
                                             >
                                                 <div className="bg-gray-800 text-white text-xs rounded py-1 px-2">
-
-
-
                                                     <span className="md:hidden block">
                                                         {party?.abbreviation}: {seat.seats} Sitze ({percentage}%)
                                                     </span>
 
-                                                   <span className="hidden md:block">
+                                                    <span className="hidden md:block">
                                                         {party?.name} ({party?.abbreviation}) <br />
                                                         {seat.seats} Sitze ({percentage}%)
-                                                   </span>
-
-
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -306,22 +330,22 @@ const GovSeats = () => {
                                 {/* Info Icon */}
                                 {selectedCountryId === 1 && (
                                     <span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        onClick={handleInfoIconClick}
-                    >
-                      <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
-                      />
-                    </svg>
-                  </span>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            onClick={handleInfoIconClick}
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
+                                            />
+                                        </svg>
+                                    </span>
                                 )}
 
                                 {/* Info Text */}

@@ -27,7 +27,11 @@ export default function RootLayout({
     {
       icon: <FaBrain />,
       label: "Wissen",
-      subItems: [{ key: "/philoskop", label: "Philoskop", href: "/philoskop" }],
+      subItems: [{key: "/philoskop", label: "Philoskop", href: "/philoskop"}, {
+        key: "/cogitarium",
+        label: "Cogitarium",
+        href: "/cogitarium"
+      }],
     },
     {
       icon: <SlSpeech />,
@@ -50,7 +54,7 @@ export default function RootLayout({
       label: "Sonstige Tools",
       subItems: [
         { key: "/politikdach", label: "Parteien-CHAD", href: "/politikdach" },
-        { key: "/pkmn", label: "Pokemontabelle", href: "/pkmn" },
+        { key: "/pkmn", label: "Poké-Tabula", href: "/pkmn" },
         { key: "/omnimutator", label: "Omnimutator", href: "/omnimutator" },
         { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
       ],
