@@ -33,8 +33,6 @@ const PokeTable = () => {
     const [hideParadox, setHideParadox] = useState(false); // Neuer State für Paradox-Pokémon
     const [monoTypeBonus, setMonoTypeBonus] = useState(false);
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
-
-    // Neue State-Variablen für Typfilter
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
 
@@ -298,8 +296,14 @@ const PokeTable = () => {
         // Filter für Typ 1
         if (selectedType1 !== "beliebig" && pokemon.type1 !== selectedType1) return false;
 
+
         // Filter für Typ 2
-        if (selectedType2 !== "beliebig" && pokemon.type2 !== selectedType2) return false;
+        if (selectedType2 === "keiner") {
+            if (pokemon.type2) return false; // Pokémon hat einen zweiten Typ, also ausschließen
+        } else if (selectedType2 !== "beliebig" && pokemon.type2 !== selectedType2) {
+            return false; // Pokémon hat einen anderen zweiten Typ, also ausschließen
+        }
+
 
         return true;
     });
@@ -577,7 +581,7 @@ const PokeTable = () => {
                         onChange={handleType1Change}
                         className="bg-gray-700 text-white p-2 rounded"
                     >
-                        <option value="beliebig">Typ 1: Beliebig</option>
+                        <option value="beliebig">[Beliebig]</option>
                         {typenData.map((type) => (
                             <option key={type.name} value={type.name}>
                                 {type.name}
@@ -586,19 +590,22 @@ const PokeTable = () => {
                     </select>
 
                     {/* Neue Dropdown für Typ 2 */}
+                    {/* Neue Dropdown für Typ 2 mit der Option "keiner" */}
                     <select
                         id="type2"
                         value={selectedType2}
                         onChange={handleType2Change}
                         className="bg-gray-700 text-white p-2 rounded"
                     >
-                        <option value="beliebig">Typ 2: Beliebig</option>
+                        <option value="beliebig">[Beliebig]</option>
+                        <option value="keiner">[Keiner]</option> {/* Neue Option */}
                         {typenData.map((type) => (
                             <option key={type.name} value={type.name}>
                                 {type.name}
                             </option>
                         ))}
                     </select>
+
 
                     <button
                         onClick={() => setShowInfo(!showInfo)}
