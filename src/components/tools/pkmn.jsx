@@ -587,9 +587,9 @@ const PokeTable = () => {
                     bzw. niedrige Initiativewerte geben einen Offensivbonus/-malus.
                     <br/>
                     <br/>
-                    Durengard ist mit Stahl/Geist defensiv stärker als offensiv, wodurch die Schildform mehr Punkte, als die Klingenform, bekommt.
-                    Duokles wiederum ist rechnerisch sogar minimal besser, da im Mittel ausgeglichene Werte besser sind, als einige hohe Werte
-                    und einige sehr niedrige - wie es bei Durengards zwei Formen der Fall ist.
+                    Durengard ist durch die Typenkombination Stahl/Geist defensiv stärker als offensiv, wodurch die Schildform mehr Punkte,
+                    als die Klingenform, bekommt. Duokles wiederum ist rechnerisch sogar minimal besser, da im Mittel ausgeglichene Werte
+                    besser sind, als einige hohe und einige sehr niedrige Werte - wie es bei Durengards zwei Formen der Fall ist.
                     <br/>
                     <br/>
                     Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder
