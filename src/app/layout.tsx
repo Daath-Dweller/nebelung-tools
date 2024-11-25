@@ -50,8 +50,8 @@ export default function RootLayout({
       label: "Sonstige Tools",
       subItems: [
         { key: "/politikdach", label: "Parteien-CHAD", href: "/politikdach" },
-        { key: "/omnimutator", label: "Omnimutator", href: "/omnimutator" },
         { key: "/pkmn", label: "Pokemontabelle", href: "/pkmn" },
+        { key: "/omnimutator", label: "Omnimutator", href: "/omnimutator" },
         { key: "/anagram", label: "Anagramm-Generator", href: "/anagram" },
       ],
     },
