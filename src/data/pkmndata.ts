@@ -1,15 +1,5 @@
 // pkmndata.ts
 
-
-
-export interface Typen {
-    id: number;
-    name: string;
-    offensiv: number;
-    defensiv: number;
-}
-
-// Mapping der Generationen zu ihren ID-Bereichen
 export const generationRanges = {
     "Alle Generationen": { min: 1, max: 12000 },
     "Generation 1": { min: 1, max: 151 },
@@ -59,114 +49,139 @@ export const ubIDs = [
     793, 794, 795, 796, 797, 798, 799, 803,804,805,806,
 ];
 
+export interface Typen {
+    id: number;
+    name: string;
+    offensiv: number;
+    defensiv: number;
+}
+
 export const typenData: Typen[] = [
     {
         id: 1,
         name: "Eis",
         offensiv: 10,
         defensiv: 7,
+
     },
     {
         id: 2,
         name: "Normal",
         offensiv: 5,
         defensiv: 20,
+
     },
     {
         id: 3,
         name: "Pflanze",
         offensiv: 0,
         defensiv: 7,
+
     },
     {
         id: 4,
         name: "Käfer",
         offensiv: 0,
         defensiv: 12,
+
     },
     {
         id: 5,
         name: "Elektro",
         offensiv: 4,
         defensiv: 18,
+
     },
     {
         id: 6,
         name: "Drache",
         offensiv: 9,
         defensiv: 13,
+
     },
     {
         id: 7,
         name: "Gift",
         offensiv: 1,
         defensiv: 17,
+
     },
     {
         id: 8,
         name: "Wasser",
         offensiv: 12,
         defensiv: 16,
+
     },
     {
         id: 9,
         name: "Geist",
         offensiv: 10,
         defensiv: 24,
+
     },
     {
         id: 10,
         name: "Stahl",
         offensiv: 9,
         defensiv: 24,
+
     },
     {
         id: 11,
         name: "Feuer",
         offensiv: 10,
         defensiv: 15,
+
     },
     {
         id: 12,
         name: "Psycho",
         offensiv: 7,
         defensiv: 11,
+
     },
     {
         id: 13,
         name: "Fee",
         offensiv: 12,
         defensiv: 20,
+
     },
     {
         id: 14,
         name: "Flug",
         offensiv: 12,
         defensiv: 17,
+
     },
     {
         id: 15,
         name: "Unlicht",
         offensiv: 11,
         defensiv: 16,
+
     },
     {
         id: 16,
         name: "Kampf",
         offensiv: 1,
         defensiv: 12,
+
     },
     {
         id: 17,
         name: "Boden",
         offensiv: 10,
         defensiv: 16,
+
     },
     {
         id: 18,
         name: "Gestein",
         offensiv: 13,
         defensiv: 11,
+
     }
 ]
 
@@ -18761,7 +18776,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10279,
-        "name_de": "Groudon (Ur)",
+        "name_de": "Groudon (Proto)",
         "name_en": "groudon-primal",
         "type1": "Boden",
         "type2": "Feuer",
@@ -18776,7 +18791,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 10280,
-        "name_de": "Kyogre (Ur)",
+        "name_de": "Kyogre (Proto)",
         "name_en": "kyogre-primal",
         "type1": "Wasser",
         "type2": "",
@@ -18809,8 +18824,8 @@ export const pokemonData: Pokemon[] = [
         "id": 11001,
         "name_de": "absolutes Minimum (Doppeltyp)",
         "name_en": "min",
-        "type1": "Pflanze",
-        "type2": "Käfer",
+        "type1": "Käfer",
+        "type2": "Pflanze",
         "stats": {
             "hp": 1,
             "attack": 5,
