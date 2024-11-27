@@ -38,46 +38,53 @@ function ExperimentCard({ experiment }) {
             <h4 className="text-md italic mb-2">{experiment.name2}</h4>
             <p className="text-sm mb-2"><strong>Gebiet:</strong> {experiment.gebiet}</p>
 
-            {isExpanded && (
-                <div className="mt-4">
-                    <p className="text-sm mb-4">{experiment.erlaeuterung}</p>
-                    <p className="text-sm mb-4 italic">Simpel erklärt: {experiment.erklaerungFuerFuenf}</p>
-                    <p className="text-sm mb-2"><strong>Beispiel:</strong> {experiment.beispiel}</p>
-                    <div>
-                        <strong>Fragen:</strong>
-                        <ul className="list-disc list-inside mt-1">
-                            {experiment.fragen.map((frage, index) => (
-                                <li key={index} className="text-sm">{frage}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    {experiment.name === "Schrödingers Katze" && (
+            {/* Bild unter dem Gebiet anzeigen */}
+            {experiment.image && (
+                <div className="flex justify-center items-center mt-4">
+                    <img
+                        src={experiment.image}
+                        alt={experiment.name}
+                        className="w-1/2 h-auto mt-2 p-2 rounded"
+                    />
+                           </div>
+                    )}
+
+                    {isExpanded && (
                         <div className="mt-4">
-                            <a
-                                href="https://i.imgflip.com/4u9jsd.jpg"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-500 underline"
-                            >
-                                Meme
-                            </a>
-<br/>
-                            <a
-                                href="https://de.wikipedia.org/wiki/Doppelspaltexperiment"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-500 underline"
-                            >
-                                Wikipedia-Erläuterung
-                            </a>
-
-
+                            <p className="text-sm mb-4">{experiment.erlaeuterung}</p>
+                            <p className="text-sm mb-4 italic">Simpel erklärt: {experiment.erklaerungFuerFuenf}</p>
+                            <p className="text-sm mb-2"><strong>Beispiel:</strong> {experiment.beispiel}</p>
+                            <div>
+                                <strong>Fragen:</strong>
+                                <ul className="list-disc list-inside mt-1">
+                                    {experiment.fragen.map((frage, index) => (
+                                        <li key={index} className="text-sm">{frage}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {experiment.name === "Schrödingers Katze" && (
+                                <div className="mt-4">
+                                    <a
+                                        href="https://i.imgflip.com/4u9jsd.jpg"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 underline"
+                                    >
+                                        Meme
+                                    </a>
+                                    <br/>
+                                    <a
+                                        href="https://de.wikipedia.org/wiki/Doppelspaltexperiment"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 underline"
+                                    >
+                                        Wikipedia-Erläuterung
+                                    </a>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
-            )}
-
-
-        </div>
-    );
-}
+            );
+            }

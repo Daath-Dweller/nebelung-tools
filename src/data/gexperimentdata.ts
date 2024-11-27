@@ -1,4 +1,3 @@
-
 interface Gedankenexperiment {
     name: string;
     name2: string;
@@ -8,12 +7,12 @@ interface Gedankenexperiment {
     erklaerungFuerFuenf: string;
     gebiet: string;
     fragen: string[];
+    image: string; // Neuer Schlüssel für das Bild
 }
 
 interface GedankenexperimenteCollection {
     [key: string]: { [key: string]: Gedankenexperiment };
 }
-
 
 export const gedankenexperimente: GedankenexperimenteCollection = {
     gedankenexperimente: {
@@ -28,7 +27,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Was passiert, wenn die Zeit unendlich ist?',
                 'Wie beeinflusst Wahrscheinlichkeit die Ergebnisse in realen Szenarien?'
-            ]
+            ],
+            image: '/affe.jpg' // Bildpfad
         },
         SchroedingersKatze: {
             name: 'Schrödingers Katze',
@@ -42,7 +42,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Wie definiert die Beobachtung den Zustand eines Systems?',
                 'Was bedeutet Überlagerung in der Quantenmechanik?'
-            ]
+            ],
+            image: '/box.jpg' // Bildpfad
         },
         SchiffDesTheseus: {
             name: 'Das Schiff des Theseus',
@@ -55,7 +56,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Was definiert die Identität eines Objekts?',
                 'Kann die Kontinuität der Teile die Kontinuität des Objekts gewährleisten?'
-            ]
+            ],
+            image: '/theseus.jpg' // Bildpfad
         },
         TrolleyProblem: {
             name: 'Das Trolley-Problem',
@@ -69,7 +71,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Ist es ethisch vertretbar, eine Person zu opfern, um mehrere zu retten?',
                 'Welche moralischen Prinzipien sollten bei solchen Entscheidungen angewendet werden?'
-            ]
+            ],
+            image: '/trolley.jpg' // Bildpfad
         },
         GehirnImTank: {
             name: 'Das Gehirn im Tank',
@@ -84,9 +87,10 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Wie können wir sicher sein, dass unsere Wahrnehmungen real sind?',
                 'Was definiert die Realität für ein Individuum?'
-            ]
+            ],
+            image: '/Hirn.jpg' // Bildpfad
         },
-         ChinesischerRaum: {
+        ChinesischerRaum: {
             name: 'Der Chinesische Raum',
             name2: 'The Chinese Room',
             erlaeuterung: 'Ein Gedankenexperiment, das argumentiert, dass das Befolgen von syntaktischen Regeln nicht mit dem Verständnis von Bedeutung gleichzusetzen ist, und somit Computer keine echte Intelligenz besitzen. ' +
@@ -99,7 +103,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Unterscheidet sich syntaktisches Verarbeiten von semantischem Verstehen?',
                 'Können Maschinen echtes Verständnis erlangen?',
                 'Was unterscheidet perfekte künstliche Intelligenz von menschlicher?'
-            ]
+            ],
+            image: '/chinraum.jpg' // Bildpfad (korrigierter Dateiname)
         },
         MarysZimmer: {
             name: 'Marys Zimmer',
@@ -114,7 +119,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Kann vollständiges physikalisches Wissen subjektive Erfahrungen erklären?',
                 'Ist alles nur die Summe ihrer Teile, oder kann aus einzelnen Dingen etwas Neues entstehen, wie es der Begriff Emergenz beschreibt?',
                 'Was ist der Unterschied zwischen Wissensarten im Kontext des Bewusstseins?'
-            ]
+            ],
+            image: '/mary.jpg' // Bildpfad
         },
         LaplacesDaemon: {
             name: 'Laplaces Dämon',
@@ -128,7 +134,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Ist das Universum vollständig deterministisch, also vorherbestimmt?',
                 'Wie beeinflusst das Konzept von freiem Willen die Idee eines allwissenden Wesens?',
                 'Was würde ein vollständig vorherbestimmtes Leben für normative Implikationen bspw. im Bereich Eigenverantwortung haben?'
-            ]
+            ],
+            image: '/daemon.jpg' // Bildpfad
         },
         SchleierDesNichtwissens: {
             name: 'Der Schleier des Nichtwissens',
@@ -141,7 +148,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Wie können wir Gerechtigkeit in einer Gesellschaft definieren?',
                 'Welche Rolle spielt persönliche Voreingenommenheit bei der Gestaltung von Gesellschaftsregeln?'
-            ]
+            ],
+            image: '/Schleier.jpg' // Bildpfad
         },
         Zwillingsparadoxon: {
             name: 'Das Zwillingsparadoxon',
@@ -156,8 +164,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             fragen: [
                 'Wie erklärt die Relativitätstheorie die Zeitdilatation?',
                 'Welche praktischen Anwendungen hat das Zwillingsparadoxon?'
-            ]
+            ],
+            image: '/erde.jpg' // Bildpfad
         },
-
     },
 };
