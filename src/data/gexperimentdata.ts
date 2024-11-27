@@ -91,7 +91,7 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             image: '/hirn.jpg' // Bildpfad
         },
         ChinesischerRaum: {
-            name: 'Der Chinesische Raum2',
+            name: 'Der Chinesische Raum',
             name2: 'The Chinese Room',
             erlaeuterung: 'Ein Gedankenexperiment, das argumentiert, dass das Befolgen von syntaktischen Regeln nicht mit dem Verständnis von Bedeutung gleichzusetzen ist, und somit Computer keine echte Intelligenz besitzen. ' +
                 'Eine Maschine, die also das Verhalten eines Menschen mithilfe Algorithmen und neuronaler Netze perfekt simulieren kann führt unweigerlich zur Frage, was diese vom Menschen unterscheidet.',
