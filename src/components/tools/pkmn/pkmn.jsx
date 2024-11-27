@@ -625,9 +625,6 @@ const PokeTable = () => {
 
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
-
-
-                    {/* Ursprünglicher Info-Text */}
                   <Infotext />
                 </div>
             )}
@@ -638,7 +635,7 @@ const PokeTable = () => {
                 </h2>
 
                 <table className="table-auto w-full border-collapse">
-                    <thead>
+                    <thead className="">
                     <tr>
                         {[
                             {key: "Pos", label: "Pos."},
@@ -671,7 +668,7 @@ const PokeTable = () => {
                             <th
                                 key={col.key}
                                 onClick={() => handleSort(col.key)}
-                                className="border border-gray-600 p-2 cursor-pointer text-left"
+                                className="border border-gray-600 p-2 cursor-pointer text-center"
                             >
                                 {col.label} {renderSortArrow(col.key)}
                             </th>
@@ -710,26 +707,30 @@ const PokeTable = () => {
                         return (
                             <tr
                                 key={pokemon.id}
-                                className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black"
+                                className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black text-center"
                             >
-                                <td className="border border-gray-600 p-2">{index + 1}</td>
-                                <td className="border border-gray-600 p-2">{pokemon.id}</td>
-                                <td className="border border-gray-600 p-2">
+                                <td className="border border-gray-600 p-2 text-center">{index + 1}</td>
+                                <td className="border border-gray-600 p-2 text-center">{pokemon.id}</td>
+                                <td className="border border-gray-600 p-2 text-center">
                                     {getDisplayName(pokemon)}
                                 </td>
-                                <td className="border border-gray-600 p-2">
-                                    <div className="flex text-center items-center">
-                      <span className="text-2xl">
+                                <td className="border border-gray-600 p-2  text-center">
+
+
+                                    <div id="type1" className="flex justify-center items-center ">
+                      <span className="text-2xl text-center">
                         {typeIconMap[pokemon.type1]}
                       </span>
                                         &nbsp;&nbsp;
                                         {showTypeText && (
-                                            <span className="hidden md:flex">{pokemon.type1}</span>
+                                            <span className="hidden md:flex text-center">{pokemon.type1}</span>
                                         )}
                                     </div>
+
+
                                 </td>
-                                <td className="border border-gray-600 p-2">
-                                    <div className="flex text-center items-center">
+                                <td className="border border-gray-600 p-2 text-center">
+                                    <div id="type2" className="flex justify-center items-center">
                       <span className="text-2xl">
                         {pokemon.type2 ? typeIconMap[pokemon.type2] : null}
                       </span>
