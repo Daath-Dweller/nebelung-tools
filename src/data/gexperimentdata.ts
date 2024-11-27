@@ -88,10 +88,10 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Wie können wir sicher sein, dass unsere Wahrnehmungen real sind?',
                 'Was definiert die Realität für ein Individuum?'
             ],
-            image: '/Hirn.jpg' // Bildpfad
+            image: '/hirn.jpg' // Bildpfad
         },
         ChinesischerRaum: {
-            name: 'Der Chinesische Raum',
+            name: 'Der Chinesische Raum2',
             name2: 'The Chinese Room',
             erlaeuterung: 'Ein Gedankenexperiment, das argumentiert, dass das Befolgen von syntaktischen Regeln nicht mit dem Verständnis von Bedeutung gleichzusetzen ist, und somit Computer keine echte Intelligenz besitzen. ' +
                 'Eine Maschine, die also das Verhalten eines Menschen mithilfe Algorithmen und neuronaler Netze perfekt simulieren kann führt unweigerlich zur Frage, was diese vom Menschen unterscheidet.',
@@ -149,7 +149,7 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Wie können wir Gerechtigkeit in einer Gesellschaft definieren?',
                 'Welche Rolle spielt persönliche Voreingenommenheit bei der Gestaltung von Gesellschaftsregeln?'
             ],
-            image: '/Schleier.jpg' // Bildpfad
+            image: '/schleier.jpg' // Bildpfad
         },
         Zwillingsparadoxon: {
             name: 'Das Zwillingsparadoxon',
