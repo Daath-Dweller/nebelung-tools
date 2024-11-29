@@ -627,7 +627,7 @@ const PokeTable = () => {
                                 getStatEmoji(pokemon.stats.specialDefense, "specialDefense"),
                                 getStatEmoji(pokemon.stats.speed, "speed"),
                             ].map((emoji) => {
-                                if (!emoji || emoji === "💀" || emoji === "💀️") {
+                                if (!emoji) {
                                     return "⏺️"; // Ersetze leere oder negative Emojis durch ⏺️
                                 } else {
                                     return emoji;
