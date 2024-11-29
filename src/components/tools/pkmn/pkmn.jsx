@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import {
     generationRanges,
     legendaryIDs,
@@ -11,13 +11,13 @@ import {
 } from "@/data/pkmndata.ts";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
-import { FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake } from "react-icons/fa";
-import { TbIrregularPolyhedron, TbPlant } from "react-icons/tb";
-import { SiStackblitz } from "react-icons/si";
-import { GiArrowWings, GiDustCloud, GiFairy, GiPoisonBottle, GiSteelClaws, GiStonePile } from "react-icons/gi";
-import { IoIosWater } from "react-icons/io";
-import { MdDarkMode, MdOutlinePsychology } from "react-icons/md";
-import { Infotext } from "@/components/tools/pkmn/infotext";
+import {FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
+import {TbIrregularPolyhedron, TbPlant} from "react-icons/tb";
+import {SiStackblitz} from "react-icons/si";
+import {GiArrowWings, GiDustCloud, GiFairy, GiPoisonBottle, GiSteelClaws, GiStonePile} from "react-icons/gi";
+import {IoIosWater} from "react-icons/io";
+import {MdDarkMode, MdOutlinePsychology} from "react-icons/md";
+import {Infotext} from "@/components/tools/pkmn/infotext";
 
 const typeIconMap = {
     Eis: <FaRegSnowflake />,
@@ -522,8 +522,8 @@ const PokeTable = () => {
     return (
         <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
             {/* Schieberegler */}
-            <div className="flex justify-center items-center mb-4">
-                <span className="text-2xl mr-2">📋</span> {/* Emoji für Tabelle */}
+            <div className="flex justify-center items-center mb-6">
+                <span className="text-2xl mr-2">📋</span> {/* Tabellenansicht */}
                 <div
                     className={`relative inline-block w-16 h-8 rounded-full cursor-pointer transition-colors duration-300 ${
                         isCardView ? "bg-teal-500" : "bg-gray-300"
@@ -534,7 +534,7 @@ const PokeTable = () => {
                         className={`absolute top-1 ${isCardView ? "right-1" : "left-1"} w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300`}
                     ></div>
                 </div>
-                <span className="text-2xl ml-2">📊</span> {/* Emoji für Monster */}
+                <span className="text-2xl ml-2">📊</span> {/* Kachelansicht */}
             </div>
 
             <div className="flex flex-col justify-between items-center mb-4 gap-x-2">
@@ -597,7 +597,7 @@ const PokeTable = () => {
 
                 {isCardView ? (
                     // Kartenansicht
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
                             const sumStats =
                                 pokemon.stats.hp +
@@ -699,9 +699,9 @@ const PokeTable = () => {
 
                                     {/* GD, GO, GS */}
                                     <div className="flex justify-around mt-3 w-full">
-                                        <div>GD: {gd}</div>
-                                        <div>GO: {go}</div>
-                                        <div>GS: {gs}</div>
+                                        <div>GD: <br/> {gd}</div>
+                                        <div>GO: <br/> {go}</div>
+                                        <div>GS: <br/> {gs}</div>
                                     </div>
                                 </div>
                             );

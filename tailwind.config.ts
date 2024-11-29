@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -10,6 +10,8 @@ const config: Config = {
     screens: {
       sm: "500px",
       md: "800px",
+      lg: "1400px",
+      xlg: "1850px"
     },
     extend: {
       backgroundImage: {
