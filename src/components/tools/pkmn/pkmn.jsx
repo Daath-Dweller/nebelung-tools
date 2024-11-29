@@ -628,7 +628,7 @@ const PokeTable = () => {
                                 getStatEmoji(pokemon.stats.speed, "speed"),
                             ].map((emoji) => {
                                 if (!emoji) {
-                                    return "⏺️"; // Ersetze leere oder negative Emojis durch ⏺️
+                                    return "⏺️"; // Ersetze leere Emojis durch ⏺️
                                 } else {
                                     return emoji;
                                 }
@@ -640,7 +640,7 @@ const PokeTable = () => {
                                     <div className="text-center font-bold">#{pokemon.id}<br/>{getDisplayName(pokemon)} </div>
 
                                     {/* Typen-Icons */}
-                                    <div className="flex justify-center mt-2">
+                                    <div className="flex justify-center my-2">
                                         <div className="flex items-center">
                                             <span className="text-2xl">{typeIconMap[pokemon.type1]}</span>
                                             {pokemon.type2 && <span className="text-2xl ml-2">{typeIconMap[pokemon.type2]}</span>}
@@ -648,7 +648,7 @@ const PokeTable = () => {
                                     </div>
 
                                     {/* TD, TO, TS */}
-                                    <div className="flex justify-around mt-2 w-full">
+                                    <div className="flex justify-around my-2 w-full">
                                         <div>TD: {defensivSum}</div>
                                         <div>TO: {offensivSum}</div>
                                         <div>TS: {typeSum}</div>
@@ -698,7 +698,7 @@ const PokeTable = () => {
                                     </div>
 
                                     {/* GD, GO, GS */}
-                                    <div className="flex justify-around mt-2 w-full">
+                                    <div className="flex justify-around mt-3 w-full">
                                         <div>GD: {gd}</div>
                                         <div>GO: {go}</div>
                                         <div>GS: {gs}</div>
@@ -826,7 +826,7 @@ const PokeTable = () => {
                                     )}
                                     <td className="border border-gray-600 p-2">{formatNumber(gd)}</td>
                                     <td className="border border-gray-600 p-2">{formatNumber(go)}</td>
-                                    <td className="border border-gray-600 p-2">{formatNumber(gs)}</td>
+                                    <td className="border border-gray-600 p-2 ">{formatNumber(gs)}</td>
                                 </tr>
                             );
                         })}
