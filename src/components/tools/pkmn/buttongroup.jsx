@@ -21,12 +21,16 @@ const ButtonGroup = ({
                          toggleHideParadox,
                          monoTypeBonus,
                          toggleMonoTypeBonus,
+    isCardView
                      }) => (
 
         <div
             id="btndiv"
             className="flex md:flex-row flex-col gap-y-2 md:gap-y-0 gap-x-2"
         >
+
+            {!isCardView && (
+                <>
             <button
                 onClick={() => setShowStats(!showStats)}
                 className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
@@ -79,7 +83,10 @@ const ButtonGroup = ({
                         <FaEyeSlash/>
                     </div>
                 )}
-            </button>
+            </button></>
+)}
+
+
 
             <button
                 onClick={toggleHideSpecialforms}
