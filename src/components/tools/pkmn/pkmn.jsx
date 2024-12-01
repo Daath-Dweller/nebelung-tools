@@ -282,17 +282,14 @@ const PokeTable = () => {
 
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
         let gd = defensivSum + defense + specialDefense;
-        if (defense <= 60 || specialDefense <= 70) {
+        if (defense <= 60) {
             gd -= 2000;
+            if (specialDefense <= 70) {
+                gd -= 2000;
+            }
         }
 
-        if (defense >= specialDefense) {
-            gd += defense;
-            gd += defensivSum * defense;
-        } else {
-            gd += specialDefense;
-            gd += defensivSum * specialDefense;
-        }
+
 
         if (hp >= 100) {
             gd += 3750;
@@ -301,24 +298,22 @@ const PokeTable = () => {
             gd -= 3750;
         }
 
+        gd += defense + defensivSum * defense;
+        gd += specialDefense + defensivSum * specialDefense;
         gd += hp * 75;
-        gd = gd / 10 + 500; //+500 gegen Negativwerte, rein optisch
+        gd = gd / 100 +75; //+75 gegen Negativwerte, rein optisch
 
         return Math.round(gd);
     };
 
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
         let go = offensivSum + attack + specialAttack;
-        if (attack <= 60 || specialAttack <= 70) {
+        if (attack <= 60) {
             go -= 2000;
-        }
+            if ( specialAttack <= 70) {
+                go -= 2000;
 
-        if (attack >= specialAttack) {
-            go += attack;
-            go += offensivSum * attack;
-        } else {
-            go += specialAttack;
-            go += offensivSum * specialAttack;
+            }
         }
 
         if (speed >= 100) {
@@ -328,8 +323,10 @@ const PokeTable = () => {
             go -= 3750;
         }
 
+        go += attack + offensivSum * attack;
+        go += specialAttack +offensivSum * specialAttack;
         go += speed * 100;
-        go = go / 10 + 500; //+500 gegen Negativwerte, rein optisch
+        go = go / 100 + 75; //+75 gegen Negativwerte, rein optisch
 
         return Math.round(go);
     };
