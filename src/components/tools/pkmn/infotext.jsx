@@ -31,8 +31,8 @@ export const Infotext = ({
         <br/>
         Durengard ist durch die Typenkombination Stahl/Geist defensiv
         stärker als offensiv, wodurch die Schildform mehr Punkte, als die
-        Klingenform, bekommt. Duokles wiederum ist rechnerisch sogar ähnlich gut,
-        da im Mittel ausgeglichene Werte meist vorteilhafteer sind, als einige
+        Klingenform, bekommt. Duokles wiederum ist rechnerisch sogar besser als die Durengards Klingenform,
+        da im Mittel ausgeglichene Werte meist vorteilhafter sind, als einige
         hohe und einige sehr niedrige Werte - wie es bei Durengards zwei
         Formen der Fall ist.
         <br/>
