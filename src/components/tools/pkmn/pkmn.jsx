@@ -1,8 +1,11 @@
 "use client";
 import React, {useEffect, useState} from "react";
 import {
+    dynamaxID,
     generationRanges,
     legendaryIDs,
+    lokalIDs,
+    megaID,
     mysticIDs,
     paradoxIDs,
     pokemonData,
@@ -55,11 +58,6 @@ const PokeTable = () => {
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
     const [showTypeValues, setShowTypeValues] = useState(false); // Neuer State für Typwerte
-    const [hideSpecialforms, setHideSpecialForms] = useState(false);
-    const [hideLegendary, setHideLegendary] = useState(false);
-    const [hideUB, setHideUB] = useState(false);
-    const [hideMystic, setHideMystic] = useState(false);
-    const [hideParadox, setHideParadox] = useState(false); // Neuer State für Paradox-Pokémon
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
@@ -68,8 +66,15 @@ const PokeTable = () => {
     const [showUniqueTypes, setShowUniqueTypes] = useState(false);
     const [selectedTypeAny, setSelectedTypeAny] = useState("beliebig");
     const [isCardView, setIsCardView] = useState(false); // Neuer State für die Ansicht
+   const [legendaryState, setLegendaryState] = useState(0);
+    const [ubState, setUbState] = useState(0);
+    const [mysticState, setMysticState] = useState(0);
+    const [paradoxState, setParadoxState] = useState(0);
+    const [localsState, setLocalsState] = useState(0);
+    const [megaState, setMegaState] = useState(0);
+    const [dynamaxState, setDynamaxState] = useState(0);
 
-    const maxValues = {
+     const maxValues = {
         hp: 255,
         attack: 190,
         defense: 250,
@@ -77,7 +82,6 @@ const PokeTable = () => {
         specialDefense: 250,
         speed: 200,
     };
-
 
     // Effekt, um die Buttons zurückzusetzen und auszublenden
     useEffect(() => {
@@ -88,25 +92,6 @@ const PokeTable = () => {
         }
     }, [isCardView]);
 
-    const toggleHideSpecialforms = () => {
-        setHideSpecialForms((prev) => !prev);
-    };
-
-    const toggleHideLegendary = () => {
-        setHideLegendary((prev) => !prev);
-    };
-
-    const toggleHideUB = () => {
-        setHideUB((prev) => !prev);
-    };
-
-    const toggleHideMystic = () => {
-        setHideMystic((prev) => !prev);
-    };
-
-    const toggleHideParadox = () => {
-        setHideParadox((prev) => !prev);
-    };
 
     // NEU: Funktion zum Umschalten des Typentextes
     const toggleShowTypeText = () => {
@@ -121,12 +106,18 @@ const PokeTable = () => {
             setDisplayedCount(pokemonData.length);
         } else {
             const range = generationRanges[selectedGen];
-            const count = pokemonData.filter((pokemon) => pokemon.id >= range.min && pokemon.id <= range.max).length;
+            const count = pokemonData.filter(
+                (pokemon) =>
+                    (pokemon.id >= range.min && pokemon.id <= range.max) ||
+                    range.extraIDs.includes(pokemon.id)
+            ).length;
             setDisplayedCount(count);
         }
 
         scrollToTop(); // Optional: Nach Generationwechsel nach oben scrollen
     };
+
+
 
     // Neue Handler für Typfilter
     const handleType1Change = (event) => {
@@ -331,26 +322,121 @@ const PokeTable = () => {
         return Math.round(go);
     };
 
+    // Legendäre
+    const handleLegendaryLeftClick = () => {
+        setLegendaryState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleLegendaryRightClick = () => {
+        setLegendaryState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // UB
+    const handleUbLeftClick = () => {
+        setUbState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleUbRightClick = () => {
+        setUbState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // Mysteriöse
+    const handleMysticLeftClick = () => {
+        setMysticState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleMysticRightClick = () => {
+        setMysticState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // Paradox
+    const handleParadoxLeftClick = () => {
+        setParadoxState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleParadoxRightClick = () => {
+        setParadoxState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // Lokalformen
+    const handleLocalsLeftClick = () => {
+        setLocalsState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleLocalsRightClick = () => {
+        setLocalsState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // Megaformen
+    const handleMegaLeftClick = () => {
+        setMegaState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleMegaRightClick = () => {
+        setMegaState(prev => (prev === 0 ? 1 : 0));
+    };
+
+    // Dynamaxformen
+    const handleDynaLeftClick = () => {
+        setDynamaxState(prev => (prev === 2 ? 0 : 2));
+        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
+    };
+
+    const handleDynaRightClick = () => {
+        setDynamaxState(prev => (prev === 0 ? 1 : 0));
+    };
+
     // Filter basierend auf Sonderformen, Legendären, UB, Mystik, Paradox, ausgewählter Generation und Typen
     const filteredPokemon = pokemonData.filter((pokemon) => {
-        // Filter für Sonderformen
-        if (hideSpecialforms && pokemon.id >= 5000) return false;
+        const isLegendary = legendaryIDs.includes(pokemon.id);
+        const isUB = ubIDs.includes(pokemon.id);
+        const isMystic = mysticIDs.includes(pokemon.id);
+        const isParadox = paradoxIDs.includes(pokemon.id);
+        const isLocal = lokalIDs.includes(pokemon.id);
+        const isDynamax = dynamaxID.includes(pokemon.id);
+        const isMega = megaID.includes(pokemon.id);
 
-        // Filter für Legendäre
-        if (hideLegendary && legendaryIDs.includes(pokemon.id)) return false;
+        const showOnlyFilters = [];
+        if (dynamaxState === 2) showOnlyFilters.push(isDynamax);
+        if (legendaryState === 2) showOnlyFilters.push(isLegendary);
+        if (ubState === 2) showOnlyFilters.push(isUB);
+        if (mysticState === 2) showOnlyFilters.push(isMystic);
+        if (paradoxState === 2) showOnlyFilters.push(isParadox);
+        if (localsState === 2) showOnlyFilters.push(isLocal);
+        if (megaState === 2) showOnlyFilters.push(isMega);
 
-        // Filter für UB
-        if (hideUB && ubIDs.includes(pokemon.id)) return false;
+        if (showOnlyFilters.length > 0) {
+            if (!showOnlyFilters.some((condition) => condition)) {
+                return false;
+            }
+        } else {
+            if (dynamaxState === 1 && isDynamax) return false;
+            if (legendaryState === 1 && isLegendary) return false;
+            if (ubState === 1 && isUB) return false;
+            if (mysticState === 1 && isMystic) return false;
+            if (paradoxState === 1 && isParadox) return false;
+            if (localsState === 1 && isLocal) return false;
+            if (megaState === 1 && isMega) return false;
+        }
 
-        // Filter für Mystik
-        if (hideMystic && mysticIDs.includes(pokemon.id)) return false;
-
-        // Filter für Paradox-Pokémon
-        if (hideParadox && paradoxIDs.includes(pokemon.id)) return false;
-
-        // Filter für Generationen
+// Filter für Generationen
         const range = generationRanges[selectedGeneration];
-        if (pokemon.id < range.min || pokemon.id > range.max) return false;
+
+// Überprüfen, ob die ID weder innerhalb des Bereichs liegt noch in den extraIDs enthalten ist
+        if (
+            (pokemon.id < range.min || pokemon.id > range.max) &&
+            !range.extraIDs.includes(pokemon.id)
+        ) {
+            return false;
+        }
+
+
 
         // Filter für Typ 1
         if (selectedType1 !== "beliebig" && pokemon.type1 !== selectedType1) return false;
@@ -530,25 +616,36 @@ const PokeTable = () => {
 
             <div className="flex flex-col justify-between items-center mb-4 gap-x-2">
 
-                    <ButtonGroup
-                        showStats={showStats}
-                        setShowStats={setShowStats}
-                        showTypeValues={showTypeValues}
-                        setShowTypeValues={setShowTypeValues}
-                        showTypeText={showTypeText}
-                        toggleShowTypeText={toggleShowTypeText}
-                        hideSpecialforms={hideSpecialforms}
-                        toggleHideSpecialforms={toggleHideSpecialforms}
-                        hideLegendary={hideLegendary}
-                        toggleHideLegendary={toggleHideLegendary}
-                        hideUB={hideUB}
-                        toggleHideUB={toggleHideUB}
-                        hideMystic={hideMystic}
-                        toggleHideMystic={toggleHideMystic}
-                        hideParadox={hideParadox}
-                        toggleHideParadox={toggleHideParadox}
-                        isCardView={isCardView}
-                    />
+                <ButtonGroup
+                    showStats={showStats}
+                    setShowStats={setShowStats}
+                    showTypeValues={showTypeValues}
+                    setShowTypeValues={setShowTypeValues}
+                    showTypeText={showTypeText}
+                    toggleShowTypeText={toggleShowTypeText}
+                    isCardView={isCardView}
+                    legendaryState={legendaryState}
+                    ubState={ubState}
+                    mysticState={mysticState}
+                    paradoxState={paradoxState}
+                    localsState={localsState}
+                    dynamaxState={dynamaxState}
+                    megaState={megaState}
+                    handleDynaRightClick={handleDynaRightClick}
+                    handleDynaLeftClick={handleDynaLeftClick}
+                    handleMegaRightClick={handleMegaRightClick}
+                    handleMegaLeftClick={handleMegaLeftClick}
+                    handleLegendaryLeftClick={handleLegendaryLeftClick}
+                    handleLegendaryRightClick={handleLegendaryRightClick}
+                    handleUbLeftClick={handleUbLeftClick}
+                    handleUbRightClick={handleUbRightClick}
+                    handleMysticLeftClick={handleMysticLeftClick}
+                    handleMysticRightClick={handleMysticRightClick}
+                    handleParadoxLeftClick={handleParadoxLeftClick}
+                    handleParadoxRightClick={handleParadoxRightClick}
+                    handleLocalsLeftClick={handleLocalsLeftClick}
+                    handleLocalsRightClick={handleLocalsRightClick}
+                />
 
 
                 <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
@@ -577,7 +674,7 @@ const PokeTable = () => {
 
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
-                    <Infotext />
+                    <Infotext/>
                 </div>
             )}
 
@@ -586,7 +683,8 @@ const PokeTable = () => {
 
                 {isCardView ? (
                     // Kartenansicht
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
+                    <div
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
                             const sumStats =
                                 pokemon.stats.hp +
@@ -596,7 +694,7 @@ const PokeTable = () => {
                                 pokemon.stats.specialDefense +
                                 pokemon.stats.speed;
 
-                            const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                            const {offensivSum, defensivSum} = getTypeDataSum(pokemon.type1, pokemon.type2);
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
                             const go = calculateGO(

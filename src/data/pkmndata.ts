@@ -2,15 +2,15 @@
 
 export const generationRanges = {
     "Alle Generationen": { min: 1, max: 12000 },
-    "Generation 1": { min: 1, max: 151 },
-    "Generation 2": { min: 152, max: 251 },
-    "Generation 3": { min: 252, max: 386 },
-    "Generation 4": { min: 387, max: 493 },
-    "Generation 5": { min: 494, max: 649 },
-    "Generation 6": { min: 650, max: 721 },
-    "Generation 7": { min: 722, max: 809 },
-    "Generation 8": { min: 810, max: 905 },
-    "Generation 9": { min: 906, max: 1025 },
+    "Generation 1": { min: 1, max: 151, extraIDs: [] },
+    "Generation 2": { min: 152, max: 251, extraIDs: [] },
+    "Generation 3": { min: 252, max: 386, extraIDs: [10013,10014,10015,] },
+    "Generation 4": { min: 387, max: 493, extraIDs: [10004,10005,10008,10009,10010,10011,10012] },
+    "Generation 5": { min: 494, max: 649, extraIDs: [10017] },
+    "Generation 6": { min: 650, max: 721, extraIDs: [10025, 10026, 10027,10028,10029,10030,10031,10032,10117,10116] },
+    "Generation 7": { min: 722, max: 809, extraIDs: [10123, 10124,10125, 10126, 10127, 10136, 10152] },
+    "Generation 8": { min: 810, max: 905, extraIDs: [10184, 10185, 10186, 10187] },
+    "Generation 9": { min: 906, max: 1025, extraIDs: [] },
 };
 
 export const legendaryIDs = [
@@ -38,7 +38,7 @@ export const mysticIDs = [
     801,802,807,808,809, //Gen 7
     893, //Gen 8
     1025, //Gen 9
-    10006, 10278, 10024, 10018
+   10001,10002,10003, 10006, 10278, 10024, 10018
 ];
 
 export const paradoxIDs = [
@@ -49,9 +49,31 @@ export const ubIDs = [
     793, 794, 795, 796, 797, 798, 799, 803,804,805,806,
 ];
 
+export const lokalIDs = [
+    10091, 10092, 10093, 10094, 10095, 10096, 10097, 10098, 10099, 10100, 10101, 10102, 10103,
+    10104, 10105, 10106, 10107, 10108, 10109, 10110, 10111, 10112, 10113, 10114, 10115, // Alola
+    10229, 10230, 10231, 10232, 10233, 10234, 10235, 10236, 10237, 10238, 10239, 10240, 10241,
+    10242, 10243, 10244, //Hisui
+    10250, 10251, 10252, 10253, //Paldea
+    10161, 10162, 10163, 10164, 10165, 10166, 10167, 10168, 10169, 10170, 10171, 10172, 10173,
+    10174, 10175, 10176, 10177, 10178, 10179, 10180, //Galar
+];
+
+export const megaID = [
+    10033, 10034, 10035, 10036, 10037, 10038, 10039, 10040, 10041, 10042, 10045,
+    10046, 10047, 10048, 10049, 10050, 10051, 10052, 10053, 10054, 10055, 10056,
+    10057, 10058, 10059, 10060, 10061, 10064, 10065, 10066, 10067, 10068, 10069, 10070,
+    10071, 10072, 10073, 10074, 10075, 10076, 10087, 10088, 10089, 10090];
+
+export const dynamaxID = [
+    10195, 10196, 10197, 10198, 10199, 10200, 10201,
+    10202, 10203, 10204, 10205, 10206, 10207, 10208, 10209,
+    10210, 10211, 10212, 10213, 10214, 10215, 10216, 10217,
+    10218, 10219, 10220, 10221, 10222, 10223, 10224, 10225];
+
 export interface Typen {
-    id: number;
-    name: string;
+   id: number;
+   name: string;
     offensiv: number;
     defensiv: number;
 }
@@ -13720,7 +13742,7 @@ export const pokemonData: Pokemon[] = [
     },
     {
         "id": 902,
-        "name_de": "Salmagnis",
+        "name_de": "Salmagnis (m)",
         "name_en": "basculegion-male",
         "type1": "Wasser",
         "type2": "Geist",
