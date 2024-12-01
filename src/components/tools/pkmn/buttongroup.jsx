@@ -1,6 +1,6 @@
 // ButtonGroup.js
 import React from 'react';
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import {FaEye, FaEyeSlash} from "react-icons/fa";
 
 const ButtonGroup = ({
                          showStats,
@@ -19,9 +19,7 @@ const ButtonGroup = ({
                          toggleHideMystic,
                          hideParadox,
                          toggleHideParadox,
-                         monoTypeBonus,
-                         toggleMonoTypeBonus,
-    isCardView
+                         isCardView
                      }) => (
 
         <div
@@ -182,15 +180,6 @@ const ButtonGroup = ({
                         <FaEye/>
                     </div>
                 )}
-            </button>
-            <button
-                onClick={toggleMonoTypeBonus}
-                className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
-                                    rounded mb-2 ${monoTypeBonus ? "bg-gray-900" : ""}`}
-            >
-                {monoTypeBonus
-                    ? "Monotypen-Bonus deaktivieren"
-                    : "Monotypen-Bonus aktivieren"}
             </button>
         </div>
 

@@ -60,7 +60,6 @@ const PokeTable = () => {
     const [hideUB, setHideUB] = useState(false);
     const [hideMystic, setHideMystic] = useState(false);
     const [hideParadox, setHideParadox] = useState(false); // Neuer State für Paradox-Pokémon
-    const [monoTypeBonus, setMonoTypeBonus] = useState(false);
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
@@ -107,10 +106,6 @@ const PokeTable = () => {
 
     const toggleHideParadox = () => {
         setHideParadox((prev) => !prev);
-    };
-
-    const toggleMonoTypeBonus = () => {
-        setMonoTypeBonus((prev) => !prev);
     };
 
     // NEU: Funktion zum Umschalten des Typentextes
@@ -274,13 +269,12 @@ const PokeTable = () => {
             defensiv: 0,
         };
 
-        let offensivSum = type1Data.offensiv + 1 + ((type2Data.offensiv + 1 || 0) * 2); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
-        let defensivSum = type1Data.defensiv + 1 + (type2Data.defensiv + 1 || 0); // +1 weil Käfer sonst 0 hat und man damit nicht rechnen kann
+        let offensivSum = (type1Data.offensiv + 1 + ((type2Data.offensiv + 1 || 0))) * 5 ; // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
+        let defensivSum = (type1Data.defensiv + 1 + (type2Data.defensiv + 1 || 0) / 2) * 5; // +1 weil Käfer sonst 0 hat und man damit nicht rechnen kann
 
-        // Monotypen-Bonus aktivieren, wenn nur ein Typ vorhanden ist und der Bonus aktiviert ist
-        if (monoTypeBonus && (!type2 || type2 === "")) {
-            offensivSum *= 2;
-            defensivSum *= 2;
+        // Monotypen-Offensiv-Malus
+        if (type2 === "") {
+            offensivSum /= 2;
         }
 
         return { offensivSum, defensivSum };
@@ -289,7 +283,7 @@ const PokeTable = () => {
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
         let gd = defensivSum + defense + specialDefense;
         if (defense <= 60 || specialDefense <= 70) {
-            gd -= 400;
+            gd -= 2000;
         }
 
         if (defense >= specialDefense) {
@@ -301,14 +295,14 @@ const PokeTable = () => {
         }
 
         if (hp >= 100) {
-            gd += 750;
+            gd += 3750;
         }
         if (hp < 50) {
-            gd -= 750;
+            gd -= 3750;
         }
 
-        gd += hp * 15;
-        gd = gd / 10 + 100;
+        gd += hp * 75;
+        gd = gd / 10 + 500; //+500 gegen Negativwerte, rein optisch
 
         return Math.round(gd);
     };
@@ -316,7 +310,7 @@ const PokeTable = () => {
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
         let go = offensivSum + attack + specialAttack;
         if (attack <= 60 || specialAttack <= 70) {
-            go -= 400;
+            go -= 2000;
         }
 
         if (attack >= specialAttack) {
@@ -328,14 +322,14 @@ const PokeTable = () => {
         }
 
         if (speed >= 100) {
-            go += 750;
+            go += 3750;
         }
         if (speed <= 50) {
-            go -= 750;
+            go -= 3750;
         }
 
-        go += speed * 25;
-        go = go / 10 + 100;
+        go += speed * 100;
+        go = go / 10 + 500; //+500 gegen Negativwerte, rein optisch
 
         return Math.round(go);
     };
@@ -556,8 +550,6 @@ const PokeTable = () => {
                         toggleHideMystic={toggleHideMystic}
                         hideParadox={hideParadox}
                         toggleHideParadox={toggleHideParadox}
-                        monoTypeBonus={monoTypeBonus}
-                        toggleMonoTypeBonus={toggleMonoTypeBonus}
                         isCardView={isCardView}
                     />
 

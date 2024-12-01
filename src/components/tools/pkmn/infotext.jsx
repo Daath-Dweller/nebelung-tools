@@ -1,20 +1,14 @@
 import React from "react";
 
 
-
 export const Infotext = ({
 
                         }) => (
     <div className="mt-4">
         Typ-Offensive und Typ-Defensive ergeben sich aus der Summe von sehr
         effektiven, nicht effektiven und wirkungslosen Angriffen gegen ein
-        Pokémon oder von einem Pokémon ausgehend, gewichtet bzw.
-        angeglichen. Normale Effektivität gibt 1 Punkt, sehr effektiv 2
-        Punkte, nicht effektiv 2 Punkte Abzug und wirkungslos 6 Punkte
-        Abzug. Gleichsam entsprechend angewendet für Abwehr gegen Typen. TO
-        wird verdoppelt, da TD doppelt so hohe Werte hat, Offensive und
-        Defensive aber gleich wichtig sind strategisch und gleichsam mit 3
-        Werten skalieren. Siehe auch{" "}
+        Pokémon oder von einem Pokémon ausgehend, gewichtet und skaliert.
+            Siehe auch{" "}
         <a
             className="text-teal-400"
             href="https://www.pokewiki.de/Typen#Wechselwirkungen"
@@ -26,12 +20,13 @@ export const Infotext = ({
         <br/>
         <br/>
         GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus
-        Typ-Off und Typ-Def in Verbindung mit gewichtetem Angr/SpAngr/Init
+        Skalierung von Typ-Off und Typ-Def in Verbindung mit gewichtetem Angr/SpAngr/Init
         und Vert/SpVert/HP. Typen die sehr oft effektiv sind, oder wenige
         Schwächen haben, nützen umso mehr, umso stärker die
         Offensiv-/Defensivwerte sind. Hohe bzw. niedrige HP-Werte geben
         einen Defensivbonus/-malus, hohe bzw. niedrige Initiativewerte geben
-        einen Offensivbonus/-malus.
+        einen Offensivbonus/-malus. Pokemon mit einem Typ besitzen immer einen Offensivmalus, da sie
+            halb so viele STAB-Attacken nutzen könneen, die Doppeltypen.
         <br/>
         <br/>
         Durengard ist durch die Typenkombination Stahl/Geist defensiv
@@ -42,7 +37,7 @@ export const Infotext = ({
         Formen der Fall ist.
         <br/>
         <br/>
-        Weiterhin gibt es einen Malus (-40), falls einer der Angriffs- oder
+        Weiterhin gibt es einen Malus, falls einer der Angriffs- oder
         Verteidigungswerte sehr klein ist, was Spezial- oder -angriffe, bzw
         Abwehr gegen diese, enorm ineffektiv werden lässt.
         <br/>
