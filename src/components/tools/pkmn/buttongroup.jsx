@@ -11,22 +11,24 @@ const ButtonWithStates = ({ label, state, onLeftClick, onRightClick }) => {
             <div className="flex w-full">
                 <button
                     onClick={onLeftClick}
-                    className="w-1/2 flex justify-center items-center m-1 p-1 border-white"
+                    className="w-1/2 flex justify-center items-center m-1 p-1 border-white bg-black
+                    hover:bg-gray-800 rounded-full"
                 >
                     {state === 2 ? (
-                        <FaMagnifyingGlass className="text-red-500 text-2xl"/>
+                        <FaMagnifyingGlass className="text-red-500 text-2xl m-3"/>
                     ) : (
-                        <FaMagnifyingGlass className="text-blue-500 text-2xl"/>
+                        <FaMagnifyingGlass className="text-blue-500 text-2xl m-3"/>
                     )}
                 </button>
                 <button
                     onClick={onRightClick}
-                    className="w-1/2 flex justify-center items-center p-1 m-1"
+                    className="w-1/2 flex justify-center items-center p-1 m-1 bg-black
+                    hover:bg-gray-800 rounded-full"
                 >
                     {state === 0 ? (
-                        <FaEye className="text-2xl"/>
+                        <FaEye className="text-2xl m-3"/>
                     ) : (
-                        <FaEyeSlash className="text-2xl"/>
+                        <FaEyeSlash className="text-2xl m-3"/>
                     )}
                 </button>
             </div>
@@ -81,12 +83,12 @@ const ButtonGroup = ({
                     {showStats ? (
                         <div className="flex flex-col items-center">
                             Basiswerte <br/>
-                            <FaEye className="mt-2"/>
+                            <FaEye className="text-2xl mt-3"/>
                         </div>
                     ) : (
                         <div className="flex flex-col items-center">
                             Basiswerte <br/>
-                            <FaEyeSlash className="mt-2"/>
+                            <FaEyeSlash className="text-2xl mt-3"/>
                         </div>
                     )}
                 </button>
@@ -98,12 +100,12 @@ const ButtonGroup = ({
                     {showTypeValues ? (
                         <div className="flex flex-col items-center">
                             Typwerte <br/>
-                            <FaEye className="mt-2"/>
+                            <FaEye className="text-2xl mt-3"/>
                         </div>
                     ) : (
                         <div className="flex flex-col items-center">
                             Typwerte <br/>
-                            <FaEyeSlash className="mt-2"/>
+                            <FaEyeSlash className="text-2xl mt-3"/>
                         </div>
                     )}
                 </button>
@@ -117,12 +119,12 @@ const ButtonGroup = ({
                     {showTypeText ? (
                         <div className="flex flex-col items-center">
                             Typentext <br/>
-                            <FaEye className="mt-2"/>
+                            <FaEye className="text-2xl mt-3"/>
                         </div>
                     ) : (
                         <div className="flex flex-col items-center">
                             Typentext <br/>
-                            <FaEyeSlash className="mt-2"/>
+                            <FaEyeSlash className="text-2xl mt-3"/>
                         </div>
                     )}
                 </button>
