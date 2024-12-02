@@ -599,7 +599,7 @@ const PokeTable = () => {
     return (
         <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
             {/* Schieberegler */}
-            <div className="flex justify-center items-center mb-6">
+            <div className="flex justify-center items-center">
                 <span className="text-2xl mr-2">📋</span> {/* Tabellenansicht */}
                 <div
                     className={`relative inline-block w-16 h-8 rounded-full cursor-pointer transition-colors duration-300 ${
@@ -614,7 +614,23 @@ const PokeTable = () => {
                 <span className="text-2xl ml-2">📊</span> {/* Kachelansicht */}
             </div>
 
-            <div className="flex flex-col justify-between items-center mb-4 gap-x-2">
+            <div className="flex flex-col justify-between items-center mb-4 gap-x-2 gap-y-4">
+                <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
+                    <FilterControls
+                        selectedGeneration={selectedGeneration}
+                        handleGenerationChange={handleGenerationChange}
+                        selectedType1={selectedType1}
+                        handleType1Change={handleType1Change}
+                        selectedType2={selectedType2}
+                        handleType2Change={handleType2Change}
+                        selectedTypeAny={selectedTypeAny}
+                        handleTypeAnyChange={handleTypeAnyChange}
+                        typeCombinationOption={typeCombinationOption}
+                        handleTypeCombinationOptionChange={handleTypeCombinationOptionChange}
+                        setShowInfo={setShowInfo}
+                        showInfo={showInfo}
+                    />
+                </div>
 
                 <ButtonGroup
                     showStats={showStats}
@@ -648,22 +664,6 @@ const PokeTable = () => {
                 />
 
 
-                <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
-                    <FilterControls
-                        selectedGeneration={selectedGeneration}
-                        handleGenerationChange={handleGenerationChange}
-                        selectedType1={selectedType1}
-                        handleType1Change={handleType1Change}
-                        selectedType2={selectedType2}
-                        handleType2Change={handleType2Change}
-                        selectedTypeAny={selectedTypeAny}
-                        handleTypeAnyChange={handleTypeAnyChange}
-                        typeCombinationOption={typeCombinationOption}
-                        handleTypeCombinationOptionChange={handleTypeCombinationOptionChange}
-                        setShowInfo={setShowInfo}
-                        showInfo={showInfo}
-                    />
-                </div>
             </div>
 
             {showUniqueTypes && (
@@ -687,7 +687,7 @@ const PokeTable = () => {
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
                             const sumStats =
-                                pokemon.stats.hp +
+                            pokemon.stats.hp +
                                 pokemon.stats.attack +
                                 pokemon.stats.defense +
                                 pokemon.stats.specialAttack +

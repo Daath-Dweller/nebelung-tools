@@ -52,10 +52,10 @@ const ButtonGroup = ({
                          localsState,
                          megaState,
                          dynamaxState,
-    handleDynaLeftClick,
-    handleDynaRightClick,
-    handleMegaLeftClick,
-    handleMegaRightClick,
+                         handleDynaLeftClick,
+                         handleDynaRightClick,
+                         handleMegaLeftClick,
+                         handleMegaRightClick,
                          handleLegendaryLeftClick,
                          handleLegendaryRightClick,
                          handleUbLeftClick,
@@ -70,11 +70,11 @@ const ButtonGroup = ({
 
     <div
         id="btndiv"
-        className="flex md:flex-row flex-col gap-y-2 md:gap-y-0 gap-x-2"
+        className="flex flex-col gap-y-2 items-center"
     >
 
         {!isCardView && (
-            <>
+            <div className="flex md:flex-row flex-col gap-x-4 ">
                 <button
                     onClick={() => setShowStats(!showStats)}
                     className={`text-white bg-gray-600 border border-dotted border-white hover:bg-gray-900 px-2 py-1 
@@ -128,9 +128,10 @@ const ButtonGroup = ({
                         </div>
                     )}
                 </button>
-            </>
+            </div>
         )}
 
+        <div id="buttonsWithStates" className="flex md:flex-row flex-col gap-x-4">
         <ButtonWithStates
 
             label="Mega"
@@ -180,7 +181,7 @@ const ButtonGroup = ({
             onLeftClick={handleLocalsLeftClick}
             onRightClick={handleLocalsRightClick}
         />
-
+        </div>
     </div>
 
 );
