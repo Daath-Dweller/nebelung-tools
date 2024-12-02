@@ -59,6 +59,22 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             ],
             image: '/theseus.jpg' // Bildpfad
         },
+        Zwillingsparadoxon: {
+            name: 'Das Zwillingsparadoxon',
+            name2: 'The Twin Paradox',
+            erlaeuterung: 'Ein Gedankenexperiment der speziellen Relativitätstheorie zeigt, wie Zeitdilatation bewirkt, dass ein reisender Zwilling langsamer altert als der auf der Erde verbleibende. Gravitation (allgemeine Relativitätstheorie) ' +
+                'und Geschwindigkeit (spezielle Relativitätstheorie) beeinflussen die Zeit unterschiedlich. Große Himmelskörper krümmen die Raumzeit, wodurch Zeit langsamer vergeht, da die Raumzeit gedehnt wird (gravitative Zeitdilatation). ' +
+                'Bewegung nahe der Lichtgeschwindigkeit verlangsamt die Zeit relativ zum ruhenden Beobachter. Bei 87 % Lichtgeschwindigkeit bewirkt ein Lorentzfaktor von 2, ' +
+                'dass die Zeit für den Reisenden halb so schnell vergeht. Nach 5 Stunden Raumschiffzeit vergehen auf der Erde 10 Stunden. Experimente mit Atomuhren bestätigten Zeitdilatation durch Gravitation und Geschwindigkeit.',
+            bgcolor: 'bg-gray-800',
+            erklaerungFuerFuenf: 'Ein Zwilling reist mit einem schnellen Raumschiff und wird zurückkehren, wenn sein Bruder auf der Erde viel älter ist.',
+            gebiet: 'Physik',
+            fragen: [
+                'Wie erklärt die Relativitätstheorie die Zeitdilatation?',
+                'Welche praktischen Anwendungen hat das Zwillingsparadoxon?'
+            ],
+            image: '/erde.jpg' // Bildpfad
+        },
         TrolleyProblem: {
             name: 'Das Trolley-Problem',
             name2: 'The Trolley Problem',
@@ -150,22 +166,7 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
                 'Welche Rolle spielt persönliche Voreingenommenheit bei der Gestaltung von Gesellschaftsregeln?'
             ],
             image: '/schleier.jpg' // Bildpfad
-        },
-        Zwillingsparadoxon: {
-            name: 'Das Zwillingsparadoxon',
-            name2: 'The Twin Paradox',
-            erlaeuterung: 'Ein Gedankenexperiment aus der speziellen Relativitätstheorie, das zeigt, wie Zeitdilatation dazu führt, dass ein reisender Zwilling langsamer altert als sein auf der Erde verbleibender Zwilling. Da Raum und Zeit ein und dasselbe (Raumzeit) sind und ' +
-                'eine Verzerrung des Raumes durch Gravitation ebenso eine Verzerrung der Zeit bedeutet. Zeitfluss bedeutet automatisch Fluss von Teilchen bzw. Materie, dadurch lassen ' +
-                'grosse Himmelskörper die Zeit langsamer vergehen, da ihre Anziehungskraft den Fluss der Teilchen verlangsamt und die Raumzeit krümmt. Gute Darstellung im Film Interstellar.',
-            beispiel: 'Ein Zwilling reist mit hoher Geschwindigkeit ins All und kehrt zurück, um festzustellen, dass sein Bruder auf der Erde viel älter geworden ist als er selbst.',
-            bgcolor: 'bg-gray-800',
-            erklaerungFuerFuenf: 'Ein Zwilling reist mit einem schnellen Raumschiff und wird zurückkehren, wenn sein Bruder auf der Erde viel älter ist.',
-            gebiet: 'Physik',
-            fragen: [
-                'Wie erklärt die Relativitätstheorie die Zeitdilatation?',
-                'Welche praktischen Anwendungen hat das Zwillingsparadoxon?'
-            ],
-            image: '/erde.jpg' // Bildpfad
-        },
+        }
+
     },
 };

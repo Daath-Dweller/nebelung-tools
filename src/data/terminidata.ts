@@ -394,6 +394,14 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         korrekt: 0,
         etymologie: 'Aus dem Griechischen „phos“ (Licht) und „phainein“ (erscheinen), ursprünglich zur Beschreibung der leuchtenden Empfindungen im Auge.',
         beispielSatz: 'Als sie sanft auf ihre Augen drückte, sah sie bunte Phosphene.'
+    },
+    vergraemung: {
+        name: 'Vergrämung',
+        erklaerungUndSynonyme: 'Die gezielte Vermeidung oder Vertreibung von unerwünschten Tieren, meist durch Abschreckungsmittel oder Störmaßnahmen. Synonyme: Tiervertreibung, Wildabwehr.',
+        options: ['Verkrämung', 'Vergreimung','Vergrämung', 'Vergrähmung'],
+        korrekt: 2,
+        etymologie: 'Vom mittelhochdeutschen „græmen“ (sich ärgern, erzürnen), im übertragenen Sinne auf das „Ärgern“ oder „Stören“ von Tieren angewandt.',
+        beispielSatz: 'Zur Vergrämung von Wildgänsen setzte der Bauer akustische Signale ein.'
     }
 
 };
