@@ -64,7 +64,8 @@ export const gedankenexperimente: GedankenexperimenteCollection = {
             name2: 'The Twin Paradox',
             erlaeuterung: 'Ein Gedankenexperiment der speziellen Relativitätstheorie zeigt, wie Zeitdilatation bewirkt, dass ein reisender Zwilling langsamer altert als der auf der Erde verbleibende. Gravitation (allgemeine Relativitätstheorie) ' +
                 'und Geschwindigkeit (spezielle Relativitätstheorie) beeinflussen die Zeit unterschiedlich. Große Himmelskörper krümmen die Raumzeit, wodurch Zeit langsamer vergeht, da die Raumzeit gedehnt wird (gravitative Zeitdilatation). ' +
-                'Bewegung nahe der Lichtgeschwindigkeit verlangsamt die Zeit relativ zum ruhenden Beobachter. Bei 87 % Lichtgeschwindigkeit bewirkt ein Lorentzfaktor von 2, ' +
+                'Bewegung nahe der Lichtgeschwindigkeit verlangsamt die Zeit relativ zum ruhenden Beobachter. ',
+            beispiel: 'Ein Zwilling verlässt per Raumschiff die Erde, wodurch die Raumzeit um ihn herum weniger gekrümmt wird. Bei 87 % Lichtgeschwindigkeit bewirkt ein Lorentzfaktor von 2, ' +
                 'dass die Zeit für den Reisenden halb so schnell vergeht. Nach 5 Stunden Raumschiffzeit vergehen auf der Erde 10 Stunden. Experimente mit Atomuhren bestätigten Zeitdilatation durch Gravitation und Geschwindigkeit.',
             bgcolor: 'bg-gray-800',
             erklaerungFuerFuenf: 'Ein Zwilling reist mit einem schnellen Raumschiff und wird zurückkehren, wenn sein Bruder auf der Erde viel älter ist.',
