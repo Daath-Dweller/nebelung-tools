@@ -1,7 +1,6 @@
 "use client";
 import React, {useEffect, useState} from "react";
 import {
-    dynamaxID,
     generationRanges,
     legendaryIDs,
     lokalIDs,
@@ -72,7 +71,7 @@ const PokeTable = () => {
     const [paradoxState, setParadoxState] = useState(0);
     const [localsState, setLocalsState] = useState(0);
     const [megaState, setMegaState] = useState(0);
-    const [dynamaxState, setDynamaxState] = useState(0);
+
 
      const maxValues = {
         hp: 255,
@@ -151,9 +150,6 @@ const PokeTable = () => {
             specialChar = "  Ⓜ️"; // Megaevolution
         } else if (pokemon.id >= 10091 && pokemon.id <= 10115) {
             displayName = `Alola-${pokemon.name_de}`;
-        } else if (pokemon.id >= 10195 && pokemon.id <= 10228) {
-            displayName = `${pokemon.name_de}`;
-            specialChar = "  ⬆️"; // Gigadynamax
         } else if (pokemon.id >= 10229 && pokemon.id <= 10244) {
             displayName = `Hisui-${pokemon.name_de}`;
         } else if (pokemon.id >= 10250 && pokemon.id <= 10253) {
@@ -399,15 +395,6 @@ const PokeTable = () => {
         setMegaState(prev => (prev === 0 ? 1 : 0));
     };
 
-    // Dynamaxformen
-    const handleDynaLeftClick = () => {
-        setDynamaxState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
-
-    const handleDynaRightClick = () => {
-        setDynamaxState(prev => (prev === 0 ? 1 : 0));
-    };
 
     // Filter basierend auf Sonderformen, Legendären, UB, Mystik, Paradox, ausgewählter Generation und Typen
     const filteredPokemon = pokemonData.filter((pokemon) => {
@@ -416,11 +403,11 @@ const PokeTable = () => {
         const isMystic = mysticIDs.includes(pokemon.id);
         const isParadox = paradoxIDs.includes(pokemon.id);
         const isLocal = lokalIDs.includes(pokemon.id);
-        const isDynamax = dynamaxID.includes(pokemon.id);
+
         const isMega = megaID.includes(pokemon.id);
 
         const showOnlyFilters = [];
-        if (dynamaxState === 2) showOnlyFilters.push(isDynamax);
+
         if (legendaryState === 2) showOnlyFilters.push(isLegendary);
         if (ubState === 2) showOnlyFilters.push(isUB);
         if (mysticState === 2) showOnlyFilters.push(isMystic);
@@ -433,7 +420,7 @@ const PokeTable = () => {
                 return false;
             }
         } else {
-            if (dynamaxState === 1 && isDynamax) return false;
+
             if (legendaryState === 1 && isLegendary) return false;
             if (ubState === 1 && isUB) return false;
             if (mysticState === 1 && isMystic) return false;
@@ -662,10 +649,9 @@ const PokeTable = () => {
                     mysticState={mysticState}
                     paradoxState={paradoxState}
                     localsState={localsState}
-                    dynamaxState={dynamaxState}
+
                     megaState={megaState}
-                    handleDynaRightClick={handleDynaRightClick}
-                    handleDynaLeftClick={handleDynaLeftClick}
+
                     handleMegaRightClick={handleMegaRightClick}
                     handleMegaLeftClick={handleMegaLeftClick}
                     handleLegendaryLeftClick={handleLegendaryLeftClick}

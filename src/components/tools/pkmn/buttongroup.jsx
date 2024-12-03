@@ -1,3 +1,4 @@
+
 // ButtonGroup.js
 
 import React from 'react';
@@ -51,9 +52,6 @@ const ButtonGroup = ({
                          paradoxState,
                          localsState,
                          megaState,
-                         dynamaxState,
-                         handleDynaLeftClick,
-                         handleDynaRightClick,
                          handleMegaLeftClick,
                          handleMegaRightClick,
                          handleLegendaryLeftClick,
@@ -138,13 +136,6 @@ const ButtonGroup = ({
             state={megaState}
             onLeftClick={handleMegaLeftClick}
             onRightClick={handleMegaRightClick}
-        />
-
-        <ButtonWithStates
-            label="Dynamax"
-            state={dynamaxState}
-            onLeftClick={handleDynaLeftClick}
-            onRightClick={handleDynaRightClick}
         />
 
         <ButtonWithStates
