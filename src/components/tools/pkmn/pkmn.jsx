@@ -11,7 +11,7 @@ import {
     pokemonData,
     ubIDs,
 } from "@/data/pkmndata.ts";
-import {typenData, dtkData} from "@/data/pkmntypedata";
+import {dtkData, typenData} from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
 import {FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
@@ -278,7 +278,7 @@ const PokeTable = () => {
             defensiv: 0,
         };
         let offensivSum =
-            (type1Data.offensiv + 2 + ((type2Data.offensiv + 2 || 0))); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
+            (type1Data.offensiv + ((type2Data.offensiv || 0))); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
 
 
 
@@ -298,8 +298,6 @@ const PokeTable = () => {
                 gd -= 2000;
             }
         }
-
-
 
         if (hp >= 100) {
             gd += 3750;

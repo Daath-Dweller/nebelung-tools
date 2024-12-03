@@ -7,129 +7,130 @@ export interface Typen {
 
 
 export const typenData: Typen[] = [
+    //offensiv alle +2 weil Käfer / Pflanze mit 0 schlecht zum rechnn
     {
         id: 1,
         name: "Eis",
-        offensiv: 10,
+        offensiv: 12,
         defensiv: 7,
 
     },
     {
         id: 2,
         name: "Normal",
-        offensiv: 5,
+        offensiv: 7,
         defensiv: 20,
 
     },
     {
         id: 3,
         name: "Pflanze",
-        offensiv: 0,
+        offensiv: 2,
         defensiv: 7,
 
     },
     {
         id: 4,
         name: "Käfer",
-        offensiv: 0,
+        offensiv: 2,
         defensiv: 12,
 
     },
     {
         id: 5,
         name: "Elektro",
-        offensiv: 4,
+        offensiv: 6,
         defensiv: 18,
 
     },
     {
         id: 6,
         name: "Drache",
-        offensiv: 9,
+        offensiv: 11,
         defensiv: 13,
 
     },
     {
         id: 7,
         name: "Gift",
-        offensiv: 1,
+        offensiv: 3,
         defensiv: 17,
 
     },
     {
         id: 8,
         name: "Wasser",
-        offensiv: 12,
+        offensiv: 14,
         defensiv: 16,
 
     },
     {
         id: 9,
         name: "Geist",
-        offensiv: 10,
+        offensiv: 12,
         defensiv: 24,
 
     },
     {
         id: 10,
         name: "Stahl",
-        offensiv: 9,
+        offensiv: 11,
         defensiv: 24,
 
     },
     {
         id: 11,
         name: "Feuer",
-        offensiv: 10,
+        offensiv: 12,
         defensiv: 15,
 
     },
     {
         id: 12,
         name: "Psycho",
-        offensiv: 7,
+        offensiv: 9,
         defensiv: 11,
 
     },
     {
         id: 13,
         name: "Fee",
-        offensiv: 12,
+        offensiv: 14,
         defensiv: 20,
 
     },
     {
         id: 14,
         name: "Flug",
-        offensiv: 12,
+        offensiv: 14,
         defensiv: 17,
 
     },
     {
         id: 15,
         name: "Unlicht",
-        offensiv: 11,
+        offensiv: 13,
         defensiv: 16,
 
     },
     {
         id: 16,
         name: "Kampf",
-        offensiv: 1,
+        offensiv: 3,
         defensiv: 12,
 
     },
     {
         id: 17,
         name: "Boden",
-        offensiv: 10,
+        offensiv: 12,
         defensiv: 16,
 
     },
     {
         id: 18,
         name: "Gestein",
-        offensiv: 13,
+        offensiv: 15,
         defensiv: 11,
 
     }
