@@ -26,7 +26,7 @@ export const Infotext = ({
         Offensiv-/Defensivwerte sind. Hohe bzw. niedrige HP-Werte geben
         einen Defensivbonus/-malus, hohe bzw. niedrige Initiativewerte geben
         einen Offensivbonus/-malus. Pokemon mit einem Typ besitzen immer einen Offensivmalus, da sie
-            halb so viele STAB-Attacken nutzen könneen, die Doppeltypen.
+            halb so viele STAB-Attacken nutzen können, die Doppeltypen.
         <br/>
         <br/>
         Durengard ist durch die Typenkombination Stahl/Geist defensiv

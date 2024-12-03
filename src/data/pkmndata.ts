@@ -18697,8 +18697,8 @@ export const pokemonData: Pokemon[] = [
         "id": 11000,
         "name_de": "absolutes Maximum (Doppeltyp)",
         "name_en": "max",
-        "type1": "Geist",
-        "type2": "Fee",
+        "type1": "Stahl",
+        "type2": "Flug",
         "stats": {
             "hp": 255,
             "attack": 190,
