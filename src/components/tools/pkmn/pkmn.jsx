@@ -9,9 +9,9 @@ import {
     mysticIDs,
     paradoxIDs,
     pokemonData,
-    typenData,
     ubIDs,
 } from "@/data/pkmndata.ts";
+import {typenData, dtkData} from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
 import {FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
@@ -255,21 +255,40 @@ const PokeTable = () => {
             offensiv: 0,
             defensiv: 0,
         };
+
+        let defensivSum = 0;
+
+        // Wenn type2 leer ist
+        if (!type2) {
+            defensivSum = (type1Data.defensiv + 2);
+        } else {
+            // Prüfe dtkData für die Kombination
+            const typeCombo = dtkData.find(
+                (combo) =>
+                    (combo.typ1 === type1 && combo.typ2 === type2) ||
+                    (combo.typ1 === type2 && combo.typ2 === type1)
+            );
+
+            defensivSum = typeCombo ? (typeCombo.wert + 2) : 0; // Wenn Kombination nicht existiert, Standardwert 0, +2 um Negativwerte zu vermeiden
+        }
+
+        // Für offensivSum bleibt die ursprüngliche Logik erhalten
         const type2Data = typenData.find((t) => t.name === type2) || {
             offensiv: 0,
             defensiv: 0,
         };
+        let offensivSum =
+            (type1Data.offensiv + 2 + ((type2Data.offensiv + 2 || 0))); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
 
-        let offensivSum = (type1Data.offensiv + 1 + ((type2Data.offensiv + 1 || 0))) * 5 ; // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
-        let defensivSum = (type1Data.defensiv + 1 + (type2Data.defensiv + 1 || 0) / 2) * 5; // +1 weil Käfer sonst 0 hat und man damit nicht rechnen kann
 
-        // Monotypen-Offensiv-Malus
-        if (type2 === "") {
-            offensivSum /= 2;
-        }
+
+        //Wichtung der Typenwerte erhöhen
+        offensivSum *= 5;
+        defensivSum *= 5;
 
         return { offensivSum, defensivSum };
     };
+
 
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
         let gd = defensivSum + defense + specialDefense;

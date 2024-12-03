@@ -1,6 +1,7 @@
 // FilterControls.js
 import React from 'react';
-import {generationRanges, typenData} from "../../../data/pkmndata";
+import {typenData} from "../../../data/pkmntypedata";
+import {generationRanges} from '../../../data/pkmndata';
 
 const FilterControls = ({
                             selectedGeneration,
