@@ -38,7 +38,7 @@ const FilterControls = ({
             onChange={handleType1Change}
             className="bg-gray-700 text-white p-2 rounded"
         >
-            <option value="beliebig">[Beliebig]</option>
+            <option value="beliebig">[Beliebiger Typ]</option>
             {typenData.map((type) => (
                 <option key={type.name} value={type.name}>
                     {type.name}
@@ -52,7 +52,7 @@ const FilterControls = ({
             onChange={handleType2Change}
             className="bg-gray-700 text-white p-2 rounded"
         >
-            <option value="beliebig">[Beliebig]</option>
+            <option value="beliebig">[Beliebiger Typ]</option>
             <option value="keiner">[Keiner]</option>
             {/* Neue Option */}
             {typenData.map((type) => (
