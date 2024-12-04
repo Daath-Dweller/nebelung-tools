@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
     generationRanges,
     legendaryIDs,
@@ -10,16 +10,17 @@ import {
     pokemonData,
     ubIDs,
 } from "@/data/pkmndata.ts";
-import {dtkData, typenData, TypenBoni} from "@/data/pkmntypedata";
+import { dtkData, typenData, TypenBoni } from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
-import {FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
-import {TbIrregularPolyhedron, TbPlant} from "react-icons/tb";
-import {SiStackblitz} from "react-icons/si";
-import {GiArrowWings, GiDustCloud, GiFairy, GiPoisonBottle, GiSteelClaws, GiStonePile} from "react-icons/gi";
-import {IoIosWater} from "react-icons/io";
-import {MdDarkMode, MdOutlinePsychology} from "react-icons/md";
-import {Infotext} from "@/components/tools/pkmn/infotext";
+import { FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake } from "react-icons/fa";
+import { TbIrregularPolyhedron, TbPlant } from "react-icons/tb";
+import { SiStackblitz } from "react-icons/si";
+import { GiArrowWings, GiDustCloud, GiFairy, GiPoisonBottle, GiSteelClaws, GiStonePile } from "react-icons/gi";
+import { IoIosWater } from "react-icons/io";
+import { MdDarkMode, MdOutlinePsychology } from "react-icons/md";
+import { Infotext } from "@/components/tools/pkmn/infotext";
+import NameFilter from "@/components/tools/pkmn/namefilter";
 
 const typeIconMap = {
     Eis: <FaRegSnowflake />,
@@ -43,20 +44,19 @@ const typeIconMap = {
 };
 
 // Hilfsfunktionen
-function scrollToTop() {
+const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-const formatNumber = (num) => {
-    return num.toLocaleString("de-DE");
 };
 
+const formatNumber = (num) => num.toLocaleString("de-DE");
+
 const PokeTable = () => {
+    // States
     const [displayedCount, setDisplayedCount] = useState(151); // Standard auf Gen 1 (151)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [showInfo, setShowInfo] = useState(false);
     const [showStats, setShowStats] = useState(true);
-    const [showTypeValues, setShowTypeValues] = useState(false); // Neuer State für Typwerte
+    const [showTypeValues, setShowTypeValues] = useState(false);
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
@@ -64,16 +64,16 @@ const PokeTable = () => {
     const [typeCombinationOption, setTypeCombinationOption] = useState("");
     const [showUniqueTypes, setShowUniqueTypes] = useState(false);
     const [selectedTypeAny, setSelectedTypeAny] = useState("beliebig");
-    const [isCardView, setIsCardView] = useState(false); // Neuer State für die Ansicht
-   const [legendaryState, setLegendaryState] = useState(0);
+    const [isCardView, setIsCardView] = useState(false);
+    const [legendaryState, setLegendaryState] = useState(0);
     const [ubState, setUbState] = useState(0);
     const [mysticState, setMysticState] = useState(0);
     const [paradoxState, setParadoxState] = useState(0);
     const [localsState, setLocalsState] = useState(0);
     const [megaState, setMegaState] = useState(0);
+    const [nameFilter, setNameFilter] = useState(""); // State für Namensfilter
 
-
-     const maxValues = {
+    const maxValues = {
         hp: 255,
         attack: 190,
         defense: 250,
@@ -90,7 +90,6 @@ const PokeTable = () => {
             setShowTypeText(true);
         }
     }, [isCardView]);
-
 
     // NEU: Funktion zum Umschalten des Typentextes
     const toggleShowTypeText = () => {
@@ -116,8 +115,6 @@ const PokeTable = () => {
         scrollToTop(); // Optional: Nach Generationwechsel nach oben scrollen
     };
 
-
-
     // Neue Handler für Typfilter
     const handleType1Change = (event) => {
         setSelectedType1(event.target.value);
@@ -137,7 +134,6 @@ const PokeTable = () => {
     // NEU: Handler für die Typenkombinationsoption
     const handleTypeCombinationOptionChange = (event) => {
         setTypeCombinationOption(event.target.value);
-        setShowUniqueTypes(true); // Info-Bereich anzeigen
         scrollToTop();
     };
 
@@ -192,7 +188,6 @@ const PokeTable = () => {
                     emoji = "💀"; // Sehr niedrig
                 }
                 break;
-
             case "attack":
                 if (value >= 120) {
                     emoji = "⚔️"; // Sehr hoch
@@ -200,7 +195,6 @@ const PokeTable = () => {
                     emoji = "💀"; // Sehr niedrig
                 }
                 break;
-
             case "defense":
                 if (value >= 105) {
                     emoji = "🧱"; // Sehr hoch
@@ -208,7 +202,6 @@ const PokeTable = () => {
                     emoji = "💀"; // Sehr niedrig
                 }
                 break;
-
             case "specialAttack":
                 if (value >= 109) {
                     emoji = "🌀"; // Sehr hoch
@@ -216,7 +209,6 @@ const PokeTable = () => {
                     emoji = "💀️"; // Sehr niedrig
                 }
                 break;
-
             case "specialDefense":
                 if (value >= 120) {
                     emoji = "🍀"; // Sehr hoch
@@ -224,7 +216,6 @@ const PokeTable = () => {
                     emoji = "💀"; // Sehr niedrig
                 }
                 break;
-
             case "speed":
                 if (value >= 100) {
                     emoji = "🚀"; // Sehr hoch
@@ -232,7 +223,6 @@ const PokeTable = () => {
                     emoji = "💀"; // Sehr niedrig
                 }
                 break;
-
             default:
                 emoji = ""; // Kein Emoji, wenn der Typ nicht passt
                 break;
@@ -254,8 +244,8 @@ const PokeTable = () => {
 
         let defensivSum = 0;
 
-        // Wenn type2 leer ist
-        if (!type2) {
+        // Wenn type2 leer oder "keiner" ist
+        if (!type2 || type2 === "keiner") {
             defensivSum = type1Data.defensiv + 2;
         } else {
             // Prüfe dtkData für die Kombination
@@ -265,7 +255,7 @@ const PokeTable = () => {
                     (combo.typ1 === type2 && combo.typ2 === type1)
             );
 
-            defensivSum = typeCombo ? typeCombo.wert + 2 : 0;
+            defensivSum = typeCombo ? typeCombo.wert + 2 : type1Data.defensiv;
         }
 
         // Für offensivSum bleibt die ursprüngliche Logik erhalten
@@ -294,7 +284,6 @@ const PokeTable = () => {
         return { offensivSum, defensivSum };
     };
 
-
     const calculateGD = (defensivSum, defense, specialDefense, hp) => {
         let gd = defensivSum + defense + specialDefense;
         if (defense <= 60) {
@@ -314,7 +303,7 @@ const PokeTable = () => {
         gd += defense + defensivSum * defense;
         gd += specialDefense + defensivSum * specialDefense;
         gd += hp * 75;
-        gd = gd / 100 +75; //+75 gegen Negativwerte, rein optisch
+        gd = gd / 100 + 75; // +75 gegen Negativwerte, rein optisch
 
         return Math.round(gd);
     };
@@ -357,189 +346,170 @@ const PokeTable = () => {
         return Math.round(go);
     };
 
+    // Handlers für Sonderformen
+    const handleLegendaryLeftClick = () => setLegendaryState((prev) => (prev === 2 ? 0 : 2));
+    const handleLegendaryRightClick = () => setLegendaryState((prev) => (prev === 0 ? 1 : 0));
 
+    const handleUbLeftClick = () => setUbState((prev) => (prev === 2 ? 0 : 2));
+    const handleUbRightClick = () => setUbState((prev) => (prev === 0 ? 1 : 0));
 
-    // Legendäre
-    const handleLegendaryLeftClick = () => {
-        setLegendaryState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
+    const handleMysticLeftClick = () => setMysticState((prev) => (prev === 2 ? 0 : 2));
+    const handleMysticRightClick = () => setMysticState((prev) => (prev === 0 ? 1 : 0));
 
-    const handleLegendaryRightClick = () => {
-        setLegendaryState(prev => (prev === 0 ? 1 : 0));
-    };
+    const handleParadoxLeftClick = () => setParadoxState((prev) => (prev === 2 ? 0 : 2));
+    const handleParadoxRightClick = () => setParadoxState((prev) => (prev === 0 ? 1 : 0));
 
-    // UB
-    const handleUbLeftClick = () => {
-        setUbState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
+    const handleLocalsLeftClick = () => setLocalsState((prev) => (prev === 2 ? 0 : 2));
+    const handleLocalsRightClick = () => setLocalsState((prev) => (prev === 0 ? 1 : 0));
 
-    const handleUbRightClick = () => {
-        setUbState(prev => (prev === 0 ? 1 : 0));
-    };
+    const handleMegaLeftClick = () => setMegaState((prev) => (prev === 2 ? 0 : 2));
+    const handleMegaRightClick = () => setMegaState((prev) => (prev === 0 ? 1 : 0));
 
-    // Mysteriöse
-    const handleMysticLeftClick = () => {
-        setMysticState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
+    // useEffect für Typenkombinationsoption
+    useEffect(() => {
+        if (typeCombinationOption === "") {
+            setShowUniqueTypes(false);
+        } else {
+            setShowUniqueTypes(true);
+        }
+    }, [typeCombinationOption]);
 
-    const handleMysticRightClick = () => {
-        setMysticState(prev => (prev === 0 ? 1 : 0));
-    };
+    // Memoized Filtered Pokémon
+    const filteredPokemon = useMemo(() => {
+        return pokemonData.filter((pokemon) => {
+            // Überprüfen von Sonderformen
+            const isLegendary = legendaryIDs.includes(pokemon.id);
+            const isUB = ubIDs.includes(pokemon.id);
+            const isMystic = mysticIDs.includes(pokemon.id);
+            const isParadox = paradoxIDs.includes(pokemon.id);
+            const isLocal = lokalIDs.includes(pokemon.id);
+            const isMega = megaID.includes(pokemon.id);
 
-    // Paradox
-    const handleParadoxLeftClick = () => {
-        setParadoxState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
+            // Nur bestimmte Filter aktiv
+            const showOnlyFilters = [];
+            if (legendaryState === 2) showOnlyFilters.push(isLegendary);
+            if (ubState === 2) showOnlyFilters.push(isUB);
+            if (mysticState === 2) showOnlyFilters.push(isMystic);
+            if (paradoxState === 2) showOnlyFilters.push(isParadox);
+            if (localsState === 2) showOnlyFilters.push(isLocal);
+            if (megaState === 2) showOnlyFilters.push(isMega);
 
-    const handleParadoxRightClick = () => {
-        setParadoxState(prev => (prev === 0 ? 1 : 0));
-    };
+            if (showOnlyFilters.length > 0) {
+                if (!showOnlyFilters.some((condition) => condition)) {
+                    return false;
+                }
+            } else {
+                // Ausschlussfilter
+                if (legendaryState === 1 && isLegendary) return false;
+                if (ubState === 1 && isUB) return false;
+                if (mysticState === 1 && isMystic) return false;
+                if (paradoxState === 1 && isParadox) return false;
+                if (localsState === 1 && isLocal) return false;
+                if (megaState === 1 && isMega) return false;
+            }
 
-    // Lokalformen
-    const handleLocalsLeftClick = () => {
-        setLocalsState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
-
-    const handleLocalsRightClick = () => {
-        setLocalsState(prev => (prev === 0 ? 1 : 0));
-    };
-
-    // Megaformen
-    const handleMegaLeftClick = () => {
-        setMegaState(prev => (prev === 2 ? 0 : 2));
-        // Hier können Sie zusätzliche Logik hinzufügen, wenn nötig
-    };
-
-    const handleMegaRightClick = () => {
-        setMegaState(prev => (prev === 0 ? 1 : 0));
-    };
-
-
-    // Filter basierend auf Sonderformen, Legendären, UB, Mystik, Paradox, ausgewählter Generation und Typen
-    const filteredPokemon = pokemonData.filter((pokemon) => {
-        const isLegendary = legendaryIDs.includes(pokemon.id);
-        const isUB = ubIDs.includes(pokemon.id);
-        const isMystic = mysticIDs.includes(pokemon.id);
-        const isParadox = paradoxIDs.includes(pokemon.id);
-        const isLocal = lokalIDs.includes(pokemon.id);
-
-        const isMega = megaID.includes(pokemon.id);
-
-        const showOnlyFilters = [];
-
-        if (legendaryState === 2) showOnlyFilters.push(isLegendary);
-        if (ubState === 2) showOnlyFilters.push(isUB);
-        if (mysticState === 2) showOnlyFilters.push(isMystic);
-        if (paradoxState === 2) showOnlyFilters.push(isParadox);
-        if (localsState === 2) showOnlyFilters.push(isLocal);
-        if (megaState === 2) showOnlyFilters.push(isMega);
-
-        if (showOnlyFilters.length > 0) {
-            if (!showOnlyFilters.some((condition) => condition)) {
+            // Filter für Generationen
+            const range = generationRanges[selectedGeneration];
+            if (
+                (pokemon.id < range.min || pokemon.id > range.max) &&
+                !range.extraIDs.includes(pokemon.id)
+            ) {
                 return false;
             }
-        } else {
 
-            if (legendaryState === 1 && isLegendary) return false;
-            if (ubState === 1 && isUB) return false;
-            if (mysticState === 1 && isMystic) return false;
-            if (paradoxState === 1 && isParadox) return false;
-            if (localsState === 1 && isLocal) return false;
-            if (megaState === 1 && isMega) return false;
-        }
+            // Filter für Typ 1
+            if (selectedType1 !== "beliebig" && pokemon.type1 !== selectedType1) return false;
 
-// Filter für Generationen
-        const range = generationRanges[selectedGeneration];
-
-// Überprüfen, ob die ID weder innerhalb des Bereichs liegt noch in den extraIDs enthalten ist
-        if (
-            (pokemon.id < range.min || pokemon.id > range.max) &&
-            !range.extraIDs.includes(pokemon.id)
-        ) {
-            return false;
-        }
-
-
-
-        // Filter für Typ 1
-        if (selectedType1 !== "beliebig" && pokemon.type1 !== selectedType1) return false;
-
-        // Filter für Typ 2
-        if (selectedType2 === "keiner") {
-            if (pokemon.type2) return false; // Pokémon hat einen zweiten Typ, also ausschließen
-        } else if (selectedType2 !== "beliebig" && pokemon.type2 !== selectedType2) {
-            return false; // Pokémon hat einen anderen zweiten Typ, also ausschließen
-        }
-
-        // Filter für Typ an beliebiger Stelle
-        if (selectedTypeAny !== "beliebig") {
-            if (pokemon.type1 !== selectedTypeAny && pokemon.type2 !== selectedTypeAny) return false;
-        }
-
-        return true;
-    });
-
-    const sortedPokemon = [...filteredPokemon.slice(0, displayedCount)].sort((a, b) => {
-        if (!sortConfig.key) return 0;
-
-        const getComparableValue = (pokemon) => {
-            if (sortConfig.key === "GD") {
-                const { defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                return calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+            // Filter für Typ 2
+            if (selectedType2 === "keiner") {
+                if (pokemon.type2) return false; // Pokémon hat einen zweiten Typ, also ausschließen
+            } else if (selectedType2 !== "beliebig" && pokemon.type2 !== selectedType2) {
+                return false; // Pokémon hat einen anderen zweiten Typ, also ausschließen
             }
-            if (sortConfig.key === "GO") {
-                const { offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
-                return calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
-            }
-            if (sortConfig.key === "GS") {
-                const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
-                const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
-                return gd + go;
-            }
-            if (sortConfig.key === "offensivSum" || sortConfig.key === "defensivSum") {
-                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                return sortConfig.key === "offensivSum" ? offensivSum : defensivSum;
-            }
-            if (sortConfig.key === "typeSum") {
-                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                return offensivSum + defensivSum;
-            }
-            if (sortConfig.key === "sumStats") {
-                return (
-                    pokemon.stats.hp +
-                    pokemon.stats.attack +
-                    pokemon.stats.defense +
-                    pokemon.stats.specialAttack +
-                    pokemon.stats.specialDefense +
-                    pokemon.stats.speed
-                );
-            }
-            if (sortConfig.key.includes("stats")) {
-                return pokemon.stats[sortConfig.key.split(".")[1]];
-            }
-            return pokemon[sortConfig.key];
-        };
 
-        const aValue = getComparableValue(a);
-        const bValue = getComparableValue(b);
+            // Filter für Typ an beliebiger Stelle
+            if (selectedTypeAny !== "beliebig") {
+                if (pokemon.type1 !== selectedTypeAny && pokemon.type2 !== selectedTypeAny) return false;
+            }
 
-        if (typeof aValue === "string") {
-            return sortConfig.direction === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-        } else {
-            return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue;
-        }
-    });
+            // Filter für Namenssuche
+            if (nameFilter && !pokemon.name_de.toLowerCase().includes(nameFilter)) return false;
+
+            return true;
+        });
+    }, [
+        legendaryState,
+        ubState,
+        mysticState,
+        paradoxState,
+        localsState,
+        megaState,
+        selectedGeneration,
+        selectedType1,
+        selectedType2,
+        selectedTypeAny,
+        nameFilter,
+    ]);
+
+    // Sortierte Pokémon
+    const sortedPokemon = useMemo(() => {
+        return [...filteredPokemon.slice(0, displayedCount)].sort((a, b) => {
+            if (!sortConfig.key) return 0;
+
+            const getComparableValue = (pokemon) => {
+                if (sortConfig.key === "GD") {
+                    const { defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    return calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+                }
+                if (sortConfig.key === "GO") {
+                    const { offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    return calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                }
+                if (sortConfig.key === "GS") {
+                    const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+                    const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                    return gd + go;
+                }
+                if (sortConfig.key === "offensivSum" || sortConfig.key === "defensivSum") {
+                    const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    return sortConfig.key === "offensivSum" ? offensivSum : defensivSum;
+                }
+                if (sortConfig.key === "typeSum") {
+                    const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    return offensivSum + defensivSum;
+                }
+                if (sortConfig.key === "sumStats") {
+                    return (
+                        pokemon.stats.hp +
+                        pokemon.stats.attack +
+                        pokemon.stats.defense +
+                        pokemon.stats.specialAttack +
+                        pokemon.stats.specialDefense +
+                        pokemon.stats.speed
+                    );
+                }
+                if (sortConfig.key.includes("stats")) {
+                    return pokemon.stats[sortConfig.key.split(".")[1]];
+                }
+                return pokemon[sortConfig.key];
+            };
+
+            const aValue = getComparableValue(a);
+            const bValue = getComparableValue(b);
+
+            if (typeof aValue === "string") {
+                return sortConfig.direction === "asc"
+                    ? aValue.localeCompare(bValue)
+                    : bValue.localeCompare(aValue);
+            } else {
+                return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue;
+            }
+        });
+    }, [filteredPokemon, displayedCount, sortConfig]);
 
     const handleSort = (key) => {
-        if (key === "Pos") {
-            return; // Keine Aktion für "Pos"
-        }
+        if (key === "Pos") return; // Keine Aktion für "Pos"
         setSortConfig((prevConfig) => {
             if (prevConfig.key === key && prevConfig.direction === "asc") {
                 return { key, direction: "desc" };
@@ -549,17 +519,21 @@ const PokeTable = () => {
     };
 
     const renderSortArrow = (key) => {
-        if (key === "Pos") {
-            return ""; // Zeige nichts für den "Pos"-Key
-        }
+        if (key === "Pos") return ""; // Zeige nichts für den "Pos"-Key
 
-        return sortConfig.key === key ? (sortConfig.direction === "asc" ? "↑" : "↓") : "⇅";
+        return sortConfig.key === key
+            ? sortConfig.direction === "asc"
+                ? "↑"
+                : "↓"
+            : "⇅";
     };
 
     // NEU: Funktion zur Berechnung nicht existierender Typenkombinationen
     const getNonExistentTypeCombinations = () => {
         const allTypes = typenData.map((type) => type.name);
-        const existingCombinations = new Set(pokemonData.map((pokemon) => `${pokemon.type1}/${pokemon.type2 || "keiner"}`));
+        const existingCombinations = new Set(
+            pokemonData.map((pokemon) => `${pokemon.type1}/${pokemon.type2 || "keiner"}`)
+        );
 
         const nonExistentCombinations = [];
 
@@ -570,7 +544,10 @@ const PokeTable = () => {
                 const combination = `${type1}/${type2}`;
                 const reverseCombination = `${type2}/${type1}`;
 
-                if (!existingCombinations.has(combination) && !existingCombinations.has(reverseCombination)) {
+                if (
+                    !existingCombinations.has(combination) &&
+                    !existingCombinations.has(reverseCombination)
+                ) {
                     nonExistentCombinations.push(combination);
                 }
             }
@@ -597,7 +574,10 @@ const PokeTable = () => {
 
         return Object.entries(combinationMap)
             .filter(([_, data]) => data.count === 1)
-            .map(([combination, data]) => `${combination} (${data.pokemonName} (${data.pokemonID}))`);
+            .map(
+                ([combination, data]) =>
+                    `${combination} (${data.pokemonName} (${data.pokemonID}))`
+            );
     };
 
     // NEU: Generieren des Info-Textes basierend auf der ausgewählten Option
@@ -606,7 +586,9 @@ const PokeTable = () => {
             const nonExistentCombinations = getNonExistentTypeCombinations();
             return (
                 <div>
-                    <h3 className="text-lg font-bold mb-2">Nicht existierende Typenkombinationen:</h3>
+                    <h3 className="text-lg font-bold mb-2">
+                        Nicht existierende Typenkombinationen:
+                    </h3>
                     <p>{nonExistentCombinations.join(", ")}</p>
                 </div>
             );
@@ -614,12 +596,12 @@ const PokeTable = () => {
             const uniqueCombinations = getUniqueTypeCombinations();
             return (
                 <div>
-                    <h3 className="text-lg font-bold mb-2">Einmalige Typenkombinationen:</h3>
+                    <h3 className="text-lg font-bold mb-2">
+                        Einmalige Typenkombinationen:
+                    </h3>
                     <p>{uniqueCombinations.join(", ")}</p>
                 </div>
             );
-        } else if (typeCombinationOption === "") {
-            setShowUniqueTypes(!showUniqueTypes);
         }
         return null;
     };
@@ -636,11 +618,15 @@ const PokeTable = () => {
                     onClick={() => setIsCardView(!isCardView)}
                 >
                     <div
-                        className={`absolute top-1 ${isCardView ? "right-1" : "left-1"} w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300`}
+                        className={`absolute top-1 ${
+                            isCardView ? "right-1" : "left-1"
+                        } w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300`}
                     ></div>
                 </div>
                 <span className="text-2xl ml-2">📊</span> {/* Kachelansicht */}
             </div>
+
+
 
             <div className="flex flex-col justify-between items-center mb-4 gap-x-2 gap-y-4">
                 <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
@@ -673,9 +659,7 @@ const PokeTable = () => {
                     mysticState={mysticState}
                     paradoxState={paradoxState}
                     localsState={localsState}
-
                     megaState={megaState}
-
                     handleMegaRightClick={handleMegaRightClick}
                     handleMegaLeftClick={handleMegaLeftClick}
                     handleLegendaryLeftClick={handleLegendaryLeftClick}
@@ -690,40 +674,45 @@ const PokeTable = () => {
                     handleLocalsRightClick={handleLocalsRightClick}
                 />
 
-
+                {/* Namensfilter */}
+                <NameFilter setNameFilter={setNameFilter} />
             </div>
 
+            {/* Einmalige Typenkombinationen Info */}
             {showUniqueTypes && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
                     <div className="mt-4">{renderTypeCombinationInfo()}</div>
                 </div>
             )}
 
+            {/* Info-Text */}
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
-                    <Infotext/>
+                    <Infotext />
                 </div>
             )}
 
             <div className="text-center mt-12 pr-2">
-                <h2 className="text-lg font-extrabold mb-4">Pokémon Liste (aktuell: {displayedCount})</h2>
+                <h2 className="text-lg font-extrabold mb-4">
+                    Pokémon Liste (aktuell: {displayedCount})
+                </h2>
 
                 {isCardView ? (
                     // Kartenansicht
-                    <div
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
-                            const sumStats =
-                            pokemon.stats.hp +
-                                pokemon.stats.attack +
-                                pokemon.stats.defense +
-                                pokemon.stats.specialAttack +
-                                pokemon.stats.specialDefense +
-                                pokemon.stats.speed;
-
-                            const {offensivSum, defensivSum} = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                            const { offensivSum, defensivSum } = getTypeDataSum(
+                                pokemon.type1,
+                                pokemon.type2,
+                                pokemon.id
+                            );
                             const typeSum = offensivSum + defensivSum;
-                            const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+                            const gd = calculateGD(
+                                defensivSum,
+                                pokemon.stats.defense,
+                                pokemon.stats.specialDefense,
+                                pokemon.stats.hp
+                            );
                             const go = calculateGO(
                                 offensivSum,
                                 pokemon.stats.attack,
@@ -740,24 +729,31 @@ const PokeTable = () => {
                                 getStatEmoji(pokemon.stats.specialAttack, "specialAttack"),
                                 getStatEmoji(pokemon.stats.specialDefense, "specialDefense"),
                                 getStatEmoji(pokemon.stats.speed, "speed"),
-                            ].map((emoji) => {
-                                if (!emoji) {
-                                    return "⏺️"; // Ersetze leere Emojis durch ⏺️
-                                } else {
-                                    return emoji;
-                                }
-                            });
+                            ].map((emoji) => (emoji ? emoji : "⏺️"));
 
                             return (
-                                <div key={pokemon.id} className="bg-gray-800 text-white p-4 rounded-md flex flex-col items-center">
+                                <div
+                                    key={pokemon.id}
+                                    className="bg-gray-800 text-white p-4 rounded-md flex flex-col items-center"
+                                >
                                     {/* Name, Nummer und Sonderstatus */}
-                                    <div className="text-center font-bold">#{pokemon.id}<br/>{getDisplayName(pokemon)} </div>
+                                    <div className="text-center font-bold">
+                                        #{pokemon.id}
+                                        <br />
+                                        {getDisplayName(pokemon)}
+                                    </div>
 
                                     {/* Typen-Icons */}
                                     <div className="flex justify-center my-2">
                                         <div className="flex items-center">
-                                            <span className="text-2xl">{typeIconMap[pokemon.type1]}</span>
-                                            {pokemon.type2 && <span className="text-2xl ml-2">{typeIconMap[pokemon.type2]}</span>}
+                                            <span className="text-2xl">
+                                                {typeIconMap[pokemon.type1]}
+                                            </span>
+                                            {pokemon.type2 && (
+                                                <span className="text-2xl ml-2">
+                                                    {typeIconMap[pokemon.type2]}
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
 
@@ -772,50 +768,58 @@ const PokeTable = () => {
                                     <div className="flex justify-center mt-2">
                                         {statEmojis.map((emoji, idx) => (
                                             <span key={idx} className="text-xl mx-1">
-                        {emoji}
-                      </span>
+                                                {emoji}
+                                            </span>
                                         ))}
                                     </div>
 
                                     {/* Balkendiagramme */}
                                     <div className="flex justify-around mt-2 w-full">
-                                        {["hp", "attack", "defense", "specialAttack", "specialDefense", "speed"].map((stat) => {
-                                            const value = pokemon.stats[stat];
-                                            const maxSegments = 13; // Maximale Anzahl an Segmenten
-                                            const maxValue = maxValues[stat]; // Maximalwert für diesen Wert
-                                            const segmentValue = maxValue / maxSegments; // Wert pro Segment
-                                            const segments = Math.ceil(value / segmentValue); // Anzahl der gefüllten Segmente
+                                        {["hp", "attack", "defense", "specialAttack", "specialDefense", "speed"].map(
+                                            (stat) => {
+                                                const value = pokemon.stats[stat];
+                                                const maxSegments = 13; // Maximale Anzahl an Segmenten
+                                                const maxValue = maxValues[stat]; // Maximalwert für diesen Wert
+                                                const segmentValue = maxValue / maxSegments; // Wert pro Segment
+                                                const segments = Math.ceil(value / segmentValue); // Anzahl der gefüllten Segmente
 
-                                            const segmentHeight = 100 / maxSegments; // Prozentuale Höhe jedes Segments
+                                                const segmentHeight = 100 / maxSegments; // Prozentuale Höhe jedes Segments
 
-                                            return (
-                                                <div className="flex flex-col-reverse items-center" key={stat}>
-                                                    <div className="relative flex flex-col-reverse h-24">
-                                                        {[...Array(maxSegments)].map((_, idx) => (
-                                                            <div
-                                                                key={idx}
-                                                                className={`w-4 ${idx < segments ? "bg-teal-500" : "bg-gray-600"} border-t border-black`}
-                                                                style={{ height: `${segmentHeight}%` }}
-                                                            ></div>
-                                                        ))}
+                                                return (
+                                                    <div
+                                                        className="flex flex-col-reverse items-center"
+                                                        key={stat}
+                                                    >
+                                                        <div className="relative flex flex-col-reverse h-24">
+                                                            {[...Array(maxSegments)].map((_, idx) => (
+                                                                <div
+                                                                    key={idx}
+                                                                    className={`w-4 ${
+                                                                        idx < segments
+                                                                            ? "bg-teal-500"
+                                                                            : "bg-gray-600"
+                                                                    } border-t border-black`}
+                                                                    style={{ height: `${segmentHeight}%` }}
+                                                                ></div>
+                                                            ))}
+                                                        </div>
+                                                        {/* Tooltip */}
+                                                        <div className="text-xs mt-1">
+                                                            <span className="cursor-help" title={stat}>
+                                                                &nbsp;
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    {/* Tooltip */}
-                                                    <div className="text-xs mt-1">
-        <span className="cursor-help" title={stat}>
-          &nbsp;
-        </span>
-                                                    </div>
-                                                </div>
-                                            );
-                                        })}
-
+                                                );
+                                            }
+                                        )}
                                     </div>
 
                                     {/* GD, GO, GS */}
                                     <div className="flex justify-around mt-3 w-full">
-                                        <div>GD: <br/> {gd}</div>
-                                        <div>GO: <br/> {go}</div>
-                                        <div>GS: <br/> {gs}</div>
+                                        <div>GD: <br />{gd}</div>
+                                        <div>GO: <br />{go}</div>
+                                        <div>GS: <br />{gs}</div>
                                     </div>
                                 </div>
                             );
@@ -824,7 +828,7 @@ const PokeTable = () => {
                 ) : (
                     // Tabellenansicht
                     <table className="table-auto w-full border-collapse">
-                        <thead className="">
+                        <thead>
                         <tr>
                             {[
                                 { key: "Pos", label: "Pos." },
@@ -866,6 +870,25 @@ const PokeTable = () => {
                         </thead>
                         <tbody>
                         {sortedPokemon.map((pokemon, index) => {
+                            const { offensivSum, defensivSum } = getTypeDataSum(
+                                pokemon.type1,
+                                pokemon.type2,
+                                pokemon.id
+                            );
+                            const typeSum = offensivSum + defensivSum;
+                            const gd = calculateGD(
+                                defensivSum,
+                                pokemon.stats.defense,
+                                pokemon.stats.specialDefense,
+                                pokemon.stats.hp
+                            );
+                            const go = calculateGO(
+                                offensivSum,
+                                pokemon.stats.attack,
+                                pokemon.stats.specialAttack,
+                                pokemon.stats.speed
+                            );
+                            const gs = gd + go;
                             const sumStats =
                                 pokemon.stats.hp +
                                 pokemon.stats.attack +
@@ -874,51 +897,64 @@ const PokeTable = () => {
                                 pokemon.stats.specialDefense +
                                 pokemon.stats.speed;
 
-                            const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                            const typeSum = offensivSum + defensivSum;
-                            const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
-                            const go = calculateGO(
-                                offensivSum,
-                                pokemon.stats.attack,
-                                pokemon.stats.specialAttack,
-                                pokemon.stats.speed
-                            );
-                            const gs = gd + go;
-
                             return (
                                 <tr
                                     key={pokemon.id}
                                     className="border-t border-gray-600 hover:border-black hover:bg-white hover:text-black text-center"
                                 >
-                                    <td className="border border-gray-600 p-2 text-center">{index + 1}</td>
-                                    <td className="border border-gray-600 p-2 text-center">{pokemon.id}</td>
-                                    <td className="border border-gray-600 p-2 text-center">{getDisplayName(pokemon)}</td>
-                                    <td className="border border-gray-600 p-2  text-center">
-                                        <div id="type1" className="flex justify-center items-center ">
-                                            <span className="text-2xl text-center">{typeIconMap[pokemon.type1]}</span>
+                                    <td className="border border-gray-600 p-2 text-center">
+                                        {index + 1}
+                                    </td>
+                                    <td className="border border-gray-600 p-2 text-center">
+                                        {pokemon.id}
+                                    </td>
+                                    <td className="border border-gray-600 p-2 text-center">
+                                        {getDisplayName(pokemon)}
+                                    </td>
+                                    <td className="border border-gray-600 p-2 text-center">
+                                        <div id="type1" className="flex justify-center items-center">
+                                                <span className="text-2xl">
+                                                    {typeIconMap[pokemon.type1]}
+                                                </span>
                                             &nbsp;&nbsp;
-                                            {showTypeText && <span className="hidden md:flex text-center">{pokemon.type1}</span>}
+                                            {showTypeText && (
+                                                <span className="hidden md:flex text-center">
+                                                        {pokemon.type1}
+                                                    </span>
+                                            )}
                                         </div>
                                     </td>
                                     <td className="border border-gray-600 p-2 text-center">
                                         <div id="type2" className="flex justify-center items-center">
-                        <span className="text-2xl">
-                          {pokemon.type2 ? typeIconMap[pokemon.type2] : null}
-                        </span>
+                                                <span className="text-2xl">
+                                                    {pokemon.type2 ? typeIconMap[pokemon.type2] : null}
+                                                </span>
                                             &nbsp;&nbsp;
-                                            {showTypeText && <span className="hidden md:flex">{pokemon.type2 || "-"}</span>}
+                                            {showTypeText && (
+                                                <span className="hidden md:flex">
+                                                        {pokemon.type2 || "-"}
+                                                    </span>
+                                            )}
                                         </div>
                                     </td>
                                     {showTypeValues && (
                                         <>
-                                            <td className="border border-gray-600 p-2">{offensivSum}</td>
-                                            <td className="border border-gray-600 p-2">{defensivSum}</td>
-                                            <td className="border border-gray-600 p-2">{typeSum}</td>
+                                            <td className="border border-gray-600 p-2">
+                                                {offensivSum}
+                                            </td>
+                                            <td className="border border-gray-600 p-2">
+                                                {defensivSum}
+                                            </td>
+                                            <td className="border border-gray-600 p-2">
+                                                {typeSum}
+                                            </td>
                                         </>
                                     )}
                                     {showStats && (
                                         <>
-                                            <td className="border border-gray-600 p-2">{getStatWithEmoji(pokemon.stats.hp, "hp")}</td>
+                                            <td className="border border-gray-600 p-2">
+                                                {getStatWithEmoji(pokemon.stats.hp, "hp")}
+                                            </td>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(pokemon.stats.attack, "attack")}
                                             </td>
@@ -926,21 +962,34 @@ const PokeTable = () => {
                                                 {getStatWithEmoji(pokemon.stats.defense, "defense")}
                                             </td>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.specialAttack, "specialAttack")}
+                                                {getStatWithEmoji(
+                                                    pokemon.stats.specialAttack,
+                                                    "specialAttack"
+                                                )}
                                             </td>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.specialDefense, "specialDefense")}
+                                                {getStatWithEmoji(
+                                                    pokemon.stats.specialDefense,
+                                                    "specialDefense"
+                                                )}
                                             </td>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(pokemon.stats.speed, "speed")}
                                             </td>
-
-                                            <td className="border border-gray-600 p-2">{formatNumber(sumStats)}</td>
+                                            <td className="border border-gray-600 p-2">
+                                                {formatNumber(sumStats)}
+                                            </td>
                                         </>
                                     )}
-                                    <td className="border border-gray-600 p-2">{formatNumber(gd)}</td>
-                                    <td className="border border-gray-600 p-2">{formatNumber(go)}</td>
-                                    <td className="border border-gray-600 p-2 ">{formatNumber(gs)}</td>
+                                    <td className="border border-gray-600 p-2">
+                                        {formatNumber(gd)}
+                                    </td>
+                                    <td className="border border-gray-600 p-2">
+                                        {formatNumber(go)}
+                                    </td>
+                                    <td className="border border-gray-600 p-2">
+                                        {formatNumber(gs)}
+                                    </td>
                                 </tr>
                             );
                         })}
@@ -948,6 +997,7 @@ const PokeTable = () => {
                     </table>
                 )}
 
+                {/* Scroll-To-Top Button */}
                 <div className="flex justify-center mt-4">
                     <button
                         onClick={scrollToTop}
@@ -969,7 +1019,7 @@ const PokeTable = () => {
                 </div>
             </div>
         </div>
-    );
-};
+            );
+            };
 
-export default PokeTable;
+            export default PokeTable;
