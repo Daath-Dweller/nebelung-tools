@@ -265,7 +265,8 @@ const PokeTable = () => {
                     (combo.typ1 === type2 && combo.typ2 === type1)
             );
 
-            defensivSum = typeCombo ? (typeCombo.wert + 2) : 0; // Wenn Kombination nicht existiert, Standardwert 0, +2 um Negativwerte zu vermeiden
+            defensivSum = typeCombo ? (typeCombo.wert + 2) : 0;
+            // Wenn Kombination nicht existiert, Standardwert 0, +2 um Negativwerte zu vermeiden
         }
 
         // Für offensivSum bleibt die ursprüngliche Logik erhalten
@@ -276,9 +277,7 @@ const PokeTable = () => {
         let offensivSum =
             (type1Data.offensiv + ((type2Data.offensiv || 0))); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
 
-
-
-        //Wichtung der Typenwerte erhöhen
+        //Wichtung der Typenwerte erhöhen, machen dadurch etwa 1/3 des GO/GD aus
         offensivSum *= 5;
         defensivSum *= 5;
 
@@ -311,15 +310,14 @@ const PokeTable = () => {
     };
 
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
-        let go = offensivSum + attack + specialAttack;
-        if (attack <= 60) {
-            go -= 2000;
-            if ( specialAttack <= 70) {
-                go -= 2000;
+        // Exponentielle Gewichtung von attack und specialAttack
+        const adjustedAttack = Math.pow(attack / 100, 2); // Skaliert und verstärkt
+        const adjustedSpecialAttack = Math.pow(specialAttack / 100, 2);
 
-            }
-        }
+        // Grundberechnung von GO
+        let go = offensivSum + adjustedAttack * 100 + adjustedSpecialAttack * 100;
 
+        // Berücksichtigung von Speed
         if (speed >= 100) {
             go += 3750;
         }
@@ -327,13 +325,15 @@ const PokeTable = () => {
             go -= 3750;
         }
 
-        go += attack + offensivSum * attack;
-        go += specialAttack +offensivSum * specialAttack;
+        // Weitere Gewichtungen
+        go += adjustedAttack * offensivSum;
+        go += adjustedSpecialAttack * offensivSum;
         go += speed * 100;
-        go = go / 100 + 75; //+75 gegen Negativwerte, rein optisch
 
+        go = go / 100 + 75; // +75 gegen Negativwerte, rein optisch
         return Math.round(go);
     };
+
 
     // Legendäre
     const handleLegendaryLeftClick = () => {
