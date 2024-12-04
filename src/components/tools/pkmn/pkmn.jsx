@@ -55,8 +55,8 @@ const PokeTable = () => {
     const [displayedCount, setDisplayedCount] = useState(151); // Standard auf Gen 1 (151)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [showInfo, setShowInfo] = useState(false);
-    const [showStats, setShowStats] = useState(false);
-    const [showTypeValues, setShowTypeValues] = useState(true); // Neuer State für Typwerte
+    const [showStats, setShowStats] = useState(true);
+    const [showTypeValues, setShowTypeValues] = useState(false); // Neuer State für Typwerte
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
@@ -339,10 +339,10 @@ const PokeTable = () => {
 
         // Berücksichtigung von Speed
         if (speed >= 100) {
-            go += 3750;
+            go += 2000;
         }
         if (speed <= 50) {
-            go -= 3750;
+            go -= 2000;
         }
 
         // Weitere Gewichtungen
