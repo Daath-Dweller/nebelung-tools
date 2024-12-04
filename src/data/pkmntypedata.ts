@@ -146,6 +146,11 @@ export const TypenBoni: FaehigkeitsTypenBonus[] = [
         defensiv: 21,
         offensiv: 0,
     },
+    {
+        pokemonID: [908],
+        defensiv: 0,
+        offensiv: 8,
+    },
 ];
 
 
