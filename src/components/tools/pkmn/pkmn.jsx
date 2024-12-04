@@ -1,3 +1,4 @@
+// PokeTable.jsx
 "use client";
 import React, { useEffect, useState, useMemo } from "react";
 import {
@@ -10,6 +11,20 @@ import {
     pokemonData,
     ubIDs,
 } from "@/data/pkmndata.ts";
+import {
+    scrollToTop,
+    formatNumber,
+    getDisplayName,
+    getStatEmoji,
+    getStatWithEmoji,
+    getTypeDataSum,
+    calculateSpeedBonus,
+    calculateHPBonus,
+    calculateGD,
+    calculateGO,
+    getNonExistentTypeCombinations,
+    getUniqueTypeCombinations,
+} from "@/components/tools/pkmn/helper.jsx";
 import { dtkData, typenData, TypenBoni } from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
@@ -42,13 +57,6 @@ const typeIconMap = {
     Boden: <GiDustCloud />,
     Gestein: <GiStonePile />,
 };
-
-// Hilfsfunktionen
-const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-const formatNumber = (num) => num.toLocaleString("de-DE");
 
 const PokeTable = () => {
     // States
@@ -135,215 +143,6 @@ const PokeTable = () => {
     const handleTypeCombinationOptionChange = (event) => {
         setTypeCombinationOption(event.target.value);
         scrollToTop();
-    };
-
-    const getDisplayName = (pokemon) => {
-        let displayName = pokemon.name_de;
-        let specialChar = "";
-
-        if (pokemon.id >= 10033 && pokemon.id <= 10090) {
-            displayName = `${pokemon.name_de}`;
-            specialChar = "  Ⓜ️"; // Megaevolution
-        } else if (pokemon.id >= 10091 && pokemon.id <= 10115) {
-            displayName = `Alola-${pokemon.name_de}`;
-        } else if (pokemon.id >= 10229 && pokemon.id <= 10244) {
-            displayName = `Hisui-${pokemon.name_de}`;
-        } else if (pokemon.id >= 10250 && pokemon.id <= 10253) {
-            displayName = `Paldea-${pokemon.name_de}`;
-        } else if (pokemon.id >= 10161 && pokemon.id <= 10180) {
-            displayName = `Galar-${pokemon.name_de}`;
-        }
-
-        // IDs aller legendären Pokémon
-        if (legendaryIDs.includes(pokemon.id)) {
-            specialChar += " ✴️";
-        }
-
-        // IDs aller UB Pokémon
-        if (ubIDs.includes(pokemon.id)) {
-            specialChar += " 🛸";
-        }
-
-        // IDs aller mystischen Pokémon
-        if (mysticIDs.includes(pokemon.id)) {
-            specialChar += " ✨";
-        }
-
-        // IDs aller Paradox-Pokémon
-        if (paradoxIDs.includes(pokemon.id)) {
-            specialChar += " ⏳";
-        }
-
-        return `${displayName} ${specialChar}`;
-    };
-
-    const getStatEmoji = (value, statType) => {
-        let emoji = "";
-
-        switch (statType) {
-            case "hp":
-                if (value >= 100) {
-                    emoji = "🩸"; // Sehr hoch
-                } else if (value <= 45) {
-                    emoji = "💀"; // Sehr niedrig
-                }
-                break;
-            case "attack":
-                if (value >= 120) {
-                    emoji = "⚔️"; // Sehr hoch
-                } else if (value < 60) {
-                    emoji = "💀"; // Sehr niedrig
-                }
-                break;
-            case "defense":
-                if (value >= 105) {
-                    emoji = "🧱"; // Sehr hoch
-                } else if (value <= 45) {
-                    emoji = "💀"; // Sehr niedrig
-                }
-                break;
-            case "specialAttack":
-                if (value >= 109) {
-                    emoji = "🌀"; // Sehr hoch
-                } else if (value < 60) {
-                    emoji = "💀️"; // Sehr niedrig
-                }
-                break;
-            case "specialDefense":
-                if (value >= 120) {
-                    emoji = "🍀"; // Sehr hoch
-                } else if (value < 46) {
-                    emoji = "💀"; // Sehr niedrig
-                }
-                break;
-            case "speed":
-                if (value >= 100) {
-                    emoji = "🚀"; // Sehr hoch
-                } else if (value < 36) {
-                    emoji = "💀"; // Sehr niedrig
-                }
-                break;
-            default:
-                emoji = ""; // Kein Emoji, wenn der Typ nicht passt
-                break;
-        }
-
-        return emoji;
-    };
-
-    const getStatWithEmoji = (value, statType) => {
-        const emoji = getStatEmoji(value, statType);
-        return `${value} ${emoji}`;
-    };
-
-    const getTypeDataSum = (type1, type2, pokemonID) => {
-        const type1Data = typenData.find((t) => t.name === type1) || {
-            offensiv: 0,
-            defensiv: 0,
-        };
-
-        let defensivSum = 0;
-
-        // Wenn type2 leer oder "keiner" ist
-        if (!type2 || type2 === "keiner") {
-            defensivSum = type1Data.defensiv + 2;
-        } else {
-            // Prüfe dtkData für die Kombination
-            const typeCombo = dtkData.find(
-                (combo) =>
-                    (combo.typ1 === type1 && combo.typ2 === type2) ||
-                    (combo.typ1 === type2 && combo.typ2 === type1)
-            );
-
-            defensivSum = typeCombo ? typeCombo.wert + 2 : type1Data.defensiv;
-        }
-
-        // Für offensivSum bleibt die ursprüngliche Logik erhalten
-        const type2Data = typenData.find((t) => t.name === type2) || {
-            offensiv: 0,
-            defensiv: 0,
-        };
-        let offensivSum = type1Data.offensiv + (type2Data.offensiv || 0);
-
-        // Pokémon-spezifische Boni prüfen
-        const pokemonBonus = TypenBoni.find((bonus) => bonus.pokemonID.includes(pokemonID));
-
-        if (pokemonBonus) {
-            // Nur ersetzen, wenn der Bonuswert für defensiv ungleich 0 ist
-            if (pokemonBonus.defensiv !== 0) {
-                defensivSum = pokemonBonus.defensiv + 2;
-            }
-            // Addiere offensiv-Bonus unabhängig von defensiv
-            offensivSum += pokemonBonus.offensiv;
-        }
-
-        // Gewichtung der Typenwerte erhöhen
-        offensivSum *= 5;
-        defensivSum *= 5;
-
-        return { offensivSum, defensivSum };
-    };
-
-    const calculateGD = (defensivSum, defense, specialDefense, hp) => {
-        let gd = defensivSum + defense + specialDefense;
-        if (defense <= 60) {
-            gd -= 2000;
-            if (specialDefense <= 70) {
-                gd -= 2000;
-            }
-        }
-
-        if (hp >= 100) {
-            gd += 3750;
-        }
-        if (hp < 50) {
-            gd -= 3750;
-        }
-
-        gd += defense + defensivSum * defense;
-        gd += specialDefense + defensivSum * specialDefense;
-        gd += hp * 75;
-        gd = gd / 100 + 75; // +75 gegen Negativwerte, rein optisch
-
-        return Math.round(gd);
-    };
-
-    const calculateGO = (offensivSum, attack, specialAttack, speed) => {
-        // Exponentielle Gewichtung
-        let adjustedAttack = Math.pow(attack / 100, 2);
-        let adjustedSpecialAttack = Math.pow(specialAttack / 100, 2);
-
-        // Dynamische Verstärkung des dominanten Wertes
-        if (attack < specialAttack) {
-            adjustedSpecialAttack *= 1 + (100 - attack) / 100; // Verstärkung bei niedrigem Angriff
-        } else if (specialAttack < attack) {
-            adjustedAttack *= 1 + (100 - specialAttack) / 100; // Verstärkung bei niedrigem Spezialangriff
-        }
-
-        // Ungleichgewichts-Malus
-        const imbalancePenalty = Math.pow(Math.abs(attack - specialAttack) / 100, 2) * 500;
-
-        // Grundberechnung von GO
-        let go = offensivSum + adjustedAttack * 100 + adjustedSpecialAttack * 100;
-
-        // Berücksichtigung von Speed
-        if (speed >= 100) {
-            go += 2000;
-        }
-        if (speed <= 50) {
-            go -= 2000;
-        }
-
-        // Weitere Gewichtungen
-        go += adjustedAttack * offensivSum;
-        go += adjustedSpecialAttack * offensivSum;
-        go += speed * 100;
-
-        // Abzug des Ungleichgewichts-Malus
-        go -= imbalancePenalty;
-
-        go = go / 100 + 75; // +75 gegen Negativwerte, rein optisch
-        return Math.round(go);
     };
 
     // Handlers für Sonderformen
@@ -458,25 +257,84 @@ const PokeTable = () => {
 
             const getComparableValue = (pokemon) => {
                 if (sortConfig.key === "GD") {
-                    const { defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                    return calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
+                    const { defensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2,
+                        pokemon.id,
+                        typenData,
+                        dtkData,
+                        TypenBoni
+                    );
+                    return calculateGD(
+                        defensivSum,
+                        pokemon.stats.defense,
+                        pokemon.stats.specialDefense,
+                        pokemon.stats.hp,
+                        calculateHPBonus
+                    );
                 }
                 if (sortConfig.key === "GO") {
-                    const { offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                    return calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                    const { offensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2,
+                        pokemon.id,
+                        typenData,
+                        dtkData,
+                        TypenBoni
+                    );
+                    return calculateGO(
+                        offensivSum,
+                        pokemon.stats.attack,
+                        pokemon.stats.specialAttack,
+                        pokemon.stats.speed,
+                        calculateSpeedBonus
+                    );
                 }
                 if (sortConfig.key === "GS") {
-                    const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
-                    const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
-                    const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
+                    const { defensivSum, offensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2,
+                        pokemon.id,
+                        typenData,
+                        dtkData,
+                        TypenBoni
+                    );
+                    const gd = calculateGD(
+                        defensivSum,
+                        pokemon.stats.defense,
+                        pokemon.stats.specialDefense,
+                        pokemon.stats.hp,
+                        calculateHPBonus
+                    );
+                    const go = calculateGO(
+                        offensivSum,
+                        pokemon.stats.attack,
+                        pokemon.stats.specialAttack,
+                        pokemon.stats.speed,
+                        calculateSpeedBonus
+                    );
                     return gd + go;
                 }
                 if (sortConfig.key === "offensivSum" || sortConfig.key === "defensivSum") {
-                    const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    const { offensivSum, defensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2,
+                        pokemon.id,
+                        typenData,
+                        dtkData,
+                        TypenBoni
+                    );
                     return sortConfig.key === "offensivSum" ? offensivSum : defensivSum;
                 }
                 if (sortConfig.key === "typeSum") {
-                    const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
+                    const { offensivSum, defensivSum } = getTypeDataSum(
+                        pokemon.type1,
+                        pokemon.type2,
+                        pokemon.id,
+                        typenData,
+                        dtkData,
+                        TypenBoni
+                    );
                     return offensivSum + defensivSum;
                 }
                 if (sortConfig.key === "sumStats") {
@@ -528,62 +386,13 @@ const PokeTable = () => {
             : "⇅";
     };
 
-    // NEU: Funktion zur Berechnung nicht existierender Typenkombinationen
-    const getNonExistentTypeCombinations = () => {
-        const allTypes = typenData.map((type) => type.name);
-        const existingCombinations = new Set(
-            pokemonData.map((pokemon) => `${pokemon.type1}/${pokemon.type2 || "keiner"}`)
-        );
-
-        const nonExistentCombinations = [];
-
-        for (let i = 0; i < allTypes.length; i++) {
-            for (let j = i + 1; j < allTypes.length; j++) {
-                const type1 = allTypes[i];
-                const type2 = allTypes[j];
-                const combination = `${type1}/${type2}`;
-                const reverseCombination = `${type2}/${type1}`;
-
-                if (
-                    !existingCombinations.has(combination) &&
-                    !existingCombinations.has(reverseCombination)
-                ) {
-                    nonExistentCombinations.push(combination);
-                }
-            }
-        }
-
-        return nonExistentCombinations;
-    };
-
     // NEU: Funktion zur Berechnung einmaliger Typenkombinationen
-    const getUniqueTypeCombinations = () => {
-        const combinationMap = {};
-        pokemonData.forEach((pokemon) => {
-            const combination = `${pokemon.type1}/${pokemon.type2 || "keiner"}`;
-            if (combinationMap[combination]) {
-                combinationMap[combination].count++;
-            } else {
-                combinationMap[combination] = {
-                    count: 1,
-                    pokemonName: pokemon.name_de,
-                    pokemonID: pokemon.id,
-                };
-            }
-        });
-
-        return Object.entries(combinationMap)
-            .filter(([_, data]) => data.count === 1)
-            .map(
-                ([combination, data]) =>
-                    `${combination} (${data.pokemonName} (${data.pokemonID}))`
-            );
-    };
-
-    // NEU: Generieren des Info-Textes basierend auf der ausgewählten Option
     const renderTypeCombinationInfo = () => {
         if (typeCombinationOption === "nonexistent") {
-            const nonExistentCombinations = getNonExistentTypeCombinations();
+            const nonExistentCombinations = getNonExistentTypeCombinations(
+                typenData,
+                pokemonData
+            );
             return (
                 <div>
                     <h3 className="text-lg font-bold mb-2">
@@ -593,7 +402,7 @@ const PokeTable = () => {
                 </div>
             );
         } else if (typeCombinationOption === "unique") {
-            const uniqueCombinations = getUniqueTypeCombinations();
+            const uniqueCombinations = getUniqueTypeCombinations(pokemonData);
             return (
                 <div>
                     <h3 className="text-lg font-bold mb-2">
@@ -625,8 +434,6 @@ const PokeTable = () => {
                 </div>
                 <span className="text-2xl ml-2">📊</span> {/* Kachelansicht */}
             </div>
-
-
 
             <div className="flex flex-col justify-between items-center mb-4 gap-x-2 gap-y-4">
                 <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
@@ -704,20 +511,25 @@ const PokeTable = () => {
                             const { offensivSum, defensivSum } = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
-                                pokemon.id
+                                pokemon.id,
+                                typenData,
+                                dtkData,
+                                TypenBoni
                             );
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(
                                 defensivSum,
                                 pokemon.stats.defense,
                                 pokemon.stats.specialDefense,
-                                pokemon.stats.hp
+                                pokemon.stats.hp,
+                                calculateHPBonus
                             );
                             const go = calculateGO(
                                 offensivSum,
                                 pokemon.stats.attack,
                                 pokemon.stats.specialAttack,
-                                pokemon.stats.speed
+                                pokemon.stats.speed,
+                                calculateSpeedBonus
                             );
                             const gs = gd + go;
 
@@ -740,7 +552,7 @@ const PokeTable = () => {
                                     <div className="text-center font-bold">
                                         #{pokemon.id}
                                         <br />
-                                        {getDisplayName(pokemon)}
+                                        {getDisplayName(pokemon, legendaryIDs, ubIDs, mysticIDs, paradoxIDs)}
                                     </div>
 
                                     {/* Typen-Icons */}
@@ -873,20 +685,25 @@ const PokeTable = () => {
                             const { offensivSum, defensivSum } = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
-                                pokemon.id
+                                pokemon.id,
+                                typenData,
+                                dtkData,
+                                TypenBoni
                             );
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(
                                 defensivSum,
                                 pokemon.stats.defense,
                                 pokemon.stats.specialDefense,
-                                pokemon.stats.hp
+                                pokemon.stats.hp,
+                                calculateHPBonus
                             );
                             const go = calculateGO(
                                 offensivSum,
                                 pokemon.stats.attack,
                                 pokemon.stats.specialAttack,
-                                pokemon.stats.speed
+                                pokemon.stats.speed,
+                                calculateSpeedBonus
                             );
                             const gs = gd + go;
                             const sumStats =
@@ -909,7 +726,7 @@ const PokeTable = () => {
                                         {pokemon.id}
                                     </td>
                                     <td className="border border-gray-600 p-2 text-center">
-                                        {getDisplayName(pokemon)}
+                                        {getDisplayName(pokemon, legendaryIDs, ubIDs, mysticIDs, paradoxIDs)}
                                     </td>
                                     <td className="border border-gray-600 p-2 text-center">
                                         <div id="type1" className="flex justify-center items-center">
@@ -1019,7 +836,7 @@ const PokeTable = () => {
                 </div>
             </div>
         </div>
-            );
-            };
+    );
+};
 
-            export default PokeTable;
+export default PokeTable;
