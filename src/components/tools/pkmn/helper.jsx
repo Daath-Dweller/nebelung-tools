@@ -262,7 +262,7 @@ export const calculateGO = (
 
     go -= imbalancePenalty;
 
-    go = go / 20 + 16;
+    go = go / 20 + 40;
     return Math.round(go);
 };
 
