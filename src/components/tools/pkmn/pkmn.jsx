@@ -10,7 +10,7 @@ import {
     pokemonData,
     ubIDs,
 } from "@/data/pkmndata.ts";
-import {dtkData, typenData} from "@/data/pkmntypedata";
+import {dtkData, typenData, TypenBoni} from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
 import {FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
@@ -55,8 +55,8 @@ const PokeTable = () => {
     const [displayedCount, setDisplayedCount] = useState(151); // Standard auf Gen 1 (151)
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     const [showInfo, setShowInfo] = useState(false);
-    const [showStats, setShowStats] = useState(true);
-    const [showTypeValues, setShowTypeValues] = useState(false); // Neuer State für Typwerte
+    const [showStats, setShowStats] = useState(false);
+    const [showTypeValues, setShowTypeValues] = useState(true); // Neuer State für Typwerte
     const [selectedGeneration, setSelectedGeneration] = useState("Generation 1");
     const [selectedType1, setSelectedType1] = useState("beliebig");
     const [selectedType2, setSelectedType2] = useState("beliebig");
@@ -246,7 +246,7 @@ const PokeTable = () => {
         return `${value} ${emoji}`;
     };
 
-    const getTypeDataSum = (type1, type2) => {
+    const getTypeDataSum = (type1, type2, pokemonID) => {
         const type1Data = typenData.find((t) => t.name === type1) || {
             offensiv: 0,
             defensiv: 0,
@@ -256,7 +256,7 @@ const PokeTable = () => {
 
         // Wenn type2 leer ist
         if (!type2) {
-            defensivSum = (type1Data.defensiv + 2);
+            defensivSum = type1Data.defensiv + 2;
         } else {
             // Prüfe dtkData für die Kombination
             const typeCombo = dtkData.find(
@@ -265,8 +265,7 @@ const PokeTable = () => {
                     (combo.typ1 === type2 && combo.typ2 === type1)
             );
 
-            defensivSum = typeCombo ? (typeCombo.wert + 2) : 0;
-            // Wenn Kombination nicht existiert, Standardwert 0, +2 um Negativwerte zu vermeiden
+            defensivSum = typeCombo ? typeCombo.wert + 2 : 0;
         }
 
         // Für offensivSum bleibt die ursprüngliche Logik erhalten
@@ -274,10 +273,21 @@ const PokeTable = () => {
             offensiv: 0,
             defensiv: 0,
         };
-        let offensivSum =
-            (type1Data.offensiv + ((type2Data.offensiv || 0))); // Defensivwerte sind ~doppelt so hoch sonst, aber Abw/Off gleich wichtig
+        let offensivSum = type1Data.offensiv + (type2Data.offensiv || 0);
 
-        //Wichtung der Typenwerte erhöhen, machen dadurch etwa 1/3 des GO/GD aus
+        // Pokémon-spezifische Boni prüfen
+        const pokemonBonus = TypenBoni.find((bonus) => bonus.pokemonID.includes(pokemonID));
+
+        if (pokemonBonus) {
+            // Nur ersetzen, wenn der Bonuswert für defensiv ungleich 0 ist
+            if (pokemonBonus.defensiv !== 0) {
+                defensivSum = pokemonBonus.defensiv + 2;
+            }
+            // Addiere offensiv-Bonus unabhängig von defensiv
+            offensivSum += pokemonBonus.offensiv;
+        }
+
+        // Gewichtung der Typenwerte erhöhen
         offensivSum *= 5;
         defensivSum *= 5;
 
@@ -310,9 +320,19 @@ const PokeTable = () => {
     };
 
     const calculateGO = (offensivSum, attack, specialAttack, speed) => {
-        // Exponentielle Gewichtung von attack und specialAttack
-        const adjustedAttack = Math.pow(attack / 100, 2); // Skaliert und verstärkt
-        const adjustedSpecialAttack = Math.pow(specialAttack / 100, 2);
+        // Exponentielle Gewichtung
+        let adjustedAttack = Math.pow(attack / 100, 2);
+        let adjustedSpecialAttack = Math.pow(specialAttack / 100, 2);
+
+        // Dynamische Verstärkung des dominanten Wertes
+        if (attack < specialAttack) {
+            adjustedSpecialAttack *= 1 + (100 - attack) / 100; // Verstärkung bei niedrigem Angriff
+        } else if (specialAttack < attack) {
+            adjustedAttack *= 1 + (100 - specialAttack) / 100; // Verstärkung bei niedrigem Spezialangriff
+        }
+
+        // Ungleichgewichts-Malus
+        const imbalancePenalty = Math.pow(Math.abs(attack - specialAttack) / 100, 2) * 500;
 
         // Grundberechnung von GO
         let go = offensivSum + adjustedAttack * 100 + adjustedSpecialAttack * 100;
@@ -330,9 +350,13 @@ const PokeTable = () => {
         go += adjustedSpecialAttack * offensivSum;
         go += speed * 100;
 
+        // Abzug des Ungleichgewichts-Malus
+        go -= imbalancePenalty;
+
         go = go / 100 + 75; // +75 gegen Negativwerte, rein optisch
         return Math.round(go);
     };
+
 
 
     // Legendäre
@@ -465,7 +489,7 @@ const PokeTable = () => {
 
         const getComparableValue = (pokemon) => {
             if (sortConfig.key === "GD") {
-                const { defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                const { defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                 return calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
             }
             if (sortConfig.key === "GO") {
@@ -473,17 +497,17 @@ const PokeTable = () => {
                 return calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
             }
             if (sortConfig.key === "GS") {
-                const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                const { defensivSum, offensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                 const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
                 const go = calculateGO(offensivSum, pokemon.stats.attack, pokemon.stats.specialAttack, pokemon.stats.speed);
                 return gd + go;
             }
             if (sortConfig.key === "offensivSum" || sortConfig.key === "defensivSum") {
-                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                 return sortConfig.key === "offensivSum" ? offensivSum : defensivSum;
             }
             if (sortConfig.key === "typeSum") {
-                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                 return offensivSum + defensivSum;
             }
             if (sortConfig.key === "sumStats") {
@@ -697,7 +721,7 @@ const PokeTable = () => {
                                 pokemon.stats.specialDefense +
                                 pokemon.stats.speed;
 
-                            const {offensivSum, defensivSum} = getTypeDataSum(pokemon.type1, pokemon.type2);
+                            const {offensivSum, defensivSum} = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
                             const go = calculateGO(
@@ -850,7 +874,7 @@ const PokeTable = () => {
                                 pokemon.stats.specialDefense +
                                 pokemon.stats.speed;
 
-                            const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2);
+                            const { offensivSum, defensivSum } = getTypeDataSum(pokemon.type1, pokemon.type2, pokemon.id);
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(defensivSum, pokemon.stats.defense, pokemon.stats.specialDefense, pokemon.stats.hp);
                             const go = calculateGO(

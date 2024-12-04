@@ -1,3 +1,155 @@
+
+export interface FaehigkeitsTypenBonus {
+    pokemonID: number[];
+    defensiv: number;
+    offensiv: number;
+}
+
+export const TypenBoni: FaehigkeitsTypenBonus[] = [
+    {
+        pokemonID: [292],
+        defensiv: 68,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10109, 10110, 10111, 700, 10067, 10051, 698, 699, 10074],
+        defensiv: 0,
+        offensiv: 2,
+    },
+    {
+        pokemonID: [10279],
+        defensiv: 30,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10280],
+        defensiv: 20,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [300, 301],
+        defensiv: 0,
+        offensiv: 6,
+    },
+    {
+        pokemonID: [751, 752],
+        defensiv: 19,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [92, 93, 94],
+        defensiv: 32,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [109, 110],
+        defensiv: 25,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10167],
+        defensiv: 31,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [200, 355,429],
+        defensiv: 29,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [201, 358, 433, 480, 481, 482, 488],
+        defensiv: 16,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [329, 330],
+        defensiv: 20,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [337, 338],
+        defensiv: 10,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [343, 344],
+        defensiv: 14,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [380, 381, 10062, 10063],
+        defensiv: 11,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [436, 437],
+        defensiv: 30,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [455],
+        defensiv: 11,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10007],
+        defensiv: 24,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [602, 603, 604],
+        defensiv: 26,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [479],
+        defensiv: 32,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10008],
+        defensiv: 27,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10009],
+        defensiv: 27,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10010],
+        defensiv: 17,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10011],
+        defensiv: 22,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [10012],
+        defensiv: 17,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [615],
+        defensiv: 12,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [635],
+        defensiv: 17,
+        offensiv: 0,
+    },
+    {
+        pokemonID: [738],
+        defensiv: 21,
+        offensiv: 0,
+    },
+];
+
+
+
 export interface Typen {
     id: number;
     name: string;

@@ -16,7 +16,7 @@ export const Infotext = ({
         >
             PokeWiki
         </a>
-        .
+        . Typenboni wie Wunderwache, Schwebe oder Elektrohaut wurden mit einbezogen.
         <br/>
         <br/>
         GO (Gesamtoffensive) und GD (Gesamtdefensive) ergeben sich aus
@@ -25,6 +25,8 @@ export const Infotext = ({
         Schwächen haben, nützen umso mehr, umso stärker die
         Offensiv-/Defensivwerte sind. Durch ein exponentielle Gewichtung von Angriff und Verteidigung werden hohe Werte höher gewichtet und niedrige niedriger,
             das die Wahrscheinlichkeit steigt bzw. sinkt je höher bzw. niedriger einer der beiden Angriffswerte ist, spezielle bzw. physische Attacken zu nutzen.
+            Ist ein Wert sehr niedrig gibt es dafür einen Malus, weil man tendenziell nicht gegen hohe Vert/SpVert
+            ankommt.
             Hohe bzw. niedrige HP-Werte geben
         einen Defensivbonus/-malus, hohe bzw. niedrige Initiativewerte geben
         einen Offensivbonus/-malus. Pokemon mit einem Typ besitzen immer einen Offensivmalus, da sie
@@ -36,6 +38,8 @@ export const Infotext = ({
         Durengard ist durch die Typenkombination Stahl/Geist defensiv
         stärker als offensiv, wodurch die Schildform mehr Punkte, als die
         Klingenform, bekommt.
+            Unterm Strich setzen sich etwa ein Drittel des GD aus den Typen, ein Drittel
+            aus den Werten selbst und ein weiteres Drittel aus dem Zusammenspiel der Werte zusammen.
         <br/>
         <br/>
         Nicht berücksichtigt werden Fähigkeiten und Wesen, die die
