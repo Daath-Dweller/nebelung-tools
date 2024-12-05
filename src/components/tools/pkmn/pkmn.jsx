@@ -81,8 +81,8 @@ const PokeTable = () => {
     const [megaState, setMegaState] = useState(0);
     const [nameFilter, setNameFilter] = useState(""); // State für Namensfilter
     const [showTypeFilter, setShowTypeFilter] = useState(true);
-    const [showTextFilter, setShowTextFilter] = useState(true);
-    const [showSearch, setShowSearch] = useState(true);
+    const [showTextFilter, setShowTextFilter] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
 
     const maxValues = {
         hp: 255,
@@ -431,16 +431,19 @@ const PokeTable = () => {
     };
 
     return (
-        <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll items-center text-center">
-
+        <div className="md:p-12 p-4 relative bg-black text-white m-2 overflow-scroll items-center text-center">
             <button
+                id="infoBtn"
                 onClick={() => setShowInfo(!showInfo)}
-                className={`${showInfo ? "bg-white" : ""} rounded-full text-white bg-gray-600 px-2 ml-2 py-1 rounded mb-2 hover:bg-gray-800 border-2 border-teal-500 hover:border-white`}
+                className={`absolute top-2 right-2 ${showInfo ? "bg-white" : ""} rounded-full text-white bg-gray-600 px-2 py-1 m-2 hover:bg-gray-800 border-2 border-teal-500 hover:border-white`}
             >
                 ℹ️
             </button>
 
-            <div className="flex justify-center items-center">
+
+            <span className="font-extrabold">Ansicht</span>
+            <div className="flex justify-center items-center mt-3">
+
                 <span className="text-2xl mr-2">📋</span> {/* Tabellenansicht */}
                 <div
                     className={`relative inline-block w-16 h-8 rounded-full cursor-pointer transition-colors duration-300 ${
@@ -459,27 +462,28 @@ const PokeTable = () => {
 
             <div className="flex flex-col justify-between items-center my-4 gap-x-2 gap-y-4">
 
+                <span className="font-extrabold">Filter & Suche</span>
+                <div className="flex flex-col md:flex-row  justify-center gap-2 items-center  ">
+                    <div className="flex flex-col items-center">
 
-                <div className="flex flex-wrap justify-center items-center gap-2 mt-4">
-                    <div className="flex items-center">
-                        <label className="mr-2 text-white">Typ- & Gen-Filter:</label>
+
                         <button onClick={toggleShowTypeFilter}
                                 className={`p-2 ${showTypeFilter ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                            {showTypeFilter ? <FaEye/> : <FaEyeSlash/>}
+                            {showTypeFilter ? <FaEye className="text-3xl"/> : <FaEyeSlash className="text-3xl"/>}
                         </button>
                     </div>
-                    <div className="flex items-center">
-                        <label className="mr-2 text-white">Text- & Typ-Filter:</label>
+                    <div className="flex flex-col items-center">
+
                         <button onClick={toggleShowTextFilter}
                                 className={`p-2 ${showTextFilter ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                            {showTextFilter ? <FaEye/> : <FaEyeSlash/>}
+                            {showTextFilter ? <FaEye className="text-3xl"/> : <FaEyeSlash className="text-3xl"/>}
                         </button>
                     </div>
-                    <div className="flex items-center">
-                        <label className="mr-2 text-white">Suche:</label>
+                    <div className="flex flex-col items-center">
+
                         <button onClick={toggleShowSearch}
                                 className={`p-2 ${showSearch ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                            {showSearch ? <FaEye/> : <FaEyeSlash/>}
+                            {showSearch ? <FaEye className="text-3xl"/> : <FaEyeSlash className="text-3xl"/>}
                         </button>
                     </div>
                 </div>
