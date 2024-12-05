@@ -28,7 +28,7 @@ import {
 import { dtkData, typenData, TypenBoni } from "@/data/pkmntypedata";
 import ButtonGroup from "@/components/tools/pkmn/buttongroup.jsx";
 import FilterControls from "@/components/tools/pkmn/filtercontrols";
-import { FaBug, FaDragon, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake } from "react-icons/fa";
+import {FaBug, FaDragon, FaEye, FaEyeSlash, FaFireAlt, FaFistRaised, FaGhost, FaRegSnowflake} from "react-icons/fa";
 import { TbIrregularPolyhedron, TbPlant } from "react-icons/tb";
 import { SiStackblitz } from "react-icons/si";
 import { GiArrowWings, GiDustCloud, GiFairy, GiPoisonBottle, GiSteelClaws, GiStonePile } from "react-icons/gi";
@@ -80,6 +80,9 @@ const PokeTable = () => {
     const [localsState, setLocalsState] = useState(0);
     const [megaState, setMegaState] = useState(0);
     const [nameFilter, setNameFilter] = useState(""); // State für Namensfilter
+    const [showTypeFilter, setShowTypeFilter] = useState(true);
+    const [showTextFilter, setShowTextFilter] = useState(true);
+    const [showSearch, setShowSearch] = useState(true);
 
     const maxValues = {
         hp: 255,
@@ -102,6 +105,18 @@ const PokeTable = () => {
     // NEU: Funktion zum Umschalten des Typentextes
     const toggleShowTypeText = () => {
         setShowTypeText((prev) => !prev);
+    };
+
+    const toggleShowTypeFilter = () => {
+        setShowTypeFilter((prev) => !prev);
+    };
+
+    const toggleShowTextFilter = () => {
+        setShowTextFilter((prev) => !prev);
+    };
+
+    const toggleShowSearch = () => {
+        setShowSearch((prev) => !prev);
     };
 
     const handleGenerationChange = (event) => {
@@ -416,8 +431,15 @@ const PokeTable = () => {
     };
 
     return (
-        <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll">
-            {/* Schieberegler */}
+        <div className="md:p-12 p-4 bg-black text-white m-2 overflow-scroll items-center text-center">
+
+            <button
+                onClick={() => setShowInfo(!showInfo)}
+                className={`${showInfo ? "bg-white" : ""} rounded-full text-white bg-gray-600 px-2 ml-2 py-1 rounded mb-2 hover:bg-gray-800 border-2 border-teal-500 hover:border-white`}
+            >
+                ℹ️
+            </button>
+
             <div className="flex justify-center items-center">
                 <span className="text-2xl mr-2">📋</span> {/* Tabellenansicht */}
                 <div
@@ -435,8 +457,35 @@ const PokeTable = () => {
                 <span className="text-2xl ml-2">📊</span> {/* Kachelansicht */}
             </div>
 
-            <div className="flex flex-col justify-between items-center mb-4 gap-x-2 gap-y-4">
-                <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
+            <div className="flex flex-col justify-between items-center my-4 gap-x-2 gap-y-4">
+
+
+                <div className="flex flex-wrap justify-center items-center gap-2 mt-4">
+                    <div className="flex items-center">
+                        <label className="mr-2 text-white">Typ- & Gen-Filter:</label>
+                        <button onClick={toggleShowTypeFilter}
+                                className={`p-2 ${showTypeFilter ? "bg-teal-500" : "bg-gray-400"} rounded`}>
+                            {showTypeFilter ? <FaEye/> : <FaEyeSlash/>}
+                        </button>
+                    </div>
+                    <div className="flex items-center">
+                        <label className="mr-2 text-white">Text- & Typ-Filter:</label>
+                        <button onClick={toggleShowTextFilter}
+                                className={`p-2 ${showTextFilter ? "bg-teal-500" : "bg-gray-400"} rounded`}>
+                            {showTextFilter ? <FaEye/> : <FaEyeSlash/>}
+                        </button>
+                    </div>
+                    <div className="flex items-center">
+                        <label className="mr-2 text-white">Suche:</label>
+                        <button onClick={toggleShowSearch}
+                                className={`p-2 ${showSearch ? "bg-teal-500" : "bg-gray-400"} rounded`}>
+                            {showSearch ? <FaEye/> : <FaEyeSlash/>}
+                        </button>
+                    </div>
+                </div>
+
+
+                <div className={`${showTypeFilter ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
                     <FilterControls
                         selectedGeneration={selectedGeneration}
                         handleGenerationChange={handleGenerationChange}
@@ -453,36 +502,37 @@ const PokeTable = () => {
                     />
                 </div>
 
-                <ButtonGroup
-                    showStats={showStats}
-                    setShowStats={setShowStats}
-                    showTypeValues={showTypeValues}
-                    setShowTypeValues={setShowTypeValues}
-                    showTypeText={showTypeText}
-                    toggleShowTypeText={toggleShowTypeText}
-                    isCardView={isCardView}
-                    legendaryState={legendaryState}
-                    ubState={ubState}
-                    mysticState={mysticState}
-                    paradoxState={paradoxState}
-                    localsState={localsState}
-                    megaState={megaState}
-                    handleMegaRightClick={handleMegaRightClick}
-                    handleMegaLeftClick={handleMegaLeftClick}
-                    handleLegendaryLeftClick={handleLegendaryLeftClick}
-                    handleLegendaryRightClick={handleLegendaryRightClick}
-                    handleUbLeftClick={handleUbLeftClick}
-                    handleUbRightClick={handleUbRightClick}
-                    handleMysticLeftClick={handleMysticLeftClick}
-                    handleMysticRightClick={handleMysticRightClick}
-                    handleParadoxLeftClick={handleParadoxLeftClick}
-                    handleParadoxRightClick={handleParadoxRightClick}
-                    handleLocalsLeftClick={handleLocalsLeftClick}
-                    handleLocalsRightClick={handleLocalsRightClick}
-                />
+                <div className={`${showTextFilter ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
+                    <ButtonGroup
+                        showStats={showStats}
+                        setShowStats={setShowStats}
+                        showTypeValues={showTypeValues}
+                        setShowTypeValues={setShowTypeValues}
+                        showTypeText={showTypeText}
+                        toggleShowTypeText={toggleShowTypeText}
+                        isCardView={isCardView}
+                        legendaryState={legendaryState}
+                        ubState={ubState}
+                        mysticState={mysticState}
+                        paradoxState={paradoxState}
+                        localsState={localsState}
+                        megaState={megaState}
+                        handleMegaRightClick={handleMegaRightClick}
+                        handleMegaLeftClick={handleMegaLeftClick}
+                        handleLegendaryLeftClick={handleLegendaryLeftClick}
+                        handleLegendaryRightClick={handleLegendaryRightClick}
+                        handleUbLeftClick={handleUbLeftClick}
+                        handleUbRightClick={handleUbRightClick}
+                        handleMysticLeftClick={handleMysticLeftClick}
+                        handleMysticRightClick={handleMysticRightClick}
+                        handleParadoxLeftClick={handleParadoxLeftClick}
+                        handleParadoxRightClick={handleParadoxRightClick}
+                        handleLocalsLeftClick={handleLocalsLeftClick}
+                        handleLocalsRightClick={handleLocalsRightClick}
+                    /></div>
 
-                {/* Namensfilter */}
-                <NameFilter setNameFilter={setNameFilter} />
+                <div className={`${showSearch ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
+                    <NameFilter setNameFilter={setNameFilter}/></div>
             </div>
 
             {/* Einmalige Typenkombinationen Info */}
@@ -495,7 +545,7 @@ const PokeTable = () => {
             {/* Info-Text */}
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
-                    <Infotext />
+                    <Infotext/>
                 </div>
             )}
 
@@ -506,9 +556,10 @@ const PokeTable = () => {
 
                 {isCardView ? (
                     // Kartenansicht
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
+                    <div
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
-                            const { offensivSum, defensivSum } = getTypeDataSum(
+                            const {offensivSum, defensivSum} = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
                                 pokemon.id,
@@ -551,7 +602,7 @@ const PokeTable = () => {
                                     {/* Name, Nummer und Sonderstatus */}
                                     <div className="text-center font-bold">
                                         #{pokemon.id}
-                                        <br />
+                                        <br/>
                                         {getDisplayName(pokemon, legendaryIDs, ubIDs, mysticIDs, paradoxIDs)}
                                     </div>
 
@@ -611,7 +662,7 @@ const PokeTable = () => {
                                                                             ? "bg-teal-500"
                                                                             : "bg-gray-600"
                                                                     } border-t border-black`}
-                                                                    style={{ height: `${segmentHeight}%` }}
+                                                                    style={{height: `${segmentHeight}%`}}
                                                                 ></div>
                                                             ))}
                                                         </div>
@@ -629,9 +680,9 @@ const PokeTable = () => {
 
                                     {/* GD, GO, GS */}
                                     <div className="flex justify-around mt-3 w-full">
-                                        <div>GD: <br />{gd}</div>
-                                        <div>GO: <br />{go}</div>
-                                        <div>GS: <br />{gs}</div>
+                                        <div>GD: <br/>{gd}</div>
+                                        <div>GO: <br/>{go}</div>
+                                        <div>GS: <br/>{gs}</div>
                                     </div>
                                 </div>
                             );
@@ -643,32 +694,32 @@ const PokeTable = () => {
                         <thead>
                         <tr>
                             {[
-                                { key: "Pos", label: "Pos." },
-                                { key: "id", label: "Nr." },
-                                { key: "name_de", label: "Name" },
-                                { key: "type1", label: "Typ 1" },
-                                { key: "type2", label: "Typ 2" },
+                                {key: "Pos", label: "Pos."},
+                                {key: "id", label: "Nr."},
+                                {key: "name_de", label: "Name"},
+                                {key: "type1", label: "Typ 1"},
+                                {key: "type2", label: "Typ 2"},
                                 ...(showTypeValues
                                     ? [
-                                        { key: "offensivSum", label: "Typ-Off" },
-                                        { key: "defensivSum", label: "Typ-Def" },
-                                        { key: "typeSum", label: "Typ-Sum" },
+                                        {key: "offensivSum", label: "Typ-Off"},
+                                        {key: "defensivSum", label: "Typ-Def"},
+                                        {key: "typeSum", label: "Typ-Sum"},
                                     ]
                                     : []),
                                 ...(showStats
                                     ? [
-                                        { key: "stats.hp", label: "HP" },
-                                        { key: "stats.attack", label: "Angr." },
-                                        { key: "stats.defense", label: "Vert." },
-                                        { key: "stats.specialAttack", label: "Sp-Angr." },
-                                        { key: "stats.specialDefense", label: "Sp-Vert." },
-                                        { key: "stats.speed", label: "Init." },
-                                        { key: "sumStats", label: "Summe" },
+                                        {key: "stats.hp", label: "HP"},
+                                        {key: "stats.attack", label: "Angr."},
+                                        {key: "stats.defense", label: "Vert."},
+                                        {key: "stats.specialAttack", label: "Sp-Angr."},
+                                        {key: "stats.specialDefense", label: "Sp-Vert."},
+                                        {key: "stats.speed", label: "Init."},
+                                        {key: "sumStats", label: "Summe"},
                                     ]
                                     : []),
-                                { key: "GD", label: "GD" },
-                                { key: "GO", label: "GO" },
-                                { key: "GS", label: "GS" },
+                                {key: "GD", label: "GD"},
+                                {key: "GO", label: "GO"},
+                                {key: "GS", label: "GS"},
                             ].map((col) => (
                                 <th
                                     key={col.key}
@@ -682,7 +733,7 @@ const PokeTable = () => {
                         </thead>
                         <tbody>
                         {sortedPokemon.map((pokemon, index) => {
-                            const { offensivSum, defensivSum } = getTypeDataSum(
+                            const {offensivSum, defensivSum} = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
                                 pokemon.id,
@@ -830,7 +881,7 @@ const PokeTable = () => {
                             stroke="currentColor"
                             strokeWidth={2}
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7"/>
                         </svg>
                     </button>
                 </div>

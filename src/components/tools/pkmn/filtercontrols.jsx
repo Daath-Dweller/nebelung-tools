@@ -88,12 +88,7 @@ const FilterControls = ({
             <option value="unique">Einmalige Typenkombinationen</option>
         </select>
 
-        <button
-            onClick={() => setShowInfo(!showInfo)}
-            className={`${showInfo ? "bg-white" : ""} rounded-full text-white bg-gray-600 px-2 ml-2 py-1 rounded mb-2 hover:bg-gray-800 border-2 border-teal-500 hover:border-white`}
-        >
-            ℹ️
-        </button>
+
     </div>
 );
 
