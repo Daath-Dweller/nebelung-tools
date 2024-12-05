@@ -70,19 +70,29 @@ const ButtonGroup = ({
     <div className="mt-4">
         {!isCardView && (
             <div className="flex flex-wrap justify-center items-center gap-4">
-                <button onClick={() => setShowStats(!showStats)}
-                        className={`p-2 ${showStats ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                    Basiswerte {showStats ? <FaEye/> : <FaEyeSlash/>}
+                <button
+                    onClick={() => setShowStats(!showStats)}
+                    className={`flex flex-col items-center p-2 ${showStats ? "bg-teal-500" : "bg-gray-400"} rounded`}
+                >
+                    <span>Basiswerte</span>
+                    {showStats ? <FaEye className="mt-1"/> : <FaEyeSlash className="mt-1"/>}
                 </button>
-                <button onClick={() => setShowTypeValues(!showTypeValues)}
-                        className={`p-2 ${showTypeValues ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                    Typwerte {showTypeValues ? <FaEye/> : <FaEyeSlash/>}
+                <button
+                    onClick={() => setShowTypeValues(!showTypeValues)}
+                    className={`flex flex-col items-center p-2 ${showTypeValues ? "bg-teal-500" : "bg-gray-400"} rounded`}
+                >
+                    <span>Typwerte</span>
+                    {showTypeValues ? <FaEye className="mt-1"/> : <FaEyeSlash className="mt-1"/>}
                 </button>
-                <button onClick={toggleShowTypeText}
-                        className={`p-2 ${showTypeText ? "bg-teal-500" : "bg-gray-400"} rounded`}>
-                    Typentext {showTypeText ? <FaEye/> : <FaEyeSlash/>}
+                <button
+                    onClick={toggleShowTypeText}
+                    className={`flex flex-col items-center p-2 ${showTypeText ? "bg-teal-500" : "bg-gray-400"} rounded`}
+                >
+                    <span>Typentext</span>
+                    {showTypeText ? <FaEye className="mt-1"/> : <FaEyeSlash className="mt-1"/>}
                 </button>
             </div>
+
         )}
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
