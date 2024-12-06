@@ -668,12 +668,12 @@ const PokeTable = () => {
 
                             // Stat Emojis anpassen
                             const statEmojis = [
-                                getStatEmoji(pokemon.stats.hp, "hp"),
-                                getStatEmoji(pokemon.stats.attack, "attack"),
-                                getStatEmoji(pokemon.stats.defense, "defense"),
-                                getStatEmoji(pokemon.stats.specialAttack, "specialAttack"),
-                                getStatEmoji(pokemon.stats.specialDefense, "specialDefense"),
-                                getStatEmoji(pokemon.stats.speed, "speed"),
+                                getStatEmoji(adjustedStats.hp, "hp"),
+                                getStatEmoji(adjustedStats.attack, "attack"),
+                                getStatEmoji(adjustedStats.defense, "defense"),
+                                getStatEmoji(adjustedStats.specialAttack, "specialAttack"),
+                                getStatEmoji(adjustedStats.specialDefense, "specialDefense"),
+                                getStatEmoji(adjustedStats.speed, "speed"),
                             ].map((emoji) => (emoji ? emoji : "⏺️"));
 
                             return (
@@ -722,7 +722,7 @@ const PokeTable = () => {
                                     <div className="flex justify-around mt-2 w-full">
                                         {["hp", "attack", "defense", "specialAttack", "specialDefense", "speed"].map(
                                             (stat) => {
-                                                const value = pokemon.stats[stat];
+                                                const value = adjustedStats[stat];
                                                 const maxSegments = 13; // Maximale Anzahl an Segmenten
                                                 const maxValue = maxValues[stat]; // Maximalwert für diesen Wert
                                                 const segmentValue = maxValue / maxSegments; // Wert pro Segment
@@ -906,28 +906,29 @@ const PokeTable = () => {
                                     {showStats && (
                                         <>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.hp, "hp")}
+                                                {getStatWithEmoji(adjustedStats.hp, "hp")}
+
                                             </td>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.attack, "attack")}
+                                                {getStatWithEmoji(adjustedStats.attack, "attack")}
                                             </td>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.defense, "defense")}
+                                                {getStatWithEmoji(adjustedStats.defense, "defense")}
                                             </td>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(
-                                                    pokemon.stats.specialAttack,
+                                                    adjustedStats.specialAttack,
                                                     "specialAttack"
                                                 )}
                                             </td>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(
-                                                    pokemon.stats.specialDefense,
+                                                    adjustedStats.specialDefense,
                                                     "specialDefense"
                                                 )}
                                             </td>
                                             <td className="border border-gray-600 p-2">
-                                                {getStatWithEmoji(pokemon.stats.speed, "speed")}
+                                                {getStatWithEmoji(adjustedStats.speed, "speed")}
                                             </td>
                                             <td className="border border-gray-600 p-2">
                                                 {formatNumber(sumStats)}
