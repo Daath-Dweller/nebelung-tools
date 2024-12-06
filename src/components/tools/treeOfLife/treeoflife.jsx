@@ -26,11 +26,15 @@ const TaxonomyList = ({ node, onSelect, level = 1 }) => {
             {node.children && node.children.map((child) => (
                 <li
                     key={child.name}
-                    className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'} mb-3`}
+                    className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'} mb-3 flex items-center`}
                     onClick={() => child.children && onSelect(child)}
                 >
-                    <span className="mr-2 border-2 border-white p-2">{`E${level}`}</span>
-                   <span className="border-2 border-white p-2 select-none"> {child.name}</span>
+                    <span className="mr-2 border-2 border-white p-2 select-none flex-shrink-0">
+                      E{level}:   {child.rank ? `${child.rank} ` : ''}
+                    </span>
+                    <span className="border-2 border-white p-2 select-none">
+                        {child.name}
+                    </span>
                 </li>
             ))}
         </ul>
@@ -50,7 +54,7 @@ const Breadcrumbs = ({ path }) => {
                 <span
                     key={index}
                     className="w-2 h-2 bg-white rounded-full flex-shrink-0"
-                    title={node.name}
+                    title={`Level ${index + 1}: ${node.name}`}
                 ></span>
             ))}
         </div>
@@ -84,8 +88,9 @@ const TreeOfLife = () => {
         <div className="bg-black m-2 pt-6 pb-4 px-4 rounded-md">
             <h1 className="text-white mb-4 italic text-xl">Phylogenetischer Stammbaum der Lebewesen</h1>
 
-
-            {currentLevel > 1 && <Breadcrumbs path={path} />}
+            {/* Breadcrumbs Component */}
+            <div className="px-4 py-2">
+            {currentLevel > 1 && <Breadcrumbs path={path} />}</div>
 
             <div className="mb-5 flex">
                 <button
