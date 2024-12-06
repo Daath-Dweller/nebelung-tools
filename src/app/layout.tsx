@@ -33,9 +33,9 @@ export default function RootLayout({
         label: "Cogitarium",
         href: "/cogitarium"
       },
-        {key: "/treeoflife",
-        label: "Phylogenetischer Stammbaum",
-        href: "/treeoflife"
+        {key: "/taxovita",
+        label: "Taxovita",
+        href: "/taxovita"
       }],
     },
     {
