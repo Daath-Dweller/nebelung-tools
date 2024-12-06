@@ -14,10 +14,13 @@ const FilterControls = ({
                             handleTypeAnyChange,
                             typeCombinationOption,
                             handleTypeCombinationOptionChange,
-                            setShowInfo,
-                            showInfo,
+                            evMode,
+                            setEvMode,
+                            ignoreHP,
+                            setIgnoreHP,
                         }) => (
-    <div className="mt-4 flex flex-col md:flex-row items-center gap-2">
+    <div className="flex flex-col gap-y-2 items-center">
+    <div className="mt-2 grid sm:grid-cols-2 md:grid-cols-3 sd:grid-cols-5 items-center gap-2">
 
 
         <select
@@ -87,8 +90,25 @@ const FilterControls = ({
             <option value="nonexistent">Nicht existierende Typenkombinationen</option>
             <option value="unique">Einmalige Typenkombinationen</option>
         </select>
+    </div>
 
-
+        <div className="flex flex-col md:flex-row items-center gap-2 my-4">
+            <label className="font-bold">EV-Punkte verteilen:</label>
+            <select value={evMode} onChange={(e) => setEvMode(e.target.value)}
+                    className="bg-gray-700 text-white p-1 rounded">
+                <option value="keine">Keine</option>
+                <option value="schwaechen">Schwächen ausgleichen</option>
+                <option value="staerken">Stärken betonen</option>
+            </select>
+            <label className="ml-4 flex items-center gap-2">
+                <input
+                    type="checkbox"
+                    checked={ignoreHP}
+                    onChange={() => setIgnoreHP(!ignoreHP)}
+                />
+                HP ignorieren
+            </label>
+        </div>
     </div>
 );
 

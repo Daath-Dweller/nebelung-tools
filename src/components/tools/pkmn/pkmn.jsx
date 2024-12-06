@@ -37,6 +37,8 @@ import { MdDarkMode, MdOutlinePsychology } from "react-icons/md";
 import { Infotext } from "@/components/tools/pkmn/infotext";
 import NameFilter from "@/components/tools/pkmn/namefilter";
 
+
+
 const typeIconMap = {
     Eis: <FaRegSnowflake />,
     Normal: <TbIrregularPolyhedron />,
@@ -83,6 +85,8 @@ const PokeTable = () => {
     const [showTypeFilter, setShowTypeFilter] = useState(true);
     const [showTextFilter, setShowTextFilter] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
+    const [evMode, setEvMode] = useState("keine"); // "keine", "schwaechen", "staerken"
+    const [ignoreHP, setIgnoreHP] = useState(false);
 
     const maxValues = {
         hp: 255,
@@ -188,6 +192,65 @@ const PokeTable = () => {
         }
     }, [typeCombinationOption]);
 
+    // Beispielhafte Handler-Funktion für das EV-Verteilen:
+    function distributeEVs(pokemon) {
+        // Kopie der Stats holen
+        const baseStats = {...pokemon.stats};
+
+        // HP ignorieren, falls ausgewählt
+        const statsToConsider = Object.entries(baseStats)
+            .filter(([key]) => !ignoreHP || key !== "hp")
+            .map(([key, value]) => ({ stat: key, val: value }));
+
+        // Sortierung der Stats nach Wert
+        statsToConsider.sort((a, b) => a.val - b.val);
+
+        // 510 Gesamt-EV, 2x 252 + 8
+        // Für "Schwächen ausgleichen" die schwächsten Stats maximieren
+        // Für "Stärken betonen" die stärksten Stats maximieren (gleiche Logik, nur Reverse)
+        let sortedStats;
+        if (evMode === "schwaechen") {
+            sortedStats = statsToConsider; // schwächste zuerst
+        } else if (evMode === "staerken") {
+            sortedStats = [...statsToConsider].reverse(); // stärkste zuerst
+        } else {
+            // Keine Verteilung
+            return { ...pokemon.stats };
+        }
+
+        // EV-Verteilung: Erster Wert 252, zweiter 252, dritter 8. Rest 0.
+        // Achtung: max 252 pro Wert und nur volle 8er Schritte zählen.
+        // 8 Punkte = +1 Statuspunkt
+        // 252 EV = +31 Statuspunkte
+        // 8 EV = +1 Statuspunkt
+        const evDistribution = {
+            hp: 0,
+            attack: 0,
+            defense: 0,
+            specialAttack: 0,
+            specialDefense: 0,
+            speed: 0
+        };
+
+        if (sortedStats.length > 0) evDistribution[sortedStats[0].stat] = 252;
+        if (sortedStats.length > 1) evDistribution[sortedStats[1].stat] = 252;
+        if (sortedStats.length > 2) evDistribution[sortedStats[2].stat] = 8;
+
+        // Neuen Status berechnen:
+        // Pro vollem 8er-Schritt EV gibt es +1 auf den Stat.
+        // EV/4 bei Gen3-5 war relevant, hier aber nach Angabe: 8 EV = 1 Punkt.
+        // Basis + (EV/8) aufgerundet ohne Reste
+        const newStats = { ...pokemon.stats };
+        for (const statKey in newStats) {
+            const ev = evDistribution[statKey];
+            if (ev > 0) {
+                const increment = Math.floor(ev / 8);
+                newStats[statKey] += increment;
+            }
+        }
+        return newStats;
+    }
+
     // Memoized Filtered Pokémon
     const filteredPokemon = useMemo(() => {
         return pokemonData.filter((pokemon) => {
@@ -266,11 +329,16 @@ const PokeTable = () => {
     ]);
 
     // Sortierte Pokémon
+    // Im sortedPokemon useMemo: adjustedStats in die Sortierlogik integrieren
     const sortedPokemon = useMemo(() => {
         return [...filteredPokemon.slice(0, displayedCount)].sort((a, b) => {
             if (!sortConfig.key) return 0;
 
-            const getComparableValue = (pokemon) => {
+            // Verteile EVs, falls EV-Modus aktiv ist:
+            const aStats = evMode !== "keine" ? distributeEVs(a) : a.stats;
+            const bStats = evMode !== "keine" ? distributeEVs(b) : b.stats;
+
+            const getComparableValue = (pokemon, stats) => {
                 if (sortConfig.key === "GD") {
                     const { defensivSum } = getTypeDataSum(
                         pokemon.type1,
@@ -282,9 +350,9 @@ const PokeTable = () => {
                     );
                     return calculateGD(
                         defensivSum,
-                        pokemon.stats.defense,
-                        pokemon.stats.specialDefense,
-                        pokemon.stats.hp,
+                        stats.defense,
+                        stats.specialDefense,
+                        stats.hp,
                         calculateHPBonus
                     );
                 }
@@ -299,9 +367,9 @@ const PokeTable = () => {
                     );
                     return calculateGO(
                         offensivSum,
-                        pokemon.stats.attack,
-                        pokemon.stats.specialAttack,
-                        pokemon.stats.speed,
+                        stats.attack,
+                        stats.specialAttack,
+                        stats.speed,
                         calculateSpeedBonus
                     );
                 }
@@ -316,16 +384,16 @@ const PokeTable = () => {
                     );
                     const gd = calculateGD(
                         defensivSum,
-                        pokemon.stats.defense,
-                        pokemon.stats.specialDefense,
-                        pokemon.stats.hp,
+                        stats.defense,
+                        stats.specialDefense,
+                        stats.hp,
                         calculateHPBonus
                     );
                     const go = calculateGO(
                         offensivSum,
-                        pokemon.stats.attack,
-                        pokemon.stats.specialAttack,
-                        pokemon.stats.speed,
+                        stats.attack,
+                        stats.specialAttack,
+                        stats.speed,
                         calculateSpeedBonus
                     );
                     return gd + go;
@@ -354,22 +422,23 @@ const PokeTable = () => {
                 }
                 if (sortConfig.key === "sumStats") {
                     return (
-                        pokemon.stats.hp +
-                        pokemon.stats.attack +
-                        pokemon.stats.defense +
-                        pokemon.stats.specialAttack +
-                        pokemon.stats.specialDefense +
-                        pokemon.stats.speed
+                        stats.hp +
+                        stats.attack +
+                        stats.defense +
+                        stats.specialAttack +
+                        stats.specialDefense +
+                        stats.speed
                     );
                 }
                 if (sortConfig.key.includes("stats")) {
-                    return pokemon.stats[sortConfig.key.split(".")[1]];
+                    const statKey = sortConfig.key.split(".")[1];
+                    return stats[statKey];
                 }
                 return pokemon[sortConfig.key];
             };
 
-            const aValue = getComparableValue(a);
-            const bValue = getComparableValue(b);
+            const aValue = getComparableValue(a, aStats);
+            const bValue = getComparableValue(b, bStats);
 
             if (typeof aValue === "string") {
                 return sortConfig.direction === "asc"
@@ -379,7 +448,8 @@ const PokeTable = () => {
                 return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue;
             }
         });
-    }, [filteredPokemon, displayedCount, sortConfig]);
+    }, [filteredPokemon, displayedCount, sortConfig, evMode]);
+
 
     const handleSort = (key) => {
         if (key === "Pos") return; // Keine Aktion für "Pos"
@@ -432,6 +502,9 @@ const PokeTable = () => {
 
     return (
         <div className="md:p-12 p-4 relative bg-black text-white m-2 overflow-scroll items-center text-center">
+
+
+
             <button
                 id="infoBtn"
                 onClick={() => setShowInfo(!showInfo)}
@@ -489,7 +562,7 @@ const PokeTable = () => {
                 </div>
 
 
-                <div className={`${showTypeFilter ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
+                <div className={`${showTypeFilter ? "" : "hidden"} mt-1 flex flex-col md:flex-row items-center gap-2`}>
                     <FilterControls
                         selectedGeneration={selectedGeneration}
                         handleGenerationChange={handleGenerationChange}
@@ -501,12 +574,14 @@ const PokeTable = () => {
                         handleTypeAnyChange={handleTypeAnyChange}
                         typeCombinationOption={typeCombinationOption}
                         handleTypeCombinationOptionChange={handleTypeCombinationOptionChange}
-                        setShowInfo={setShowInfo}
-                        showInfo={showInfo}
+                        evMode = {evMode}
+                        setEvMode={setEvMode}
+                        ignoreHP={ignoreHP}
+                        setIgnoreHP={setIgnoreHP}
                     />
                 </div>
 
-                <div className={`${showTextFilter ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
+                <div className={`${showTextFilter ? "" : "hidden"} mt-1 flex flex-col md:flex-row items-center gap-2`}>
                     <ButtonGroup
                         showStats={showStats}
                         setShowStats={setShowStats}
@@ -535,7 +610,7 @@ const PokeTable = () => {
                         handleLocalsRightClick={handleLocalsRightClick}
                     /></div>
 
-                <div className={`${showSearch ? "" : "hidden"} mt-4 flex flex-col md:flex-row items-center gap-2`}>
+                <div className={`${showSearch ? "" : "hidden"} mt-1 flex flex-col md:flex-row items-center gap-2`}>
                     <NameFilter setNameFilter={setNameFilter}/></div>
             </div>
 
@@ -563,7 +638,10 @@ const PokeTable = () => {
                     <div
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
                         {sortedPokemon.map((pokemon, index) => {
-                            const {offensivSum, defensivSum} = getTypeDataSum(
+                            // Angepasste EV-Stats berechnen:
+                            const adjustedStats = distributeEVs(pokemon);
+
+                            const { offensivSum, defensivSum } = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
                                 pokemon.id,
@@ -574,16 +652,16 @@ const PokeTable = () => {
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(
                                 defensivSum,
-                                pokemon.stats.defense,
-                                pokemon.stats.specialDefense,
-                                pokemon.stats.hp,
+                                adjustedStats.defense,
+                                adjustedStats.specialDefense,
+                                adjustedStats.hp,
                                 calculateHPBonus
                             );
                             const go = calculateGO(
                                 offensivSum,
-                                pokemon.stats.attack,
-                                pokemon.stats.specialAttack,
-                                pokemon.stats.speed,
+                                adjustedStats.attack,
+                                adjustedStats.specialAttack,
+                                adjustedStats.speed,
                                 calculateSpeedBonus
                             );
                             const gs = gd + go;
@@ -737,7 +815,10 @@ const PokeTable = () => {
                         </thead>
                         <tbody>
                         {sortedPokemon.map((pokemon, index) => {
-                            const {offensivSum, defensivSum} = getTypeDataSum(
+                            // Angepasste EV-Stats berechnen:
+                            const adjustedStats = distributeEVs(pokemon);
+
+                            const { offensivSum, defensivSum } = getTypeDataSum(
                                 pokemon.type1,
                                 pokemon.type2,
                                 pokemon.id,
@@ -748,26 +829,26 @@ const PokeTable = () => {
                             const typeSum = offensivSum + defensivSum;
                             const gd = calculateGD(
                                 defensivSum,
-                                pokemon.stats.defense,
-                                pokemon.stats.specialDefense,
-                                pokemon.stats.hp,
+                                adjustedStats.defense,
+                                adjustedStats.specialDefense,
+                                adjustedStats.hp,
                                 calculateHPBonus
                             );
                             const go = calculateGO(
                                 offensivSum,
-                                pokemon.stats.attack,
-                                pokemon.stats.specialAttack,
-                                pokemon.stats.speed,
+                                adjustedStats.attack,
+                                adjustedStats.specialAttack,
+                                adjustedStats.speed,
                                 calculateSpeedBonus
                             );
                             const gs = gd + go;
                             const sumStats =
-                                pokemon.stats.hp +
-                                pokemon.stats.attack +
-                                pokemon.stats.defense +
-                                pokemon.stats.specialAttack +
-                                pokemon.stats.specialDefense +
-                                pokemon.stats.speed;
+                                adjustedStats.hp +
+                                adjustedStats.attack +
+                                adjustedStats.defense +
+                                adjustedStats.specialAttack +
+                                adjustedStats.specialDefense +
+                                adjustedStats.speed;
 
                             return (
                                 <tr
