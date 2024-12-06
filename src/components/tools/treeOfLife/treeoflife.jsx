@@ -1,8 +1,11 @@
 // TreeOfLife.jsx
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { taxonomyData } from '@/data/treeoflifedata';
 
+/**
+ * Recursive function to find the path from the root to a specific node.
+ */
 const findPath = (node, name, path = []) => {
     if (node.name === name) return [...path, node];
     if (node.children) {
@@ -14,16 +17,19 @@ const findPath = (node, name, path = []) => {
     return null;
 };
 
+/**
+ * Component to display the list of taxonomy nodes.
+ */
 const TaxonomyList = ({ node, onSelect, level = 1 }) => {
     return (
-        <ul style={{ listStyleType: 'none', paddingLeft: `${level * 10}px`, color: 'white', fontFamily: 'sans-serif' }}>
+        <ul className={`list-none pl-[${level * 10}px] text-white font-sans`}>
             {node.children && node.children.map((child) => (
                 <li
                     key={child.name}
-                    style={{ cursor: child.children ? 'pointer' : 'default', marginBottom: '4px' }}
+                    className={`${child.children ? 'cursor-pointer hover:text-gray-300' : 'cursor-default'} mb-1`}
                     onClick={() => child.children && onSelect(child)}
                 >
-                    <span style={{ marginRight: '8px' }}>{`E${level}`}</span>
+                    <span className="mr-2">{`E${level}`}</span>
                     {child.name}
                 </li>
             ))}
@@ -31,6 +37,29 @@ const TaxonomyList = ({ node, onSelect, level = 1 }) => {
     );
 };
 
+/**
+ * Component to display breadcrumbs as small dots representing each previous level.
+ */
+const Breadcrumbs = ({ path }) => {
+    // Exclude the last item in the path as it represents the current level
+    const previousLevels = path.slice(0, -1);
+
+    return (
+        <div className="flex items-center space-x-1 mb-4 overflow-x-auto">
+            {previousLevels.map((node, index) => (
+                <span
+                    key={index}
+                    className="w-2 h-2 bg-white rounded-full flex-shrink-0"
+                    title={node.name}
+                ></span>
+            ))}
+        </div>
+    );
+};
+
+/**
+ * Main TreeOfLife component.
+ */
 const TreeOfLife = () => {
     const [path, setPath] = useState([taxonomyData]);
 
@@ -52,35 +81,24 @@ const TreeOfLife = () => {
     };
 
     return (
-        <div className="bg-black m-2 pt-6 pb-4 px-4">
-            <h1 className="text-white mb-4 italic">Phylogenetischer Stammbaum der Lebewesen</h1>
-            <div style={{ marginBottom: '10px' }}>
+        <div className="bg-black m-2 pt-6 pb-4 px-4 rounded-md">
+            <h1 className="text-white mb-4 italic text-xl">Phylogenetischer Stammbaum der Lebewesen</h1>
+
+            {/* Breadcrumbs Component */}
+            {currentLevel > 1 && <Breadcrumbs path={path} />}
+
+            <div className="mb-2.5 flex">
                 <button
                     onClick={handleReset}
                     disabled={path.length === 1}
-                    style={{
-                        marginRight: '10px',
-                        padding: '5px 10px',
-                        cursor: path.length === 1 ? 'not-allowed' : 'pointer',
-                        backgroundColor: '#444',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                    }}
+                    className={`mr-2 py-1 px-2.5 cursor-pointer bg-gray-700 text-white border-0 rounded-md disabled:cursor-not-allowed disabled:bg-gray-700`}
                 >
                     Zum Anfang
                 </button>
                 <button
                     onClick={handleBack}
                     disabled={path.length === 1}
-                    style={{
-                        padding: '5px 10px',
-                        cursor: path.length === 1 ? 'not-allowed' : 'pointer',
-                        backgroundColor: '#444',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                    }}
+                    className={`py-1 px-2.5 cursor-pointer bg-gray-700 text-white border-0 rounded-md disabled:cursor-not-allowed disabled:bg-gray-700`}
                 >
                     ← Zurück
                 </button>
