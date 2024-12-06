@@ -22,15 +22,15 @@ const findPath = (node, name, path = []) => {
  */
 const TaxonomyList = ({ node, onSelect, level = 1 }) => {
     return (
-        <ul className={`list-none pl-[${level * 10}px] text-white font-sans`}>
+        <ul className={`list-none pl-[${level * 10}px] text-white font-sans m-2`}>
             {node.children && node.children.map((child) => (
                 <li
                     key={child.name}
-                    className={`${child.children ? 'cursor-pointer hover:text-gray-300' : 'cursor-default'} mb-1`}
+                    className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'} mb-3`}
                     onClick={() => child.children && onSelect(child)}
                 >
-                    <span className="mr-2">{`E${level}`}</span>
-                    {child.name}
+                    <span className="mr-2 border-2 border-white p-2">{`E${level}`}</span>
+                   <span className="border-2 border-white p-2 select-none"> {child.name}</span>
                 </li>
             ))}
         </ul>
@@ -84,10 +84,10 @@ const TreeOfLife = () => {
         <div className="bg-black m-2 pt-6 pb-4 px-4 rounded-md">
             <h1 className="text-white mb-4 italic text-xl">Phylogenetischer Stammbaum der Lebewesen</h1>
 
-            {/* Breadcrumbs Component */}
+
             {currentLevel > 1 && <Breadcrumbs path={path} />}
 
-            <div className="mb-2.5 flex">
+            <div className="mb-5 flex">
                 <button
                     onClick={handleReset}
                     disabled={path.length === 1}
