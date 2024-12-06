@@ -7,7 +7,7 @@ export const generationRanges = {
     "Generation 3": { min: 252, max: 386, extraIDs: [10013,10014,10015,] },
     "Generation 4": { min: 387, max: 493, extraIDs: [10004,10005,10008,10009,10010,10011,10012] },
     "Generation 5": { min: 494, max: 649, extraIDs: [10017] },
-    "Generation 6": { min: 650, max: 721, extraIDs: [10025, 10026, 10027,10028,10029,10030,10031,10032,10117,10116] },
+    "Generation 6": { min: 650, max: 721, extraIDs: [10025, 10026, 10027,10028,10029,10030,10031,10032,10117,10116, 11004] },
     "Generation 7": { min: 722, max: 809, extraIDs: [10123, 10124,10125, 10126, 10127, 10136, 10152] },
     "Generation 8": { min: 810, max: 905, extraIDs: [10184, 10185, 10186, 10187] },
     "Generation 9": { min: 906, max: 1025, extraIDs: [] },
@@ -18258,6 +18258,20 @@ export const pokemonData: Pokemon[] = [
             "specialDefense": 20,
             "speed": 5
         }
+    },
+    {
+        "id": 11004,
+        "name_de": "Durengard (Durchschnitt)",
+        "name_en": "Aegislash avg",
+        "type1": "Stahl",
+        "type2": "Geist",
+        "stats": {
+            "hp": 60,
+            "attack": 95,
+            "defense": 95,
+            "specialAttack": 95,
+            "specialDefense": 95,
+            "speed": 60  }
     },
 
 ];

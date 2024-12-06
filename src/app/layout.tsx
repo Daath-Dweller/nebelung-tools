@@ -7,6 +7,7 @@ import {FaBrain, FaTools} from "react-icons/fa";
 import {SlSpeech} from "react-icons/sl";
 import {IoIosBody} from "react-icons/io";
 import {usePathname} from "next/navigation";
+import TreeOfLife from "@/components/tools/treeOfLife/treeoflife";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,10 +28,14 @@ export default function RootLayout({
     {
       icon: <FaBrain />,
       label: "Wissen",
-      subItems: [{key: "/philoskop", label: "Philoskop", href: "/philoskop"}, {
-        key: "/cogitarium",
+      subItems: [{key: "/philoskop", label: "Philoskop", href: "/philoskop"},
+        {key: "/cogitarium",
         label: "Cogitarium",
         href: "/cogitarium"
+      },
+        {key: "/treeoflife",
+        label: "Phylogenetischer Stammbaum",
+        href: "/treeoflife"
       }],
     },
     {
