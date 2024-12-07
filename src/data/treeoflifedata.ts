@@ -190,9 +190,16 @@ export const taxonomyData: TaxonomyNode = {
                             ]
                         }
                     ]
-                }
+                },
+                {name: "Archaeen (Archae)",
+                    rank: "Domäne",
+                    children: []},
+                {name: "Bakterien (Bacteria)",
+                    rank: "Domäne",
+                    children: []},
             ]
         },
+
     ],
 };
 
