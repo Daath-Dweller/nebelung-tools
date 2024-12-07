@@ -2,7 +2,9 @@
 export interface TaxonomyNode {
     name: string;
     rank?: string; // Optionales Rang-Feld
+    icon?: string;
     children?: TaxonomyNode[];
+
 }
 
 export const taxonomyData: TaxonomyNode = {
@@ -12,6 +14,7 @@ export const taxonomyData: TaxonomyNode = {
         {
             name: "Lebewesen",
             rank: "Klassifikation",
+            icon: "IoWater",
             children: [
                 {
                     name: "Eukaryoten (Eukaryota)",
@@ -188,7 +191,45 @@ export const taxonomyData: TaxonomyNode = {
                                     ]
                                 }
                             ]
-                        }
+                        },
+                        {name: "Diaphoretickes",
+                            rank: "ohne Rang",
+                            children: [
+                                {name: "Archaeplastida",
+                                    rank: "Supergruppe",
+                                    children: [
+                                        {name: "Glaucophyta",
+                                            rank: "Abteilung",
+                                            children: []},
+                                        {name: "Rotalgen (Rhodophyceae)",
+                                            rank: "Abteilung",
+                                            children: []},
+                                        {name: "Pflanzen (Chloroplastida)",
+                                            rank: "Abteilung",
+                                            children: [
+                                                {name: "Chlorophyta",
+                                                    rank: "ohne Rang",
+                                                    children: [
+                                                    ]},
+                                                {name: "Charophyta",
+                                                    rank: "ohne Rang",
+                                                    children: [
+                                                        {name: "Phragmoplastophyta",
+                                                            rank: "ohne Rang",
+                                                            children: [
+                                                                {name: "Streptophyta",
+                                                                    rank: "ohne Rang",
+                                                                    children: [
+                                                                        {name: "Landpflanzn (Embryophyta)",
+                                                                            rank: "Reich",
+                                                                            children: [
+                                                                            ]},
+                                                                    ]},
+                                                            ]},
+                                                    ]},
+                                            ]},
+                                    ]},
+                            ]},
                     ]
                 },
                 {name: "Archaeen (Archae)",

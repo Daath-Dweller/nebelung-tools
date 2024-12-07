@@ -1,7 +1,8 @@
 // TreeOfLife.jsx
 'use client';
-import React, { useState } from 'react';
-import { taxonomyData } from '@/data/treeoflifedata';
+import React, {useState} from 'react';
+import {taxonomyData} from '@/data/treeoflifedata';
+import {iconMapping} from '@/data/iconMappingTOL'; // Importiere die Icon-Mapping-Datei
 
 /**
  * Recursive function to find the path from the root to a specific node.
@@ -22,27 +23,35 @@ const findPath = (node, name, path = []) => {
  */
 const TaxonomyList = ({ node, onSelect, level = 1 }) => {
     return (
-        <ul className={`list-none pl-[${level * 10}px] text-white font-sans m-2`}>
-            {node.children && node.children.map((child) => (
-                <li
-                    key={child.name}
-                    className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'} mb-3 flex items-center`}
-                    onClick={() => child.children && onSelect(child)}
-                >
-                    <span className="mr-2 border-2 border-white p-2 select-none flex-shrink-0">
-                      E{level}:   {child.rank ? `${child.rank} ` : ''}
-                    </span>
-                    <span className="border-2 border-white p-2 select-none">
-                        {child.name}
-                    </span>
-                </li>
-            ))}
-        </ul>
-    );
-};
+        <ul className={`list-none pl-${level * 10}px text-white font-sans m-2`}>
+            {node.children && node.children.map((child) => {
+                const IconComponent = child.icon ? iconMapping[child.icon] : null;
+                return (
+                    <li
+                        key={child.name}
+                        className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'}
+                         mb-3 flex items-center`}
+                        onClick={() => child.children && onSelect(child)}
+                    >
+                        <span className="mr-2 border-2 border-white p-2 select-none flex-shrink-0">
+                            E{level}: {child.rank ? `${child.rank} ` : ''}
+                        </span>
+                        <span className="border-2 border-white p-2 select-none flex items-center">
+                            {child.name}
+                        </span>
+                        <span className={`${IconComponent ? "" : "hidden"} border-2 border-white p-2 select-none 
+flex items-center`}>
+                        {IconComponent && <IconComponent className="text-2xl ml-2"/>}  </span>
+                    </li>
+            );
+            })}
+            </ul>
+            )
+                ;
+            };
 
-/**
- * Component to display breadcrumbs as small dots representing each previous level.
+                /**
+                 * Component to display breadcrumbs as small dots representing each previous level.
  */
 const Breadcrumbs = ({ path }) => {
     // Exclude the last item in the path as it represents the current level
@@ -90,7 +99,8 @@ const TreeOfLife = () => {
 
             {/* Breadcrumbs Component */}
             <div className="px-4 py-2">
-            {currentLevel > 1 && <Breadcrumbs path={path} />}</div>
+                {currentLevel > 1 && <Breadcrumbs path={path} />}
+            </div>
 
             <div className="mb-5 flex">
                 <button
