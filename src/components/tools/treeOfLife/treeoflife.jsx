@@ -2,7 +2,7 @@
 'use client';
 import React, {useState} from 'react';
 import {taxonomyData} from '@/data/treeoflifedata';
-import {iconMapping} from '@/data/iconMappingTOL'; // Importiere die Icon-Mapping-Datei
+import {iconMappingTOL} from "@/data/iconMapping";
 
 /**
  * Recursive function to find the path from the root to a specific node.
@@ -25,7 +25,7 @@ const TaxonomyList = ({ node, onSelect, level = 1 }) => {
     return (
         <ul className={`list-none pl-${level * 10}px text-white font-sans m-2`}>
             {node.children && node.children.map((child) => {
-                const IconComponent = child.icon ? iconMapping[child.icon] : null;
+                const IconComponent = child.icon ? iconMappingTOL[child.icon] : null;
                 return (
                     <li
                         key={child.name}

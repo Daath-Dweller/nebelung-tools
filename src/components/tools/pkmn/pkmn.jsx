@@ -36,29 +36,7 @@ import { IoIosWater } from "react-icons/io";
 import { MdDarkMode, MdOutlinePsychology } from "react-icons/md";
 import { Infotext } from "@/components/tools/pkmn/infotext";
 import NameFilter from "@/components/tools/pkmn/namefilter";
-
-
-
-const typeIconMap = {
-    Eis: <FaRegSnowflake />,
-    Normal: <TbIrregularPolyhedron />,
-    Pflanze: <TbPlant />,
-    Käfer: <FaBug />,
-    Elektro: <SiStackblitz />,
-    Drache: <FaDragon />,
-    Gift: <GiPoisonBottle />,
-    Wasser: <IoIosWater />,
-    Geist: <FaGhost />,
-    Stahl: <GiSteelClaws />,
-    Feuer: <FaFireAlt />,
-    Psycho: <MdOutlinePsychology />,
-    Fee: <GiFairy />,
-    Flug: <GiArrowWings />,
-    Unlicht: <MdDarkMode />,
-    Kampf: <FaFistRaised />,
-    Boden: <GiDustCloud />,
-    Gestein: <GiStonePile />,
-};
+import {iconMappingPKMN} from "@/data/iconMapping";
 
 const PokeTable = () => {
     // States
@@ -502,9 +480,6 @@ const PokeTable = () => {
 
     return (
         <div className="md:p-12 p-4 relative bg-black text-white m-2 overflow-scroll items-center text-center">
-
-
-
             <button
                 id="infoBtn"
                 onClick={() => setShowInfo(!showInfo)}
@@ -512,7 +487,6 @@ const PokeTable = () => {
             >
                 ℹ️
             </button>
-
 
             <span className="font-extrabold">Ansicht</span>
             <div className="flex justify-center items-center mt-3">
@@ -624,7 +598,7 @@ const PokeTable = () => {
             {/* Info-Text */}
             {showInfo && (
                 <div className="bg-gray-800 text-white p-4 rounded-md m-4 mx-auto">
-                    <Infotext/>
+                    <Infotext />
                 </div>
             )}
 
@@ -636,7 +610,8 @@ const PokeTable = () => {
                 {isCardView ? (
                     // Kartenansicht
                     <div
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4">
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xlg:grid-cols-8 gap-4"
+                    >
                         {sortedPokemon.map((pokemon, index) => {
                             // Angepasste EV-Stats berechnen:
                             const adjustedStats = distributeEVs(pokemon);
@@ -676,6 +651,10 @@ const PokeTable = () => {
                                 getStatEmoji(adjustedStats.speed, "speed"),
                             ].map((emoji) => (emoji ? emoji : "⏺️"));
 
+                            // Icons als Komponenten instanziieren
+                            const TypeIcon1 = iconMappingPKMN[pokemon.type1] || FallbackIcon;
+                            const TypeIcon2 = pokemon.type2 ? (iconMappingPKMN[pokemon.type2] || FallbackIcon) : null;
+
                             return (
                                 <div
                                     key={pokemon.id}
@@ -684,20 +663,16 @@ const PokeTable = () => {
                                     {/* Name, Nummer und Sonderstatus */}
                                     <div className="text-center font-bold">
                                         #{pokemon.id}
-                                        <br/>
+                                        <br />
                                         {getDisplayName(pokemon, legendaryIDs, ubIDs, mysticIDs, paradoxIDs)}
                                     </div>
 
                                     {/* Typen-Icons */}
                                     <div className="flex justify-center my-2">
                                         <div className="flex items-center">
-                                            <span className="text-2xl">
-                                                {typeIconMap[pokemon.type1]}
-                                            </span>
-                                            {pokemon.type2 && (
-                                                <span className="text-2xl ml-2">
-                                                    {typeIconMap[pokemon.type2]}
-                                                </span>
+                                            {TypeIcon1 && <TypeIcon1 className="text-2xl" />}
+                                            {TypeIcon2 && (
+                                                <TypeIcon2 className="text-2xl ml-2" />
                                             )}
                                         </div>
                                     </div>
@@ -744,7 +719,7 @@ const PokeTable = () => {
                                                                             ? "bg-teal-500"
                                                                             : "bg-gray-600"
                                                                     } border-t border-black`}
-                                                                    style={{height: `${segmentHeight}%`}}
+                                                                    style={{ height: `${segmentHeight}%` }}
                                                                 ></div>
                                                             ))}
                                                         </div>
@@ -762,9 +737,9 @@ const PokeTable = () => {
 
                                     {/* GD, GO, GS */}
                                     <div className="flex justify-around mt-3 w-full">
-                                        <div>GD: <br/>{gd}</div>
-                                        <div>GO: <br/>{go}</div>
-                                        <div>GS: <br/>{gs}</div>
+                                        <div>GD: <br />{gd}</div>
+                                        <div>GO: <br />{go}</div>
+                                        <div>GS: <br />{gs}</div>
                                     </div>
                                 </div>
                             );
@@ -776,32 +751,32 @@ const PokeTable = () => {
                         <thead>
                         <tr>
                             {[
-                                {key: "Pos", label: "Pos."},
-                                {key: "id", label: "Nr."},
-                                {key: "name_de", label: "Name"},
-                                {key: "type1", label: "Typ 1"},
-                                {key: "type2", label: "Typ 2"},
+                                { key: "Pos", label: "Pos." },
+                                { key: "id", label: "Nr." },
+                                { key: "name_de", label: "Name" },
+                                { key: "type1", label: "Typ 1" },
+                                { key: "type2", label: "Typ 2" },
                                 ...(showTypeValues
                                     ? [
-                                        {key: "offensivSum", label: "Typ-Off"},
-                                        {key: "defensivSum", label: "Typ-Def"},
-                                        {key: "typeSum", label: "Typ-Sum"},
+                                        { key: "offensivSum", label: "Typ-Off" },
+                                        { key: "defensivSum", label: "Typ-Def" },
+                                        { key: "typeSum", label: "Typ-Sum" },
                                     ]
                                     : []),
                                 ...(showStats
                                     ? [
-                                        {key: "stats.hp", label: "HP"},
-                                        {key: "stats.attack", label: "Angr."},
-                                        {key: "stats.defense", label: "Vert."},
-                                        {key: "stats.specialAttack", label: "Sp-Angr."},
-                                        {key: "stats.specialDefense", label: "Sp-Vert."},
-                                        {key: "stats.speed", label: "Init."},
-                                        {key: "sumStats", label: "Summe"},
+                                        { key: "stats.hp", label: "HP" },
+                                        { key: "stats.attack", label: "Angr." },
+                                        { key: "stats.defense", label: "Vert." },
+                                        { key: "stats.specialAttack", label: "Sp-Angr." },
+                                        { key: "stats.specialDefense", label: "Sp-Vert." },
+                                        { key: "stats.speed", label: "Init." },
+                                        { key: "sumStats", label: "Summe" },
                                     ]
                                     : []),
-                                {key: "GD", label: "GD"},
-                                {key: "GO", label: "GO"},
-                                {key: "GS", label: "GS"},
+                                { key: "GD", label: "GD" },
+                                { key: "GO", label: "GO" },
+                                { key: "GS", label: "GS" },
                             ].map((col) => (
                                 <th
                                     key={col.key}
@@ -850,6 +825,10 @@ const PokeTable = () => {
                                 adjustedStats.specialDefense +
                                 adjustedStats.speed;
 
+                            // Icons als Komponenten instanziieren
+                            const TypeIcon1 = iconMappingPKMN[pokemon.type1] || FallbackIcon;
+                            const TypeIcon2 = pokemon.type2 ? (iconMappingPKMN[pokemon.type2] || FallbackIcon) : null;
+
                             return (
                                 <tr
                                     key={pokemon.id}
@@ -866,9 +845,7 @@ const PokeTable = () => {
                                     </td>
                                     <td className="border border-gray-600 p-2 text-center">
                                         <div id="type1" className="flex justify-center items-center">
-                                                <span className="text-2xl">
-                                                    {typeIconMap[pokemon.type1]}
-                                                </span>
+                                            {TypeIcon1 && <TypeIcon1 className="text-2xl" />}
                                             &nbsp;&nbsp;
                                             {showTypeText && (
                                                 <span className="hidden md:flex text-center">
@@ -879,9 +856,7 @@ const PokeTable = () => {
                                     </td>
                                     <td className="border border-gray-600 p-2 text-center">
                                         <div id="type2" className="flex justify-center items-center">
-                                                <span className="text-2xl">
-                                                    {pokemon.type2 ? typeIconMap[pokemon.type2] : null}
-                                                </span>
+                                            {TypeIcon2 && <TypeIcon2 className="text-2xl" />}
                                             &nbsp;&nbsp;
                                             {showTypeText && (
                                                 <span className="hidden md:flex">
@@ -907,7 +882,6 @@ const PokeTable = () => {
                                         <>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(adjustedStats.hp, "hp")}
-
                                             </td>
                                             <td className="border border-gray-600 p-2">
                                                 {getStatWithEmoji(adjustedStats.attack, "attack")}
@@ -967,7 +941,7 @@ const PokeTable = () => {
                             stroke="currentColor"
                             strokeWidth={2}
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7"/>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
                         </svg>
                     </button>
                 </div>
