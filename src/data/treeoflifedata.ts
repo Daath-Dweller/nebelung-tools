@@ -240,7 +240,6 @@ export const taxonomyData: TaxonomyNode = {
                     children: []},
             ]
         },
-
     ],
 };
 
