@@ -1,7 +1,7 @@
 // TreeOfLife.jsx
 'use client';
 import React, {useState} from 'react';
-import {taxonomyData} from '@/data/treeoflifedata';
+import {taxonomyData} from '@/data/treeOfLifeData/treeoflifedata';
 import {iconMappingTOL} from "@/data/iconMapping";
 
 /**
