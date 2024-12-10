@@ -76,6 +76,63 @@ export const mammalia: TaxonomyNode = {
                     ]
                 }
             ]
-        }
+        },
+        {
+            name: "Ursäuger (Protheria)",
+            rank: taxons.UNTERKLASSE,
+            children: [
+                {
+                    name: "Kloakentiere (Monotremata)",
+                    rank: taxons.ORDNUNG,
+                    children: [
+                        {
+                            name: "Schnabeltiere (Ornithorhynchidae)",
+                            rank: taxons.FAMILIE,
+                            children: [
+                                {
+                                    name: "Ornithorhynchus",
+                                    rank: taxons.GATTUNG,
+                                    children: [
+                                        {
+                                            name: "Schnabeltier (Ornithorhynchus anatinus)",
+                                            rank: taxons.ART,
+                                            children: []},
+                                    ]},
+                            ]},
+                        {
+                            name: "Ameisenigel (Tachyglossidae)",
+                            rank: taxons.FAMILIE,
+                            children: [
+                                {
+                                    name: "Kurzschnabeligel",
+                                    rank: taxons.GATTUNG,
+                                    children: [
+                                        {
+                                            name: "Kurzschnabel-Ameisenigel (Tachyglossus aculeatus)",
+                                            rank: taxons.ART},
+
+                                    ]},
+                                {
+                                    name: "Langschnabeligel",
+                                    rank: taxons.GATTUNG,
+                                    children: [
+                                        {
+                                            name: "Barton-Langschnabeligel (Zaglossus bartoni)",
+                                            rank: taxons.ART},
+                                        {
+                                            name: "Westlicher Langschnabeligel (Zaglossus brujini)",
+                                            rank: taxons.ART},
+                                        {
+                                            name: "Attenborough-Langschnabeligel (Zaglossus attenboroughi)",
+                                            rank: taxons.ART},
+
+                                    ]},
+                            ]},
+                    ]},
+            ]},
+        {
+            name: "Beutelsäuger (Metatheria)",
+            rank: taxons.UNTERKLASSE,
+            children: []},
     ]
 };

@@ -1,7 +1,7 @@
 // taxons.ts
 
 export const taxons = {
-    ENTITAETEN: "überkategorie",
+    ENTITAETEN: "Überkategorie",
     KLASSIFIKATION: "Klassifikation",
     DOMAENE: "Domäne",
     REICH: "Reich",
