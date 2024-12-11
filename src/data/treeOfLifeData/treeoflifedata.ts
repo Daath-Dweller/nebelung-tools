@@ -71,7 +71,7 @@ export const taxonomyData: TaxonomyNode = {
                                                                                                                             children: [
                                                                                                                                 {
                                                                                                                                     name: "Landwirbeltiere (Tetrapoda)",
-                                                                                                                                    rank: taxons.ORDE,
+                                                                                                                                    rank: taxons.REIHE,
                                                                                                                                     children: [
                                                                                                                                         {
                                                                                                                                             name: "Amnioten (Amniota)",
