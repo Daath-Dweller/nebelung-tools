@@ -1,83 +1,16 @@
 // TreeOfLife.jsx
 'use client';
-import React, {useState} from 'react';
-import {taxonomyData} from '@/data/treeOfLifeData/treeoflifedata';
-import {iconMappingTOL} from "@/data/iconMapping";
+import React, { useState } from 'react';
+import { taxonomyData } from '@/data/treeOfLifeData/treeoflifedata';
+import {TaxonPath} from "@/components/tools/treeOfLife/taxonPath";
+import {TaxonomyList} from "@/components/tools/treeOfLife/taxonomyList";
+import {Breadcrumbs} from "@/components/tools/treeOfLife/breadcrumbs";
 
-/**
- * Recursive function to find the path from the root to a specific node.
- */
-const findPath = (node, name, path = []) => {
-    if (node.name === name) return [...path, node];
-    if (node.children) {
-        for (let child of node.children) {
-            const result = findPath(child, name, [...path, node]);
-            if (result) return result;
-        }
-    }
-    return null;
-};
-
-/**
- * Component to display the list of taxonomy nodes.
- */
-const TaxonomyList = ({ node, onSelect, level = 1 }) => {
-    return (
-        <ul className={`list-none pl-${level * 10}px text-white font-sans m-2`}>
-            {node.children && node.children.map((child) => {
-                const IconComponent = child.icon ? iconMappingTOL[child.icon] : null;
-                return (
-                    <li
-                        key={child.name}
-                        className={`${child.children ? 'cursor-pointer hover:text-gray-400' : 'cursor-default'}
-                         mb-3 flex items-center`}
-                        onClick={() => child.children && onSelect(child)}
-                    >
-                        <span className="mr-2 border-2 border-white p-2 select-none flex-shrink-0">
-                            E{level}: {child.rank ? `${child.rank} ` : ''}
-                        </span>
-                        <span className="border-2 border-white p-2 select-none flex items-center">
-                            {child.name}
-                        </span>
-                        <span className={`${IconComponent ? "" : "hidden"} border-2 border-white p-2 select-none 
-flex items-center`}>
-                        {IconComponent && <IconComponent className="text-2xl ml-2"/>}  </span>
-                    </li>
-            );
-            })}
-            </ul>
-            )
-                ;
-            };
-
-                /**
-                 * Component to display breadcrumbs as small dots representing each previous level.
- */
-const Breadcrumbs = ({ path }) => {
-    // Exclude the last item in the path as it represents the current level
-    const previousLevels = path.slice(0, -1);
-
-    return (
-        <div className="flex items-center space-x-1 mb-4 overflow-x-auto">
-            {previousLevels.map((node, index) => (
-                <span
-                    key={index}
-                    className="w-2 h-2 bg-white rounded-full flex-shrink-0"
-                    title={`Level ${index + 1}: ${node.name}`}
-                ></span>
-            ))}
-        </div>
-    );
-};
-
-/**
- * Main TreeOfLife component.
- */
 const TreeOfLife = () => {
     const [path, setPath] = useState([taxonomyData]);
 
     const currentNode = path[path.length - 1];
-    const currentLevel = path.length;
+    const currentLevel = path.length - 1; // E0 für Root, E1 für erste Ebene, etc.
 
     const handleSelect = (node) => {
         setPath([...path, node]);
@@ -97,9 +30,14 @@ const TreeOfLife = () => {
         <div className="bg-black m-2 pt-6 pb-4 px-4 rounded-md">
             <h1 className="text-white mb-4 italic text-xl">Phylogenetischer Stammbaum der Lebewesen</h1>
 
+            {/* TaxonPath Component */}
+            <div className="px-4 py-2">
+                {currentLevel >= 0 && <TaxonPath path={path} setPath={setPath} />}
+            </div>
+
             {/* Breadcrumbs Component */}
             <div className="px-4 py-2">
-                {currentLevel > 1 && <Breadcrumbs path={path} />}
+                {currentLevel >= 0 && <Breadcrumbs path={path} />}
             </div>
 
             <div className="mb-5 flex">
@@ -118,7 +56,7 @@ const TreeOfLife = () => {
                     ← Zurück
                 </button>
             </div>
-            <TaxonomyList node={currentNode} onSelect={handleSelect} level={currentLevel} />
+            <TaxonomyList node={currentNode} onSelect={handleSelect} level={currentLevel + 1} />
         </div>
     );
 };
