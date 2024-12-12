@@ -64,7 +64,7 @@ const PhyloTree = ({ ancestors, current, descendants, additionalDescendants }) =
                                 <div className="w-px h-8 bg-white"></div>
                                 {/* Nicht-anklickbare Anzeige für zusätzliche Kinder */}
                                 <div className="flex items-center justify-center bg-gray-600 border-2 border-white font-bold text-white px-4 py-2 rounded-full">
-                                    <span className="text-sm">+ {additionalDescendants} mehr</span>
+                                    <span className="text-sm">+ {additionalDescendants} </span>
                                 </div>
                             </div>
                         )}

@@ -3,6 +3,7 @@
 import { taxons } from "@/data/treeOfLifeData/taxons";
 import { TaxonomyNode } from "@/data/treeOfLifeData/taxonomyTypes";
 import { mammalia } from "@/data/treeOfLifeData/mammalia";
+import {embryophyta} from "@/data/treeOfLifeData/embryophyta";
 
 export const taxonomyData: TaxonomyNode = {
     name: "Entitaeten",
@@ -12,10 +13,12 @@ export const taxonomyData: TaxonomyNode = {
             name: "Lebewesen",
             rank: taxons.KLASSIFIKATION,
             icon: "IoWater",
+            info: "Ein Individuum, das durch Eigenschaften wie Stoffwechsel, Wachstum, Fortpflanzung und Reaktionsfähigkeit auf seine Umwelt charakterisiert ist.",
             children: [
                 {
                     name: "Eukaryoten (Eukaryota)",
                     rank: taxons.DOMAENE,
+                    info: "Lebewesen, deren Zellen (Eucyten) einen echten Kern und eine reiche Kompartimentierung haben.",
                     children: [
                         {
                             name: "Amorphea",
@@ -23,7 +26,7 @@ export const taxonomyData: TaxonomyNode = {
                             children: [
                                 {
                                     name: "Obazoa",
-                                    rank: taxons.OHNE_RANG,
+                                    rank: taxons.SUPERGRUPPE,
                                     children: [
                                         {
                                             name: "Opisthokonta",
@@ -50,11 +53,11 @@ export const taxonomyData: TaxonomyNode = {
                                                                                     rank: taxons.OHNE_RANG,
                                                                                     children: [
                                                                                         {
-                                                                                            name: "Bilateria",
+                                                                                            name: "Zweiseitentiere (Bilateria)",
                                                                                             rank: taxons.OHNE_RANG,
                                                                                             children: [
                                                                                                 {
-                                                                                                    name: "Neumuender (Deuterostomia)",
+                                                                                                    name: "Neumünder (Deuterostomia)",
                                                                                                     rank: taxons.STAMM,
                                                                                                     children: [
                                                                                                         {
@@ -66,7 +69,7 @@ export const taxonomyData: TaxonomyNode = {
                                                                                                                     rank: taxons.UNTERSTAMM,
                                                                                                                     children: [
                                                                                                                         {
-                                                                                                                            name: "Kiefermaeuler (Gnathostomata)",
+                                                                                                                            name: "Kiefermäuler (Gnathostomata)",
                                                                                                                             rank: taxons.KLASSE, // Angepasst falls notwendig
                                                                                                                             children: [
                                                                                                                                 {
@@ -111,77 +114,112 @@ export const taxonomyData: TaxonomyNode = {
                                             ]
                                         }
                                     ]
-                                }
+                                },
+                                {
+                                    name: "Amoebozoa",
+                                    rank: taxons.SUPERGRUPPE,
+                                    icon: "IoWater",
+                  },
                             ]
-                        }
-                    ]
-                },
-                {
-                    name: "Diaphoretickes",
-                    rank: taxons.OHNE_RANG,
-                    children: [
+                        },
                         {
-                            name: "Archaeplastida",
-                            rank: "Supergruppe",
+                            name: "Diaphoretickes",
+                            rank: taxons.OHNE_RANG,
                             children: [
                                 {
-                                    name: "Glaucophyta",
-                                    rank: "Abteilung",
-                                    children: []
-                                },
-                                {
-                                    name: "Rotalgen (Rhodophyceae)",
-                                    rank: "Abteilung",
-                                    children: []
-                                },
-                                {
-                                    name: "Pflanzen (Chloroplastida)",
-                                    rank: "Abteilung",
+                                    name: "Archaeplastida",
+                                    rank: taxons.SUPERGRUPPE,
+                                    info: "Archaeplastida besitzen photosynthetisch aktive Plastiden mit Chlorophyll a als Hauptfarbstoff. Die Plastiden stammen von einer primären Endosymbiose mit einem Cyanobakterium. Die Plastiden können in manchen Gruppen sekundär verloren gegangen oder reduziert sein. Meist besitzen sie eine Zellwand aus Zellulose. ",
                                     children: [
                                         {
-                                            name: "Chlorophyta",
-                                            rank: taxons.OHNE_RANG,
-                                            children: []
+                                            name: "Glaucophyta",
+                                            rank: "Abteilung",
+                    
                                         },
                                         {
-                                            name: "Charophyta",
-                                            rank: taxons.OHNE_RANG,
+                                            name: "Rotalgen (Rhodophyceae)",
+                                            rank: "Abteilung",
+                      
+                                        },
+                                        {
+                                            name: "Pflanzen (Chloroplastida / Viridiplantae)",
+                                            rank: "Abteilung",
                                             children: [
                                                 {
-                                                    name: "Phragmoplastophyta",
+                                                    name: "Grünalgen (Chlorophyta)",
+                                                    rank: taxons.OHNE_RANG,
+                                  
+                                                },
+                                                {
+                                                    name: "Charophyta",
                                                     rank: taxons.OHNE_RANG,
                                                     children: [
                                                         {
-                                                            name: "Streptophyta",
+                                                            name: "Phragmoplastophyta",
                                                             rank: taxons.OHNE_RANG,
                                                             children: [
                                                                 {
-                                                                    name: "Landpflanzn (Embryophyta)",
-                                                                    rank: taxons.REICH,
-                                                                    children: []
+                                                                    name: "Streptophyta",
+                                                                    rank: taxons.OHNE_RANG,
+                                                                    children: [
+                                                                        embryophyta,
+                                                                        {
+                                                                            name: "Armleuchteralgen (Charophyceae)",
+                                                                            rank: taxons.OHNE_RANG,
+                                                          
+                                                                        },
+
+                                                                    ]
                                                                 },
+                                                                {
+                                                                    name: "Schmuckalgen (Zygnematophyceae)",
+                                                                    rank: taxons.OHNE_RANG,
+                                                                    children: [
+                                                                    ]
+                                                                },
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            name: "Klebsormidiophyceae",
+                                                            rank: taxons.GATTUNG,
+                                                            children: [
                                                             ]
                                                         },
                                                     ]
                                                 },
+
                                             ]
                                         },
                                     ]
                                 },
+                                {
+                                    name: "Sar",
+                                    rank: taxons.SUPERGRUPPE,
+
+                  },
                             ]
                         },
                     ]
                 },
                 {
+                    name: "Prokaryoten",
+                    rank: taxons.OHNE_RANG,
+                    info: "Lebewesen, deren Zellen keinen Zellkern besitzen (Protocyten).",
+                    children: [
+                {
                     name: "Archaeen (Archae)",
                     rank: taxons.DOMAENE,
-                    children: []
+                    info : "Einzellige, prokaryotische Mikroorganismen, die durch einzigartige Membranlipide mit Etherbindungen, Zellwände ohne Peptidoglykan, genetische Ähnlichkeiten mit Eukaryoten und häufig das Leben in extremen Umweltbedingungen gekennzeichnet sind.",
+
                 },
                 {
                     name: "Bakterien (Bacteria)",
                     rank: taxons.DOMAENE,
-                    children: []
+                    info: "Einzellige, prokaryotische Mikroorganismen, die durch vielfältige Formen (wie Kokken oder Stäbchen), eine Zellwand aus Peptidoglykan, fehlende membranständige Organellen und hohe Stoffwechselvielfalt gekennzeichnet sind.",
+
                 },
+                    ]},
             ]
         },
     ],

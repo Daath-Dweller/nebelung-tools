@@ -6,6 +6,7 @@ export const taxons = {
     DOMAENE: "Domäne",
     REICH: "Reich",
     STAMM: "Stamm",
+    SUPERGRUPPE: "Supergruppe",
     UNTERSTAMM: "Unterstamm",
     KLASSE: "Klasse",
     UNTERKLASSE: "Unterklasse",

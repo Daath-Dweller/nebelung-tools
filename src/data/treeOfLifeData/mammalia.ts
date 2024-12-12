@@ -96,7 +96,7 @@ export const mammalia: TaxonomyNode = {
                                         {
                                             name: "Schnabeltier (Ornithorhynchus anatinus)",
                                             rank: taxons.ART,
-                                            children: []},
+                           },
                                     ]},
                             ]},
                         {
@@ -133,6 +133,6 @@ export const mammalia: TaxonomyNode = {
         {
             name: "Beutelsäuger (Metatheria)",
             rank: taxons.UNTERKLASSE,
-            children: []},
+         },
     ]
 };
