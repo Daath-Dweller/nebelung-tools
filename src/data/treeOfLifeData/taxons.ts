@@ -18,5 +18,7 @@ export const taxons = {
     GATTUNG: "Gattung",
     ART: "Art",
     OHNE_RANG: "ohne Rang",
-    REIHE: "Reihe"
+    REIHE: "Reihe",
+    ABTEILUNG: "Abteilung",
+    UNTERABTEILUNG: "Unterabteilung",
 } as const;

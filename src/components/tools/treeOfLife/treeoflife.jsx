@@ -37,10 +37,6 @@ const TreeOfLife = () => {
             <div id="links" className="select-none">
                 <h1 className="text-white mb-4 italic text-xl">Phylogenetischer Stammbaum der Lebewesen</h1>
 
-                {/* TaxonPath Component */}
-                <div className="px-4 py-2">
-                    {currentLevel >= 0 && <TaxonPath path={path} setPath={setPath}/>}
-                </div>
 
                 {/* Breadcrumbs Component */}
                 <div className="px-4 py-2">
@@ -64,6 +60,11 @@ const TreeOfLife = () => {
                     </button>
                 </div>
                 <TaxonomyList node={currentNode} onSelect={handleSelect} level={currentLevel + 1}/>
+                {/* TaxonPath Component */}
+                <div className="px-4 py-2">
+                    {currentLevel >= 0 && <TaxonPath path={path} setPath={setPath}/>}
+                </div>
+
             </div>
             <div id="rechts" className="bg-black p-4">
                 <PhyloTree

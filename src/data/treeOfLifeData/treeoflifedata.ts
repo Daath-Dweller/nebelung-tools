@@ -174,8 +174,7 @@ export const taxonomyData: TaxonomyNode = {
                                                                 {
                                                                     name: "Schmuckalgen (Zygnematophyceae)",
                                                                     rank: taxons.OHNE_RANG,
-                                                                    children: [
-                                                                    ]
+
                                                                 },
 
                                                             ]
@@ -183,8 +182,7 @@ export const taxonomyData: TaxonomyNode = {
                                                         {
                                                             name: "Klebsormidiophyceae",
                                                             rank: taxons.GATTUNG,
-                                                            children: [
-                                                            ]
+
                                                         },
                                                     ]
                                                 },
