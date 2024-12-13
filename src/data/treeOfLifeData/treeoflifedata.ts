@@ -58,7 +58,7 @@ export const taxonomyData: TaxonomyNode = {
                                                                                             children: [
                                                                                                 {
                                                                                                     name: "Neumünder (Deuterostomia)",
-                                                                                                    rank: taxons.STAMM,
+                                                                                                    rank: taxons.UEBERSTAMM,
                                                                                                     children: [
                                                                                                         {
                                                                                                             name: "Chordatiere (Chordata)",
