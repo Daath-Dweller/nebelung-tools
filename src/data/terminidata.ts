@@ -386,7 +386,6 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         etymologie: 'Aus dem Griechischen „petra“ (Stein) und „ichor“ (Götterblut), ursprünglich verwendet, um den Duft zu beschreiben, der nach Regen auftritt.',
         beispielSatz: 'Nach dem Gewitter lag der Duft des Petrichors in der Luft.'
     },
-
     phosphene: {
         name: 'Phosphene',
         erklaerungUndSynonyme: 'Die Lichtmuster, die man sieht, wenn die Augen bei geschlossenen Lidern gedrückt werden. Synonyme: Sehhalluzinationen, Druckerscheinungen.',
@@ -402,7 +401,14 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         korrekt: 2,
         etymologie: 'Vom mittelhochdeutschen „græmen“ (sich ärgern, erzürnen), im übertragenen Sinne auf das „Ärgern“ oder „Stören“ von Tieren angewandt.',
         beispielSatz: 'Zur Vergrämung von Wildgänsen setzte der Bauer akustische Signale ein.'
-    }
-
+    },
+    insinuation: {
+        name: 'Insinuation',
+        erklaerungUndSynonyme: 'Eine subtile oder indirekte Andeutung, oft mit manipulativer oder beleidigender Absicht. Synonyme: Unterstellung, Andeutung, Anspielung.',
+        options: ['Insignation', 'Insinuation', 'Insonation', 'Insulation'],
+        korrekt: 1,
+        etymologie: 'Vom lateinischen „insinuare“ (hineinführen, einfügen), später im übertragenen Sinn „etwas unterschwellig andeuten“.',
+        beispielSatz: 'Die Insinuation, dass er unfähig sei, ließ ihn aufhorchen.'
+    },
 };
 
