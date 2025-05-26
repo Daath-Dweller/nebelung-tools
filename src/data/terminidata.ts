@@ -410,5 +410,181 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         etymologie: 'Vom lateinischen „insinuare“ (hineinführen, einfügen), später im übertragenen Sinn „etwas unterschwellig andeuten“.',
         beispielSatz: 'Die Insinuation, dass er unfähig sei, ließ ihn aufhorchen.'
     },
+    binnenmajuskel: {
+        name: 'Binnenmajuskel',
+        erklaerungUndSynonyme: 'Binnenmajuskel (die) nennt man einen Grossbuchstaben (Versalie, Majuskel) im Innern eines Wortes, das nicht komplett in Großbuchstaben geschrieben ist. Synonyme: der Binnenversal, die Binnenversalie oder Camelcase. ',
+        options: ['Binenmmajuskel', 'Binnenmahjuskel', 'Binnenmajuskel', 'Binnenmajusgel'],
+        korrekt: 2,
+        etymologie: 'Vom lateinischen maiusculus (etwas größer).',
+        beispielSatz: 'Die Binnenmajuskel wird in Lateinschriften verwendet, um einzelne semantische Bestandteile (Lexeme) zu betonen,Die Binnenmajuskel wird in Lateinschriften verwendet, um einzelne semantische Bestandteile (Lexeme) zu betonen.'
+    },
+    kuleschowEffekt: {
+    name: "Kuleschow-Effekt",
+        erklaerungUndSynonyme: "Filmtheoretisches Phänomen, bei dem Zuschauer emotionale oder inhaltliche Verbindungen zwischen aufeinanderfolgenden, eigentlich unverbundenen Einstellungen herstellen, abhängig vom Kontext. Die Interpretation einer Einstellung (z.B. ein neutrales Gesicht) ändert sich durch die vorherige oder nachfolgende Einstellung. Es werden also vom Kontext abhängig, Emotionen in ein neutrales Gesicht gedeutet.",
+        options: ["Kuleschow-Effekt", "Kuleschow-Prinzip", "Kuleschow-Montage", "Kuleschow-Theorie"],
+        korrekt: 0,
+        etymologie: "Benannt nach dem russischen Filmemacher Lew Kuleschow (1899–1970), der diesen Effekt in Experimenten um 1920 demonstrierte.",
+        beispielSatz: "Der Kuleschow-Effekt zeigt, wie die Montage die Wahrnehmung des Zuschauers manipulieren kann, indem ein neutraler Gesichtsausdruck durch den Kontext mal als traurig, mal als hungrig interpretiert wird."
+},
+    eustress: {
+    name: "Eustress",
+        erklaerungUndSynonyme: "Positiver Stress, der als anregend, motivierend und leistungsfördernd empfunden wird. Er tritt auf, wenn eine Herausforderung als bewältigbar angesehen wird. Synonyme: Positivstress, guter Stress.",
+        options: ["Austress", "Eustress", "Neustress", "Poststress"],
+        korrekt: 1,
+        etymologie: "Griechisch „eu-“ (gut, wohl) und „Stress“ (englisch, ursprünglich von lateinisch „stringere“ – anspannen, zusammenschnüren). Geprägt von Hans Selye.",
+        beispielSatz: "Die Aufregung vor einem wichtigen Wettkampf kann Eustress sein, der zu Höchstleistungen anspornt."
+},
+    distress: {
+    name: "Distress",
+        erklaerungUndSynonyme: "Negativer Stress, der als überfordernd, schädlich und unangenehm empfunden wird und zu gesundheitlichen Problemen führen kann. Synonyme: Negativstress, schlechter Stress, Überlastung.",
+        options: ["Destress", "Dysstress", "Distress", "De-Stress"],
+        korrekt: 2,
+        etymologie: "Lateinisch „dis-“ (auseinander, schlecht) und „Stress“ (englisch, ursprünglich von lateinisch „stringere“ – anspannen, zusammenschnüren). Geprägt von Hans Selye.",
+        beispielSatz: "Anhaltender Lärm und hohe Arbeitsbelastung können zu chronischem Distress führen."
+},
+    erker: {
+    name: "Erker",
+       erklaerungUndSynonyme: "Ein geschlossener, über ein oder mehrere Geschosse reichender Vorbau an der Fassade eines Gebäudes, der aus der Wandflucht hervortritt und oft mit Fenstern versehen ist. Dient der Erweiterung des Wohnraums und der besseren Belichtung. Synonyme: Ausbau, Vorbau (teilweise).",
+        options: ["Arker", "Erker", "Orker", "Urker"],
+        korrekt: 1,
+        etymologie: "Mittelhochdeutsch „erker“, wahrscheinlich verwandt mit althochdeutsch „archo“ (Bogen, Wölbung) oder aus dem Französischen „archière“ (Schießscharte).",
+        beispielSatz: "Der Erker im Wohnzimmer bietet einen schönen Ausblick auf den Garten."
+},
+    gaube: {
+    name: "Gaube",
+        erklaerungUndSynonyme: "Ein Aufbau im geneigten Dach eines Gebäudes, der dazu dient, den Dachraum zu belichten, zu belüften und zusätzlichen Raum zu gewinnen. Hat ein eigenes kleines Dach und meist ein senkrechtes Fenster. Synonyme: Dachgaube, Dachgaupe, regional Lukarne.",
+        options: ["Gabe", "Glaube", "Gaube", "Grube"],
+        korrekt: 2,
+        etymologie: "Wahrscheinlich von mittelhochdeutsch „gûpe“ (Ausguck, überdachter Vorbau), verwandt mit „gähnen“ oder „gaffen“ im Sinne von Öffnung.",
+        beispielSatz: "Durch den Einbau einer Gaube wurde das Dachgeschoss deutlich heller und wohnlicher."
+},
+    dunningKrugerEffekt: {
+    name: "Dunning-Kruger-Effekt",
+        erklaerungUndSynonyme: "Kognitive Verzerrung, bei der inkompetente Personen dazu neigen, ihr eigenes Können zu überschätzen, während kompetente Personen ihr Können eher unterschätzen. Inkompetente erkennen das Ausmaß ihrer Inkompetenz nicht. Die Fähigkeit eine richtige Lösung zu finden, ist identisch mit der Fähigkeit die richtige Lösung bei anderen als richtig zu erkennen. Synonyme: Inkompetenz-Illusion.",
+        options: ["Kruger-Dunning-Effekt", "Dunning-Kruger-Effekt", "Denning-Kruger-Phänomen", "Downing-Krüger-Tendenz"],
+        korrekt: 1,
+        etymologie: "Benannt nach den Sozialpsychologen David Dunning und Justin Kruger, die den Effekt 1999 beschrieben.",
+        beispielSatz: "Der Dunning-Kruger-Effekt erklärt, warum manche Anfänger sich bereits nach kurzer Zeit für Experten halten."
+},
+    subsidiaritaet: {
+    name: "Subsidiarität",
+        erklaerungUndSynonyme: "Gesellschaftspolitisches Prinzip, wonach übergeordnete Einheiten (z.B. Staat) nur dann Aufgaben übernehmen sollen, wenn untergeordnete Einheiten (z.B. Familie, Gemeinde, Individuum) dazu nicht in der Lage sind. Hilfe zur Selbsthilfe steht im Vordergrund. Synonyme: Prinzip der Nachrangigkeit, Unterstützungsprinzip.",
+        options: ["Subordinarität", "Subsidarität", "Subsidiartät", "Subsidiarität"],
+        korrekt: 3,
+        etymologie: "Vom lateinischen „subsidiarius“ (zur Reserve gehörig, helfend) zu „subsidium“ (Hilfe, Reserve, Unterstützung).",
+        beispielSatz: "Das Prinzip der Subsidiarität fordert, dass Entscheidungen möglichst bürgernah auf der niedrigsten möglichen Ebene getroffen werden."
+},
+    ubiquitaer: {
+    name: "Ubiquitär",
+        erklaerungUndSynonyme: "Überall verbreitet, allgegenwärtig, an jedem Ort vorkommend oder verfügbar. Synonyme: Allgegenwärtig, omnipräsent, weitverbreitet.",
+        options: ["Obiquitär", "Uniquitär", "Ubiquitär", "Ibiquitär"],
+        korrekt: 2,
+        etymologie: "Vom spätlateinischen „ubiquitarius“ (überall befindlich), abgeleitet von lateinisch „ubique“ (überall).",
+        beispielSatz: "In der modernen Welt sind Smartphones nahezu ubiquitär geworden."
+},
+    agogik: {
+    name: "Agogik",
+        erklaerungUndSynonyme: "Sammelbegriff für die Lehre und Praxis der professionellen Beeinflussung, Begleitung, Bildung und Führung von Menschen zur Entfaltung ihrer Persönlichkeit und Bewältigung von Lebensaufgaben. Umfasst z.B. Pädagogik, Andragogik. Synonyme: Führungskunst, Bildungslehre (i.w.S.).",
+        options: ["Agogik", "Akustik", "Agnostik", "Apologetik"],
+        korrekt: 0,
+        etymologie: "Vom griechischen „agōgē“ (Führung, Leitung, Erziehung), abgeleitet von „agein“ (führen, leiten, treiben).",
+        beispielSatz: "Die Agogik beschäftigt sich mit den Prinzipien der Leitung und Begleitung von Lern- und Entwicklungsprozessen."
+},
+    barnumEffekt: {
+    name: "Barnum-Effekt",
+        erklaerungUndSynonyme: "Auch Forer-Effekt; die Neigung von Menschen, vage und allgemeingültige Aussagen über die eigene Person als zutreffende Beschreibung zu akzeptieren, besonders wenn sie als spezifisch für sie erstellt wahrgenommen werden. Synonyme: Forer-Effekt, Täuschung durch Allgemeingültigkeit.",
+        options: ["Barnum-Effekt", "Barum-Effekt", "Barnam-Effekt", "Burnham-Effekt"],
+        korrekt: 0,
+        etymologie: "Benannt nach P. T. Barnum (indirekt, wissenschaftlich von Bertram R. Forer), dem der Ausspruch „We've got something for everyone“ zugeschrieben wird.",
+        beispielSatz: "Der Barnum-Effekt erklärt, warum viele Menschen von der scheinbaren Genauigkeit von Horoskopen beeindruckt sind."
+},
+    laizistisch: {
+    name: "Laizistisch",
+        erklaerungUndSynonyme: "Bezieht sich auf den Laizismus, ein Prinzip der strikten Trennung von Kirche und Staat, bei dem Religion als reine Privatangelegenheit betrachtet wird. Synonyme: Religionsneutral (aber strenger).",
+        options: ["Laizistisch", "Laizisstisch", "Luzistisch", "Laizystisch"],
+        korrekt: 0,
+        etymologie: "Vom französischen „laïcisme“, abgeleitet von „laïque“ (weltlich), vom griechischen „laikos“ (zum Volk gehörig).",
+        beispielSatz: "Ein laizistischer Staat duldet keine religiösen Symbole in öffentlichen Schulen."
+},
+    saekular: {
+    name: "Säkular",
+        erklaerungUndSynonyme: "Weltlich, nicht-kirchlich, nicht-religiös. Bezieht sich auf Dinge oder Prozesse, die von religiösen Bindungen gelöst sind. Synonyme: Weltlich, profan, religionsfrei.",
+        options: ["Säkular", "Sekular", "Zirkular", "Spekular"],
+        korrekt: 0,
+        etymologie: "Vom lateinischen „saecularis“ (zum Jahrhundert gehörig, weltlich), von „saeculum“ (Zeitalter, Jahrhundert, Welt).",
+        beispielSatz: "Die Universität wurde als eine säkulare Bildungseinrichtung gegründet."
+},
+    pluralisBenevolentiae: {
+    name: "Pluralis Benevolentiae",
+        erklaerungUndSynonyme: "„Plural der Wohlgesonnenheit“; rhetorische Figur, bei der ein Sprecher „wir“ sagt, obwohl er sich selbst meint, oft aus Bescheidenheit oder um Wohlwollen auszudrücken. Synonyme: Wohlwollensplural.",
+        options: ["Pluralis Maiestatis", "Pluralis Modestiae", "Pluralis Benevolentiae", "Pluralis Autoralis"],
+        korrekt: 2,
+        etymologie: "Lateinisch: „pluralis“ (Mehrzahl), „benevolentiae“ (Genitiv von „benevolentia“ – Wohlwollen, Güte).",
+        beispielSatz: "„Wir sind der Meinung, dass diese Maßnahme hilfreich wäre“, sagte der Berater und meinte mit dem Pluralis Benevolentiae eigentlich nur seine eigene Einschätzung."
+},
+    epistemologisch: {
+    name: "Epistemologisch",
+        erklaerungUndSynonyme: "Die Erkenntnistheorie betreffend; sich auf die Bedingungen, Möglichkeiten und Grenzen des Wissens und Erkennens beziehend. Synonyme: Erkenntnistheoretisch.",
+        options: ["Epistomologisch", "Epistemologisch", "Äpistemologisch", "Epistemiologisch"],
+        korrekt: 1,
+        etymologie: "Vom griechischen „epistēmē“ (Wissen, Erkenntnis) und „logos“ (Lehre, Wort).",
+        beispielSatz: "Die epistemologische Frage lautet hier, wie wir überhaupt zu gesichertem Wissen über die Außenwelt gelangen können."
+},
+    epistemisch: {
+    name: "Epistemisch",
+        erklaerungUndSynonyme: "Auf das Wissen oder die Erkenntnis bezogen; das Wissen betreffend oder aus dem Wissen stammend. Bezieht sich oft auf den Zustand oder die Rechtfertigung von Wissen. Synonyme: Wissensbezogen, erkenntnisbezogen.",
+        options: ["Epistemisch", "Epistenisch", "Epistymisch", "Apistemisch"],
+        korrekt: 0,
+        etymologie: "Vom griechischen „epistēmē“ (Wissen, Erkenntnis, Wissenschaft).",
+        beispielSatz: "Eine epistemische Rechtfertigung für eine Überzeugung basiert auf guten Gründen und Beweisen."
+},
+    axiom: {
+    name: "Axiom",
+        erklaerungUndSynonyme: "Ein grundlegender Lehrsatz oder eine Aussage, die innerhalb eines theoretischen Systems ohne Beweis als wahr angenommen wird und als Ausgangspunkt für weitere Ableitungen dient. Ein nicht-religiöses Dogma. Synonyme: Grundsatz, Postulat, Grundannahme.",
+        options: ["Axion", "Axiom", "Axim", "Akion"],
+        korrekt: 1,
+        etymologie: "Vom griechischen „axíōma“ (das für würdig Gehaltene, Grundsatz), von „axioûn“ (für würdig halten).",
+        beispielSatz: "In der euklidischen Geometrie ist „Durch zwei Punkte verläuft genau eine Gerade“ ein grundlegendes Axiom."
+},
+    usurpation: {
+    name: "Usurpation",
+        erklaerungUndSynonyme: "Die widerrechtliche Anmaßung oder gewaltsame Inbesitznahme von Herrschaft, Macht, Rechten, Besitz oder eines Amtes. Synonyme: Anmaßung, widerrechtliche Aneignung, Machtergreifung.",
+        options: ["Usurpation", "Usupation", "Usupration", "Uzurpation"],
+        korrekt: 0,
+        etymologie: "Vom lateinischen „usurpatio“ (widerrechtliche Inbesitznahme), zu „usurpare“ (widerrechtlich in Besitz nehmen).",
+        beispielSatz: "Die Usurpation des Throns durch den General führte zu einem langjährigen Bürgerkrieg."
+},
+    wernickeAphasie: {
+    name: "Wernicke-Aphasie",
+        erklaerungUndSynonyme: "Sprachstörung (Aphasie) durch Schädigung des Wernicke-Areals. Betroffene haben Probleme mit dem Sprachverständnis, produzieren aber oft flüssige, aber inhaltsleere Sprache („Wortsalat“). Synonyme: Sensorische Aphasie, flüssige Aphasie.",
+        options: ["Broca-Aphasie", "Globale Aphasie", "Wernicke-Aphasie", "Amnestische Aphasie"],
+        korrekt: 2,
+        etymologie: "Benannt nach dem Neurologen Carl Wernicke (1848–1905), der sie 1874 beschrieb.",
+        beispielSatz: "Patienten mit Wernicke-Aphasie verstehen oft nicht, was zu ihnen gesagt wird, und ihre eigene Sprache kann für andere unverständlich sein."
+},
+    reziprokerAltruismus: {
+    name: "Reziproker Altruismus",
+        erklaerungUndSynonyme: "Form des Altruismus, bei der ein Individuum einem anderen hilft in der Erwartung (nicht notwendigerweise bewusst), dass die Hilfe später erwidert wird („Wie du mir, so ich dir“). Synonyme: Gegenseitiger Altruismus, altruistische Kooperation.",
+        options: ["Reziproker Egoismus", "Direkter Altruismus", "Reziproker Altruismus", "Nepotistischer Altruismus"],
+        korrekt: 2,
+        etymologie: "„Reziprok“ von lat. „reciprocus“ (gegenseitig). „Altruismus“ von lat. „alter“ (der andere). Begriff von Robert Trivers 1971.",
+        beispielSatz: "Der reziproke Altruismus erklärt, warum nicht verwandte Individuen einander helfen, wenn die Kosten der Hilfe geringer sind als der Nutzen der erwarteten Gegenleistung."
+},
+    deviant: {
+    name: "Deviant",
+        erklaerungUndSynonyme: "Von der Norm, dem Durchschnitt oder den Erwartungen abweichend; ein Verhalten oder eine Person, die von akzeptierten sozialen oder statistischen Normen abweicht. Synonyme: Abweichend, normabweichend, nonkonformistisch.",
+        options: ["Deviant", "Diviant", "Defiant", "Dezent"],
+        korrekt: 0,
+        etymologie: "Vom lateinischen „deviare“ (vom Wege abweichen), zu „de-“ (ab-, weg-) und „via“ (Weg).",
+        beispielSatz: "Sein deviantes Verhalten führte oft zu Konflikten mit Autoritäten, brachte aber auch neue Perspektiven ein."
+},
+    intellektuelleRedlichkeit: {
+    name: "Intellektuelle Redlichkeit",
+        erklaerungUndSynonyme: "Haltung und Praxis, die auf Ehrlichkeit, Aufrichtigkeit und Genauigkeit im Denken, Argumentieren und in der Darstellung von Informationen beruht. Beinhaltet kritische Selbstprüfung und faire Bewertung von Gegenargumenten. Synonyme: Geistige Aufrichtigkeit, wissenschaftliche Ehrlichkeit, akademische Integrität.",
+        options: ["Intellektuelle Flexibilität", "Intellektuelle Redlichkeit", "Intellektuelle Kapazität", "Intellektuelle Dominanz"],
+        korrekt: 1,
+        etymologie: "„Intellektuell“ von lat. „intellectualis“ (den Verstand betreffend). „Redlichkeit“ von ahd. „redîlih“ (vernünftig), zu „reda“ (Rede, Rechenschaft).",
+        beispielSatz: "Zur intellektuellen Redlichkeit gehört es, auch Argumente anzuerkennen, die der eigenen Position widersprechen."
+}
 };
 

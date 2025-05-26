@@ -7,7 +7,7 @@ interface WordEntry {
 
 export const words: WordEntry[] = [
     {
-        word: 'Diabeteeeeeees',
+        word: 'Diabetes',
         article: 'der',
         explanation: 'Der Diabetes - Eine Stoffwechselerkrankung, die den Blutzuckerspiegel betrifft.',
     },
