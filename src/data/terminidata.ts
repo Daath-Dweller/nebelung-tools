@@ -98,14 +98,6 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         etymologie: 'Französischen Ursprungs, von „hasard“ für „Wagnis“ oder „Risiko“, bezieht sich auf jemanden, der ein Spieler oder Draufgänger ist.',
         beispielSatz: 'Sein riskantes Geschäftsvorhaben machte ihn zum Hasardeur.'
     },
-    axiom: {
-        name: 'Axiom',
-        erklaerungUndSynonyme: 'Ein Grundsatz oder eine Annahme, die als gegeben gilt. Synonyme: Grundsatz, Postulat.',
-        options: ['Axiom', 'Axiomm', 'Aximom', 'Aksiom'],
-        korrekt: 0,
-        etymologie: 'Vom griechischen „axioma“ für „Würde“ oder „allgemein anerkannte Wahrheit“; grundlegende Annahme in der Philosophie und Mathematik.',
-        beispielSatz: 'In der Mathematik gelten Axiome als grundsätzliche Wahrheiten.'
-    },
     moraene: {
         name: 'Moräne',
         erklaerungUndSynonyme: 'Gesteinsmaterial, das von einem Gletscher transportiert und abgelagert wird. Synonyme: Gletscherschutt.',
