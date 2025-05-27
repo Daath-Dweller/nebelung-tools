@@ -577,6 +577,22 @@ export const Fachbegriffe: { [key: string]: Fachbegriff } = {
         korrekt: 1,
         etymologie: "„Intellektuell“ von lat. „intellectualis“ (den Verstand betreffend). „Redlichkeit“ von ahd. „redîlih“ (vernünftig), zu „reda“ (Rede, Rechenschaft).",
         beispielSatz: "Zur intellektuellen Redlichkeit gehört es, auch Argumente anzuerkennen, die der eigenen Position widersprechen."
-}
+},
+    spontaneitaet: {
+        name: 'Spontaneität',
+        erklaerungUndSynonyme: 'Die Fähigkeit oder Eigenschaft, ohne langes Überlegen oder äusseren Anstoss aus eigenem Antrieb zu handeln oder zu entstehen. Das Substantiv zu "spontan". Synonyme: Ungezwungenheit, Impulsivität (teilweise), Eigeninitiative, Unmittelbarkeit.',
+        options: ['Spontanität', 'Spontaneität', 'Spontanietät', 'Spontaneitet'],
+        korrekt: 1, // Index von "Spontaneität"
+        etymologie: 'Abgeleitet vom Adjektiv "spontan" (lat. "spontaneus" – freiwillig, aus eigenem Antrieb). Die korrekte Substantivierung im Deutschen erfolgt mit dem Suffix "-ität". Bei Adjektiven wie "spontan", die auf "-an" enden, wird zur Bildung des Substantivs auf "-ität" ein "e" zwischen Stamm und Suffix eingeschoben ("Spontan-e-ität"), um die Aussprache zu erleichtern und die Wortstruktur zu wahren. Die Form "Spontanität" ohne dieses "e" ist eine verbreitete, aber orthographisch nicht korrekte Vereinfachung.',
+        beispielSatz: 'Ihre erfrischende Spontaneität machte sie bei allen beliebt und sorgte oft für unerwartete Abenteuer.'
+    },
+    sardonisch: {
+        name: 'Sardonisch (Lachen/Lächeln)',
+        erklaerungUndSynonyme: 'Ein bitteres, höhnisches, boshaft-grinsendes oder gequält wirkendes Lachen oder Lächeln, das oft Spott, Verachtung, Überlegenheit oder auch unterdrückten Schmerz ausdrückt. Es ist kein Ausdruck von Freude. Synonyme: Hohnlächeln, Spottlächeln, grimmiges Grinsen, boshaftes Lächeln.',
+        options: ['Sarkastisches Lächeln', 'Sardisches Lächeln', 'Sardonisches Lächeln', 'Sadistisches Lächeln'],
+        korrekt: 2, // Index von "Sardonisches Lächeln"
+        etymologie: 'Vom lateinischen "risus sardonicus" (sardonisches Lachen), zurückgehend auf griechisch "sardánios gélōs" (σαρδάνιος γέλως). Der Ausdruck soll sich auf die Wirkung einer giftigen Pflanze aus Sardinien ("Herba Sardonica", evtl. ein Hahnenfussgewächs) beziehen, deren Verzehr tödliche Krämpfe mit einer schmerzhaften, grinsenden Gesichtsentstellung verursachte.',
+        beispielSatz: 'Mit einem sardonischen Lächeln quittierte er die offensichtliche Lüge seines Gegenübers.'
+    },
 };
 

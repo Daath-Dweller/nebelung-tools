@@ -71,4 +71,32 @@ export const Rechtschreibfehler: { [key: string]: Rechtschreibfehler } = {
         beispielKorrekt: "Ich möchte dich kennenlernen. Sie wusste Bescheid, das kann ich zugute halten.",
         erlaeuterung: "Bei bestimmten Verbindungen, wie Verb + Verb oder Präfixe, schreibt man zusammen, z. B. 'kennenlernen', 'zusammenschreiben' und  'zugutekommen'.",
     },
+    EffektivUndEffizient: {
+        name: 'Effektiv und effizient',
+        name2: '"effektiv" oder "effizient"?',
+        beispielFalsch: "Um die Aufgabe schnell zu erledigen, brauchen wir eine effektive Lösung, die wenig Zeit kostet.",
+        beispielKorrekt: "Um die Aufgabe schnell zu erledigen, brauchen wir eine effiziente Lösung. Die Maßnahme war effektiv, das Problem wurde gelöst.",
+        erlaeuterung: "Effektiv bedeutet wirksam, also dass ein Ziel erreicht wird. Effizient bedeutet wirtschaftlich oder leistungsfähig, also dass ein Ziel mit möglichst geringem Aufwand (Zeit, Kosten, Ressourcen) erreicht wird.",
+    },
+    SelbeUndGleich: {
+        name: 'Dasselbe und das Gleiche', // Name angepasst für Konsistenz
+        name2: '"dasselbe Auto" oder "das gleiche Auto"?',
+        beispielFalsch: "Meine Schwester und ich haben dasselbe Fahrrad, nur ihres ist blau und meins ist rot.",
+        beispielKorrekt: "Meine Schwester und ich haben das gleiche Fahrradmodell, aber verschiedene Exemplare. Wenn wir uns ein einziges Fahrrad teilen würden, führen wir dasselbe Fahrrad.",
+        erlaeuterung: "'Dasselbe' (derselbe, dieselbe) bezieht sich auf ein und dasselbe identische Exemplar oder Einzelstück. 'Das Gleiche' (der Gleiche, die Gleiche) bezieht sich auf ein Exemplar derselben Art, Sorte oder Modells; es gibt aber mehrere davon.",
+    },
+    WieUndAls: {
+        name: 'Wie und als',
+        name2: 'Größer "wie" oder "als" du?',
+        beispielFalsch: "Dieses Buch ist spannender wie das andere. Er ist genauso alt als sein Freund.",
+        beispielKorrekt: "Dieses Buch ist spannender als das andere. Er ist genauso alt wie sein Freund.",
+        erlaeuterung: "Für Vergleiche bei Ungleichheit (Komparativ, z.B. schneller, besser, mehr) verwendet man 'als'. Für Vergleiche bei Gleichheit (Positiv mit 'so', 'ebenso', 'genauso') verwendet man 'wie'.",
+    },
+    FugenS: {
+        name: 'Fugen-s',
+        name2: "Verkehrszeichen oder Verkehrzeichen?",
+        beispielFalsch: "Der Schadenersatz wurde gezahlt. Die Regierung plant eine Einkommensteuer Senkung.",
+        beispielKorrekt: "Der Schadensersatz wurde gezahlt. Die Regierung plant eine Einkommenssteuersenkung.",
+        erlaeuterung: "Das Fugen-s ist ein Verbindungslaut in Komposita (zusammengesetzten Wörtern). Es gibt keine allgemeingültigen, einfachen Regeln, aber häufige Muster (z.B. nach Substantiven auf -ung, -heit, -keit, -schaft, -ion, -tät, -at, bei vielen femininen Substantiven als Genitiv-s, oder zur Verbesserung der Aussprache). Oft hat sich eine Form etabliert (z.B. Hochzeitstag, aber nicht Hochzeitsfest). Im Zweifel hilft der Duden.",
+    },
 };

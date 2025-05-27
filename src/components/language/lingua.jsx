@@ -19,27 +19,22 @@ export default function Lingua() {
             <div className="flex flex-col md:flex-row justify-center flex-wrap mt-8">
                 <button
                     className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
-                    onClick={() => setActiveContent('genus')}
-                >
-                    Wortgeschlecht-Raten
-                </button>
-                <button
-                    className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
-                    onClick={() => setActiveContent('rechtschreibfehler')}
-                >
-                    Rechtschreib-Wissen
-                </button>
-                <button
-                    className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
                     onClick={() => setActiveContent('fachbegriffe')}
                 >
                     Wortschatz-Quiz
                 </button>
                 <button
                     className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+                    onClick={() => setActiveContent('genus')}
+                >
+                    Wortgeschlecht-Quiz
+                </button>
+
+                <button
+                    className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
                     onClick={() => setActiveContent('numerus')}
                 >
-                    Plural-Raten
+                    Plural-Quiz
                 </button>
                 {/* NEU: Button für das Konjunktiv-II-Quiz */}
                 <button
@@ -48,6 +43,12 @@ export default function Lingua() {
                     onClick={() => setActiveContent('konjunktiv')}
                 >
                     Konjunktiv II-Quiz {/* Textvorschlag für den Button */}
+                </button>
+                <button
+                    className="text-lg font-bold py-4 px-8 m-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg"
+                    onClick={() => setActiveContent('rechtschreibfehler')}
+                >
+                    Rechtschreib-Wissen
                 </button>
             </div>
             <div className="mt-8">
